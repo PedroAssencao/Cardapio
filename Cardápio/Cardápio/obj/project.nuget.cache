@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "0C6GNwNGOH5iecwOu3jvqBSiZNWgMlSB7yt7Bl9O41bVNjjsZHLILiR37DO3xXubJwPBKbfA++Se4vJw9EX4Qg==",
+  "dgSpecHash": "NpbD4yX+qzAq8ZnOrRnhBDCg8vxIo7Ml0aJTs23WiIuv1AErDAYhp2/Be5V1ypPlReoJpLG897OEr0Q9QO/2Gw==",
   "success": true,
   "projectFilePath": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\Cardápio\\Cardápio.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\android\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\android\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\android\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\android\\.nuget\\packages\\k4os.compression.lz4\\1.2.6\\k4os.compression.lz4.1.2.6.nupkg.sha512",

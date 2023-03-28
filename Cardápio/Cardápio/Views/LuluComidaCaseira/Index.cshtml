@@ -3,43 +3,41 @@
 *@
 @{
 }
-@model IEnumerable<Cardápio.Models.categoriaProduto>
+@model IEnumerable<Cardápio.Models.LuluComidaCaseiraModels>
 
 
-	<header> 
 	<link href="~/css/Cardapio.css" rel="stylesheet" />
-	</header>
 <div class="hero">
 	<div class="bg">
 		<div class="content">
-			<h2>Nunca foi tão facil pedir <span>lanche</span></h2>
+			<h2>LuluComida<span>Caseira</span></h2>
 			<p>Descubra nossos produtos no seu conforto</p>
 			@*<div class="form">
-				<div class="search">
-					<input type="text" placeholder=" Explore nossas opções " />
-				</div>
-				<button>Buscar</button>
-			</div>*@
-			<div class="tags">
-				<span>#pizza</span>
-				<span>#lanche</span>
-				<span>#comidabrasileira</span>
-				<span>#pizza</span>
-				<span>#lanche</span>
-				<span>#comidabrasileira</span>
+			<div class="search">
+			<input type="text" placeholder=" Explore nossas opções " />
 			</div>
+			<button>Buscar</button>
+			</div>*@
+			@*<div class="tags">
+			<span>#pizza</span>
+			<span>#lanche</span>
+			<span>#comidabrasileira</span>
+			<span>#pizza</span>
+			<span>#lanche</span>
+			<span>#comidabrasileira</span>
+			</div>*@
 		</div>
 	</div>
 </div>
 
-<h1 class="title"> Categorias </h1>
-@*@foreach (var item in Model)
+<h1 class="title"> Pratos </h1>
+@foreach (var item in Model)
 {
 	<section class="produtos">
 		<img class="imagens" src="https://www.designi.com.br/images/preview/10099225.jpg" alt="" width="300" height="200" />
-		<p class="descricaoProduto"> @item.NomeProduto </p>
+		<p class="DescricaoProduto"> @item.NomeProduto </p>
 
-		a href="#modal" class="btn">Abrir modal</a>
+		@*a href="#modal" class="btn">Abrir modal</a>
 	<div id="modal" class="modal">
 	<div class="modal_Content"></div>
 	<h2 class="modal_title">Descrição do item</h2>
@@ -50,12 +48,12 @@
 	</p>
 	<a href="" class="Modal_link">OK</a>
 
-	</div>
-		
+	</div>*@
+
 
 		<p class="valorProduto"> R$ @item.valorProduto.ToString("F")</p>
 	</section>
-}	*@
+}
 @*<div class="slider">
 	<div class="slides">
 		<div class="slide slide1">
@@ -81,36 +79,5 @@
 		</div>
 	</div>
 </div>*@
-
-	<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-		Entrada
-	</button>
-
-    <!-- Modal -->
-    <div class="" id="exampleModal" tabindex="-100" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        
-				@foreach (var item in Model.Where(x => x.Nomecategoria == "Entrada"))
-				{	<div class="modal-body" style="color: red">
-						@item.NomeProduto
-						R$ @item.valorProduto.ToString("F")
-						<br />
-					</div>
-
-					@*
-					Protudos dessa categoria*@
-					<div >
-					</div>
-				}
-           
-    </div>
-@*
-
-	Carrinho*@
-	<div>
-
-
-	</div>
-
-
 
 

@@ -73,3 +73,4 @@ C:\Users\android\Documents\GitHub\Cardapio\Cardápio\Cardápio\obj\Debug\net6.0\
 C:\Users\android\Documents\GitHub\Cardapio\Cardápio\Cardápio\obj\Debug\net6.0\Cardápio.pdb
 C:\Users\android\Documents\GitHub\Cardapio\Cardápio\Cardápio\obj\Debug\net6.0\Cardápio.genruntimeconfig.cache
 C:\Users\android\Documents\GitHub\Cardapio\Cardápio\Cardápio\obj\Debug\net6.0\ref\Cardápio.dll
+C:\Users\android\Documents\GitHub\Cardapio\Cardápio\Cardápio\bin\Debug\net6.0\Dapper.dll

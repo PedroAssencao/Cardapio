@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lFM2wjOF1MciGmCSKuevuhvKw8kZxws7RStVPc0e2ew=",
+  "Hash": "8guqijrmzs8EUqZW9JZN02SsOUKhXvv1oxJZuixWwBY=",
   "Source": "Cardápio",
   "BasePath": "_content/Cardápio",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\Cardápio\\wwwroot\\css\\style.css",
+      "SourceId": "Cardápio",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\Cardápio\\wwwroot\\",
+      "BasePath": "_content/Cardápio",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
       "Identity": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\Cardápio\\wwwroot\\favicon.ico",
@@ -236,6 +253,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\search.svg"
+    },
+    {
+      "Identity": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\Cardápio\\wwwroot\\Images\\undraw_login_re_4vu2.svg",
+      "SourceId": "Cardápio",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\Cardápio\\wwwroot\\",
+      "BasePath": "_content/Cardápio",
+      "RelativePath": "Images/undraw_login_re_4vu2.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\undraw_login_re_4vu2.svg"
+    },
+    {
+      "Identity": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\Cardápio\\wwwroot\\Images\\undraw_shopping_app_flsj.svg",
+      "SourceId": "Cardápio",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\Cardápio\\wwwroot\\",
+      "BasePath": "_content/Cardápio",
+      "RelativePath": "Images/undraw_shopping_app_flsj.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\undraw_shopping_app_flsj.svg"
     },
     {
       "Identity": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\Cardápio\\wwwroot\\js\\site.js",

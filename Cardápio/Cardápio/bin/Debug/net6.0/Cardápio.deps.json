@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Cardápio/1.0.0": {
         "dependencies": {
+          "Dapper": "2.0.123",
           "Microsoft.EntityFrameworkCore.Design": "7.0.4",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.4",
           "MySql.Data": "8.0.32.1",
@@ -15,6 +16,14 @@
         },
         "runtime": {
           "Cardápio.dll": {}
+        }
+      },
+      "Dapper/2.0.123": {
+        "runtime": {
+          "lib/net5.0/Dapper.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.123.33578"
+          }
         }
       },
       "Google.Protobuf/3.21.9": {
@@ -531,6 +540,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Dapper/2.0.123": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RDFF4rBLLmbpi6pwkY7q/M6UXHRJEOerplDGE5jwEkP/JGJnBauAClYavNKJPW1yOTWRPIyfj4is3EaJxQXILQ==",
+      "path": "dapper/2.0.123",
+      "hashPath": "dapper.2.0.123.nupkg.sha512"
     },
     "Google.Protobuf/3.21.9": {
       "type": "package",
