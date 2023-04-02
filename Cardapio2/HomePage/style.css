@@ -1,0 +1,104 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+  .box {
+    width: 380px;
+    height: 770px;
+    margin: 120px auto;
+    border: 2px solid #666666;
+    border-radius: 12px;
+    padding: 10px; 
+    background-image: url('https://i.pinimg.com/236x/88/93/72/889372aae0911872403f2d6b50b67099.jpg');
+    background-size: 100% 100%;
+    text-align: center center;
+    
+ 
+  }
+
+  .estilo_pp .destaque1 {
+    color: red; 
+    font-size: 20px;
+    
+   
+}
+
+body {
+  background-image: url('https://static.vecteezy.com/ti/vetor-gratis/p3/13800186-icone-de-hamburguer-preto-isolado-padrao-sem-emenda-no-fundo-branco-icone-de-hamburguer-sinal-de-sanduiche-de-cheeseburger-cardapio-de-fast-food-ilustracaoial-gratis-vetor.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  
+}
+
+
+.teste{
+
+  color: #000;
+}
+
+table {
+  border-collapse: separate;
+  text-indent: initial;
+  white-space: normal;
+  line-height: normal;
+  font-weight: normal;
+  font-size: medium;
+  font-style: normal;
+  color: -internal-quirk-inherit;
+  text-align: start;
+  border-spacing: 2px;
+  font-variant: normal;
+}
+
+.estilo_titulo a {
+  text-decoration: none;
+  color: #333333;
+}
+
+.estilo_data a {
+  text-decoration: none;
+  color: #333333;
+}
+
+.estilo_titulo {
+  font-family: Arial, calibri, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #333333;
+  visibility: inherit;
+  text-transform: uppercase;
+}
+
+b {
+  font-weight: bold;
+  color: #333333;
+}
+
+.estilo_data a:hover {
+  text-decoration: underline;
+  color: #333333;
+}
+
+.box {
+  height: 770px; 
+  overflow-y: scroll; 
+  scrollbar-width: thin; 
+  scrollbar-color: #aaa #fff; 
+}
+
+
+.box::-webkit-scrollbar {
+  width: 10px; 
+ 
+}
+
+.box::-webkit-scrollbar-track {
+  background-color: #fff; 
+}
+
+.box::-webkit-scrollbar-thumb {
+  background-color: #aaa; 
+}
+
