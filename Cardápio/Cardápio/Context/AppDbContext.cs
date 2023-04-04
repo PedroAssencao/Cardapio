@@ -8,6 +8,7 @@ namespace Cardápio.Context
 		public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
 		public DbSet<EstabelecimentoModels> estabelecimento { get; set; }
-		public DbSet<ProdutosModel> produtos { get; set; }
+		public DbSet<categoriaProduto> categoriaProduto { get; set; }
+		public DbSet<LuluComidaCaseiraModels> LuluComidaCaseira { get; set; }
 	}
 }

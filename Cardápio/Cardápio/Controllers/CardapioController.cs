@@ -14,10 +14,12 @@ namespace Cardápio.Controllers
 		}
 		public IActionResult Index()
 		{
-			ProdutosModel novoproduto = new ProdutosModel {  };
-			
-			_context.produtos.Add(novoproduto);	
-			return View(_context.produtos.ToList());
+			categoriaProduto novoproduto = new categoriaProduto { };
+
+			//_context.produtos.Add(novoproduto);	
+			//return View(_context.produtos.ToList());
+			var data = _context.categoriaProduto.ToList();
+			return View(data);
 		}
 	}
 }

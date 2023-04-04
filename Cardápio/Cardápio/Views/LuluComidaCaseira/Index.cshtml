@@ -1,0 +1,86 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<Cardápio.Models.LuluComidaCaseiraModels>
+
+	<link href="~/css/Cardapio.css" rel="stylesheet" />
+<div class="hero">
+	<div class="bg">
+		<div class="content">
+			<h2>LuluComida<span>Caseira</span></h2>
+			<p>Descubra nossos produtos no seu conforto</p>
+			@*<div class="form">
+			<div class="search">
+			<input type="text" placeholder=" Explore nossas opções " />
+			</div>
+			<button>Buscar</button>
+			</div>*@
+			@*<div class="tags">
+			<span>#pizza</span>
+			<span>#lanche</span>
+			<span>#comidabrasileira</span>
+			<span>#pizza</span>
+			<span>#lanche</span>
+			<span>#comidabrasileira</span>
+			</div>*@
+		</div>
+	</div>
+</div>
+<div class="col-md-6">
+	<a href="/LuluComidaCaseira/Create" class="btn btn-primary">Novo</a>
+</div>
+<br />
+
+<h1 class="title"> Pratos </h1>
+@foreach (var item in Model)
+{
+	<section class="produtos">
+		<img class="imagens" src="https://www.designi.com.br/images/preview/10099225.jpg" alt="" width="300" height="200" />
+		<p class="DescricaoProduto"> @item.NomeProduto </p>
+
+		@*a href="#modal" class="btn">Abrir modal</a>
+	<div id="modal" class="modal">
+	<div class="modal_Content"></div>
+	<h2 class="modal_title">Descrição do item</h2>
+	<p class="modal_description">
+
+	Brasil
+
+	</p>
+	<a href="" class="Modal_link">OK</a>
+
+	</div>*@
+
+
+		<p class="valorProduto"> R$ @item.valorProduto?.ToString("F")</p>
+	</section>
+}
+@*<div class="slider">
+	<div class="slides">
+		<div class="slide slide1">
+			<h2>Pratos Principais</h2>
+			<a href="https://web.whatsapp.com/"><img src="https://www.designi.com.br/images/preview/10099225.jpg" alt="" width="300" height="200" /></a>
+			<a href="https://web.whatsapp.com/"><img src="https://www.designi.com.br/images/preview/10099225.jpg" alt="" width="300" height="200" /></a>
+			<a href="https://web.whatsapp.com/"><img src="https://www.designi.com.br/images/preview/10099225.jpg" alt="" width="300" height="200" /></a>
+			<a href="https://web.whatsapp.com/"><img src="https://www.designi.com.br/images/preview/10099225.jpg" alt="" width="300" height="200" /></a>
+
+			<p></p>
+
+		</div>
+		@*<h2>Pratos em Promoção</h2>
+		<a href="https://web.whatsapp.com/"><img src="https://www.designi.com.br/images/preview/10099225.jpg" alt="" width="300" height="200" /></a>
+
+		</div>
+		<div class="slide slide3">
+		<h2>Pratos da Casa</h2>
+		<a href="https://web.whatsapp.com/"><img src="https://www.designi.com.br/images/preview/10099225.jpg" alt="" width="300" height="200" /></a>
+
+		<img src="https://www.designi.com.br/images/preview/10099225.jpg" alt="" width="300" height="200">
+
+		</div>
+	</div>
+</div>*@
+
+

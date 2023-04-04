@@ -3,12 +3,11 @@
 *@
 @{
 }
-@model IEnumerable<Cardápio.Models.ProdutosModel>
+@model IEnumerable<Cardápio.Models.categoriaProduto>
 
 
 	<header> 
 	<link href="~/css/Cardapio.css" rel="stylesheet" />
-	<link href="~/css/Modal.css" rel="stylesheet" />
 	</header>
 <div class="hero">
 	<div class="bg">
@@ -33,14 +32,14 @@
 	</div>
 </div>
 
-<h1 class="title"> Pratos </h1>
-@foreach (var item in Model)
+<h1 class="title"> Categorias </h1>
+@*@foreach (var item in Model)
 {
 	<section class="produtos">
 		<img class="imagens" src="https://www.designi.com.br/images/preview/10099225.jpg" alt="" width="300" height="200" />
-		<p class="descricaoProduto"> @item.Descricao </p>
+		<p class="descricaoProduto"> @item.NomeProduto </p>
 
-		@*a href="#modal" class="btn">Abrir modal</a>
+		a href="#modal" class="btn">Abrir modal</a>
 	<div id="modal" class="modal">
 	<div class="modal_Content"></div>
 	<h2 class="modal_title">Descrição do item</h2>
@@ -51,12 +50,12 @@
 	</p>
 	<a href="" class="Modal_link">OK</a>
 
-	</div>*@
+	</div>
 		
 
-		<p class="valorProduto"> R$ @item.Valor.ToString("F")</p>
+		<p class="valorProduto"> R$ @item.valorProduto.ToString("F")</p>
 	</section>
-}	
+}	*@
 @*<div class="slider">
 	<div class="slides">
 		<div class="slide slide1">
@@ -79,8 +78,39 @@
 
 		<img src="https://www.designi.com.br/images/preview/10099225.jpg" alt="" width="300" height="200">
 
-		</div>*@
+		</div>
 	</div>
-</div>
+</div>*@
+
+	<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+		Entrada
+	</button>
+
+    <!-- Modal -->
+    <div class="" id="exampleModal" tabindex="-100" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        
+				@foreach (var item in Model.Where(x => x.Nomecategoria == "Entrada"))
+				{	<div class="modal-body" style="color: red">
+						@item.NomeProduto
+						R$ @item.valorProduto.ToString("F")
+						<br />
+					</div>
+
+					@*
+					Protudos dessa categoria*@
+					<div >
+					</div>
+				}
+           
+    </div>
+@*
+
+	Carrinho*@
+	<div>
+
+
+	</div>
+
+
 
 

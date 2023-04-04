@@ -33,6 +33,14 @@
       "PackagePath": "staticwebassets\\Images\\search.svg"
     },
     {
+      "Id": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\Cardápio\\wwwroot\\Images\\undraw_login_re_4vu2.svg",
+      "PackagePath": "staticwebassets\\Images\\undraw_login_re_4vu2.svg"
+    },
+    {
+      "Id": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\Cardápio\\wwwroot\\Images\\undraw_shopping_app_flsj.svg",
+      "PackagePath": "staticwebassets\\Images\\undraw_shopping_app_flsj.svg"
+    },
+    {
       "Id": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\Cardápio\\wwwroot\\css\\Cardapio.css",
       "PackagePath": "staticwebassets\\css\\Cardapio.css"
     },
@@ -43,6 +51,10 @@
     {
       "Id": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\Cardápio\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\Cardápio\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
     },
     {
       "Id": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\Cardápio\\wwwroot\\favicon.ico",

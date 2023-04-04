@@ -1,0 +1,276 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model EstabelecimentoModels
+        <style>
+            @@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Open+Sans:wght@300;400;500;600&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fde3a7d7;
+}
+
+.container {
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+}
+
+.form-image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5428a
+
+}
+
+.form-image img {
+    width: 31rem;
+}
+
+.form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 3rem;
+}
+
+.form-header {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login-button {
+    display: flex;
+    align-items: center;
+}
+
+.login-button button {
+    border: none;
+    background-color: red;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-button button:hover {
+    background-color: red;
+}
+
+.login-button button a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+}
+
+.form-header h1::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: red;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+}
+
+.input-box input {
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+    font-size: 0.8rem;
+}
+
+.input-box input:hover {
+    background-color: #eeeeee75;
+}
+
+.input-box input:focus-visible {
+    outline: 1px solid red;
+}
+
+.input-box label,
+.gender-title h6 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #000000c0;
+}
+
+.input-box input::placeholder {
+    color: #000000be;
+}
+
+.gender-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.62rem;
+    padding: 0 .5rem;
+}
+
+.gender-input {
+    display: flex;
+    align-items: center;
+}
+
+.gender-input input {
+    margin-right: 0.35rem;
+}
+
+.gender-input label {
+    font-size: 0.81rem;
+    font-weight: 600;
+    color: #000000c0;
+}
+
+.continue-button button {
+    width: 100%;
+    margin-top: 2.5rem;
+    border: none;
+    background-color: red;
+    padding: 0.62rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.continue-button button:hover {
+    background-color: red;
+}
+
+.continue-button button a {
+    text-decoration: none;
+    font-size: 0.93rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+@@media screen and (max-width: 1330px) {
+    .form-image {
+        display: none;
+    }
+    .container {
+        width: 50%;
+    }
+    .form {
+        width: 100%;
+    }
+}
+
+@@media screen and (max-width: 1064px) {
+    .container {
+        width: 90%;
+        height: auto;
+    }
+    .input-group {
+        flex-direction: column;
+        z-index: 5;
+        padding-right: 5rem;
+        max-height: 10rem;
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+    }
+    .gender-inputs {
+        margin-top: 2rem;
+    }
+    .gender-group {
+        flex-direction: column;
+    }
+    .gender-title h6 {
+        margin: 0;
+    }
+    .gender-input {
+        margin-top: 0.5rem;
+    }
+}
+
+        </style>
+        <div class="container">
+            <div class="form-image">
+                <img src="~/Images/undraw_shopping_app_flsj.svg" alt="">
+            </div>
+            <div class="form">
+        <form asp-action="Create">
+                    <div class="form-header">
+                        <div class="title">
+                            <h1>Cadastre-se</h1>
+                        </div>
+                        <div class="login-button">
+                            <button><a href="/LuluComidaCaseira/Login">Entrar</a></button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-box col">
+                            <label for="firstname">Nome da Empresa</label>
+                    <input id="firstname" type="text" asp-for="Nome" placeholder="Digite o Nome da empresa" required>
+                        </div>
+
+                <div class="input-box col">
+                            <label for="Cnpj">Cnpj</label>
+                            <input id="Cnpj" type="text" asp-for="CNPJ" placeholder="Digite o Cnpj da empresa" required>
+                        </div>
+
+                <div class="input-box col">
+                            <label for="email">E-Mail</label>
+                            <input id="email" type="text" asp-for="Email" placeholder="Digite o email da sua empresa" required>
+                        </div>
+
+                <div class="input-box col">
+                            <label for="number">Número</label>
+                            <input id="number" type="text" asp-for="Telefone" placeholder="(xx) xxxx-xxxx" required>
+                        </div>
+
+                <div class="input-box col">
+                            <label for="Endereco">Endereço</label>
+                            <input id="endereco" type="text" asp-for="Endereco" placeholder="Digite o Endereço" required>
+                        </div>
+
+
+                <div class="input-box col">
+                            <label for="password">Senha</label>
+                            <input id="password" type="text" asp-for="Senha" placeholder="Digite a senha" required>
+                        </div>
+
+                <div class="input-box col">
+                            <label for="passwordConfirm">Confirme a Senha</label>
+                            <input id="passwordConfirm" type="text" asp-for="ConfirmarSenha" placeholder="Confirme a senha" required>
+                        </div>
+
+                <div class="continue-button">
+                            <button type="submit">Continuar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
