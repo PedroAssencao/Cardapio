@@ -5,20 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CardapioV2</title>
-    <link rel="stylesheet" href="~/css/style.css">
-    <script src="~/js/script.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js//script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+
+
+
+
 </head>
 <body>
 
 
     <div class="box">
 
-        <td align="center" valign="top">
-            <table width="360" border="0" align="center" cellspacing="5" cellpadding="0">
+        <td valign="top">
+            <table width="360" cellspacing="5" cellpadding="0">
 
                 <tbody>
                     <tr>
-                        <td align="center" valign="top" class="estilo_data"><img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/testing-logo-design-template-ce84480d61b3db9a8e1522a99875832f_screen.jpg?ts=1615794516" width="210" height="140" border="0"></td>
+                        <td valign="top" class="estilo_data"><img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/testing-logo-design-template-ce84480d61b3db9a8e1522a99875832f_screen.jpg?ts=1615794516" width="210" height="140" border="0"></td>
                     </tr>
                 </tbody>
             </table>
@@ -42,15 +47,9 @@
                                 <td width="230" valign="top">
                                     <table width="230" cellspacing="2">
                                         <tbody>
-                                            @foreach (var item in ViewBag.listaCategorias)
-                                            {
-
-                                                <div class="estilo_titulo"><b class="teste" onclick="">@item.Nome
-
-                                                </div>
-                                                 
-                                            }
-                                           
+                                            <tr>
+                                                <td class="estilo_titulo"><b class="teste" onclick="">Comercial</b></a></td>
+                                            </tr>
                                             <tr>
                                                 <td class="estilo_data" onclick="">*insira texto aqui*</a></td>
                                             </tr>
@@ -63,6 +62,7 @@
 
                 </div>
 
+                <!--Entradas-->
                 <div onclick="clicar2()">
 
                     <table width="340" cellspacing="8">
@@ -87,6 +87,7 @@
 
                 </div>
 
+                <!--Sobremesas-->
                 <div onclick="clicar3()">
 
                     <table width="340" cellspacing="8">
@@ -184,7 +185,6 @@
                 </div>
 
                 <div onclick="clicar7()">
-
                     <table width="340" cellspacing="8">
                         <tbody>
                             <tr>
@@ -193,10 +193,10 @@
                                     <table width="230" cellspacing="2">
                                         <tbody>
                                             <tr>
-                                                <td class="estilo_titulo"><b class="teste" onclick="">Bebidas Alcholicas</b></a></td>
+                                                <td class="estilo_titulo"><b class="teste" onclick="">Bebidas Alcholicas</b></td>
                                             </tr>
                                             <tr>
-                                                <td class="estilo_data" onclick="">*insira texto aqui*</a></td>
+                                                <td class="estilo_data" onclick="">*insira texto aqui*</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -204,13 +204,14 @@
                             </tr>
                         </tbody>
                     </table>
-
                 </div>
+
 
 
 
             </div>
 
+            <!--Bebidas Alcholicas - completa-->
             <div id="div-mostrar7">
 
                 <table width="300" border="0" cellspacing="0" cellpadding="0" align="center">
@@ -225,76 +226,122 @@
                 <table width="300" border="0" align="center">
                     <tbody>
                         <tr>
-                            <td width="230" class="estilo_titulo" valign="top"><b>Heineken</b></td>
-                            <td width="70" class="estilo_amarelo" valign="top" align="right">R$ <b>13,00</b></td>
+                            <td id="heineken" class="estilo_titulo_preco" valign="top" style="white-space: nowrap;"><b>Heineken Aleman</b> R$<b>150,00</b></td>
                         </tr>
                     </tbody>
                 </table>
 
-                <table width="300" border="0" align="center">
-                    <tbody>
-                        <tr>
-                            <td class="estilo"></td>
-                        </tr>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
-                                </tr>
-                            </tbody>
-                        </table>
+        <td>
 
-                        <table width="300" border="0" align="center">
-                            <tbody>
-                                <tr>
-                                    <td width="230" class="estilo_titulo" valign="top"><b>Voodka</b></td>
-                                    <td width="70" class="estilo_amarelo" valign="top" align="right">R$ <b>20,00</b></td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <button class="btn-confirmar" onclick="enviarMensagem('heineken')">Confirmar Pedido ??</button>
 
-                        <table width="300" border="0" align="center">
-                            <tbody>
-                                <tr>
-                                    <td class="estilo"></td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td> <width ="220" height="8" border="0"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
-
-                    <table width="300" border="0" align="center">
-                        <tbody>
-                            <tr>
-                                <td width="230" class="estilo_titulo" valign="top"><b>Whisnky</b></td>
-                                <td width="70" class="estilo_amarelo" valign="top" align="right">R$ <b>135,00</b></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table width="300" border="0" align="center">
-                        <tbody><tr>
+            <form style="margin-left: 220px; margin-top: -30px;">
+                <select id="quantidade" size="1">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                </select>
+            </form>
         </td>
-        </tr>
-        <table>
+
+        <br>
+
+        <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
+
+        <table width="300" border="0" align="center">
             <tbody>
                 <tr>
+                    <td id="voodka" class="estilo_titulo_preco" valign="top" style="white-space: nowrap;"><b>Voodka de caravalho</b> R$<b>150,00</b></td>
                 </tr>
             </tbody>
         </table>
+
+        <td>
+            <button class="btn-confirmar" onclick="enviarMensagem('voodka')">Confirmar Pedido ??</button>
+            
+            <form style="margin-left: 220px; margin-top: -30px;">
+                <select id="quantidade2" size="1">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                </select>
+
+            </form>
+        </td>
+
+        <br>
+
+
+        <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
+
+            
+        <table width="300" border="0" align="center">
+            <tbody>
+                @foreach (var item in ViewBag.listaBebidasAL)
+                {
+                    <tr>
+                            <td id="DANONEFODA" class="estilo_titulo_preco" valign="top" style="white-space: nowrap;"><b>@item.NomePruduto</b> R$<b>@item.PrecoProduto.ToString("F")</b></td>
+                    </tr>
+                }
+            </tbody>
+        </table> 
+       
+
+        <td>
+            <button class="btn-confirmar" onclick="enviarMensagem('DANONEFODA')">Confirmar Pedido ??</button>
+
+            <form style="margin-left: 220px; margin-top: -30px;">
+                <select id="quantidade3" size="1">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                </select>
+
+            </form>
+        </td>
+
+        <br>
+
+        <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
+
+        <table width="300" border="0" align="center">
+            <tbody>
+                <tr>
+                    <td id="whisky" class="estilo_titulo_preco" valign="top" style="white-space: nowrap;"><b>Whisky 200 Anos</b> R$<b>1500,00</b></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <td>
+            <button class="btn-confirmar" onclick="enviarMensagem('whisky')">Confirmar Pedido ??</button>
+
+
+            <form style="margin-left: 220px; margin-top: -30px;">
+                <select id="quantidade4" size="1">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                </select>
+
+            </form>
+        </td>
+
+        <br>
 
         <img id="seta" src="https://cdn-icons-png.flaticon.com/512/60/60577.png" width="70" height="30" border="0" id="voltar" onclick="voltar8()">
 
 
     </div>
+
+    <!--Bebidas - completa-->
 
     <div id="div-mostrar6">
 
@@ -310,78 +357,85 @@
         <table width="300" border="0" align="center">
             <tbody>
                 <tr>
-                    <td width="230" class="estilo_titulo" valign="top"><b>Coca-Cola Francesa</b></td>
-                    <td width="70" class="estilo_amarelo" valign="top" align="right">R$ <b>150,00</b></td>
+                    <td class="estilo_titulo_preco" valign="top" style="white-space: nowrap;"><b>Coca-Cola Francesa</b> R$<b>150,00</b></td>
                 </tr>
             </tbody>
         </table>
 
+        <td>
+            <button class="btn-confirmar">Confirmar Pedido 👌</button>
+
+            <form style="margin-left: 220px; margin-top: -30px;">
+                <select size="1">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                </select>
+
+            </form>
+        </td>
+
+        <br>
+
+        <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
+        </tr>
+        </tbody></table>
+
         <table width="300" border="0" align="center">
             <tbody>
                 <tr>
-                    <td class="estilo"></td>
+                    <td class="estilo_titulo_preco" valign="top" style="white-space: nowrap;"><b>Guarana Italiano</b> R$<b>260,00</b></td>
                 </tr>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
-                        </tr>
-                    </tbody>
-                </table>
+            </tbody>
+        </table>
 
-                <table width="300" border="0" align="center">
-                    <tbody>
-                        <tr>
-                            <td width="230" class="estilo_titulo" valign="top"><b>Guarana Italiano</b></td>
-                            <td width="70" class="estilo_amarelo" valign="top" align="right">R$ <b>260,00</b></td>
-                        </tr>
-                    </tbody>
-                </table>
+        <td>
+            <button class="btn-confirmar">Confirmar Pedido 👌</button>
 
-                <table width="300" border="0" align="center">
-                    <tbody>
-                        <tr>
-                            <td class="estilo"></td>
-                        </tr>
+            <form style="margin-left: 220px; margin-top: -30px;">
+                <select size="1">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                </select>
 
-                    </tbody>
-                </table>
+            </form>
+        </td>
 
-                <table>
-                    <tbody>
-                        <tr>
-                            <td> <width ="220" height="8" border="0"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
+        <br>
 
-            <table width="300" border="0" align="center">
-                <tbody>
-                    <tr>
-                        <td width="230" class="estilo_titulo" valign="top">
-                            <b>
-                                Fanta UVA INGlesa
-                            </b>
-                        </td>
-                        <td width="70" class="estilo_amarelo" valign="top" align="right">R$ <b>135,00</b></td>
-                    </tr>
-                </tbody>
-            </table>
+        <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
 
-            <table width="300" border="0" align="center">
-                <tbody>
-                    <tr>
-                        </td>
-                    </tr>
-                    <table>
-                        <tbody>
-                            <tr>
-                            </tr>
-                        </tbody>
-                    </table>
+        <table width="300" border="0" align="center">
+            <tbody>
+                <tr>
+                    <td class="estilo_titulo_preco" valign="top" style="white-space: nowrap;"><b>Fanta Uva Inglesa</b> R$<b>280,00</b></td>
+                </tr>
+            </tbody>
+        </table>
 
-                    <img id="seta" src="https://cdn-icons-png.flaticon.com/512/60/60577.png" width="70" height="30" border="0" id="voltar" onclick="voltar7()">
+        <td>
+            <button class="btn-confirmar">Confirmar Pedido 👌</button>
+
+            <form style="margin-left: 220px; margin-top: -30px;">
+                <select size="1">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                </select>
+
+            </form>
+        </td>
+
+        <br>
+
+        <img id="seta" src="https://cdn-icons-png.flaticon.com/512/60/60577.png" width="70" height="30" border="0" id="voltar" onclick="voltar7()">
 
 
     </div>
@@ -389,7 +443,7 @@
 
 
 
-
+    <!--Petiscos - completa-->
     <div id="div-mostrar5">
 
         <table width="300" border="0" cellspacing="0" cellpadding="0" align="center">
@@ -400,12 +454,49 @@
             </tbody>
         </table>
         <br>
+        
+                @foreach (var item in ViewBag.listaCardapio)
+                {
+                    <table width="300" border="0" align="center">
+                        <tbody>
+                            <tr>
+                        <td class="estilo_titulo_preco" valign="top" style="white-space: nowrap;"><b>@item.NomePruduto</b> R$<b>@item.PrecoProduto.ToString("F")</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                }
+        
+
+
+        <table width="300" border="0" align="center">
+            <tr>
+                <td class="estilo">batatas, sal a gosto.</td>
+            </tr>
+        </table>
+
+        <td>
+            <button class="btn-confirmar">Confirmar Pedido 👌</button>
+
+            <form style="margin-left: 220px; margin-top: -30px;">
+                <select size="1">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                </select>
+
+            </form>
+        </td>
+        <br>
+        <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
+        </tr>
+        </tbody></table>
 
         <table width="300" border="0" align="center">
             <tbody>
                 <tr>
-                    <td width="230" class="estilo_titulo" valign="top"><b>batata frita</b></td>
-                    <td width="70" class="estilo_amarelo" valign="top" align="right">R$ <b>30,00</b></td>
+                    <td class="estilo_titulo_preco" valign="top" style="white-space: nowrap;"><b>bolinha de Queijo</b> R$<b>120,00</b></td>
                 </tr>
             </tbody>
         </table>
@@ -413,76 +504,71 @@
         <table width="300" border="0" align="center">
             <tbody>
                 <tr>
-                    <td class="estilo">batatas, sal a gosto.</td>
+                    <td class="estilo">margarina, queijo branco , sal a gosto, gema de ovo, leite.</td>
                 </tr>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
-                        </tr>
-                    </tbody>
-                </table>
+            </tbody>
+        </table>
 
-                <table width="300" border="0" align="center">
-                    <tbody>
-                        <tr>
-                            <td width="230" class="estilo_titulo" valign="top"><b>bolinha de Queijo</b></td>
-                            <td width="70" class="estilo_amarelo" valign="top" align="right">R$ <b>120,00</b></td>
-                        </tr>
-                    </tbody>
-                </table>
+        <td>
+            <button class="btn-confirmar">Confirmar Pedido 👌</button>
 
-                <table width="300" border="0" align="center">
-                    <tbody>
-                        <tr>
-                            <td class="estilo">margarina, queijo branco , sal a gosto, gema de ovo, leite.</td>
-                        </tr>
+            <form style="margin-left: 220px; margin-top: -30px;">
+                <select size="1">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                </select>
 
-                    </tbody>
-                </table>
+            </form>
+        </td>
+        <br>
+        <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
+        </tr>
+        </tbody></table>
 
-                <table>
-                    <tbody>
-                        <tr>
-                            <td> <width ="220" height="8" border="0"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
 
-            <table width="300" border="0" align="center">
-                <tbody>
-                    <tr>
-                        <td width="230" class="estilo_titulo" valign="top">
-                            <b>
-                                Salpicão Surpresa
-                            </b>
-                        </td>
-                        <td width="70" class="estilo_amarelo" valign="top" align="right">R$ <b>35,00</b></td>
-                    </tr>
-                </tbody>
-            </table>
+        <table width="300" border="0" align="center">
+            <tbody>
+                <tr>
+                    <td class="estilo_titulo_preco" valign="top" style="white-space: nowrap;"><b>Salpicão De Creme</b> R$<b>40,00</b></td>
+                </tr>
+            </tbody>
+        </table>
 
-            <table width="300" border="0" align="center">
-                <tbody>
-                    <tr>
-                        MAGGI® Caldo Galinha, salsão em tiras, Creme de Leite, mostarda </td>
-                    </tr>
-                    <table>
-                        <tbody>
-                            <tr>
-                            </tr>
-                        </tbody>
-                    </table>
 
-                    <img id="seta" src="https://cdn-icons-png.flaticon.com/512/60/60577.png" width="70" height="30" border="0" id="voltar" onclick="voltar6()">
+        <table width="300" border="0" align="center">
+            <tr>
+                <td class="estilo">Nutella, salsão em tiras, Creme de Leite, Granulado</td>
+            </tr>
+        </table>
+
+        <td>
+            <button class="btn-confirmar">Confirmar Pedido 👌</button>
+
+            <form style="margin-left: 220px; margin-top: -30px;">
+                <select size="1">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                </select>
+
+            </form>
+        </td>
+
+
+
+        <img id="seta" src="https://cdn-icons-png.flaticon.com/512/60/60577.png" width="70" height="30" border="0" id="voltar" onclick="voltar6()">
 
     </div>
 
 
 
 
-
+    <!--Acompanhamento - completa-->
     <div id="div-mostrar4">
 
 
@@ -498,87 +584,106 @@
         <table width="300" border="0" align="center">
             <tbody>
                 <tr>
-                    <td width="230" class="estilo_titulo" valign="top"><b>Purê de batata com alho</b></td>
-                    <td width="70" class="estilo_amarelo" valign="top" align="right">R$ <b>30,00</b></td>
+                    <td class="estilo_titulo_preco" valign="top" style="white-space: nowrap;"><b>Purê de batata com alho</b> R$<b>30,00</b></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <table width="300" border="0" align="center">
+            <tr>
+                <td class="estilo">batatas, dentes de alho, Manteiga, Leite Líquido, Maggi Fondor.</td>
+            </tr>
+        </table>
+
+        <td>
+            <button class="btn-confirmar">Confirmar Pedido 👌</button>
+
+            <form style="margin-left: 220px; margin-top: -30px;">
+                <select size="1">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                </select>
+
+            </form>
+        </td>
+
+        <br>
+
+        <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
+
+
+        <table width="300" border="0" align="center">
+            <tbody>
+                <tr>
+                    <td class="estilo_titulo_preco" valign="top" style="white-space: nowrap;"><b>Farofa de Linguiça</b> R$<b>120,00</b></td>
                 </tr>
             </tbody>
         </table>
 
         <table width="300" border="0" align="center">
+            <tr>
+                <td class="estilo">manteiga, cebola , linguiça fresca, farinha de mandioca crua, Maggi Gril, Ovo cozido.</td>
+            </tr>
+        </table>
+
+        <td>
+            <button class="btn-confirmar">Confirmar Pedido 👌</button>
+
+            <form style="margin-left: 220px; margin-top: -30px;">
+                <select size="1">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                </select>
+
+            </form>
+        </td>
+        <br>
+
+        <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
+
+        <table width="300" border="0" align="center">
             <tbody>
                 <tr>
-                    <td class="estilo">batatas, dentes de alho, manteiga, Leite Líquido, MAGGI Fondor.</td>
+                    <td class="estilo_titulo_preco" valign="top" style="white-space: nowrap;"><b>Salpicão Surpresa</b> R$<b>35,00</b></td>
                 </tr>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
-                        </tr>
-                    </tbody>
-                </table>
+            </tbody>
+        </table>
 
-                <table width="300" border="0" align="center">
-                    <tbody>
-                        <tr>
-                            <td width="230" class="estilo_titulo" valign="top"><b>Farofa de Linguiça</b></td>
-                            <td width="70" class="estilo_amarelo" valign="top" align="right">R$ <b>120,00</b></td>
-                        </tr>
-                    </tbody>
-                </table>
+        <table width="300" border="0" align="center">
+            <tr>
+                <td class="estilo">Maggi Caldo Galinha, salsão em tiras, Creme de Leite, mostarda</td>
+            </tr>
+        </table>
 
-                <table width="300" border="0" align="center">
-                    <tbody>
-                        <tr>
-                            <td class="estilo">manteiga, cebola , linguiça fresca, farinha de mandioca crua, MAGGI Gril, Ovo cozido.</td>
-                        </tr>
+        <td>
+            <button class="btn-confirmar">Confirmar Pedido 👌</button>
 
-                    </tbody>
-                </table>
+            <form style="margin-left: 220px; margin-top: -30px;">
+                <select size="1">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                </select>
 
-                <table>
-                    <tbody>
-                        <tr>
-                            <td> <width ="220" height="8" border="0"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
-
-            <table width="300" border="0" align="center">
-                <tbody>
-                    <tr>
-                        <td width="230" class="estilo_titulo" valign="top">
-                            <b>
-                                Salpicão Surpresa
-                            </b>
-                        </td>
-                        <td width="70" class="estilo_amarelo" valign="top" align="right">R$ <b>35,00</b></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <table width="300" border="0" align="center">
-                <tbody>
-                    <tr>
-                        MAGGI® Caldo Galinha, salsão em tiras, Creme de Leite, mostarda </td>
-                    </tr>
-                    <table>
-                        <tbody>
-                            <tr>
-                            </tr>
-                        </tbody>
-                    </table>
+            </form>
+        </td>
 
 
-
-
-
-                    <img id="seta" src="https://cdn-icons-png.flaticon.com/512/60/60577.png" width="70" height="30" border="0" id="voltar" onclick="voltar5()">
+        <img id="seta" src="https://cdn-icons-png.flaticon.com/512/60/60577.png" width="70" height="30" border="0" id="voltar" onclick="voltar5()">
 
     </div>
 
 
-    <!--Sobremesas-->
+    <!--Sobremesas - completa-->
     <div id="div-mostrar3">
 
 
@@ -594,209 +699,125 @@
         <table width="300" border="0" align="center">
             <tbody>
                 <tr>
-                        @foreach (var item in ViewBag.listaCardapio)
-                        {
-                        <td width="230" class="estilo_titulo" valign="top"><b>@item.NomeProduto</b></td>
-                            <td width="70" class="estilo_amarelo" valign="top" align="right">R$ <b>@item.valorProduto.ToString("F")</b></td>
-                        }
-                    
+                    <td class="estilo_titulo_preco" valign="top" style="white-space: nowrap;"><b>Frozen Yogurt</b> R$<b>30,00</b></td>
                 </tr>
             </tbody>
         </table>
 
+
+        <table width="300" border="0" align="center">
+            <tr>
+                <td class="estilo">iogurte natural, creme de leite, açúcar, raspas de limão, geleia.</td>
+            </tr>
+        </table>
+
+        <td>
+            <button class="btn-confirmar">Confirmar Pedido 👌</button>
+
+            <form style="margin-left: 220px; margin-top: -30px;">
+                <select size="1">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                </select>
+
+            </form>
+        </td>
+
+        </tr>
+        <table>
+            <tbody>
+                <tr>
+
+                    <br>
+                    <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
         <table width="300" border="0" align="center">
             <tbody>
                 <tr>
-                        @foreach (var item in ViewBag.listaCardapio)
-                        {
-                              <td class="estilo">@item.NutricaoProduto</td>
-                        }
-
-                    <td class="estilo" align="center" height="40" valign="bottom">
-                        <form action="" method="" name="" onsubmit="return submitit()">
-                            <table width="150" border="0" align="center">
-                                <tbody>
-                                    <tr>
-                                        <td class="estilo_amarelo" align="center">
-                                            <select size="1" name="quantidade" class="estilo_formulario">
-                                                <option selected="" value="01">01</option>
-                                                <option value="02">02</option>
-                                                <option value="03">03</option>
-                                                <option value="04">04</option>
-                                                <option value="05">05</option>
-                                                <option value="06">06</option>
-                                                <option value="07">07</option>
-                                                <option value="08">08</option>
-                                                <option value="09">09</option>
-                                                <option value="10">10</option>
-                                                <option value="20">20</option>
-                                                <option value="30">30</option>
-                                                <option value="40">40</option>
-                                                <option value="50">50</option>
-                                                <option value="60">60</option>
-                                                <option value="70">70</option>
-                                                <option value="80">80</option>
-                                                <option value="90">90</option>
-                                                <option value="100">100</option>
-                                            </select>
-                                            <input type="hidden" name="preco" value="51,90">
-                                            <input type="hidden" name="produto" value="<b>Lasanha de Frango</b><br>(Massas)">
-                                            <input type="hidden" name="id_produto" value="20">
-                                            <input type="hidden" name="tipo" value="Massas">
-                                        </td>
-                                        <td class="estilo_amarelo" align="center"><input type="image" src="https://cdn.icon-icons.com/icons2/1325/PNG/512/ontask4x_86986.png" border="0" width="25" height="25"></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </form>
-                    </td>
-
+                    <td class="estilo_titulo_preco" valign="top" style="white-space: nowrap;"><b>Tiramisù</b> R$<b>120,00</b></td>
                 </tr>
-                <table>
-                    <tbody>
-                        <tr>
-
-                            <br>
-                            <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
-                        </tr>
-                    </tbody>
-                </table>
+            </tbody>
+        </table>
 
 
+        <table width="300" border="0" align="center">
+            <tr>
+                <td class="estilo">biscoito tipo champagne, café, dose pequena de licor, chocolate em pó, leite condensado.</td>
+            </tr>
+        </table>
 
-                <table width="300" border="0" align="center">
-                    <tbody>
-                        <tr>
-                            <td width="230" class="estilo_titulo" valign="top"><b>Tiramisù</b></td>
-                            <td width="70" class="estilo_amarelo" valign="top" align="right">R$ <b>120,00</b></td>
-                        </tr>
-                    </tbody>
-                </table>
+        <td>
+            <button class="btn-confirmar">Confirmar Pedido 👌</button>
 
-                <table width="300" border="0" align="center">
-                    <tbody>
-                        <tr>
-                            <td class="estilo">biscoito tipo champagne, café, dose pequena de licor, chocolate em pó, leite condensado.</td>
-                            <td class="estilo" align="center" height="40" valign="bottom">
-                                <form action="" method="" name="" onsubmit="return submitit()">
-                                    <table width="150" border="0" align="center">
-                                        <tbody>
-                                            <tr>
-                                                <td class="estilo_amarelo" align="center">
-                                                    <select size="1" name="quantidade" class="estilo_formulario">
-                                                        <option selected="" value="01">01</option>
-                                                        <option value="02">02</option>
-                                                        <option value="03">03</option>
-                                                        <option value="04">04</option>
-                                                        <option value="05">05</option>
-                                                        <option value="06">06</option>
-                                                        <option value="07">07</option>
-                                                        <option value="08">08</option>
-                                                        <option value="09">09</option>
-                                                        <option value="10">10</option>
-                                                        <option value="20">20</option>
-                                                        <option value="30">30</option>
-                                                        <option value="40">40</option>
-                                                        <option value="50">50</option>
-                                                        <option value="60">60</option>
-                                                        <option value="70">70</option>
-                                                        <option value="80">80</option>
-                                                        <option value="90">90</option>
-                                                        <option value="100">100</option>
-                                                    </select>
-                                                    <input type="hidden" name="preco" value="51,90">
-                                                    <input type="hidden" name="produto" value="<b>Lasanha de Frango</b><br>(Massas)">
-                                                    <input type="hidden" name="id_produto" value="20">
-                                                    <input type="hidden" name="tipo" value="Massas">
-                                                </td>
-                                                <td class="estilo_amarelo" align="center"><input type="image" src="https://cdn.icon-icons.com/icons2/1325/PNG/512/ontask4x_86986.png" border="0" width="25" height="25"></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </form>
-                            </td>
-                        </tr>
+            <form style="margin-left: 220px; margin-top: -30px;">
+                <select size="1">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                </select>
 
-                    </tbody>
-                </table>
+            </form>
+        </td>
 
-                <table>
-                    <tbody>
-                        <tr>
-                            <td> <width ="220" height="8" border="0"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
+        <br>
+
+        <table>
+            <tbody>
+                <tr>
+                    <td> <width ="220" height="8" border="0"></td>
+                </tr>
+            </tbody>
+        </table>
+        <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
 
 
-            <table width="300" border="0" align="center">
-                <tbody>
-                    <tr>
-                        <td width="230" class="estilo_titulo" valign="top">
-                            <b>
-                                PAVÊ DE CHOCOLATE
-                            </b>
-                        </td>
-                        <td width="70" class="estilo_amarelo" valign="top" align="right">R$ <b>35,00</b></td>
-                    </tr>
-                </tbody>
-            </table>
 
-            <table width="300" border="0" align="center">
-                <tbody>
-                    <tr>
-                        <td class="estilo">biscoito maisena, chocolate em pó, leite condensado, lata de creme de leite sem soro </td>
-                        <td class="estilo" align="center" height="40" valign="bottom">
-                            <form action="" method="" name="" onsubmit="return submitit()">
-                                <table width="150" border="0" align="center">
-                                    <tbody>
-                                        <tr>
-                                            <td class="estilo_amarelo" align="center">
-                                                <select size="1" name="quantidade" class="estilo_formulario">
-                                                    <option selected="" value="01">01</option>
-                                                    <option value="02">02</option>
-                                                    <option value="03">03</option>
-                                                    <option value="04">04</option>
-                                                    <option value="05">05</option>
-                                                    <option value="06">06</option>
-                                                    <option value="07">07</option>
-                                                    <option value="08">08</option>
-                                                    <option value="09">09</option>
-                                                    <option value="10">10</option>
-                                                    <option value="20">20</option>
-                                                    <option value="30">30</option>
-                                                    <option value="40">40</option>
-                                                    <option value="50">50</option>
-                                                    <option value="60">60</option>
-                                                    <option value="70">70</option>
-                                                    <option value="80">80</option>
-                                                    <option value="90">90</option>
-                                                    <option value="100">100</option>
-                                                </select>
-                                                <input type="hidden" name="preco" value="51,90">
-                                                <input type="hidden" name="produto" value="<b>Lasanha de Frango</b><br>(Massas)">
-                                                <input type="hidden" name="id_produto" value="20">
-                                                <input type="hidden" name="tipo" value="Massas">
-                                            </td>
-                                            <td class="estilo_amarelo" align="center"><input type="image" src="https://cdn.icon-icons.com/icons2/1325/PNG/512/ontask4x_86986.png" border="0" width="25" height="25"></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </form>
-                        </td>
-                    </tr>
-                    <table>
-                        <tbody>
-                            <tr>
-                            </tr>
-                        </tbody>
-                    </table>
+        <table width="300" border="0" align="center">
+            <tbody>
+                <tr>
+                    <td class="estilo_titulo_preco" valign="top" style="white-space: nowrap;"><b>Pavé de Chocolate</b> R$<b>35,00</b></td>
+                </tr>
+            </tbody>
+        </table>
 
-                    <img id="seta" src="https://cdn-icons-png.flaticon.com/512/60/60577.png" width="70" height="30" border="0" id="voltar" onclick="voltar4()">
+
+
+        <table width="300" border="0" align="center">
+            <tr>
+                <td class="estilo">biscoito maisena, chocolate em pó, leite condensado, lata de creme de leite sem soro</td>
+            </tr>
+        </table>
+
+        <td>
+            <button class="btn-confirmar">Confirmar Pedido 👌</button>
+
+            <form style="margin-left: 220px; margin-top: -30px;">
+                <select size="1">
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                </select>
+
+            </form>
+        </td>
+
+        <img id="seta" src="https://cdn-icons-png.flaticon.com/512/60/60577.png" width="70" height="30" border="0" id="voltar" onclick="voltar4()">
 
     </div>
 
+    <!--Entradas - completa-->
     <div id="div-mostrar2">
 
         <table width="300" border="0" cellspacing="0" cellpadding="0" align="center">
@@ -808,14 +829,20 @@
         </table>
         <br>
 
+
         <table width="300" border="0" align="center">
             <tbody>
                 <tr>
-                    <td width="230" class="estilo_titulo" valign="top"><b>Batata frita com queijo e bacon</b></td>
-                    <td width="70" class="estilo_amarelo" valign="top" align="right">R$ <b>30,00</b></td>
+                    <td class="estilo_titulo_preco" valign="top" style="white-space: nowrap;"><b>Batata frita com queijo e bacon</b> R$<b>75,00</b></td>
+                    <td align="center">
+                    </td>
                 </tr>
             </tbody>
         </table>
+
+
+        </tr>
+        </tbody></table>
 
         <table width="300" border="0" align="center">
             <tbody>
@@ -825,29 +852,34 @@
                 <table>
                     <tbody>
                         <tr>
-                            <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
+
+
+
+
+                            <td>
+                                <button class="btn-confirmar">Confirmar Pedido 👌</button>
+
+                                <form style="margin-left: 220px; margin-top: -30px;">
+                                    <select size="1">
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                    </select>
+
+                                </form>
+                            </td>
+
+
+
+
                         </tr>
                     </tbody>
                 </table>
 
-                <table width="300" border="0" align="center">
-                    <tbody>
-                        <tr>
-                            <td width="230" class="estilo_titulo" valign="top"><b>Carne do sol</b></td>
-                            <td width="70" class="estilo_amarelo" valign="top" align="right">R$ <b>35,00</b></td>
-                        </tr>
-                    </tbody>
-                </table>
 
-                <table width="300" border="0" align="center">
-                    <tbody>
-                        <tr>
-                            <td class="estilo">Carne bovina, sal agosto</td>
-                        </tr>
-
-                    </tbody>
-                </table>
-
+                <br>
                 <table>
                     <tbody>
                         <tr>
@@ -860,15 +892,15 @@
             <table width="300" border="0" align="center">
                 <tbody>
                     <tr>
-                        <td width="230" class="estilo_titulo" valign="top">
-                            <b>
-                                ISCA DE FRANGO DE BOTECO
-                            </b>
-                        </td>
-                        <td width="70" class="estilo_amarelo" valign="top" align="right">R$ <b>35,00</b></td>
+                        <td class="estilo_titulo_preco" valign="top" style="white-space: nowrap;"><b>ISCA DE FRANGO DE BOTECO</b> R$<b>35,00</b></td>
+
+
                     </tr>
                 </tbody>
             </table>
+
+
+
 
             <table width="300" border="0" align="center">
                 <tbody>
@@ -882,99 +914,68 @@
                         </tbody>
                     </table>
 
+                <td>
+                    <button class="btn-confirmar">Confirmar Pedido 👌</button>
+
+                    <form style="margin-left: 220px; margin-top: -30px;">
+                        <select size="1">
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                        </select>
+
+                    </form>
+                </td>
+                <br>
+                <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
+
+
+                <table width="300" border="0" align="center">
+                    <tbody>
+                        <tr>
+                            <td class="estilo_titulo_preco" valign="top" style="white-space: nowrap;"><b>Carne do sol Acebolada</b> R$<b>35,00</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+
+                <table width="300" border="0" align="center">
+                    <tbody>
+                        <tr>
+                            <td class="estilo">Carne do sol, cebola, sal.</td>
+                        </tr>
+                        <table>
+                            <tbody>
+                                <tr>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    <td>
+                        <button class="btn-confirmar">Confirmar Pedido 👌</button>
+
+                        <form style="margin-left: 220px; margin-top: -30px;">
+                            <select size="1">
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                            </select>
+
+                        </form>
+                    </td>
+                    <br>
+                    <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
+
+
+
                     <img id="seta" src="https://cdn-icons-png.flaticon.com/512/60/60577.png" width="70" height="30" border="0" id="voltar" onclick="voltar3()">
     </div>
-
-
-
-
-    <div id="div-mostrar">
-
-        <table width="300" border="0" cellspacing="0" cellpadding="0" align="center">
-            <tbody>
-                <tr>
-                    <td class="estilo_titulo"><b><i>Comercial</i></b></td>
-                </tr>
-            </tbody>
-        </table>
-        <br>
-
-        <table width="300" border="0" align="center">
-            <tbody>
-                <tr>
-                    <td width="230" class="estilo_titulo" valign="top"><b>Carry de carne</b></td>
-                    <td width="70" class="estilo_amarelo" valign="top" align="right">R$ <b>23,00</b></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table width="300" border="0" align="center">
-            <tbody>
-                <tr>
-                    <td class="estilo">contra filé bovino,  batatas, cenouras , pimentão, molho de soja, dentes grandes de alho, sopa de curry.</td>
-                </tr>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <table width="300" border="0" align="center">
-                    <tbody>
-                        <tr>
-                            <td width="230" class="estilo_titulo" valign="top"><b>ARROZ COM PEQUI</b></td>
-                            <td width="70" class="estilo_amarelo" valign="top" align="right">R$ <b>20,00</b></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <table width="300" border="0" align="center">
-                    <tbody>
-                        <tr>
-                            <td class="estilo">banha de porco, pequi lavado, alho espremidos, cebola, arroz, Salsinha, cebolinha picada, Pimenta de cheiros</td>
-                        </tr>
-
-                    </tbody>
-                </table>
-
-                <table>
-                    <tbody>
-                        <tr>
-                            <td> <width ="220" height="8" border="0"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
-
-            <table width="300" border="0" align="center">
-                <tbody>
-                    <tr>
-                        <td width="230" class="estilo_titulo" valign="top"><b>CARNE DE ONÇA</b></td>
-                        <td width="70" class="estilo_amarelo" valign="top" align="right">R$ <b>20,00</b></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <table width="300" border="0" align="center">
-                <tbody>
-                    <tr>
-                        <td class="estilo">broa escura, alcatra, cebola branca, cebolinha verde, dentes de alho, cachaça</td>
-                    </tr>
-                    <table>
-                        <tbody>
-                            <tr>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <img id="seta" src="https://cdn-icons-png.flaticon.com/512/60/60577.png" width="70" height="30" border="0" id="voltar" onclick="voltar()">
-
-
-    </div>
-
-
-
 
 
     </div>

@@ -1,4 +1,4 @@
-﻿//massas
+﻿
 function clicar() {
     var a = window.document.getElementById('container')
     var b = window.document.getElementById('div-mostrar')
@@ -61,7 +61,6 @@ function voltar2() {
         V.style.display == 'none'
     }
 }
-
 //bebidas
 function clicar2() {
     var a = window.document.getElementById('container')
@@ -243,3 +242,11 @@ function voltar8() {
 
 
 
+function enviarMensagem(id) {
+    var numero = "5579998468046";
+    var quantidade = document.getElementById("quantidade").value;
+    var produto = document.getElementById(id).textContent.trim();
+    var mensagem = "Olá, gostaria de pedir " + quantidade + " " + produto + "(s)";
+    var link = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
+    window.open(link, "_blank");
+}

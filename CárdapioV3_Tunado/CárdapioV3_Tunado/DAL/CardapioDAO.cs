@@ -20,12 +20,28 @@ namespace CárdapioV3_Tunado.DAL
             return dados;
         }
 
-        public List<Cardapio> getTodasSobremesas()
+        public List<Produto> getTodasSobremesas()
         {
-            var sql = "SELECT * FROM LuluComidaCaseira WHERE NomeCategoria = 'Sobremesas'";
-            var dados = (List<Cardapio>)_connection.Query<Cardapio>(sql);
+            var sql = "SELECT * FROM Produto WHERE CategoriaProduto = 'Petisco'";
+            var dados = (List<Produto>)_connection.Query<Produto>(sql);
             return dados;
         }
+
+        public List<Produto> getTodasBebidasAlcholicas()
+        {
+            var sql = "select * from Produto where CategoriaProduto='Bebidas Alcholicas'";
+            var dados = (List<Produto>)_connection.Query<Produto>(sql);
+            return dados;
+        }
+
+        public List<Produto> getTodosProdutos()
+        {
+            var sql = "select * from Produto";
+            var dados = (List<Produto>)_connection.Query<Produto>(sql);
+            return dados;
+        }
+
+
 
     }
 }

@@ -10,7 +10,7 @@ namespace CárdapioV3_Tunado.Models
         {
             if (_banco == null)
             {
-                return _banco = new MySqlConnection("server = localhost; port = 3306; database = bdcardapio; user = root; password = Produção0310*; Persist Security Info=False; Connect Timeout = 300");
+                return _banco = new MySqlConnection("server = localhost; port = 3306; database = Cardapio; user = root; password = 123456; Persist Security Info=False; Connect Timeout = 300");
             }
             else
             {
