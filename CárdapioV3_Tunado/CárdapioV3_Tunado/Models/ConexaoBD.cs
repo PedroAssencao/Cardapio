@@ -1,16 +1,17 @@
 ﻿using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace CárdapioV3_Tunado.Models
 {
     public class ConexaoBD
     {
-        private static MySqlConnection _banco;
+        private static SqlConnection _banco;
 
-        public static MySqlConnection getConexao()
+        public static SqlConnection getConexao()
         {
             if (_banco == null)
             {
-                return _banco = new MySqlConnection("server = localhost; port = 3306; database = bdcardapio; user = root; password = Produção0310*; Persist Security Info=False; Connect Timeout = 300");
+                return _banco = new SqlConnection(@"Server=DESKTOP-VIKGCGP\SQLEXPRESS; Database=Cardapio; User Id =sa; Password=31102006;");
             }
             else
             {
