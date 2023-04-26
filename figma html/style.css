@@ -1,0 +1,184 @@
+*{
+    border: none;
+    padding: none;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.porra{
+
+margin-left: 100px;
+
+}
+
+body{
+
+    position: relative;
+    width: 390px;
+    height: auto;
+    
+    background: #1E6993;
+}
+.cardápio{
+    position: absolute;
+width: 400px;
+height: 114px;
+
+background: #3A7A9E;
+border-radius: 0px 0px 15px 15px;
+
+
+}
+
+h1{
+    text-align: center;
+    margin-top: 20px;
+   
+}
+
+.icone{
+    position: absolute;
+    width: 27px;
+    height: 26px;
+    left: 322px;
+    top: 780px;
+
+font-family: 'Courier Prime';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+border-radius: 15px;
+}
+
+.icone2{
+    position: absolute;
+width: 27px;
+height: 26px;
+left: 355px;
+top: 780px;
+border-radius: 15px;
+}
+
+
+
+/*.container{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}*/
+
+
+
+.bebidasa{
+    position: absolute;
+width: 233px;
+height: 75px;
+left: 79px;
+top: 669px;
+background: #B3CADF;
+border-radius: 75px;
+
+
+}
+
+.b{
+    width: 72px;
+height: 75px;
+left: 81px;
+top: 669px;
+border-radius: 50%;
+}
+
+.b2{
+    width: 72px;
+height: 75px;
+left: 81px;
+top: 669px;
+border-radius: 50%;
+}
+
+.comida{
+    position: absolute;
+width: 149px;
+height: 54px;
+margin-left: 80px;
+margin-top: 25px;
+font-family: 'Courier Prime';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+color: #000000;
+}
+
+.álcool{
+    position: absolute;
+width: 149px;
+height: 54px;
+margin-left: 80px;
+margin-top: 10px;
+
+font-family: 'Courier Prime';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+color: #000000;
+
+}
+
+.bebidas{
+    position: absolute;
+width: 233px;
+height: 75px;
+left: 81px;
+top: 568px;
+
+background: #B3CADF;
+border-radius: 75px;
+
+}
+
+.entradas{
+    position: absolute;
+width: 233px;
+height: 75px;
+left: 81px;
+top: 467px;
+
+background: #B3CADF;
+border-radius: 75px;
+}
+
+.pizzas{
+    position: absolute;
+width: 233px;
+height: 75px;
+left: 79px;
+top: 366px;
+
+background: #B3CADF;
+border-radius: 75px;
+}
+
+.massas{
+    position: absolute;
+width: 233px;
+height: 75px;
+left: 79px;
+top: 265px;
+
+background: #B3CADF;
+border-radius: 75px;
+}
+
+.sobremesas{
+    position: absolute;
+width: 233px;
+height: 75px;
+left: 79px;
+top: 164px;
+
+background: #B3CADF;
+border-radius: 75px;
+}
