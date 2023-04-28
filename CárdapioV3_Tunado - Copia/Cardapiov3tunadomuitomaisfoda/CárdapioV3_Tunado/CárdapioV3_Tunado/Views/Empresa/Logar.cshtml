@@ -1,0 +1,51 @@
+﻿<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoginScreen</title>
+    <link rel="stylesheet" href="/css/StyleSheet.css">
+</head>
+<body>
+    <div>
+
+        <div class="metal">
+            <div class="form-image">
+                <img src="assets2/img//undraw_login_re_4vu2.svg" alt="">
+            </div>
+            <div class="form">
+                <form action="/Empresa/Logar" method="post">
+                    <div class="form-header">
+                        <div class="title">
+                            <h1>Entre</h1>
+                        </div>
+                        <div class="cadastrion-button">
+                            <button><a href="/Empresa/Create">Cadastre-se</a></button>
+                        </div>
+
+
+
+                    </div>
+                    <div class="input-group">
+                        <div class="input-box">
+                            <label for="NomeEmpresa">Nome da Empresa</label>
+                            <input id="NomeEmpresa" type="text" name="NomeEmpresa" placeholder="Digite o Nome da empresa" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="SenhaEmpresa">Senha</label>
+                            <input id="SenhaEmpresa" type="text" name="SenhaEmpresa" placeholder="Digite a senha" required>
+                        </div>
+
+                        <div class="continue-button">
+                            <button><a type="submit" class="btn btn-outline-secondary">Continuar</a></button>
+                        </div>
+
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
