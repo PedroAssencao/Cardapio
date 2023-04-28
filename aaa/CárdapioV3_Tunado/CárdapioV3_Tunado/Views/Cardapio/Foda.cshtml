@@ -1,0 +1,21 @@
+﻿@model List<CárdapioV3_Tunado.Models.Produto>
+
+
+
+
+@foreach (var item in Model.GroupBy(x=>x.CategoriaProduto).Select(y=>y.First()))
+{
+    <div id="cat@item.CategoriaProduto">
+        Categoria: <strong> @item.CategoriaProduto</strong>
+       
+        <div id="produtoscat@item.CategoriaProduto">
+            @foreach (var itemProduto in Model.Where(z => z.CategoriaProduto == @item.CategoriaProduto).ToList())
+            {
+                @itemProduto.NomePruduto <br />
+            }
+
+        </div>
+
+        <br><br>
+    </div>
+}
