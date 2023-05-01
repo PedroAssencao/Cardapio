@@ -90,18 +90,13 @@
                             </tbody>
                         </table>
                 <td>
-                    <button class="btn-confirmar-pedido" onclick="exibirProdutoSelecionado(@itemProduto.ProID); ocultarTabela();">Confirmar Pedido 👌</button>
-
-
-
-
-
+                    <button class="btn-confirmar-pedido" onclick="ocultarTabela(); exibirProdutoSelecionado(@itemProduto.ProID); produtoSelecionado">Confirmar Pedido 👌</button>
 
 
 
 
                     <form style="margin-left: 100px; margin-top: -30px;">
-                        <select id="seletor-id" size="1">
+                        <select id="quantidade" size="1">
                             <option value="01">01</option>
                             <option value="02">02</option>
                             <option value="03">03</option>
@@ -146,16 +141,16 @@
             <h2 class="resumo">Resumo do pedido</h2>
 
 
-            <div class="retangulo" id="produto-selecionado">
+            <div class="retangulo" id="produto-selecionado" exibirProdutosDoCarrinho() >
 
+                <div id="carrinho" exibirProdutosDoCarrinho()>
 
-                <div id="preco-total"></div>
-
-
+                </div>
+                
 
             </div>
 
-
+            <textarea style="width:100%" rows="2" name="obs" cols="30" class="estilo_novo_form" onfocus="if (this.value=='Alguma Observação? Ex.: Sem salada') this.value='';" onblur="if (this.value=='') this.value='Alguma Observação? Ex.: Sem salada'">Alguma Observação? Ex.: Sem salada</textarea>
 
 
             <h2 class="pagamento">Formas de pagamento:</h2>
@@ -171,7 +166,9 @@
             <div class="linha3"></div>
             <button class="btn-FinalizarPedido">Finalizar Pedido</button>
 
-            <button class="btn-AdicionarPedido onclick="adicionarAoCarrinho(@itemProduto.ProID,@itemProduto.PrecoProduto)">Adicionar item</button>
+            <button id="btn-adicionar-item" class="btn-AdicionarPedido" onclick="adicionarItem()">Adicionar item</button>
+
+
 
            
 
@@ -235,6 +232,7 @@
             tabelaPedidos.style.display = "none";
         }
 
+
         telaFinalizarPedido.addEventListener("click", function () {
             ocultarTabelaPedidos();
         });
@@ -266,64 +264,104 @@
 
 
         function exibirProdutoSelecionado(idProduto) {
-          
-            var quantidade = document.querySelector("select").value;
+    var quantidade = document.querySelector("select").value;
+    var nomeProduto = document.getElementById("nome-produto-" + idProduto)?.textContent;
+    var precoProduto = parseFloat(document.getElementById("preco-produto-" + idProduto)?.textContent);
+    var precoAnterior = 0;
+    var index = carrinho.findIndex(item => item.proID === idProduto);
+    if (index !== -1) {
+        precoAnterior = carrinho[index].precoProduto;
+    }
 
-     
-            var nomeProduto = document.getElementById("nome-produto-" + idProduto)?.textContent;
-            var precoProduto = document.getElementById("preco-produto-" + idProduto)?.textContent;
+    adicionarAoCarrinho(idProduto, precoProduto, nomeProduto, precoAnterior);
 
-        
-            var produtoSelecionado = document.getElementById("produto-selecionado");
-            if (nomeProduto && precoProduto) {
-                produtoSelecionado.innerHTML = "Produto selecionado: " + nomeProduto + " x " + quantidade + " = R$" + (precoProduto * quantidade).toFixed(2);
+    var produtoSelecionado = document.getElementById("produto-selecionado");
+    var html = "";
+    for (var i = 0; i < carrinho.length; i++) {
+        var item = carrinho[i];
+                html += "<div>" + item.nomeProduto + " x " + quantidade + " = R$" + (item.precoProduto * quantidade).toFixed(2) + "<button onclick='removerItemDoCarrinho(" + i + "); event.preventDefault();'>X</button></div>";
+
+
+    }
+    produtoSelecionado.innerHTML = "Produtos selecionados: " + html;
+}
+
+
+
+
+        function removerItemDoCarrinho(index) {
+            carrinho.splice(index, 1);
+            salvarNoLocalStorage("carrinho", carrinho);
+            exibirCarrinho();
+        }
+
+        function exibirCarrinho() {
+    var produtoSelecionado = document.getElementById("produto-selecionado");
+    var html = "";
+    for (var i = 0; i < carrinho.length; i++) {
+        var item = carrinho[i];
+        html += "<div>" + item.nomeProduto + " x " + item.quantidade + " = R$" + (item.precoProduto * item.quantidade).toFixed(2) + "<button onclick='removerItemDoCarrinho(" + i + "); event.preventDefault();'>Excluir</button></div>";
+    }
+    produtoSelecionado.innerHTML = "Produtos selecionados: " + html;
+}
+
+
+
+
+
+
+
+        var btnAdicionarItem = document.getElementById("btn-adicionar-item");
+
+        btnAdicionarItem.addEventListener("click", function () {
+            document.getElementById("FinalizarPedido").style.display = "none";
+            document.getElementById("produtoscat@item.CategoriaProduto").style.display = "block";
+        });
+
+        var carrinho = [];
+
+        function salvarNoLocalStorage(nome, valor) {
+            localStorage.setItem(nome, JSON.stringify(valor));
+        }
+
+        function lerDoLocalStorage(nome) {
+            return JSON.parse(localStorage.getItem(nome));
+        }
+
+
+
+
+
+        function adicionarAoCarrinho(proID, precoProduto, nomeProduto, precoAnterior) {
+    var item = {
+        proID: proID,
+        precoProduto: precoProduto,
+        nomeProduto: nomeProduto,
+        precoAnterior: precoAnterior
+    };
+    carrinho.push(item);
+    salvarNoLocalStorage("carrinho", carrinho);
+    console.log(carrinho);
+}
+      function ocultarTabelaPedidos() {
+            var pedido = document.getElementById("FinalizarPedido");
+            if (pedido) {
+                pedido.style.display = "none";
             }
         }
 
-        var precoTotal = 0;
 
-function adicionarAoCarrinho(idProduto, precoProduto) {
-    precoTotal += precoProduto;
-    exibirMensagem("Produto adicionado ao carrinho!");
-}
+        window.addEventListener("load", function () {
+            carrinho = lerDoLocalStorage("carrinho") || [];
+            atualizarCarrinho();
+        });
 
-function exibirMensagem(mensagem) {
-    alert(mensagem);
-}
+        var btnAdicionarItem = document.getElementById("btn-adicionar-item");
 
-function atualizarPrecoTotal() {
-    document.getElementById("preco-total").innerHTML = precoTotal;
-}
-
-
-// Adicione um evento de clique ao botão "Adicionar item"
-        document.getElementById("btn-AdicionarPedido").addEventListener("click", function () {
-  
-  // Obtenha os valores dos campos de entrada
-  var nome = document.getElementById("campo-nome").value;
-  var preco = document.getElementById("campo-preco").value;
-
-  // Adicione o item atual à tabela de produtos
-  var tabela = document.getElementById("tabela-produtos");
-  var novaLinha = tabela.insertRow(-1);
-  var colunaNome = novaLinha.insertCell(0);
-  var colunaPreco = novaLinha.insertCell(1);
-  colunaNome.innerHTML = nome;
-  colunaPreco.innerHTML = preco;
-
-  // Limpe os campos de entrada
-  document.getElementById("campo-nome").value = "";
-  document.getElementById("campo-preco").value = "";
-
-  // Retorne o foco ao primeiro campo de entrada
-  document.getElementById("campo-nome").focus();
-
-  // Adicione uma mensagem de sucesso ou feedback
-  alert("Item adicionado com sucesso!");
-
-});
-
-
+        btnAdicionarItem.addEventListener("click", function () {
+            document.getElementById("FinalizarPedido").style.display = "none";
+            document.getElementById("produtoscat@item.CategoriaProduto").style.display = "block";
+        });
 
 
 
