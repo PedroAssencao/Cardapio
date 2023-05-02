@@ -13,13 +13,6 @@
 </head>
 <body>
 
-    <style>
-        .produtos {
-            display: none;
-        }
-    </style>
-
-
     <div class="box">
 
 
@@ -141,9 +134,9 @@
             <h2 class="resumo">Resumo do pedido</h2>
 
 
-            <div class="retangulo" id="produto-selecionado" exibirProdutosDoCarrinho() >
+            <div class="retangulo" id="produto-selecionado" exibirProdutosDoCarrinho(); atualizarCarrinho();>
 
-                <div id="carrinho" exibirProdutosDoCarrinho()>
+                <div id="carrinho" exibirProdutosDoCarrinho(); atualizarCarrinho();>
 
                 </div>
                 
@@ -164,7 +157,7 @@
             </form>
 
             <div class="linha3"></div>
-            <button class="btn-FinalizarPedido">Finalizar Pedido</button>
+            <button class="btn-FinalizarPedido" onclick="enviarMensagem()">Finalizar Pedido</button>
 
             <button id="btn-adicionar-item" class="btn-AdicionarPedido" onclick="adicionarItem()">Adicionar item</button>
 
@@ -229,9 +222,11 @@
         }
 
         function ocultarTabelaPedidos() {
-            tabelaPedidos.style.display = "none";
-        }
-
+    var pedido = document.getElementById("FinalizarPedido");
+    if (pedido) {
+        pedido.style.display = "none";
+    }
+}
 
         telaFinalizarPedido.addEventListener("click", function () {
             ocultarTabelaPedidos();
@@ -262,6 +257,7 @@
             $("#FinalizarPedido").show();
         }
 
+/*------------------------*/
 
         function exibirProdutoSelecionado(idProduto) {
     var quantidade = document.querySelector("select").value;
@@ -279,37 +275,19 @@
     var html = "";
     for (var i = 0; i < carrinho.length; i++) {
         var item = carrinho[i];
-                html += "<div>" + item.nomeProduto + " x " + quantidade + " = R$" + (item.precoProduto * quantidade).toFixed(2) + "<button onclick='removerItemDoCarrinho(" + i + "); event.preventDefault();'>X</button></div>";
+                html += "<div>" + item.nomeProduto + " x " + quantidade + " = R$" + (item.precoProduto * quantidade).toFixed(2) + "<button onclick='removerItemDoCarrinho(" + i + "); event.preventDefault(); atualizarCarrinho();'>X</button></div>";
 
 
     }
     produtoSelecionado.innerHTML = "Produtos selecionados: " + html;
 }
 
-
-
-
-        function removerItemDoCarrinho(index) {
-            carrinho.splice(index, 1);
-            salvarNoLocalStorage("carrinho", carrinho);
-            exibirCarrinho();
-        }
-
-        function exibirCarrinho() {
-    var produtoSelecionado = document.getElementById("produto-selecionado");
-    var html = "";
-    for (var i = 0; i < carrinho.length; i++) {
-        var item = carrinho[i];
-        html += "<div>" + item.nomeProduto + " x " + item.quantidade + " = R$" + (item.precoProduto * item.quantidade).toFixed(2) + "<button onclick='removerItemDoCarrinho(" + i + "); event.preventDefault();'>Excluir</button></div>";
-    }
-    produtoSelecionado.innerHTML = "Produtos selecionados: " + html;
+function removerItemDoCarrinho(index) {
+    carrinho.splice(index, 1);
+    salvarNoLocalStorage("carrinho", carrinho);
+    atualizarItemDoCarrinho(index);
+    atualizarCarrinho();
 }
-
-
-
-
-
-
 
         var btnAdicionarItem = document.getElementById("btn-adicionar-item");
 
@@ -331,7 +309,6 @@
 
 
 
-
         function adicionarAoCarrinho(proID, precoProduto, nomeProduto, precoAnterior) {
     var item = {
         proID: proID,
@@ -343,25 +320,16 @@
     salvarNoLocalStorage("carrinho", carrinho);
     console.log(carrinho);
 }
-      function ocultarTabelaPedidos() {
-            var pedido = document.getElementById("FinalizarPedido");
-            if (pedido) {
-                pedido.style.display = "none";
-            }
-        }
 
+          function enviarMensagem(id) {
+                    var numero = "5579998468046";
+                    var quantidade = document.getElementById("quantidade").value;
+                    var produto = document.getElementById(id).textContent.trim();
+                    var mensagem = "Olá, gostaria de pedir " + quantidade + " " + produto + "(s)";
+                    var link = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
+                    window.open(link, "_blank");
+                }
 
-        window.addEventListener("load", function () {
-            carrinho = lerDoLocalStorage("carrinho") || [];
-            atualizarCarrinho();
-        });
-
-        var btnAdicionarItem = document.getElementById("btn-adicionar-item");
-
-        btnAdicionarItem.addEventListener("click", function () {
-            document.getElementById("FinalizarPedido").style.display = "none";
-            document.getElementById("produtoscat@item.CategoriaProduto").style.display = "block";
-        });
 
 
 
