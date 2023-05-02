@@ -115,17 +115,17 @@
 
             <div>
                 <label class="nome" for="exampleFormControlInput1">Nome:</label>
-                <input  type="nome" class="form-controlNome" id="exampleFormControlInput1" placeholder="José Oliveira">
+                <input  type="nome" class="form-controlNome" id="InputNome" placeholder="José Oliveira">
             </div>
 
             <div>
                 <label class="Endereco" for="exampleFormControlInput1">Endereço:</label>
-                <input  type="Endereco" class="form-controlEndereco" id="exampleFormControlInput1" placeholder="R. Antônio C. Carvalho">
+                <input  type="Endereco" class="form-controlEndereco" id="InputEndereco" placeholder="R. Antônio C. Carvalho">
             </div>
 
             <div>
                 <label class="NTelefone" for="exampleFormControlInput1">Numero de telefone:</label>
-                <input  type="NTelefone" class="form-controlTelefone" id="exampleFormControlInput1" placeholder="79 9 9854-9746">
+                <input  type="NTelefone" class="form-controlTelefone" id="InputNTelefone" placeholder="79 9 9854-9746">
             </div>
 
 
@@ -139,17 +139,18 @@
                 <div id="carrinho" exibirProdutosDoCarrinho(); atualizarCarrinho();>
 
                 </div>
+
                 
 
             </div>
 
-            <textarea style="width:100%" rows="2" name="obs" cols="30" class="estilo_novo_form" onfocus="if (this.value=='Alguma Observação? Ex.: Sem salada') this.value='';" onblur="if (this.value=='') this.value='Alguma Observação? Ex.: Sem salada'">Alguma Observação? Ex.: Sem salada</textarea>
 
+            <textarea id="observacao" style="width:100%" rows="2" name="obs" cols="30" class="estilo_novo_form" onfocus="if (this.value=='Alguma Observação? Ex.: Sem salada') this.value='';" onblur="if (this.value=='') this.value='Alguma Observação? Ex.: Sem salada'">Alguma Observação? Ex.: Sem salada</textarea>
 
             <h2 class="pagamento">Formas de pagamento:</h2>
 
             <form class="quadradinho" style="margin-left: 100px; margin-top: -30px;">
-                <select class="pagamento" size="1">
+                <select id="FormaDePagamento" class="pagamento" size="1">
                     <option value="01">Dinheiro</option>
                     <option value="02">Cartão</option>
                     <option value="03">Pix</option>
@@ -157,7 +158,7 @@
             </form>
 
             <div class="linha3"></div>
-            <button class="btn-FinalizarPedido" onclick="enviarMensagem()">Finalizar Pedido</button>
+            <button class="btn-FinalizarPedido" onclick="varrer()">Finalizar Pedido</button>
 
             <button id="btn-adicionar-item" class="btn-AdicionarPedido" onclick="adicionarItem()">Adicionar item</button>
 
@@ -221,23 +222,7 @@
             document.getElementById("TabelaPedido").style.display = "none";
         }
 
-        function ocultarTabelaPedidos() {
-    var pedido = document.getElementById("FinalizarPedido");
-    if (pedido) {
-        pedido.style.display = "none";
-    }
-}
 
-        telaFinalizarPedido.addEventListener("click", function () {
-            ocultarTabelaPedidos();
-        });
-
-        btnVoltar.addEventListener("click", function () {
-            mostrarCategorias();
-            ocultarProdutos();
-            ocultarBotaoVoltar();
-            ocultarTabelaPedidos();
-        });
 
         function ocultarBotaoVoltar() {
             btnVoltar.style.display = "none";
@@ -275,11 +260,18 @@
     var html = "";
     for (var i = 0; i < carrinho.length; i++) {
         var item = carrinho[i];
-                html += "<div>" + item.nomeProduto + " x " + quantidade + " = R$" + (item.precoProduto * quantidade).toFixed(2) + "<button onclick='removerItemDoCarrinho(" + i + "); event.preventDefault(); atualizarCarrinho();'>X</button></div>";
+                html += "<div id='" + i + "'>" + item.nomeProduto +
+                    " x " + quantidade + " = R$" + (item.precoProduto * quantidade).toFixed(2) + "<button onclick='event.preventDefault(); deleteDiv(" + i + "); removerItemDoCarrinho();'>X</button></div>";
 
 
     }
     produtoSelecionado.innerHTML = "Produtos selecionados: " + html;
+            console.log(allStorage())
+}
+
+function deleteDiv(id){
+    console.log('executou')
+    var divpequena = document.getElementById(id).remove();
 }
 
 function removerItemDoCarrinho(index) {
@@ -306,7 +298,58 @@ function removerItemDoCarrinho(index) {
             return JSON.parse(localStorage.getItem(nome));
         }
 
+        
+        function allStorage() {
 
+            var values = [],
+                keys = Object.keys(localStorage),
+                i = keys.length;
+
+            while (i--) {
+                values.push(localStorage.getItem(keys[i]));
+            }
+
+            return values;
+        }
+
+        
+        function varrer (nome, valor){
+            carrinho = JSON.parse(allStorage()[1])
+            var string = "";
+            var nome = $("#InputNome").val()
+            var endereco = $("#InputEndereco").val()
+            var telefone = $("#InputNTelefone").val()
+            var observacao = $("#observacao").val()
+            var e = document.getElementById("FormaDePagamento");
+            var value = e.value;
+            var text = e.options[e.selectedIndex].text;
+
+            for (var i = 0; i < carrinho.length; i++) {
+                var carrinho = JSON.parse(allStorage()[1])
+                string += "\n" + carrinho[i]["nomeProduto"]
+            }
+            
+            var numero = $("#InputNTelefone").val();
+            var mensagem = "👥 CLIENTE: \n Nome:  " + nome + " \n" +
+                " Endereço:  " + endereco + " \n" +
+            "Telefone:  "+telefone+"  \n" +
+            " 📝 RESUMO DO PEDIDO \n" +
+           "Produto:" +string + "\n" +
+           "Observação:" + observacao + "\n" +
+               " 💵 DADOS DE PAGAMENTO " + "\n" +
+                "Forma de pagamento:" + e+ "\n"/*
+                Soma dos produtos: { SomaProduto }
+                Taxa de entrega: { TaxaEntrega }
+                Valor total: { SomaProduto + TaxaEntrega }
+*/
+
+            var link = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
+            window.open(link, "_blank");
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            varrer()
+        })
 
 
         function adicionarAoCarrinho(proID, precoProduto, nomeProduto, precoAnterior) {
@@ -320,19 +363,6 @@ function removerItemDoCarrinho(index) {
     salvarNoLocalStorage("carrinho", carrinho);
     console.log(carrinho);
 }
-
-          function enviarMensagem(id) {
-                    var numero = "5579998468046";
-                    var quantidade = document.getElementById("quantidade").value;
-                    var produto = document.getElementById(id).textContent.trim();
-                    var mensagem = "Olá, gostaria de pedir " + quantidade + " " + produto + "(s)";
-                    var link = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
-                    window.open(link, "_blank");
-                }
-
-
-
-
     </script>
 
 </body>

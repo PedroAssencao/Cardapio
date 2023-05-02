@@ -1822,19 +1822,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Pedro Marcelo\\.nuget\\packages\\": {}
+    "C:\\Users\\android\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pedro Marcelo\\Documents\\GitHub\\Cardapio\\CárdapioV3_Tunado - Copia\\Cardapiov3tunadomuitomaisfoda\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\CárdapioV3_Tunado.csproj",
+      "projectUniqueName": "C:\\Users\\android\\Desktop\\Cardapio-main (2)\\Cardapio-main\\CárdapioV3_Tunado - Copia\\Cardapiov3tunadomuitomaisfoda\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\CárdapioV3_Tunado.csproj",
       "projectName": "CárdapioV3_Tunado",
-      "projectPath": "C:\\Users\\Pedro Marcelo\\Documents\\GitHub\\Cardapio\\CárdapioV3_Tunado - Copia\\Cardapiov3tunadomuitomaisfoda\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\CárdapioV3_Tunado.csproj",
-      "packagesPath": "C:\\Users\\Pedro Marcelo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pedro Marcelo\\Documents\\GitHub\\Cardapio\\CárdapioV3_Tunado - Copia\\Cardapiov3tunadomuitomaisfoda\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\obj\\",
+      "projectPath": "C:\\Users\\android\\Desktop\\Cardapio-main (2)\\Cardapio-main\\CárdapioV3_Tunado - Copia\\Cardapiov3tunadomuitomaisfoda\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\CárdapioV3_Tunado.csproj",
+      "packagesPath": "C:\\Users\\android\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\android\\Desktop\\Cardapio-main (2)\\Cardapio-main\\CárdapioV3_Tunado - Copia\\Cardapiov3tunadomuitomaisfoda\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Pedro Marcelo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\android\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1892,7 +1899,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
