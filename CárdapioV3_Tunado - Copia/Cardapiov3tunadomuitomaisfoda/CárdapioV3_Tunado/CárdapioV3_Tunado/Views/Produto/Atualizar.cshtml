@@ -1,0 +1,44 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Atualizar Categoria</h1>
+
+<form method="post" action="/Produto/Atualizar">
+
+    <div class="form-group">
+        <label for="codigo">Código</label>
+        <input type="text" class="form-control" id="codigo" value="@ViewBag.listaProdutosController.ProID" name="codigo" readonly>
+    </div>
+
+
+    <div class="form-group">
+        <label for="NomeProduto">Nome do Produto</label>
+        <input type="text" class="form-control" id="NomeProduto" value="@ViewBag.listaProdutosController.NomeProduto" name="NomeProduto">
+    </div>
+
+    <div class="form-group">
+        <label for="DescricaoProduto">Descrição do Produto</label>
+        <input type="text" class="form-control" id="DescricaoProduto" value="@ViewBag.listaProdutosController.DescricaoProduto" name="DescricaoProduto">
+    </div>
+
+    <div class="form-group">
+        <label for="NutricaoProduto">Nutrição</label>
+        <input type="text" class="form-control" id="NutricaoProduto" value="@ViewBag.listaProdutosController.NutricaoProduto" name="NutricaoProduto">
+    </div>
+
+    <div class="form-group">
+        <label for="PrecoProduto">Preço</label>
+        <input type="text" class="form-control" id="PrecoProduto" value="@ViewBag.listaProdutosController.PrecoProduto" name="PrecoProduto">
+    </div>
+
+    <div class="form-group">
+        <label for="CategoriaProduto">Categoria do Produto</label>
+        <input type="text" class="form-control" id="CategoriaProduto" value="@ViewBag.listaProdutosController.CategoriaProduto" name="CategoriaProduto">
+    </div>
+
+
+    <a class="btn btn-secondary" href="/Produto/Index">Voltar</a>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

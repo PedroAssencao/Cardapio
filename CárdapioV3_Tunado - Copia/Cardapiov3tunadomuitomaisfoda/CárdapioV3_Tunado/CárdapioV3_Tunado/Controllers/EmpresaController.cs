@@ -1,11 +1,16 @@
 ﻿using CárdapioV3_Tunado.DAL;
 using CárdapioV3_Tunado.Models;
 using Dapper;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.Cms;
 using Org.BouncyCastle.Asn1.Esf;
 using Org.BouncyCastle.Asn1.Iana;
 using System.Data.SqlClient;
+using System.Security.Claims;
+using System.Text;
 
 namespace CárdapioV3_Tunado.Controllers
 {
@@ -36,11 +41,14 @@ namespace CárdapioV3_Tunado.Controllers
         {
             Empresa novaEmpresa = new Empresa();
             novaEmpresa.NomeEmpresa = NomeEmpresa;
-            novaEmpresa.SenhaEmpresa = SenhaEmpresa;
             novaEmpresa.Telefone = Telefone;
             novaEmpresa.CNPJ = CNPJ;
             if (novaEmpresa.VerificarSenha(SenhaEmpresa, ConfirmarSenha))
             {
+                //cripto=grafa
+                var a = Encoding.UTF8.GetBytes(SenhaEmpresa);
+                var b = Convert.ToBase64String(a);
+                novaEmpresa.SenhaEmpresa = b;
                 Estabelecimento.InsertEmpresa(novaEmpresa);
                 return RedirectToAction("Index");
             }
@@ -57,16 +65,29 @@ namespace CárdapioV3_Tunado.Controllers
         }
 
         [HttpPost]
-        public IActionResult Logar(string NomeEmpresa, string SenhaEmpresa)
+        public async Task<IActionResult> Logar(string NomeEmpresa, string SenhaEmpresa)
         {
             using (var conexao = _connection)
             {
-                var query = "SELECT * FROM Empresa WHERE NomeEmpresa = @NomeEmpresa AND SenhaEmpresa = @SenhaEmpresa";
+                var query = "select * from Empresa";
                 var parametros = new { NomeEmpresa, SenhaEmpresa };
-                var empresa = conexao.QueryFirstOrDefault<Empresa>(query, parametros);
+
+
+                var empresas = conexao.Query<Empresa>(query).ToList();
+                var empresa = empresas.FirstOrDefault(x => x.NomeEmpresa == NomeEmpresa && Estabelecimento.Descriptografar(x.SenhaEmpresa) == SenhaEmpresa);
                 if (empresa != null)
                 {
-                    return RedirectToAction("Create");
+                    var claims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Name, NomeEmpresa),
+                        new Claim(ClaimTypes.NameIdentifier, empresa.EmpresaID.ToString()),
+                    };
+
+                    var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    var principal = new ClaimsPrincipal(identity);
+
+                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+                    return RedirectToAction("Foda", "Cardapio");
                 }
                 else
                 {
