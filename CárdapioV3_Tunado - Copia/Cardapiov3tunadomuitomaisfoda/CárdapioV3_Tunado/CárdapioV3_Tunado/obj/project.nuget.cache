@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "5HFf0P4jYAXhUS6Ug8doxucZgN/pZ0atPfV0ez8sXYv05tdlAU/wIGFmL2Vx07SrVE5AdFAyQeFSoxC++bBNZg==",
   "success": true,
   "projectFilePath": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\CárdapioV3_Tunado - Copia\\Cardapiov3tunadomuitomaisfoda\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\CárdapioV3_Tunado.csproj",
+=======
+  "dgSpecHash": "ThiFD3DHVl/S7qxm9QvsHooCF96IlqeISgQ7aGuAoZJckpyICvaRnnbvGG4QJ946QI8Zgt+iMIBzxPdbEvr85w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\android\\Downloads\\Cardapio-Criptografia-Senha\\CárdapioV3_Tunado - Copia\\Cardapiov3tunadomuitomaisfoda\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\CárdapioV3_Tunado.csproj",
+>>>>>>> Stashed changes
   "expectedPackageFiles": [
     "C:\\Users\\android\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\android\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",

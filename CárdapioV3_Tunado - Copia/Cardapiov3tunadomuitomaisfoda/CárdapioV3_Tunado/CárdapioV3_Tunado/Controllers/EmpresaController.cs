@@ -95,6 +95,37 @@ namespace CárdapioV3_Tunado.Controllers
                 }
             }
         }
+
+        [HttpGet]
+        public IActionResult Atualizar(int idEmpresa)
+        {
+            var empresa = Estabelecimento.getTodasEmpresas().Where(x => x.EmpresaID == idEmpresa).FirstOrDefault();
+            if (empresa is null)
+                return BadRequest();
+            ViewBag.TaxaAtualizar = empresa;
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult cu(int idEmpresa)
+        {
+            var empresa = Estabelecimento.getTodasEmpresas().Where(x => x.EmpresaID == idEmpresa).FirstOrDefault();
+            if (empresa is null)
+                return BadRequest();
+            ViewBag.TaxaAtualizar = empresa;
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult cu(double Taxa)
+        {
+
+            Empresa taxaempresa = new Empresa();
+            taxaempresa.taxaEmpresa = Taxa;
+            Estabelecimento.AtualizarTaxa(taxaempresa);
+
+            return RedirectToAction("Index");
+        }
     }
 }
         

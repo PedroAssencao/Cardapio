@@ -78,5 +78,15 @@ namespace CárdapioV3_Tunado.DAL
             var d = Encoding.UTF8.GetString(c);
             return d;
         }
+<<<<<<< Updated upstream
+=======
+
+        public void AtualizarTaxa(Empresa Taxa)
+        {
+            var query = "update Empresa set taxaEmpresa=@taxaEmpresa where EmpresaID=@EmpresaID";
+
+            int qtdinserida = _connection.Execute(query, Taxa);
+        }
+>>>>>>> Stashed changes
     }
 }

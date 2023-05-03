@@ -14,14 +14,14 @@ namespace CárdapioV3_Tunado.Controllers
             return View();
         }
 
-        public IActionResult Foda()
+        public IActionResult Foda(int idEmpresa)
         {
-            List<CategoriaProdutoView> lista = cardapio.getTodosProdutos();
+            List<CategoriaProdutoView> lista = cardapio.getTodosProdutosbyEmpresa(idEmpresa);
             List<CategoriaProdutoView> listaCategoria = cardapio.getTodosCategorias();
             var listas = new ListCategoriaProduto
             {
-                Lista1 = cardapio.getTodosCategorias(),
-                Lista2 = cardapio.getTodosProdutos()
+                Lista1 = cardapio.getTodosProdutosbyEmpresa(idEmpresa),
+                Lista2 = cardapio.getTodosProdutosbyEmpresa(idEmpresa)
             };
             return View(listas);
         }
