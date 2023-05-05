@@ -403,59 +403,125 @@ C:\Users\Pedro Marcelo\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Card
 C:\Users\Pedro Marcelo\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.pdb
 C:\Users\Pedro Marcelo\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.genruntimeconfig.cache
 C:\Users\Pedro Marcelo\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\ref\CárdapioV3_Tunado.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\appsettings.Development.json
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\appsettings.json
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\CárdapioV3_Tunado.staticwebassets.runtime.json
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\CárdapioV3_Tunado.exe
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\CárdapioV3_Tunado.deps.json
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\CárdapioV3_Tunado.runtimeconfig.json
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\CárdapioV3_Tunado.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\CárdapioV3_Tunado.pdb
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\Dapper.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\Google.Protobuf.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\K4os.Compression.LZ4.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\K4os.Hash.xxHash.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\MySql.Data.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\BouncyCastle.Crypto.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\System.Data.SqlClient.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\System.Drawing.Common.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\System.Security.Permissions.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\System.Windows.Extensions.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-x64\native\comerr64.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-x64\native\gssapi64.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-x64\native\k5sprt64.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-x64\native\krb5_64.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-x64\native\krbcc64.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.csproj.AssemblyReference.cache
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.AssemblyInfoInputs.cache
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.AssemblyInfo.cs
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.csproj.CoreCompileInputs.cache
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.RazorAssemblyInfo.cache
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.RazorAssemblyInfo.cs
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\staticwebassets.build.json
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\staticwebassets.development.json
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\scopedcss\bundle\CárdapioV3_Tunado.styles.css
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\scopedcss\projectbundle\CárdapioV3_Tunado.bundle.scp.css
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.csproj.CopyComplete
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\refint\CárdapioV3_Tunado.dll
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.pdb
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.genruntimeconfig.cache
-C:\Users\android\Desktop\Cardapio-main (2)\Cardapio-main\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\ref\CárdapioV3_Tunado.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\appsettings.json
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\CárdapioV3_Tunado.staticwebassets.runtime.json
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\CárdapioV3_Tunado.exe
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\CárdapioV3_Tunado.deps.json
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\CárdapioV3_Tunado.runtimeconfig.json
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\CárdapioV3_Tunado.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\CárdapioV3_Tunado.pdb
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\Dapper.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-x64\native\comerr64.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-x64\native\gssapi64.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-x64\native\krb5_64.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-x64\native\krbcc64.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.csproj.AssemblyReference.cache
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.AssemblyInfoInputs.cache
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.AssemblyInfo.cs
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.csproj.CoreCompileInputs.cache
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.RazorAssemblyInfo.cache
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.RazorAssemblyInfo.cs
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\staticwebassets\msbuild.CárdapioV3_Tunado.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\staticwebassets\msbuild.build.CárdapioV3_Tunado.props
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.CárdapioV3_Tunado.props
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.CárdapioV3_Tunado.props
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\scopedcss\bundle\CárdapioV3_Tunado.styles.css
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\scopedcss\projectbundle\CárdapioV3_Tunado.bundle.scp.css
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.csproj.CopyComplete
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\refint\CárdapioV3_Tunado.dll
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.pdb
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.genruntimeconfig.cache
+C:\Users\android\Documents\GitHub\Cardapio\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\ref\CárdapioV3_Tunado.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\appsettings.json
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\CárdapioV3_Tunado.staticwebassets.runtime.json
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\CárdapioV3_Tunado.exe
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\CárdapioV3_Tunado.deps.json
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\CárdapioV3_Tunado.runtimeconfig.json
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\CárdapioV3_Tunado.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\CárdapioV3_Tunado.pdb
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\Dapper.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\K4os.Compression.LZ4.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\K4os.Hash.xxHash.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\MySql.Data.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-x64\native\comerr64.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-x64\native\gssapi64.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-x64\native\krb5_64.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-x64\native\krbcc64.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.csproj.AssemblyReference.cache
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.AssemblyInfoInputs.cache
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.AssemblyInfo.cs
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.csproj.CoreCompileInputs.cache
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.RazorAssemblyInfo.cache
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.RazorAssemblyInfo.cs
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\staticwebassets\msbuild.CárdapioV3_Tunado.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\staticwebassets\msbuild.build.CárdapioV3_Tunado.props
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.CárdapioV3_Tunado.props
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.CárdapioV3_Tunado.props
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\scopedcss\bundle\CárdapioV3_Tunado.styles.css
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\scopedcss\projectbundle\CárdapioV3_Tunado.bundle.scp.css
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.csproj.CopyComplete
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\refint\CárdapioV3_Tunado.dll
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.pdb
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\CárdapioV3_Tunado.genruntimeconfig.cache
+C:\Users\android\Downloads\Cardapio-Criptografia-Senha\CárdapioV3_Tunado - Copia\Cardapiov3tunadomuitomaisfoda\CárdapioV3_Tunado\CárdapioV3_Tunado\obj\Debug\net6.0\ref\CárdapioV3_Tunado.dll

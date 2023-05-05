@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{
+    int cade = -1;
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -6,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CardapioV2</title>
     <link rel="stylesheet" href="/css/style.css">
-    <script src="js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
     @model CárdapioV3_Tunado.Models.ListCategoriaProduto
@@ -65,6 +67,8 @@
                 <div class="produtos" id="produtoscat@item.CategoriaProduto">
                     @foreach (var itemProduto in Model.Lista2.Where(z => z.CategoriaProduto == @item.CategoriaID).ToList())
                     {
+                        cade++;
+                        string qtd = "quantidade";
                         <table width="300" border="0" align="center">
                             <tbody>
                                 <tr>
@@ -82,29 +86,27 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
                 <td>
-                    <button class="btn-confirmar-pedido" onclick="ocultarTabela(); exibirProdutoSelecionado(@itemProduto.ProID); produtoSelecionado">Confirmar Pedido 👌</button>
+                    <button class="btn-confirmar-pedido" onclick="ocultarTabela(); exibirProdutoSelecionado(@itemProduto.ProID, @cade);">Confirmar Pedido 👌</button>
 
 
-
-
-                    <form style="margin-left: 100px; margin-top: -30px;">
-                        <select id="quantidade" size="1">
+                    <div style="margin-left: 100px; margin-top: -30px;">
+                        <select id="@qtd@cade" size="1">
                             <option value="01">01</option>
                             <option value="02">02</option>
                             <option value="03">03</option>
                             <option value="04">04</option>
                             <option value="05">05</option>
                         </select>
+                    </div>
 
-                    </form>
                 </td>
                 <br>
                 <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
-
-
-
                     }
+
 
         </div>
 
@@ -115,17 +117,17 @@
 
             <div>
                 <label class="nome" for="exampleFormControlInput1">Nome:</label>
-                <input  type="nome" class="form-controlNome" id="InputNome" placeholder="José Oliveira">
+                <input type="nome" class="form-controlNome" id="InputNome" placeholder="José Oliveira">
             </div>
 
             <div>
                 <label class="Endereco" for="exampleFormControlInput1">Endereço:</label>
-                <input  type="Endereco" class="form-controlEndereco" id="InputEndereco" placeholder="R. Antônio C. Carvalho">
+                <input type="Endereco" class="form-controlEndereco" id="InputEndereco" placeholder="R. Antônio C. Carvalho">
             </div>
 
             <div>
                 <label class="NTelefone" for="exampleFormControlInput1">Numero de telefone:</label>
-                <input  type="NTelefone" class="form-controlTelefone" id="InputNTelefone" placeholder="79 9 9854-9746">
+                <input type="NTelefone" class="form-controlTelefone" id="InputNTelefone" placeholder="79 9 9854-9746">
             </div>
 
 
@@ -137,10 +139,9 @@
             <div class="retangulo" id="produto-selecionado" exibirProdutosDoCarrinho(); atualizarCarrinho();>
 
                 <div id="carrinho" exibirProdutosDoCarrinho(); atualizarCarrinho();>
-
                 </div>
 
-                
+
 
             </div>
 
@@ -160,15 +161,15 @@
             <div class="linha3"></div>
             <button class="btn-FinalizarPedido" onclick="varrer()">Finalizar Pedido</button>
 
-            <button id="btn-adicionar-item" class="btn-AdicionarPedido" onclick="adicionarItem()">Adicionar item</button>
+            <button id="btn-adicionar-item" class="btn-AdicionarPedido">Adicionar item</button>
 
 
 
-           
+
 
         </div>
 
-        <button id="btn-voltar" style="display: none;">Voltar 👈</button>
+        <button id="btn-voltar" onclick="btnVoltarF()">Voltar 👈</button>
             }
     </div>
 
@@ -177,192 +178,209 @@
 
     <script>
 
-        var categorias = document.getElementsByClassName("categoria");
-        var produtos = document.getElementsByClassName("produtos");
-        var btnVoltar = document.getElementById("btn-voltar");
-        var tabelaPedidos = document.getElementById("tabela-pedidos");
-        var telaFinalizarPedido = document.getElementById("FinalizarPedido");
+                window.addEventListener("DOMContentLoaded", () => {
+                    $("#btn-voltar").hide()
+                })
 
-        for (var i = 0; i < categorias.length; i++) {
-            categorias[i].addEventListener("click", function () {
-                ocultarCategorias();
-                mostrarProdutos(this.nextElementSibling);
-                mostrarBotaoVoltar();
-            });
-        }
-
-        btnVoltar.addEventListener("click", function () {
-            mostrarCategorias();
-            ocultarProdutos();
-            ocultarBotaoVoltar();
-        });
-
-        function mostrarCategorias() {
-            for (var i = 0; i < categorias.length; i++) {
-                categorias[i].style.display = "block";
-            }
-        }
-
-        function ocultarCategorias() {
-            for (var i = 0; i < categorias.length; i++) {
-                categorias[i].style.display = "none";
-            }
-        }
+                var categorias = document.getElementsByClassName("categoria");
+                var produtos = document.getElementsByClassName("produtos");
+                var btnVoltar = document.getElementById("btn-voltar");
+                var tabelaPedidos = document.getElementById("tabela-pedidos");
+                var telaFinalizarPedido = document.getElementById("FinalizarPedido");
 
 
+                function mostrarBotaoVoltar() {
+                    $("#btn-voltar").show()
+                }
 
-        function mostrarProdutos(produtosCategoria) {
-            produtosCategoria.style.display = "block";
-        }
+                for (var i = 0; i < categorias.length; i++) {
+                    categorias[i].addEventListener("click", function () {
+                        ocultarCategorias();
+                        mostrarProdutos(this.nextElementSibling);
+                        mostrarBotaoVoltar();
+                    });
+                }
 
-   
+                function btnVoltarF () {
+                    mostrarCategorias();
+                    ocultarProdutos();
+                    ocultarBotaoVoltar();
+                };
 
-        function ocultarTabela() {
-            document.getElementById("FinalizarPedido").style.display = "block";
-            document.getElementById("TabelaPedido").style.display = "none";
-        }
+                function mostrarCategorias() {
+                    for (var i = 0; i < categorias.length; i++) {
+                        categorias[i].style.display = "block";
+                    }
+                }
 
+                function ocultarCategorias() {
+                    for (var i = 0; i < categorias.length; i++) {
+                        categorias[i].style.display = "none";
+                    }
+                }
 
-
-        function ocultarBotaoVoltar() {
-            btnVoltar.style.display = "none";
-            telaFinalizarPedido.style.display = "none";
-        }
-
-        function ocultarTabela() {
-            var tabelaProdutos = document.querySelector(".produtos");
-            tabelaProdutos.style.display = "none";
-        }
-
-        function ocultarTabela() {
-            
-            $(".produtos").hide();
-
-            
-            $("#FinalizarPedido").show();
-        }
-
-/*------------------------*/
-
-        function exibirProdutoSelecionado(idProduto) {
-    var quantidade = document.querySelector("select").value;
-    var nomeProduto = document.getElementById("nome-produto-" + idProduto)?.textContent;
-    var precoProduto = parseFloat(document.getElementById("preco-produto-" + idProduto)?.textContent);
-    var precoAnterior = 0;
-    var index = carrinho.findIndex(item => item.proID === idProduto);
-    if (index !== -1) {
-        precoAnterior = carrinho[index].precoProduto;
-    }
-
-    adicionarAoCarrinho(idProduto, precoProduto, nomeProduto, precoAnterior);
-
-    var produtoSelecionado = document.getElementById("produto-selecionado");
-    var html = "";
-    for (var i = 0; i < carrinho.length; i++) {
-        var item = carrinho[i];
-                html += "<div id='" + i + "'>" + item.nomeProduto +
-                    " x " + quantidade + " = R$" + (item.precoProduto * quantidade).toFixed(2) + "<button onclick='event.preventDefault(); deleteDiv(" + i + "); removerItemDoCarrinho();'>X</button></div>";
-
-
-    }
-    produtoSelecionado.innerHTML = "Produtos selecionados: " + html;
-            console.log(allStorage())
-}
-
-function deleteDiv(id){
-    console.log('executou')
-    var divpequena = document.getElementById(id).remove();
-}
-
-function removerItemDoCarrinho(index) {
-    carrinho.splice(index, 1);
-    salvarNoLocalStorage("carrinho", carrinho);
-    atualizarItemDoCarrinho(index);
-    atualizarCarrinho();
-}
-
-        var btnAdicionarItem = document.getElementById("btn-adicionar-item");
-
-        btnAdicionarItem.addEventListener("click", function () {
-            document.getElementById("FinalizarPedido").style.display = "none";
-            document.getElementById("produtoscat@item.CategoriaProduto").style.display = "block";
-        });
-
-        var carrinho = [];
-
-        function salvarNoLocalStorage(nome, valor) {
-            localStorage.setItem(nome, JSON.stringify(valor));
-        }
-
-        function lerDoLocalStorage(nome) {
-            return JSON.parse(localStorage.getItem(nome));
-        }
-
-        
-        function allStorage() {
-
-            var values = [],
-                keys = Object.keys(localStorage),
-                i = keys.length;
-
-            while (i--) {
-                values.push(localStorage.getItem(keys[i]));
+                function ocultarProdutos() {
+                    for (var i = 0; i < produtos.length; i++) {
+                    produtos[i].style.display = "none";
+                }
             }
 
-            return values;
-        }
+                function mostrarProdutos(produtosCategoria) {
+                    produtosCategoria.style.display = "block";
+                }
 
-        
-        function varrer (nome, valor){
-            carrinho = JSON.parse(allStorage()[1])
-            var string = "";
-            var nome = $("#InputNome").val()
-            var endereco = $("#InputEndereco").val()
-            var telefone = $("#InputNTelefone").val()
-            var observacao = $("#observacao").val()
-            var e = document.getElementById("FormaDePagamento");
-            var value = e.value;
-            var text = e.options[e.selectedIndex].text;
 
+
+                function ocultarTabela() {
+                    document.getElementById("FinalizarPedido").style.display = "block";
+                    document.getElementById("TabelaPedido").style.display = "none";
+                }
+
+
+
+                function ocultarBotaoVoltar() {
+                    btnVoltar.style.display = "none";
+                    telaFinalizarPedido.style.display = "none";
+                }
+
+                function ocultarTabela() {
+                    var tabelaProdutos = document.querySelector(".produtos");
+                    tabelaProdutos.style.display = "none";
+                }
+
+                function ocultarTabela() {
+
+                    $(".produtos").hide();
+
+
+                    $("#FinalizarPedido").show();
+                }
+
+        /*------------------------*/
+
+                function exibirProdutoSelecionado(idProduto, id) {
+            var nomeProduto = document.getElementById("nome-produto-" + idProduto)?.textContent;
+            var precoProduto = parseFloat(document.getElementById("preco-produto-" + idProduto)?.textContent);
+            var precoAnterior = 0;
+            var index = carrinho.findIndex(item => item.proID === idProduto);
+            if (index !== -1) {
+                precoAnterior = carrinho[index].precoProduto;
+            }
+
+
+            var quantidade = $("#quantidade"+id+" option:selected").val()
+            adicionarAoCarrinho(idProduto, precoProduto, nomeProduto, precoAnterior, quantidade);
+
+            var produtoSelecionado = document.getElementById("produto-selecionado");
+            var html = "";
             for (var i = 0; i < carrinho.length; i++) {
-                var carrinho = JSON.parse(allStorage()[1])
-                string += "\n" + carrinho[i]["nomeProduto"]
-            }
-            
-            var numero = $("#InputNTelefone").val();
-            var mensagem = "👥 CLIENTE: \n Nome:  " + nome + " \n" +
-                " Endereço:  " + endereco + " \n" +
-            "Telefone:  "+telefone+"  \n" +
-            " 📝 RESUMO DO PEDIDO \n" +
-           "Produto:" +string + "\n" +
-           "Observação:" + observacao + "\n" +
-               " 💵 DADOS DE PAGAMENTO " + "\n" +
-                "Forma de pagamento:" + e+ "\n"/*
-                Soma dos produtos: { SomaProduto }
-                Taxa de entrega: { TaxaEntrega }
-                Valor total: { SomaProduto + TaxaEntrega }
-*/
 
-            var link = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
-            window.open(link, "_blank");
+                var item = carrinho[i];
+                        html += "<div id='"+"produto-"+i+"'>" + item.nomeProduto +
+                            " x " + item.quantidade + " = R$" + (item.precoProduto * item.quantidade).toFixed(2) + "<button onclick='event.preventDefault(); deleteDiv(" + i + "); removerItemDoCarrinho();'>X</button></div>";
+
+            }
+            produtoSelecionado.innerHTML = "Produtos selecionados: " + html;
         }
 
-        window.addEventListener('DOMContentLoaded', () => {
-            varrer()
-        })
+        function deleteDiv(id){
+            var divpequena = document.getElementById("produto-"+id).remove();
+        }
+
+        function removerItemDoCarrinho(index) {
+            carrinho.splice(index, 1);
+            salvarNoLocalStorage("carrinho", carrinho);
+        }
+
+                var btnAdicionarItem = document.getElementById("btn-adicionar-item");
+
+                btnAdicionarItem.addEventListener("click", function () {
+                    document.getElementById("FinalizarPedido").style.display = "none";
+                    document.getElementById("produtoscat@item.CategoriaProduto").style.display = "block";
+                });
+
+                var carrinho = [];
+
+                function salvarNoLocalStorage(nome, valor) {
+                    localStorage.setItem(nome, JSON.stringify(valor));
+                }
+
+                function lerDoLocalStorage(nome) {
+                    return JSON.parse(localStorage.getItem(nome));
+                }
 
 
-        function adicionarAoCarrinho(proID, precoProduto, nomeProduto, precoAnterior) {
-    var item = {
-        proID: proID,
-        precoProduto: precoProduto,
-        nomeProduto: nomeProduto,
-        precoAnterior: precoAnterior
-    };
-    carrinho.push(item);
-    salvarNoLocalStorage("carrinho", carrinho);
-    console.log(carrinho);
-}
+                function allStorage() {
+
+                    var values = [],
+                        keys = Object.keys(localStorage),
+                        i = keys.length;
+
+                    while (i--) {
+                        values.push(localStorage.getItem(keys[i]));
+                    }
+
+                    return values;
+                }
+
+
+                function varrer (nome, valor){
+                    carrinho = JSON.parse(allStorage()[1])
+                    var string = "";
+                    var nome = $("#InputNome").val()
+                    var endereco = $("#InputEndereco").val()
+                    var telefone = $("#InputNTelefone").val()
+                    var observacao = $("#observacao").val()
+                    var e = $("#FormaDePagamento option:selected").text();
+
+                    for (var i = 0; i < carrinho.length; i++) {
+                        var carrinho = JSON.parse(allStorage()[1])
+                        string += "\n" + carrinho[i]["nomeProduto"]
+                    }
+
+                    var numero = "@Model.Lista1.First().Telefone"
+                    var preco = 0
+                    for (var i = 0; i < carrinho.length; i++) {
+                        var item = carrinho[i];
+                        preco += parseFloat(carrinho[i].precoProduto) * parseInt(carrinho[i].quantidade)
+                    }
+
+
+                    var taxa = parseFloat("@Model.Lista1.First().Taxa")
+                    var novopreco = parseFloat(preco)
+                    var resultado = taxa + novopreco
+
+                    var mensagem = "👥 CLIENTE: \n Nome:  " + nome + " \n" +
+                        " Endereço:  " + endereco + " \n" +
+                        "Telefone:  " + telefone + "  \n" +
+                        " 📝 RESUMO DO PEDIDO \n" +
+                        "Produto:" + string + "\n" +
+                        "Observação:" + observacao + "\n" +
+                        " 💵 DADOS DE PAGAMENTO " + "\n" +
+                        "Forma de pagamento:" + "" + e + "\n" +
+                        "R$" + preco + "\n" +
+                        "Taxa de entrega: @Model.Lista1.First().Taxa" +
+                        "Valor total: " + resultado
+
+
+
+                    var link = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
+                    window.open(link, "_blank");
+                }
+
+                //não mexi no banco
+
+                function adicionarAoCarrinho(proID, precoProduto, nomeProduto, precoAnterior, quantidade) {
+                var item = {
+                    proID: proID,
+                    precoProduto: precoProduto,
+                    nomeProduto: nomeProduto,
+                    precoAnterior: precoAnterior,
+                    quantidade: quantidade
+                };
+            carrinho.push(item);
+            salvarNoLocalStorage("carrinho", carrinho);
+        }
     </script>
 
 </body>

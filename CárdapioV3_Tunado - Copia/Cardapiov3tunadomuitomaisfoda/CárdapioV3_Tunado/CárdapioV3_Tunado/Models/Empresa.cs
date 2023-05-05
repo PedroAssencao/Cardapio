@@ -7,6 +7,7 @@
         public string NomeEmpresa { get; set; }
         public string SenhaEmpresa { get; set; }
         public string CNPJ { get; set; }
+        public double taxaEmpresa { get; set; }
 
         public bool VerificarSenha(string Senha, string ConfirmarSenhas)
         {

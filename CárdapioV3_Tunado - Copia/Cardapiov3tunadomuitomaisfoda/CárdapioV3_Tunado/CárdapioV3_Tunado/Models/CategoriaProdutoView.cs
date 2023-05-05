@@ -4,6 +4,9 @@
     {
         public int ProID { get; set; }
         public int CategoriaID { get; set; }
+        public string Telefone { get; set; }
+        public int EmpresaID { get; set; }
+        public double Taxa { get; set; }
         public string NomeProduto { get; set; }
         public string DescricaoProduto { get; set; }
         public string NutricaoProduto { get; set; }

@@ -25,8 +25,15 @@ namespace CárdapioV3_Tunado.DAL
         }
 
 
+        public List<CategoriaProdutoView> getTodosProdutosbyEmpresa(int idEmpresa)
+        {
+            var sql = "Select ep.*, p.NomeProduto, p.DescricaoProduto, p.PrecoProduto, p.CategoriaProduto, p.ProID, c.Nome, c.CategoriaID from produtoempresa ep join Produto p on ep.ProdutoID=p.ProID join categoria c on ep.CategoriaID=c.CategoriaID where ep.EmpresaID=" + idEmpresa;
 
+            var dados = _connection.Query<CategoriaProdutoView>(sql);
+            return (List<CategoriaProdutoView>)dados;
+        }
 
+            
         public List<CategoriaProdutoView> getTodosProdutos()
         {
             var sql = "select * from Produto";

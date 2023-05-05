@@ -1,6 +1,7 @@
 ﻿using CárdapioV3_Tunado.Models;
 using Dapper;
 using MySql.Data.MySqlClient;
+using System.Text;
 
 namespace CárdapioV3_Tunado.DAL
 {
@@ -59,6 +60,30 @@ namespace CárdapioV3_Tunado.DAL
             var query = "delete from Empresa where EmpresaID=@EmpresaID";
 
             int qtdinserida = _connection.Execute(query, deletarEmpresa);
+        }
+
+        public string Criptografar(string SenhaEmpresa)
+        {
+            //cripto=grafa
+            var a = Encoding.UTF8.GetBytes(SenhaEmpresa);
+            var b = Convert.ToBase64String(a);
+            return b;
+        }
+
+        public string Descriptografar(string SenhaEmpresa)
+        {
+
+            //descripotografa
+            var c = Convert.FromBase64String(SenhaEmpresa);
+            var d = Encoding.UTF8.GetString(c);
+            return d;
+        }
+
+        public void AtualizarTaxa(Empresa Taxa)
+        {
+            var query = "update Empresa set taxaEmpresa=@taxaEmpresa where EmpresaID=@EmpresaID";
+
+            int qtdinserida = _connection.Execute(query, Taxa);
         }
     }
 }

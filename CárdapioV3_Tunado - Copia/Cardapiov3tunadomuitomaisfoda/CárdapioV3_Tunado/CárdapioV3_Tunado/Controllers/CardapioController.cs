@@ -8,20 +8,46 @@ namespace CárdapioV3_Tunado.Controllers
     {
         ListCategoriaProduto cardapio2 = new ListCategoriaProduto();
         CardapioDAO cardapio = new CardapioDAO();
+        EmpresaDAO empresa = new EmpresaDAO();
         public IActionResult Index()
         {
             
             return View();
         }
 
-        public IActionResult Foda()
+        public IActionResult Foda(int idEmpresa)
         {
-            List<CategoriaProdutoView> lista = cardapio.getTodosProdutos();
+            List<CategoriaProdutoView> lista = cardapio.getTodosProdutosbyEmpresa(idEmpresa);
             List<CategoriaProdutoView> listaCategoria = cardapio.getTodosCategorias();
+
+            var emp = empresa.getTodasEmpresas().First(x => x.EmpresaID == lista.First().EmpresaID);
+             
+            lista = lista.Select(x =>
+            {
+                x.Telefone = emp.Telefone;
+                return x;
+            }).ToList();
+            listaCategoria.Select(x =>
+            {
+                x.Telefone = emp.Telefone;
+                return x;
+            }).ToList();
+
+            lista = lista.Select(x =>
+            {
+                x.Taxa = emp.taxaEmpresa;
+                return x;
+            }).ToList();
+            listaCategoria.Select(x =>
+            {
+                x.Taxa = emp.taxaEmpresa;
+                return x;
+            }).ToList();
+
             var listas = new ListCategoriaProduto
             {
-                Lista1 = cardapio.getTodosCategorias(),
-                Lista2 = cardapio.getTodosProdutos()
+                Lista1 = lista,
+                Lista2 = lista
             };
             return View(listas);
         }

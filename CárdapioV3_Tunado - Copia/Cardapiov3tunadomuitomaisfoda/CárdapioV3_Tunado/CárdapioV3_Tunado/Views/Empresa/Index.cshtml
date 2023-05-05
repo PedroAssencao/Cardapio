@@ -3,7 +3,7 @@
 *@
 @{
 }
-<h1> Categorias </h1>
+<h1> Empresas </h1>
 <br />
 <td><a class="btn btn-outline-secondary" href="/Cardapio/Foda">Voltar</a></td>
 <td><a class="btn btn-primary" href="/Empresa/Create">Nova</a></td>
@@ -16,6 +16,7 @@
                 <th scope="col">EmpresaID</th>
                 <th scope="col">Nome da Empresa</th>
                 <th scope="col">Telefone da Empresa</th>
+                <th scope="col">Taxa de Entrega</th>
             </tr>
         </thead>
         <tbody>
@@ -25,8 +26,8 @@
                     <td>@item.EmpresaID</td>
                     <td>@item.NomeEmpresa</td>
                     <td>@item.Telefone</td>
-                    @*<td><a class="btn btn-outline-warning" href="/Categoria/Atualizar/@item.CategoriaID">Editar</a></td>
-                    <td><a class="btn btn-outline-danger" href="/Categoria/Apagar/@item.CategoriaID">Deletar</a></td>*@
+                    <td>@item.taxaEmpresa</td>
+                    <td><a class="btn btn-outline-danger" href="/Empresa/cu?idEmpresa=@item.EmpresaID">Taxa</a></td>
                 </tr>
             }
         </tbody>

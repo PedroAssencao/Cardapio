@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7vwfKRMnVKA0dwtEmSKZV2VJVxTb1TeFBj2F7hZUMN45IMstmOrHGkTINQPN8BoRAljM6/sdn2JPt6fb8VNUUA==",
+  "dgSpecHash": "ThiFD3DHVl/S7qxm9QvsHooCF96IlqeISgQ7aGuAoZJckpyICvaRnnbvGG4QJ946QI8Zgt+iMIBzxPdbEvr85w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\android\\Desktop\\Cardapio-main (2)\\Cardapio-main\\CárdapioV3_Tunado - Copia\\Cardapiov3tunadomuitomaisfoda\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\CárdapioV3_Tunado.csproj",
+  "projectFilePath": "C:\\Users\\android\\Downloads\\Cardapio-Criptografia-Senha\\CárdapioV3_Tunado - Copia\\Cardapiov3tunadomuitomaisfoda\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\CárdapioV3_Tunado.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\android\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\android\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
