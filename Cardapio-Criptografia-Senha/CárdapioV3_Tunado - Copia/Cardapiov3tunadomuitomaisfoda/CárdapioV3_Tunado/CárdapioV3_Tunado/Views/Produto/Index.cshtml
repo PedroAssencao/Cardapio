@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1> Produtos </h1>
+<br />
+<td><a class="btn btn-outline-secondary" href="/Cardapio/Foda">Voltar</a></td>
+<td><a class="btn btn-primary" href="/Produto/Create">Novo Produto</a></td>
+<td><a class="btn btn-outline-dark" href="/Categoria/Index?idEmpresa=">Categorias</a></td>
+<td><a class="btn btn-outline-info" href="/ProdutoEmpresa/Index?idEmpresa=">ProdutoEmpresa</a></td>
+
+
+<div id="divtabela">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ProdutoID</th>
+                <th scope="col">Nome do Produto</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Nutrição do Produto</th>
+                <th scope="col">Preço do Produto</th>
+                <th scope="col">Categoria do Produto</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in @ViewBag.listaProdutosController)
+            {
+                <tr>
+                    <td>@item.ProID</td>
+                    <td>@item.NomeProduto</td>
+                    <td>@item.DescricaoProduto</td>
+                    <td>@item.NutricaoProduto</td>
+                    <td>@item.PrecoProduto</td>
+                    <td>@item.CategoriaProduto</td>
+                    <td><a class="btn btn-outline-warning" href="/Produto/Atualizar/@item.ProID">Editar</a></td>
+                    <td><a class="btn btn-outline-danger" href="/Produto/Apagar/@item.ProID">Deletar</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
