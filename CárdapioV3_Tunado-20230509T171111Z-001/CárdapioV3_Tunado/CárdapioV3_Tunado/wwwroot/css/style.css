@@ -459,9 +459,6 @@ b {
     height: auto;
 }
 
-.ScroolBAr::-webkit-scrollbar-track {
-    background-color: #fff;
-}
 
 .ScroolBAr::-webkit-scrollbar-thumb {
     background-color: #aaa;

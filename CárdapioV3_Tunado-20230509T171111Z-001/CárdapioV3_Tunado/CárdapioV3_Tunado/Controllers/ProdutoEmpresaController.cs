@@ -25,16 +25,25 @@ namespace CárdapioV3_Tunado.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(int ProdutoID, int CategoriaID)
+        public IActionResult Create(bool continuar = true)
         {
-            var idEmpresa = int.Parse(User.Identity!.Name);
-            ProdutoEmpresa novoProdutoEmpresa = new ProdutoEmpresa();
-            novoProdutoEmpresa.EmpresaID = idEmpresa;
-            novoProdutoEmpresa.ProdutoID = ProdutoID;
-            novoProdutoEmpresa.CategoriaID = CategoriaID;
-            empresa.InsertProdutoEmpresa(novoProdutoEmpresa);
+            if (continuar == true)
+            {
+                var idEmpresa = int.Parse(User.Identity!.Name);
+                var CategoriaID = int.Parse(Request.Cookies["ID"]);
+                var ProdutoID = int.Parse(Request.Cookies["IDProduto"]);
+                ProdutoEmpresa novoProdutoEmpresa = new ProdutoEmpresa();
+                novoProdutoEmpresa.EmpresaID = idEmpresa;
+                novoProdutoEmpresa.ProdutoID = ProdutoID;
+                novoProdutoEmpresa.CategoriaID = CategoriaID;
+                empresa.InsertProdutoEmpresa(novoProdutoEmpresa);
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         [HttpGet]
