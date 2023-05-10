@@ -1,0 +1,113 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = CárdapioV3_Tunado
+build_property.RootNamespace = CárdapioV3_Tunado
+build_property.ProjectDir = C:\Users\android\Desktop\Cardapio\Cardápio\src\CárdapioV3_Tunado\CárdapioV3_Tunado\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\android\Desktop\Cardapio\Cardápio\src\CárdapioV3_Tunado\CárdapioV3_Tunado
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Cardapio/Atualizar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZGFwaW9cQXR1YWxpemFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Cardapio/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZGFwaW9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Cardapio/Exibir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZGFwaW9cRXhpYmlyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Cardapio/Foda.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZGFwaW9cRm9kYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Cardapio/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZGFwaW9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Categoria/Atualizar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXEF0dWFsaXphci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Categoria/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Categoria/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Empresa/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Empresa/cu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxjdS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Empresa/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Empresa/Logar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxMb2dhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/ProdutoEmpresa/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b0VtcHJlc2FcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/ProdutoEmpresa/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b0VtcHJlc2FcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Produto/Atualizar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b1xBdHVhbGl6YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Produto/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Produto/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/android/Desktop/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-84j7niadnu
