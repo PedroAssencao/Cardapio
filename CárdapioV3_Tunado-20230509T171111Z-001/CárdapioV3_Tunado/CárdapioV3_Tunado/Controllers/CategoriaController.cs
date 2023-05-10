@@ -34,6 +34,12 @@ namespace CárdapioV3_Tunado.Controllers
             NovaCategoria.CategoriaDescricao = CategoriaDescricao;
             NovaCategoria.CategoriaFoto = Foto;
             categoria.InsertCategoria(NovaCategoria);
+            int ID = categoria.CategoriaIDRetornar();
+            var CookieOptions = new CookieOptions
+            {
+                Expires = DateTime.Now.AddMinutes(30)
+            };
+            Response.Cookies.Append("ID", ID.ToString(), CookieOptions);
             return RedirectToAction("Index");
 
         }

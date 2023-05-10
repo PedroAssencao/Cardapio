@@ -26,6 +26,14 @@ namespace CárdapioV3_Tunado.DAL
             string query = "Insert Categoria (Nome, CategoriaDescricao, CategoriaFoto) values (@Nome, @CategoriaDescricao, @CategoriaFoto)";
 
             int qtdinserida = _connection.Execute(query, novaCategoria);
+
+        }
+
+        public int CategoriaIDRetornar()
+        {
+            int result = _connection.QueryFirst<int>("select Max(CategoriaID) from Categoria ");
+
+            return result;
         }
 
         //update

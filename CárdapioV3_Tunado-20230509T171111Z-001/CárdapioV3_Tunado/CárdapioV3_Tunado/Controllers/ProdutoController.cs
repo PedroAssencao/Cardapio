@@ -35,6 +35,12 @@ namespace CárdapioV3_Tunado.Controllers
             NovoProduto.PrecoProduto = PrecoProduto;
             NovoProduto.CategoriaProduto = CategoriaProduto;
             produto.InsertProduto(NovoProduto);
+            int ID = produto.ProdutoIDRetornar();
+            var CookieOptions = new CookieOptions
+            {
+                Expires = DateTime.Now.AddMinutes(50)
+            };
+            Response.Cookies.Append("IDProduto", ID.ToString(), CookieOptions);
             return RedirectToAction("Index");
 
         }

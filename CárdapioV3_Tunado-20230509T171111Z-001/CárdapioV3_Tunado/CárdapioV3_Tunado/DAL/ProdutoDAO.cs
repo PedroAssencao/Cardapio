@@ -28,6 +28,13 @@ namespace CárdapioV3_Tunado.DAL
             int qtdinserida = _connection.Execute(query, novoProduto);
         }
 
+        public int ProdutoIDRetornar()
+        {
+            int result = _connection.QueryFirst<int>("select Max(CategoriaID) from Categoria ");
+
+            return result;
+        }
+
         //update
 
         public void UptdateProduto(CategoriaProdutoView EditarProduto)
