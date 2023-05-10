@@ -1,2 +1,0 @@
-exibir a quantidade na mensagem do whatsapp 
-reconhecer sempre o ID da empresa ao logar
