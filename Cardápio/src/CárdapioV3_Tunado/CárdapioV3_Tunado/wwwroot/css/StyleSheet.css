@@ -218,6 +218,7 @@ body {
 .cadastrion-button {
     position: absolute;
     margin-top: 300px;
+    left: 715px;
     text-decoration: none;
     font-size: 0.93rem;
     font-weight: 500;

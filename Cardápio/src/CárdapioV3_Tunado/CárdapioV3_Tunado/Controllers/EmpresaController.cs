@@ -26,7 +26,8 @@ namespace CárdapioV3_Tunado.Controllers
 
         public IActionResult Index(int idEmpresa)
         {
-            ViewBag.listaEmpresas = Estabelecimento.getTodasEmpresas();
+            idEmpresa = int.Parse(User.Identity!.Name);
+            ViewBag.listaEmpresas = Estabelecimento.getTodasEmpresasbyID(idEmpresa);
             return View();
         }
 

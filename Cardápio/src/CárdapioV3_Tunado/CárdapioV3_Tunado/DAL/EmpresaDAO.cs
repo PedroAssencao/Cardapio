@@ -38,12 +38,20 @@ namespace CárdapioV3_Tunado.DAL
             return dados;
         }
 
+        public List<Empresa> getTodasEmpresasbyID(int idEmpresa)
+        {
+            var query = "select * from Empresa where EmpresaID=" + idEmpresa;
+
+            var dados = (List<Empresa>)_connection.Query<Empresa>(query);
+            return dados;
+        }
+
 
 
         //Insert
         public void InsertEmpresa(Empresa novaEmpresa)
         {
-            var query = "insert Empresa (NomeEmpresa, SenhaEmpresa, Telefone, CNPJ) values (@NomeEmpresa, @SenhaEmpresa, @Telefone, @CNPJ)";
+            var query = "insert Empresa (NomeEmpresa, SenhaEmpresa, Telefone, CNPJ, FotoEmpresa) values (@NomeEmpresa, @SenhaEmpresa, @Telefone, @CNPJ, @FotoEmpresa)";
 
             int qtdinserida = _connection.Execute(query, novaEmpresa);
         }
