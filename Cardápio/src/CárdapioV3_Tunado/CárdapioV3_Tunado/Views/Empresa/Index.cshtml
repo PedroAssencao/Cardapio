@@ -3,10 +3,19 @@
 *@
 @{
 }
+
 <h1> Empresas </h1>
 <br />
 <td><a class="btn btn-outline-secondary" href="/Cardapio/Foda">Voltar para o Cardapio</a></td>
 <td><a class="btn btn-primary" href="/Empresa/Create">Nova</a></td>
+<script src="~/js/javascript.js"></script>
+<form method="post" asp-controller="Empresa" asp-action="Logout">
+    <br />
+    <button class="btn btn-info" href="/Empresa/Logout" Nova>Logout</button>
+</form>
+<input type="text" value="https://localhost:44313/cardapio/foda?idempresa=@int.Parse(User.Identity!.Name)" id="myInput">
+
+<button onclick="myFunction()">Copiar</button>
 
 
 
