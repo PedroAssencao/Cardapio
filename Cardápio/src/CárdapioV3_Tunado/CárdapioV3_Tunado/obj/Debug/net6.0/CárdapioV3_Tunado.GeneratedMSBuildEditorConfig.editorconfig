@@ -27,10 +27,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZGFwaW9cRXhpYmlyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/android/Downloads/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Cardapio/Foda.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZGFwaW9cRm9kYS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/android/Downloads/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Cardapio/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZGFwaW9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -47,12 +43,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/android/Downloads/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Empresa/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxDcmVhdGUuY3NodG1s
+[C:/Users/android/Downloads/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Empresa/Atualizar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxBdHVhbGl6YXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/android/Downloads/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Empresa/cu.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxjdS5jc2h0bWw=
+[C:/Users/android/Downloads/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Empresa/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/android/Downloads/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Empresa/Index.cshtml]

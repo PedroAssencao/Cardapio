@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cNgdRqH6DGhbAl3Ia2rFitg/TY7a8eI65uWjhJZb6do=",
+  "Hash": "o5fqR6bHlJCqfs7xd6IhkfwN25aqAAPlBuGQAOL8aIY=",
   "Source": "CárdapioV3_Tunado",
   "BasePath": "_content/CárdapioV3_Tunado",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\StyleSheet.css"
+    },
+    {
+      "Identity": "C:\\Users\\android\\Downloads\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\css\\telaEmpresa.css",
+      "SourceId": "CárdapioV3_Tunado",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\android\\Downloads\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\",
+      "BasePath": "_content/CárdapioV3_Tunado",
+      "RelativePath": "css/telaEmpresa.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\telaEmpresa.css"
     },
     {
       "Identity": "C:\\Users\\android\\Downloads\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\favicon.ico",

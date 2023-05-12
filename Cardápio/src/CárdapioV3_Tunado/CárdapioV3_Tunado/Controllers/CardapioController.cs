@@ -10,16 +10,14 @@ namespace CárdapioV3_Tunado.Controllers
         ListCategoriaProduto cardapio2 = new ListCategoriaProduto();
         CardapioDAO cardapio = new CardapioDAO();
         EmpresaDAO empresa = new EmpresaDAO();
-        public IActionResult Index()
-        {
-            
-            return View();
-        }
 
         
-        public IActionResult Foda(int idEmpresa)
+        public IActionResult Index(int idEmpresa)
         {
-            idEmpresa = int.Parse(User.Identity!.Name);
+            if (User.Identity?.Name != null)
+            {
+                idEmpresa = int.Parse(User.Identity!.Name);
+            }
             List<CategoriaProdutoView> lista = cardapio.getTodosProdutosbyEmpresa(idEmpresa);
             List<CategoriaProdutoView> listaCategoria = cardapio.getTodasCategoriasbyEmpresa(idEmpresa);            
 
