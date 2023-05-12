@@ -19,8 +19,9 @@ namespace CárdapioV3_Tunado.Controllers
         
         public IActionResult Foda(int idEmpresa)
         {
+            idEmpresa = int.Parse(User.Identity!.Name);
             List<CategoriaProdutoView> lista = cardapio.getTodosProdutosbyEmpresa(idEmpresa);
-            List<CategoriaProdutoView> listaCategoria = cardapio.getTodosCategorias();
+            List<CategoriaProdutoView> listaCategoria = cardapio.getTodasCategoriasbyEmpresa(idEmpresa);            
 
             var emp = empresa.getTodasEmpresas().First(x => x.EmpresaID == lista.First().EmpresaID);
              
@@ -69,7 +70,7 @@ namespace CárdapioV3_Tunado.Controllers
             var listas = new ListCategoriaProduto
             {
                 Lista1 = lista,
-                Lista2 = lista
+                Lista2 = listaCategoria
             };
             return View(listas);
         }

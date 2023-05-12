@@ -4,17 +4,15 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CárdapioV3_Tunado.Controllers
-{        
-    [Authorize]
+{
+    [Authorize(Roles = "AdminFoda2006")]
     public class CategoriaController : Controller
     {
         CategoriaDAO categoria = new CategoriaDAO();
-        CardapioDAO cardapio = new CardapioDAO();
 
         public IActionResult Index()
         {
-            var idEmpresa = int.Parse(User.Identity!.Name);
-            ViewBag.listaCategorias = cardapio.getTodosProdutosbyEmpresa(idEmpresa);
+            ViewBag.listaCategorias = categoria.getTodasCategorias();
             return View();
         }
 
@@ -34,12 +32,6 @@ namespace CárdapioV3_Tunado.Controllers
             NovaCategoria.CategoriaDescricao = CategoriaDescricao;
             NovaCategoria.CategoriaFoto = Foto;
             categoria.InsertCategoria(NovaCategoria);
-            int ID = categoria.CategoriaIDRetornar();
-            var CookieOptions = new CookieOptions
-            {
-                Expires = DateTime.Now.AddMinutes(30)
-            };
-            Response.Cookies.Append("ID", ID.ToString(), CookieOptions);
             return RedirectToAction("Index");
 
         }
@@ -49,10 +41,7 @@ namespace CárdapioV3_Tunado.Controllers
         [HttpGet]
         public IActionResult Atualizar(int id)
         {
-            var idEmpresa = int.Parse(User.Identity!.Name);
-            EmpresaDAO empresa = new EmpresaDAO();
             ViewBag.CategoriaAtualizar = categoria.getTodasCategorias().Where(x => x.CategoriaID == id).FirstOrDefault();
-            ViewBag.listaIdEmpresa = empresa.getTodasEmpresas().FirstOrDefault(x => x.EmpresaID == idEmpresa);  
             return View();
         }
 

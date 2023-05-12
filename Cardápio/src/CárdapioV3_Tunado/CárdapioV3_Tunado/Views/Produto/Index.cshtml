@@ -5,10 +5,18 @@
 }
 <h1> Produtos </h1>
 <br />
-<td><a class="btn btn-outline-secondary" href="/Cardapio/Foda">Voltar</a></td>
+<td><a class="btn btn-outline-secondary" href="/Cardapio/Foda">Voltar para o Cardapio</a></td>
 <td><a class="btn btn-primary" href="/Produto/Create">Novo Produto</a></td>
-<td><a class="btn btn-outline-dark" href="/Categoria/Index?idEmpresa=">Categorias</a></td>
-<td><a class="btn btn-outline-info" href="/ProdutoEmpresa/Index?idEmpresa=">ProdutoEmpresa</a></td>
+@if (User.IsInRole("AdminFoda2006"))
+{
+    <td><a class="btn btn-outline-dark" href="/Categoria/Index?idEmpresa=">Categorias</a></td>
+}
+<td><a class="btn btn-outline-info" href="/Empresa/Index?idEmpresa=">Empresa</a></td>
+
+@if (ViewBag.ProdutoID !=null)
+{
+    <p class="alert-success">Produto criado com sucesso, ID do Produto:@ViewBag.ProdutoID</p>
+}
 
 
 <div id="divtabela">
@@ -20,7 +28,6 @@
                 <th scope="col">Descrição</th>
                 <th scope="col">Nutrição do Produto</th>
                 <th scope="col">Preço do Produto</th>
-                <th scope="col">Categoria do Produto</th>
             </tr>
         </thead>
         <tbody>
@@ -32,7 +39,6 @@
                     <td>@item.DescricaoProduto</td>
                     <td>@item.NutricaoProduto</td>
                     <td>@item.PrecoProduto</td>
-                    <td>@item.CategoriaProduto</td>
                     <td><a class="btn btn-outline-warning" href="/Produto/Atualizar/@item.ProID">Editar</a></td>
                     @*<td><a class="btn btn-outline-danger" href="/Produto/Apagar/@item.ProID">Deletar</a></td>*@
                 </tr>

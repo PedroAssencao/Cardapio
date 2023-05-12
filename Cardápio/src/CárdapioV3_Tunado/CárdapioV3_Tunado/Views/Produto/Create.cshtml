@@ -3,7 +3,7 @@
 *@
 @{
 }
-<h1>Nova Categoria</h1>
+<h1>Novo Produto</h1>
 <form action="/Produto/Create" method="post">
     <div class="form-group">
         <label for="NomeProduto">Nome do Produto</label>
@@ -21,10 +21,16 @@
         <label for="PrecoProduto">Preço do Produto</label>
         <input type="text" class="form-control" id="PrecoProduto" name="PrecoProduto" aria-describedby="PrecoProduto" placeholder="Digite o Preço do Produto" required>
     </div>
-    <div class="form-group">
-        <label for="CategoriaProduto">Categoria do Produto</label>
-        <input type="text" class="form-control" id="CategoriaProduto" name="CategoriaProduto" aria-describedby="CategoriaProduto" placeholder="Digite o ID da categoria do produto" required>
-    </div>
+
+    <br />
+    <label for="Categorias">Escolha uma categoria:</label>
+    <select name="Categorias" id="Categorias">
+        @foreach (var item in ViewBag.listaCategorias)
+        {
+            <option value="@item.CategoriaID">@item.Nome</option>
+        }
+    </select>
+    <br><br>
     <br />
     <button type="submit" class="btn btn-success">Salvar</button>
 </form>

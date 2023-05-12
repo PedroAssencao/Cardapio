@@ -11,6 +11,7 @@ using Org.BouncyCastle.Asn1.Iana;
 using System.Data.SqlClient;
 using System.Security.Claims;
 using System.Text;
+using Microsoft.Extensions.Options;
 
 namespace CárdapioV3_Tunado.Controllers
 {
@@ -26,7 +27,8 @@ namespace CárdapioV3_Tunado.Controllers
 
         public IActionResult Index(int idEmpresa)
         {
-            ViewBag.listaEmpresas = Estabelecimento.getTodasEmpresas();
+            idEmpresa = int.Parse(User.Identity!.Name);
+            ViewBag.listaEmpresas = Estabelecimento.getTodasEmpresasbyID(idEmpresa);
             return View();
         }
 
@@ -76,11 +78,14 @@ namespace CárdapioV3_Tunado.Controllers
 
                 var empresas = conexao.Query<Empresa>(query).ToList();
                 var empresa = empresas.FirstOrDefault(x => x.NomeEmpresa == NomeEmpresa && Estabelecimento.Descriptografar(x.SenhaEmpresa) == SenhaEmpresa);
+
+                string role = NomeEmpresa == "AdminFoda2006" ? "AdminFoda2006" : "Usuario";
                 if (empresa != null)
                 {
                     var claims = new List<Claim>
                     {
                         new Claim(ClaimTypes.Name, empresa.EmpresaID.ToString()),
+                        new Claim(ClaimTypes.Role, role),
                         new Claim(ClaimTypes.NameIdentifier, NomeEmpresa),
                     };
 
@@ -88,7 +93,7 @@ namespace CárdapioV3_Tunado.Controllers
                     var principal = new ClaimsPrincipal(identity);
 
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-                    return RedirectToAction("Index", "Categoria");
+                    return RedirectToAction("Index", "Produto");
                 }
                 else
                 {

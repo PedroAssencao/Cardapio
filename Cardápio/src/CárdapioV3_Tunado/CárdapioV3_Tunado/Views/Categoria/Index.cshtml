@@ -3,16 +3,11 @@
 *@
 @{
 }
-@using CárdapioV3_Tunado.DAL;
-@{CategoriaDAO categoria = new CategoriaDAO();}
 <h1> Categorias </h1>
 <br />
-<td><a class="btn btn-outline-secondary" href="/Cardapio/Foda">Voltar</a></td>
-<td><a class="btn btn-primary" href="/Categoria/Create">Nova Categoria</a></td>
-<td><a class="btn btn-outline-dark" href="/Produto/Index?idEmpresa=">Produtos</a></td>
-<td><a class="btn btn-outline-info" href="/ProdutoEmpresa/Index?idEmpresa=">ProdutoEmpresa</a></td>
-<br />
-
+<td><a class="btn btn-outline-secondary" href="/Cardapio/Foda">Voltar ao Cardápio</a></td>
+<td><a class="btn btn-primary" href="/Categoria/Create">Nova</a></td>
+<td><a class="btn btn-primary" href="/Produto/Index">Produtos</a></td>
 
 
 <div id="divtabela">
@@ -26,7 +21,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in @ViewBag.listaCategorias)
+            @foreach (var item in ViewBag.listaCategorias)
             {
                 <tr>
                     <td>@item.CategoriaID</td>
@@ -34,6 +29,7 @@
                     <td>@item.CategoriaDescricao</td>
                     <td>@item.CategoriaFoto</td>
                     <td><a class="btn btn-outline-warning" href="/Categoria/Atualizar/@item.CategoriaID">Editar</a></td>
+                    <td><a class="btn btn-outline-danger" href="/Categoria/Apagar/@item.CategoriaID">Deletar</a></td>
                 </tr>
             }
         </tbody>

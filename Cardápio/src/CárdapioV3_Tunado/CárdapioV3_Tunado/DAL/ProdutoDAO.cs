@@ -23,14 +23,14 @@ namespace CárdapioV3_Tunado.DAL
 
         public void InsertProduto(CategoriaProdutoView novoProduto)
         {
-            string query = "Insert Produto (NomeProduto, DescricaoProduto, NutricaoProduto, PrecoProduto, CategoriaProduto) values (@NomeProduto, @DescricaoProduto, @NutricaoProduto, @PrecoProduto, @CategoriaProduto)";
+            string query = "Insert Produto (NomeProduto, DescricaoProduto, NutricaoProduto, PrecoProduto, CategoriaID, EmpresaID) values (@NomeProduto, @DescricaoProduto, @NutricaoProduto, @PrecoProduto, @CategoriaID, @EmpresaID)";
 
             int qtdinserida = _connection.Execute(query, novoProduto);
         }
 
         public int ProdutoIDRetornar()
         {
-            int result = _connection.QueryFirst<int>("select Max(CategoriaID) from Categoria ");
+            int result = _connection.QueryFirst<int>("select Max(ProID) from Produto ");
 
             return result;
         }

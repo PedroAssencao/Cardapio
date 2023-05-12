@@ -19,28 +19,33 @@ namespace CárdapioV3_Tunado.Controllers
 
         //create
         [HttpGet]
-        public IActionResult create()
+        public IActionResult create(int idEmpresa)
         {
+            CardapioDAO cardapio = new CardapioDAO();
+            idEmpresa = int.Parse(User.Identity!.Name);
+            ViewBag.listaCategorias = cardapio.getTodasCategoriasbyEmpresa(idEmpresa);
             return View();
 
         }
 
         [HttpPost]
-        public IActionResult create(string NomeProduto, string ProdutoDescricao, string NutricaoProduto, double PrecoProduto, int CategoriaProduto)
+        public IActionResult create(string NomeProduto, string ProdutoDescricao, string NutricaoProduto, double PrecoProduto, int Categorias)
         {
+            int idEmpresa = int.Parse(User.Identity!.Name);
             CategoriaProdutoView NovoProduto = new CategoriaProdutoView();
             NovoProduto.NomeProduto = NomeProduto;
             NovoProduto.DescricaoProduto = ProdutoDescricao;
             NovoProduto.NutricaoProduto = NutricaoProduto;
             NovoProduto.PrecoProduto = PrecoProduto;
-            NovoProduto.CategoriaProduto = CategoriaProduto;
+            NovoProduto.CategoriaID = Categorias;
+            NovoProduto.EmpresaID = idEmpresa;
             produto.InsertProduto(NovoProduto);
-            int ID = produto.ProdutoIDRetornar();
-            var CookieOptions = new CookieOptions
-            {
-                Expires = DateTime.Now.AddMinutes(50)
-            };
-            Response.Cookies.Append("IDProduto", ID.ToString(), CookieOptions);
+            //int ID = produto.ProdutoIDRetornar();
+            //var CookieOptions = new CookieOptions
+            //{
+            //    Expires = DateTime.Now.AddSeconds(50)
+            //};
+            //Response.Cookies.Append("IDProduto", ID.ToString(), CookieOptions);
             return RedirectToAction("Index");
 
         }

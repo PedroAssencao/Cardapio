@@ -17,6 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Categoria\Atualizar.cshtml" />
+    <None Include="Views\Categoria\Create.cshtml" />
+    <None Include="Views\Categoria\Index.cshtml" />
     <None Include="Views\Empresa\Atualizar.cshtml" />
   </ItemGroup>
 
