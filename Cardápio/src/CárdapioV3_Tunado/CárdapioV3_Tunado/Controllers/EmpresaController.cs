@@ -80,7 +80,7 @@ namespace CárdapioV3_Tunado.Controllers
                 var empresas = conexao.Query<Empresa>(query).ToList();
                 var empresa = empresas.FirstOrDefault(x => x.NomeEmpresa == NomeEmpresa && Estabelecimento.Descriptografar(x.SenhaEmpresa) == SenhaEmpresa);
 
-                string role = NomeEmpresa == "AdminFoda2006" ? "AdminFoda2006" : "Usuario";
+                string role = NomeEmpresa == "AdminIncrivel2006" ? "AdminIncrivel2006" : "Usuario";
                 if (empresa != null)
                 {
                     var claims = new List<Claim>
@@ -90,7 +90,7 @@ namespace CárdapioV3_Tunado.Controllers
                         new Claim(ClaimTypes.NameIdentifier, NomeEmpresa),
                     };
 
-                    var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme) ;
                     var principal = new ClaimsPrincipal(identity);
 
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);

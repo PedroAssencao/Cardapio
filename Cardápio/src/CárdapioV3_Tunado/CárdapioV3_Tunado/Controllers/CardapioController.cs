@@ -95,7 +95,7 @@ namespace CárdapioV3_Tunado.Controllers
             NovoProduto.PrecoProduto = preco;
             NovoProduto.CategoriaProduto = Categoria;
             cardapio.InsertProdutos(NovoProduto);
-            return RedirectToAction("Foda");
+            return RedirectToAction("Index");
 
         }
         //atualizar
@@ -119,7 +119,7 @@ namespace CárdapioV3_Tunado.Controllers
             AtualizarProduto.CategoriaProduto = CategoriaProduto;
             cardapio.UptdateProdutos(AtualizarProduto);
 
-            return RedirectToAction("Foda");
+            return RedirectToAction("Index");
         }
         //apagar
         [HttpGet]
@@ -130,7 +130,7 @@ namespace CárdapioV3_Tunado.Controllers
             apagarproduto.ProID = Convert.ToInt32(id);
             cardapio.ApagarProdutos(apagarproduto);
 
-            return RedirectToAction("foda");
+            return RedirectToAction("Index");
         }
     }
 }
