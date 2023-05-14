@@ -89,11 +89,11 @@ namespace CárdapioV3_Tunado.DAL
             return d;
         }
 
-        public void AtualizarTaxa(Empresa Taxa)
+        public void AtualizarEmpresa(Empresa novaEmpresa)
         {
-            var query = "update Empresa set taxaEmpresa=@taxaEmpresa where EmpresaID=@EmpresaID";
+            var query = "update Empresa set NomeEmpresa=@NomeEmpresa, SenhaEmpresa=@SenhaEmpresa, CNPJ=@CNPJ, Telefone=@Telefone, taxaEmpresa=@taxaEmpresa, FotoEmpresa=@FotoEmpresa where EmpresaID=@EmpresaID";
 
-            int qtdinserida = _connection.Execute(query, Taxa);
+            int qtdinserida = _connection.Execute(query, novaEmpresa);
         }
     }
 }

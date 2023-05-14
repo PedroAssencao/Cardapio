@@ -12,6 +12,8 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LoginPath = "/Empresa/Logar";
         options.Cookie.Name = "EmpresaDados";
         options.LogoutPath = "/Empresa/Logout";
+        options.AccessDeniedPath = "/Empresa/Logar";
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
     });
 
 var app = builder.Build();
@@ -36,6 +38,6 @@ app.UseCookiePolicy();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Cardapio}/{action=Foda}/{id?}");
+    pattern: "{controller=Empresa}/{action=Index}/{id?}");
 
 app.Run();

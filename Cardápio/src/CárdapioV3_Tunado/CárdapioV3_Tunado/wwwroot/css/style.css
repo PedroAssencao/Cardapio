@@ -21,6 +21,7 @@ html, body {
 
 
 #btn-voltar {
+    display: none;
     position: absolute;
     bottom: 10px;
     right: 10px;

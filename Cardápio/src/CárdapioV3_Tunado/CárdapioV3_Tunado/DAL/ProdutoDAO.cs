@@ -39,7 +39,7 @@ namespace CárdapioV3_Tunado.DAL
 
         public void UptdateProduto(CategoriaProdutoView EditarProduto)
         {
-            string query = "update Produto set NomeProduto=@NomeProduto, DescricaoProduto=@DescricaoProduto, NutricaoProduto=@NutricaoProduto, PrecoProduto=@PrecoProduto, CategoriaProduto=@CategoriaProduto where ProID=@ProID";
+            string query = "update Produto set NomeProduto=@NomeProduto, DescricaoProduto=@DescricaoProduto, NutricaoProduto=@NutricaoProduto, PrecoProduto=@PrecoProduto, CategoriaID=@CategoriaID, EmpresaID=@EmpresaID where ProID=@ProID";
 
             int qtdAtualizada = _connection.Execute(query, EditarProduto);
 

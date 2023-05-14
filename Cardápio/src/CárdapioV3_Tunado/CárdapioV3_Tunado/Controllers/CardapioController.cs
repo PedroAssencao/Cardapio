@@ -10,16 +10,14 @@ namespace CárdapioV3_Tunado.Controllers
         ListCategoriaProduto cardapio2 = new ListCategoriaProduto();
         CardapioDAO cardapio = new CardapioDAO();
         EmpresaDAO empresa = new EmpresaDAO();
-        public IActionResult Index()
-        {
-            
-            return View();
-        }
 
         
-        public IActionResult Foda(int idEmpresa)
+        public IActionResult Index(int idEmpresa)
         {
-            idEmpresa = int.Parse(User.Identity!.Name);
+            if (User.Identity?.Name != null)
+            {
+                idEmpresa = int.Parse(User.Identity!.Name);
+            }
             List<CategoriaProdutoView> lista = cardapio.getTodosProdutosbyEmpresa(idEmpresa);
             List<CategoriaProdutoView> listaCategoria = cardapio.getTodasCategoriasbyEmpresa(idEmpresa);            
 
@@ -97,7 +95,7 @@ namespace CárdapioV3_Tunado.Controllers
             NovoProduto.PrecoProduto = preco;
             NovoProduto.CategoriaProduto = Categoria;
             cardapio.InsertProdutos(NovoProduto);
-            return RedirectToAction("Foda");
+            return RedirectToAction("Index");
 
         }
         //atualizar
@@ -121,7 +119,7 @@ namespace CárdapioV3_Tunado.Controllers
             AtualizarProduto.CategoriaProduto = CategoriaProduto;
             cardapio.UptdateProdutos(AtualizarProduto);
 
-            return RedirectToAction("Foda");
+            return RedirectToAction("Index");
         }
         //apagar
         [HttpGet]
@@ -132,7 +130,7 @@ namespace CárdapioV3_Tunado.Controllers
             apagarproduto.ProID = Convert.ToInt32(id);
             cardapio.ApagarProdutos(apagarproduto);
 
-            return RedirectToAction("foda");
+            return RedirectToAction("Index");
         }
     }
 }

@@ -31,13 +31,18 @@
     <div class="form-group">
         <label for="PrecoProduto">Preço</label>
         <input type="text" class="form-control" id="PrecoProduto" value="@ViewBag.ProdutoAtualizar.PrecoProduto" name="PrecoProduto">
-    </div>
+    </div>]
 
-    <div class="form-group">
-        <label for="CategoriaProduto">Categoria do Produto</label>
-        <input type="text" class="form-control" id="CategoriaProduto" value="@ViewBag.ProdutoAtualizar.CategoriaProduto" name="CategoriaProduto">
-    </div>
-
+    <br />
+    <label for="Categorias">Escolha uma categoria:</label>
+    <select name="CategoriaID" id="CategoriaID">
+        @foreach (var item in ViewBag.Categoria)
+        {
+            <option value="@item.CategoriaID" id="CategoriaID" >@item.Nome</option>
+        }
+    </select>
+    <br><br>
+    <br />
 
     <a class="btn btn-secondary" href="/Produto/Index">Voltar</a>
     <button type="submit" class="btn btn-primary">Submit</button>

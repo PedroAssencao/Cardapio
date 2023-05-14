@@ -12,23 +12,24 @@ using System.Data.SqlClient;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CárdapioV3_Tunado.Controllers
 {
+
     public class EmpresaController : Controller
     {
-
         EmpresaDAO Estabelecimento = new EmpresaDAO();
         MySqlConnection _connection;
         public EmpresaController()
         {
             _connection = ConexaoBD.getConexao();
         }
-
+        [Authorize]
         public IActionResult Index(int idEmpresa)
         {
             idEmpresa = int.Parse(User.Identity!.Name);
-            ViewBag.listaEmpresas = Estabelecimento.getTodasEmpresasbyID(idEmpresa);
+            ViewBag.listadeEmpresas = Estabelecimento.getTodasEmpresasbyID(idEmpresa);
             return View();
         }
 
@@ -79,7 +80,7 @@ namespace CárdapioV3_Tunado.Controllers
                 var empresas = conexao.Query<Empresa>(query).ToList();
                 var empresa = empresas.FirstOrDefault(x => x.NomeEmpresa == NomeEmpresa && Estabelecimento.Descriptografar(x.SenhaEmpresa) == SenhaEmpresa);
 
-                string role = NomeEmpresa == "AdminFoda2006" ? "AdminFoda2006" : "Usuario";
+                string role = NomeEmpresa == "AdminIncrivel2006" ? "AdminIncrivel2006" : "Usuario";
                 if (empresa != null)
                 {
                     var claims = new List<Claim>
@@ -89,7 +90,7 @@ namespace CárdapioV3_Tunado.Controllers
                         new Claim(ClaimTypes.NameIdentifier, NomeEmpresa),
                     };
 
-                    var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme) ;
                     var principal = new ClaimsPrincipal(identity);
 
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
@@ -110,35 +111,34 @@ namespace CárdapioV3_Tunado.Controllers
         }
 
         [HttpGet]
-        public IActionResult Atualizar(int idEmpresa)
-        {
-            var empresa = Estabelecimento.getTodasEmpresas().Where(x => x.EmpresaID == idEmpresa).FirstOrDefault();
-            if (empresa is null)
-                return BadRequest();
-            ViewBag.TaxaAtualizar = empresa;
-            return View();
-        }
-
-        [HttpGet]
-        public IActionResult cu()
+        public IActionResult Atualizar()
         {
             var idEmpresa = int.Parse(User.Identity!.Name);
-            var empresa = Estabelecimento.getTodasEmpresas().Where(x => x.EmpresaID == idEmpresa).FirstOrDefault();
-            if (empresa is null)
-                return BadRequest();
-            ViewBag.TaxaAtualizar = empresa;
-            ViewBag.listaIDEmpresa = idEmpresa;
+            //var empresa = Estabelecimento.getTodasEmpresas().Where(x => x.EmpresaID == idEmpresa).FirstOrDefault();
+            //if (empresa is null)
+            //   return BadRequest();
+            //ViewBag.TaxaAtualizar = empresa;
+            //ViewBag.listaIDEmpresa = idEmpresa;
+            ViewBag.EmpresaAtualizar = Estabelecimento.getTodasEmpresasbyID(idEmpresa);
             return View();
         }
 
         [HttpPost]
-        public IActionResult cu(double Taxa, int idEmpresa)
+        public IActionResult Atualizar(string NomeEmpresa, string Telefone, string CNPJ, string SenhaEmpresa, double taxaEmpresa, string FotoEmpresa, int idEmpresa)
         {
-
-            EmpresaDAO taxaempresa = new EmpresaDAO();
-            var empresa = taxaempresa.getTodasEmpresas().FirstOrDefault(x => x.EmpresaID == idEmpresa);
-            empresa.taxaEmpresa = Taxa;
-            Estabelecimento.AtualizarTaxa(empresa);
+            idEmpresa = int.Parse(User.Identity!.Name);
+            Empresa novaEmpresa = new Empresa();
+            //var empresa = Estabelecimento.getTodasEmpresas().FirstOrDefault(x => x.EmpresaID == idEmpresa);
+            //empresa.taxaEmpresa = Taxa;
+            novaEmpresa.EmpresaID = idEmpresa;
+            novaEmpresa.NomeEmpresa = NomeEmpresa;
+            novaEmpresa.Telefone = Telefone;
+            novaEmpresa.CNPJ = CNPJ;
+            novaEmpresa.taxaEmpresa = taxaEmpresa;
+            novaEmpresa.FotoEmpresa = FotoEmpresa;
+            string novaSenha = Estabelecimento.Criptografar(SenhaEmpresa);
+            novaEmpresa.SenhaEmpresa = novaSenha;
+            Estabelecimento.AtualizarEmpresa(novaEmpresa);
 
             return RedirectToAction("Index");
         }

@@ -21,9 +21,9 @@ namespace CárdapioV3_Tunado.Controllers
         [HttpGet]
         public IActionResult create(int idEmpresa)
         {
-            CardapioDAO cardapio = new CardapioDAO();
+            CategoriaDAO cardapio = new CategoriaDAO();
             idEmpresa = int.Parse(User.Identity!.Name);
-            ViewBag.listaCategorias = cardapio.getTodasCategoriasbyEmpresa(idEmpresa);
+            ViewBag.listaCategorias = cardapio.getTodasCategorias();
             return View();
 
         }
@@ -55,21 +55,24 @@ namespace CárdapioV3_Tunado.Controllers
         [HttpGet]
         public IActionResult Atualizar(int id)
         {
+            CategoriaDAO categoria = new CategoriaDAO();
             ViewBag.ProdutoAtualizar = produto.getTodosProdutos().FirstOrDefault(x => x.ProID == id);
+            ViewBag.Categoria = categoria.getTodasCategorias();
             return View();
         }
 
         [HttpPost]
-        public IActionResult Atualizar(string NomeProduto, string DescricaoProduto, string NutricaoProduto, string codigo, double PrecoProduto, int CategoriaProduto)
+        public IActionResult Atualizar(string NomeProduto, string DescricaoProduto, string NutricaoProduto, string codigo, double PrecoProduto, int CategoriaID, int EmpresaID)
         {
-
+            EmpresaID = int.Parse(User.Identity!.Name);
             CategoriaProdutoView AtualizarProduto = new CategoriaProdutoView();
             AtualizarProduto.ProID = Convert.ToInt32(codigo);
             AtualizarProduto.NomeProduto = NomeProduto;
             AtualizarProduto.DescricaoProduto = DescricaoProduto;
             AtualizarProduto.NutricaoProduto = NutricaoProduto;
             AtualizarProduto.PrecoProduto = PrecoProduto;
-            AtualizarProduto.CategoriaProduto = CategoriaProduto;
+            AtualizarProduto.CategoriaID = CategoriaID;
+            AtualizarProduto.EmpresaID = EmpresaID;
             produto.UptdateProduto(AtualizarProduto);
 
             return RedirectToAction("Index");
