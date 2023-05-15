@@ -1,17 +1,19 @@
 ﻿using CárdapioV3_Tunado.DAL;
 using CárdapioV3_Tunado.Models;
+using CárdapioV3_Tunado.Models.enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CárdapioV3_Tunado.Controllers
 {
+    [Authorize(Roles = nameof(E_Perfil.MASTER))] // alterado
     public class CardapioController : Controller
     {
         ListCategoriaProduto cardapio2 = new ListCategoriaProduto();
         CardapioDAO cardapio = new CardapioDAO();
         EmpresaDAO empresa = new EmpresaDAO();
 
-        
+        [AllowAnonymous]
         public IActionResult Index(int idEmpresa)
         {
             if (User.Identity?.Name != null)
@@ -21,7 +23,7 @@ namespace CárdapioV3_Tunado.Controllers
             List<CategoriaProdutoView> lista = cardapio.getTodosProdutosbyEmpresa(idEmpresa);
             List<CategoriaProdutoView> listaCategoria = cardapio.getTodasCategoriasbyEmpresa(idEmpresa);            
 
-            var emp = empresa.getTodasEmpresas().First(x => x.EmpresaID == lista.First().EmpresaID);
+            var emp = empresa.getTodasEmpresas().First(x => x.EmpresaID == lista.First().EmpresaID); //TODO: Retorna erro ao não ter itens no banco
              
             lista = lista.Select(x =>
             {

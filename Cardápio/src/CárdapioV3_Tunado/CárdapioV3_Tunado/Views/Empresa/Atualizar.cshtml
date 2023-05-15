@@ -21,7 +21,7 @@
 
         @foreach (var item in ViewBag.EmpresaAtualizar)
         {
-            <img class="avatar" src="@item.FotoEmpresa" alt="Avatar">
+            <img class="avatar" src="/@item.FotoEmpresa" alt="Avatar">
         }
 
 
@@ -39,7 +39,7 @@
     </div>
 
     <div class="about">
-        <form method="post" action="Atualizar">
+        <form method="post" action="Atualizar" enctype="multipart/form-data">
             <div class="form-group" style="text-align: left; position: relative;">
                 <label for="formGroupExampleInput">Nome</label>
                 <div class="input-with-button">
@@ -55,7 +55,7 @@
                 <div class="input-with-button">
                     @foreach (var item in ViewBag.EmpresaAtualizar)
 					{
-						<input type="text" name="Telefone" value="@item.Telefone" class="form-control" id="formGroupExampleInput2">
+                        <input type="text" name="Telefone" value="@item.Telefone" class="form-control" id="telefone" placeholder="+00 (00) 0000-0000">
 					}
 
                 </div>
@@ -86,9 +86,8 @@
                 <div class="input-with-button">
                     @foreach (var item in ViewBag.EmpresaAtualizar)
                     {
-                        <input type="text" name="FotoEmpresa" value="@item.FotoEmpresa" class="form-control" id="formGroupExampleInput2" >
+                        <input type="file" name="FotoEmpresa" value="@item.FotoEmpresa" class="form-control" id="formGroupExampleInput2" >
                     }
-
                 </div>
             </div>
 

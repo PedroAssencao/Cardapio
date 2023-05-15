@@ -1,11 +1,12 @@
 ﻿using CárdapioV3_Tunado.DAL;
 using CárdapioV3_Tunado.Models;
+using CárdapioV3_Tunado.Models.enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CárdapioV3_Tunado.Controllers
 {
-    [Authorize(Roles = "AdminIncrivel2006")]
+    [Authorize(Roles = nameof(E_Perfil.MASTER))] // alterado
     public class CategoriaController : Controller
     {
         CategoriaDAO categoria = new CategoriaDAO();
@@ -63,12 +64,19 @@ namespace CárdapioV3_Tunado.Controllers
         [HttpGet]
         public IActionResult Apagar(string id)
         {
+            try
+            {
+                CategoriaProdutoView apagarCategoria = new CategoriaProdutoView();
+                apagarCategoria.CategoriaID = Convert.ToInt32(id);
+                categoria.ApagarCategoria(apagarCategoria);
 
-            CategoriaProdutoView apagarCategoria = new CategoriaProdutoView();
-            apagarCategoria.CategoriaID = Convert.ToInt32(id);
-            categoria.ApagarCategoria(apagarCategoria);
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return Json("Não foi possível apagar a categoria pois ela está vinculada a um produto"); //Fazer página ou trocar pra mensagem de erro
+            }
 
-            return RedirectToAction("Index");
         }
     }
 }

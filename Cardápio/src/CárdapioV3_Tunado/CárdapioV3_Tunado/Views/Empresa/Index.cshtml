@@ -23,7 +23,7 @@
 		<h1>Perfil Empresa</h1>
 		@foreach (var item in ViewBag.listadeEmpresas)
 		{
-			<img class="avatar" src="@item.FotoEmpresa" alt="Avatar">
+			<img class="avatar" src="/@item.FotoEmpresa" alt="Avatar">
 		}
 
 
@@ -49,6 +49,7 @@
 		<input type="text" value="@String.Join("", new string[] { Context.Request.IsHttps ? "https://" : "http://", Context.Request.Host.Value})/cardapio/index?idempresa=@int.Parse(User.Identity!.Name)" id="myInput">
 
 		<button onclick="myFunction()">Copiar</button>
+		<button onclick="sendwhatsapp()">Compartilhar com o Whatsapp</button>
 
 		<form method="post">
 			<div class="form-group" style="text-align: left; position: relative;">
@@ -67,7 +68,7 @@
 				<div class="input-with-button">
 					@foreach (var item in ViewBag.listadeEmpresas)
 					{
-						<input type="text" value="@item.Telefone" class="form-control" id="formGroupExampleInput2" readonly>
+						<input type="text" value="@item.Telefone" class="form-control" id="telefone" readonly>
 					}
 					
 
@@ -97,18 +98,6 @@
 			</div>
 
 			<div class="form-group" style="text-align: left; position: relative;">
-				<label for="formGroupExampleInput2">Foto Empresa</label>
-				<div class="input-with-button">
-					@foreach (var item in ViewBag.listadeEmpresas)
-					{
-						<input type="text" value="@item.FotoEmpresa" class="form-control" id="formGroupExampleInput2" readonly>
-					}
-					
-
-				</div>
-			</div>
-
-			<div class="form-group" style="text-align: left; position: relative;">
 				<label for="formGroupExampleInput2">Taxa Empresa</label>
 				<div class="input-with-button">
 					@foreach (var item in ViewBag.listadeEmpresas)
@@ -131,3 +120,14 @@
 
 </body>
 </html>
+<script>
+	function sendwhatsapp(){
+		var mensagem = $("#myInput").val();
+		var numeroDestinatario = $("#telefone").val().replace(/[()+\-]/g, '');
+		console.log(numeroDestinatario)
+		var mensagemCodificada = encodeURIComponent(mensagem);
+		var numeroCodificado = encodeURIComponent(numeroDestinatario);
+		var url = "https://api.whatsapp.com/send?text=" + mensagemCodificada + "&phone=" + numeroCodificado;
+		window.open(url)
+	}
+</script>

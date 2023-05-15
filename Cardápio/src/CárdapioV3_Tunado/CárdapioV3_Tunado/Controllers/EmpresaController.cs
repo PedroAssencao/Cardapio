@@ -13,10 +13,12 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Authorization;
+using CárdapioV3_Tunado.Models.enums;
+using System.IO;
 
 namespace CárdapioV3_Tunado.Controllers
 {
-
+    [Authorize]
     public class EmpresaController : Controller
     {
         EmpresaDAO Estabelecimento = new EmpresaDAO();
@@ -25,27 +27,36 @@ namespace CárdapioV3_Tunado.Controllers
         {
             _connection = ConexaoBD.getConexao();
         }
-        [Authorize]
+
         public IActionResult Index(int idEmpresa)
         {
-            idEmpresa = int.Parse(User.Identity!.Name);
+            idEmpresa = int.Parse(User.Identity!.Name!);
             ViewBag.listadeEmpresas = Estabelecimento.getTodasEmpresasbyID(idEmpresa);
             return View();
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult Create()
         {
             return View();
         }
 
+        [HttpGet]
+        [Authorize(Roles = nameof(E_Perfil.MASTER))] //alterado
+        public IActionResult Empresas()
+        {
+            return View(Estabelecimento.getTodasEmpresas());
+        }
+
+
         [HttpPost]
-        public IActionResult Create(string NomeEmpresa, string SenhaEmpresa, string ConfirmarSenha, string Telefone, string FotoEmpresa, string CNPJ)
+        [AllowAnonymous]
+        public IActionResult Create(string NomeEmpresa, string SenhaEmpresa, string ConfirmarSenha, string Telefone, string CNPJ)
         {
             Empresa novaEmpresa = new Empresa();
             novaEmpresa.NomeEmpresa = NomeEmpresa;
             novaEmpresa.Telefone = Telefone;
-            novaEmpresa.FotoEmpresa = FotoEmpresa;
             novaEmpresa.CNPJ = CNPJ;
             if (novaEmpresa.VerificarSenha(SenhaEmpresa, ConfirmarSenha))
             {
@@ -63,12 +74,14 @@ namespace CárdapioV3_Tunado.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous] // alterado
         public IActionResult Logar()
         {
             return View();
         }
 
         [HttpPost]
+        [AllowAnonymous] //alterado
         public async Task<IActionResult> Logar(string NomeEmpresa, string SenhaEmpresa)
         {
             using (var conexao = _connection)
@@ -80,13 +93,14 @@ namespace CárdapioV3_Tunado.Controllers
                 var empresas = conexao.Query<Empresa>(query).ToList();
                 var empresa = empresas.FirstOrDefault(x => x.NomeEmpresa == NomeEmpresa && Estabelecimento.Descriptografar(x.SenhaEmpresa) == SenhaEmpresa);
 
-                string role = NomeEmpresa == "AdminIncrivel2006" ? "AdminIncrivel2006" : "Usuario";
+                //alterado
+
                 if (empresa != null)
                 {
                     var claims = new List<Claim>
                     {
                         new Claim(ClaimTypes.Name, empresa.EmpresaID.ToString()),
-                        new Claim(ClaimTypes.Role, role),
+                        new Claim(ClaimTypes.Role, empresa.Perfil_Empresa), //alterado
                         new Claim(ClaimTypes.NameIdentifier, NomeEmpresa),
                     };
 
@@ -104,6 +118,7 @@ namespace CárdapioV3_Tunado.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
@@ -111,9 +126,13 @@ namespace CárdapioV3_Tunado.Controllers
         }
 
         [HttpGet]
-        public IActionResult Atualizar()
+        [Authorize] //alterado
+        public IActionResult Atualizar(int idEmpresa = 0)
         {
-            var idEmpresa = int.Parse(User.Identity!.Name);
+            if (idEmpresa == 0)
+            {
+                idEmpresa = int.Parse(User.Identity!.Name!);
+            }
             //var empresa = Estabelecimento.getTodasEmpresas().Where(x => x.EmpresaID == idEmpresa).FirstOrDefault();
             //if (empresa is null)
             //   return BadRequest();
@@ -124,9 +143,13 @@ namespace CárdapioV3_Tunado.Controllers
         }
 
         [HttpPost]
-        public IActionResult Atualizar(string NomeEmpresa, string Telefone, string CNPJ, string SenhaEmpresa, double taxaEmpresa, string FotoEmpresa, int idEmpresa)
+        [Authorize] //alterado
+        public async Task<IActionResult> Atualizar(string NomeEmpresa, string Telefone, string CNPJ, string SenhaEmpresa, double taxaEmpresa, IFormFile FotoEmpresa, int idEmpresa = 0)
         {
-            idEmpresa = int.Parse(User.Identity!.Name);
+            if (idEmpresa == 0)
+            {
+                idEmpresa = int.Parse(User.Identity!.Name!);
+            }
             Empresa novaEmpresa = new Empresa();
             //var empresa = Estabelecimento.getTodasEmpresas().FirstOrDefault(x => x.EmpresaID == idEmpresa);
             //empresa.taxaEmpresa = Taxa;
@@ -135,12 +158,45 @@ namespace CárdapioV3_Tunado.Controllers
             novaEmpresa.Telefone = Telefone;
             novaEmpresa.CNPJ = CNPJ;
             novaEmpresa.taxaEmpresa = taxaEmpresa;
-            novaEmpresa.FotoEmpresa = FotoEmpresa;
+
+            if (!Directory.Exists("wwwroot/FotoEmpresas"))
+                Directory.CreateDirectory("wwwroot/FotoEmpresas");
+
+            string path = $"wwwroot/FotoEmpresas/Empresa_{novaEmpresa.EmpresaID}.png";
+
+            if (FotoEmpresa is not null)
+            {
+                using var memoryStream = new MemoryStream();
+                await FotoEmpresa.CopyToAsync(memoryStream);
+                memoryStream.Position = 0;
+                using var fileStream = new FileStream(path, FileMode.OpenOrCreate);
+                memoryStream.CopyTo(fileStream);
+            }
+
+            novaEmpresa.FotoEmpresa = path.Replace("wwwroot/", String.Empty);
+
             string novaSenha = Estabelecimento.Criptografar(SenhaEmpresa);
             novaEmpresa.SenhaEmpresa = novaSenha;
             Estabelecimento.AtualizarEmpresa(novaEmpresa);
 
             return RedirectToAction("Index");
+        }
+
+        public IActionResult Apagar(string id)
+        {
+            try
+            {
+                Empresa empresa = new Empresa();
+                empresa.EmpresaID = Convert.ToInt32(id);
+                Estabelecimento.DeleteEmpresa(empresa);
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return Json("Não foi possível apagar a empresa pois ela está vinculada a produtos e categorias"); //Fazer página ou trocar pra mensagem de erro
+            }
+
         }
     }
 }

@@ -1,18 +1,20 @@
 ﻿using CárdapioV3_Tunado.DAL;
 using CárdapioV3_Tunado.Models;
+using CárdapioV3_Tunado.Models.enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CárdapioV3_Tunado.Controllers
-{       
+{
     [Authorize]
     public class ProdutoController : Controller
     {
         CardapioDAO cardapio = new CardapioDAO();
         ProdutoDAO produto = new ProdutoDAO();
-        public IActionResult Index()
+        public IActionResult Index(int idEmpresa = 0)
         {
-            var idEmpresa = int.Parse(User.Identity!.Name);
+            if (idEmpresa == 0)
+                idEmpresa = int.Parse(User.Identity!.Name!);
             ViewBag.listaProdutosController = cardapio.getTodosProdutosbyEmpresa(idEmpresa);
             return View();
         }
@@ -22,7 +24,7 @@ namespace CárdapioV3_Tunado.Controllers
         public IActionResult create(int idEmpresa)
         {
             CategoriaDAO cardapio = new CategoriaDAO();
-            idEmpresa = int.Parse(User.Identity!.Name);
+            idEmpresa = int.Parse(User.Identity!.Name!);
             ViewBag.listaCategorias = cardapio.getTodasCategorias();
             return View();
 
@@ -31,7 +33,7 @@ namespace CárdapioV3_Tunado.Controllers
         [HttpPost]
         public IActionResult create(string NomeProduto, string ProdutoDescricao, string NutricaoProduto, double PrecoProduto, int Categorias)
         {
-            int idEmpresa = int.Parse(User.Identity!.Name);
+            int idEmpresa = int.Parse(User.Identity!.Name!);
             CategoriaProdutoView NovoProduto = new CategoriaProdutoView();
             NovoProduto.NomeProduto = NomeProduto;
             NovoProduto.DescricaoProduto = ProdutoDescricao;
@@ -64,7 +66,7 @@ namespace CárdapioV3_Tunado.Controllers
         [HttpPost]
         public IActionResult Atualizar(string NomeProduto, string DescricaoProduto, string NutricaoProduto, string codigo, double PrecoProduto, int CategoriaID, int EmpresaID)
         {
-            EmpresaID = int.Parse(User.Identity!.Name);
+            EmpresaID = int.Parse(User.Identity!.Name!);
             CategoriaProdutoView AtualizarProduto = new CategoriaProdutoView();
             AtualizarProduto.ProID = Convert.ToInt32(codigo);
             AtualizarProduto.NomeProduto = NomeProduto;
@@ -82,7 +84,6 @@ namespace CárdapioV3_Tunado.Controllers
         [HttpGet]
         public IActionResult Apagar(string id)
         {
-
             CategoriaProdutoView apagarProduto = new CategoriaProdutoView();
             apagarProduto.ProID = Convert.ToInt32(id);
             produto.ApagarProduto(apagarProduto);
