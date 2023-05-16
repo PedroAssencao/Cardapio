@@ -11,6 +11,7 @@ namespace CárdapioV3_Tunado.Controllers
     {
         CardapioDAO cardapio = new CardapioDAO();
         ProdutoDAO produto = new ProdutoDAO();
+        CategoriaDAO categoria = new CategoriaDAO();
         public IActionResult Index(int idEmpresa = 0)
         {
             if (idEmpresa == 0)
@@ -82,13 +83,26 @@ namespace CárdapioV3_Tunado.Controllers
 
         //apagar
         [HttpGet]
-        public IActionResult Apagar(string id)
+        public IActionResult Apagar(int id)
         {
-            CategoriaProdutoView apagarProduto = new CategoriaProdutoView();
-            apagarProduto.ProID = Convert.ToInt32(id);
-            produto.ApagarProduto(apagarProduto);
+            try
+            {
+                CategoriaProdutoView apagarProduto = new CategoriaProdutoView();
+                apagarProduto.ProID = id;
 
-            return RedirectToAction("Index");
+
+                if (categoria.getTodasCategorias().Any(x => x.CategoriaID == produto.getTodosProdutos().FirstOrDefault(x => x.ProID == id)?.CategoriaID))
+                    throw new Exception();
+
+                produto.ApagarProduto(apagarProduto);
+
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                return Json("Você não pode apagar um produto vinculado a uma categoria");
+            }
+
         }
     }
 }

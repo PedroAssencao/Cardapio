@@ -13,6 +13,9 @@ create table Perfil(
     Per_Nome varchar(255) primary key
 );
 
+insert Perfil values ('MASTER');
+insert Perfil values ('EMPRESS');
+
 Create table Empresa
 (
 	EmpresaID int primary key auto_increment,
@@ -22,7 +25,7 @@ Create table Empresa
     FotoEmpresa varchar(999) default null,
     CNPJ varchar(14),
     taxaEmpresa double,
-    Perfil_Empresa varchar(255) not null,
+    Perfil_Empresa varchar(255) default 'EMPRESS' not null,
     Constraint FK_Perfil foreign key (Perfil_Empresa) references Perfil(Per_Nome)
 );
 
@@ -40,8 +43,6 @@ CategoriaID int,
     
 );
 
-insert Perfil values ('MASTER');
-insert Perfil values ('EMPRESS');
 insert into Empresa (EmpresaID, Telefone, NomeEmpresa, SenhaEmpresa, FotoEmpresa, CNPJ, taxaEmpresa, Perfil_Empresa) values (null, null, 'master', 'bWFzdGVyQDEyM0AxMjM=', null, null, null, 'MASTER');
 /*insert into Empresa (EmpresaID, Telefone, NomeEmpresa, SenhaEmpresa, FotoEmpresa, CNPJ, taxaEmpresa, Perfil_Empresa) values (null, null, 'pedro', 'bWFzdGVyQDEyM0AxMjM=', null, null, null, 'EMPRESS');*/
 /*insert into Empresa (EmpresaID, Telefone, NomeEmpresa, SenhaEmpresa, FotoEmpresa, CNPJ, taxaEmpresa, Perfil_Empresa) values (null, null, 'mario', 'bWFzdGVyQDEyM0AxMjM=', null, null, null, 'DEFAULT');*/
