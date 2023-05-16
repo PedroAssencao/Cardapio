@@ -119,17 +119,17 @@
 
             <div>
                 <label class="nome" for="exampleFormControlInput1">Nome:</label>
-                <input type="nome" class="form-controlNome" id="InputNome" placeholder="José Oliveira">
+                <input type="nome" class="form-controlNome" id="InputNome" placeholder="José Oliveira" required>
             </div>
 
             <div>
                 <label class="Endereco" for="exampleFormControlInput1">Endereço :</label>
-                <input type="Endereco" class="form-controlEndereco" id="InputEndereco" placeholder="R. Antônio C. Carvalho">
+                <input type="Endereco" class="form-controlEndereco" id="InputEndereco" placeholder="R. Antônio C. Carvalho" required>
             </div>
 
             <div>
                 <label class="NTelefone" for="exampleFormControlInput1">Numero de telefone:</label>
-                <input type="NTelefone" class="form-controlTelefone" id="InputNTelefone" placeholder="79 9 9854-9746">
+                <input type="NTelefone" class="form-controlTelefone" id="InputNTelefone" placeholder="79 9 9854-9746" required>
             </div>
 
 
@@ -333,7 +333,7 @@
             var string = "";
             var nome = $("#InputNome").val()
             var endereco = $("#InputEndereco").val()
-            var telefone = $("#InputNTelefone").val()
+            var telefone = $("#InputNTelefone").val().replace(/[()+\-]/g, '');
             var observacao = $("#observacao").val()
             var html = "";
             for (var i = 0; i < carrinho.length; i++) {

@@ -466,3 +466,9 @@ b {
 .ScroolBAr::-webkit-scrollbar-thumb {
     background-color: #aaa;
 }
+
+.btn btn-info {
+
+    position: absolute;
+    right: 100px;
+}

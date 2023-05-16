@@ -124,7 +124,7 @@ namespace CárdapioV3_Tunado.Controllers
         }
 
         [HttpPost]
-        public IActionResult Atualizar(string NomeEmpresa, string Telefone, string CNPJ, string SenhaEmpresa, double taxaEmpresa, string FotoEmpresa, int idEmpresa)
+        public IActionResult Atualizar(string NomeEmpresa, string Telefone, string CNPJ, string SenhaEmpresa, double taxaEmpresa, IFormFile FotoEmpresa, int idEmpresa)
         {
             idEmpresa = int.Parse(User.Identity!.Name);
             Empresa novaEmpresa = new Empresa();
@@ -135,9 +135,20 @@ namespace CárdapioV3_Tunado.Controllers
             novaEmpresa.Telefone = Telefone;
             novaEmpresa.CNPJ = CNPJ;
             novaEmpresa.taxaEmpresa = taxaEmpresa;
-            novaEmpresa.FotoEmpresa = FotoEmpresa;
+
+            string path = $"wwwroot/Images/{novaEmpresa.EmpresaID}";
+            if (FotoEmpresa is not null)
+            {
+                using var stream = new MemoryStream();
+                FotoEmpresa.CopyToAsync(stream);
+                stream.Position = 0;    
+                using var fileStream = new FileStream($"{path}empresa_{novaEmpresa.EmpresaID}.png", FileMode.OpenOrCreate);
+                stream.CopyTo(fileStream);
+            }
             string novaSenha = Estabelecimento.Criptografar(SenhaEmpresa);
             novaEmpresa.SenhaEmpresa = novaSenha;
+            novaEmpresa.FotoEmpresa = $"{path}empresa_{novaEmpresa.EmpresaID}.png".Replace(@"wwwroot", string.Empty);
+            
             Estabelecimento.AtualizarEmpresa(novaEmpresa);
 
             return RedirectToAction("Index");

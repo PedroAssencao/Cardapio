@@ -15,18 +15,17 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src="~/js/JavaScript.js"></script>
 	<link rel="stylesheet" href="~/css/telaEmpresa.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+
+
 </head>
 
 <body>
 	<div class="header">
 
 		<h1>Perfil Empresa</h1>
-		@foreach (var item in ViewBag.listadeEmpresas)
-		{
-			<img class="avatar" src="@item.FotoEmpresa" alt="Avatar">
-		}
-
-
+		
 		<div>
 			<br />
 			<h2>
@@ -62,26 +61,54 @@
 
 				</div>
 			</div>
+
+
+			@functions {
+				public string FormatTelefone(string telefone)
+				{
+					if (string.IsNullOrWhiteSpace(telefone))
+						return "";
+
+					if (telefone.Length != 14)
+						return telefone;
+
+					return string.Format("({0}) {1} {2}-{3}", telefone.Substring(0, 2), telefone.Substring(2, 2), telefone.Substring(4, 5), telefone.Substring(9, 4));
+				}
+			}
+
 			<div class="form-group" style="text-align: left; position: relative;">
 				<label for="formGroupExampleInput2">Telefone</label>
 				<div class="input-with-button">
 					@foreach (var item in ViewBag.listadeEmpresas)
 					{
-						<input type="text" value="@item.Telefone" class="form-control" id="formGroupExampleInput2" readonly>
+						<input type="text" value="@FormatTelefone(item.Telefone)" class="form-control telefone-input" id="telefone" readonly>
 					}
-					
-
 				</div>
 			</div>
+			
+			
+
+			
+			@functions {
+				public string FormatCnpj(string cnpj)
+				{
+					if (string.IsNullOrWhiteSpace(cnpj))
+						return "";
+
+					if (cnpj.Length != 14)
+						return cnpj;
+
+					return $"{cnpj.Substring(0, 2)}.{cnpj.Substring(2, 3)}.{cnpj.Substring(5, 3)}/{cnpj.Substring(8, 4)}-{cnpj.Substring(12, 2)}";
+				}
+			}
+
 			<div class="form-group" style="text-align: left; position: relative;">
 				<label for="formGroupExampleInput">CNPJ</label>
 				<div class="input-with-button">
 					@foreach (var item in ViewBag.listadeEmpresas)
 					{
-						<input type="text" value="@item.CNPJ" class="form-control" id="formGroupExampleInput" readonly>
+						<input type="text" value="@FormatCnpj(item.CNPJ)" class="form-control" id="formGroupExampleInput" readonly>
 					}
-					
-
 				</div>
 			</div>
 			<div class="form-group" style="text-align: left; position: relative;">
@@ -95,6 +122,10 @@
 
 				</div>
 			</div>
+
+
+		
+
 
 			<div class="form-group" style="text-align: left; position: relative;">
 				<label for="formGroupExampleInput2">Foto Empresa</label>
@@ -113,19 +144,17 @@
 				<div class="input-with-button">
 					@foreach (var item in ViewBag.listadeEmpresas)
 					{
-						<input type="text" value="@item.taxaEmpresa" class="form-control" id="formGroupExampleInput2" readonly>
+						<input type="text" value="@item.taxaEmpresa.ToString("0.00")" class="form-control" id="formGroupExampleInput2" readonly>
 					}
-
-
 				</div>
 			</div>
 
+
 			
 		</form>
-		<a type="button" class="btn btn-primary edit-button" style="margin-left: 715px; margin-top: -550px;" href="/Empresa/Atualizar">Editar</a>
-		<a type="button" class="btn btn-primary edit-button" style="margin-left: 790px; margin-top: -550px;" href="/Cardapio/Index">Cardapio</a>
-		<a type="button" class="btn btn-primary edit-button" style="margin-left: 610px; margin-top: -550px;" href="/Produto/Index">Produtos</a>
-
+		<a type="button" class="btn btn-primary edit-button" style="margin-left: 700px; margin-top: -550px;" href="/Empresa/Atualizar">Editar</a>
+		<a type="button" class="btn btn-primary edit-button" style="margin-left: 890px; margin-top: -550px;" href="/Cardapio/Index">Cardapio</a>
+		<a type="button" class="btn btn-primary edit-button" style="margin-left: 510px; margin-top: -550px;" href="/Produto/Index">Produtos</a>
 
 	</div>
 
