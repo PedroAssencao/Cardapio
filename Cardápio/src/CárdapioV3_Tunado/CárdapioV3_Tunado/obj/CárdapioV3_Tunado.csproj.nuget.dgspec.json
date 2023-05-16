@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gestaomargiteens\\Documents\\GitHubRegymatrix\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\CárdapioV3_Tunado.csproj": {}
+    "C:\\Users\\escola3\\Downloads\\Cardapio-Atualizando\\Cardapio-Atualizando\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\CárdapioV3_Tunado.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gestaomargiteens\\Documents\\GitHubRegymatrix\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\CárdapioV3_Tunado.csproj": {
+    "C:\\Users\\escola3\\Downloads\\Cardapio-Atualizando\\Cardapio-Atualizando\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\CárdapioV3_Tunado.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gestaomargiteens\\Documents\\GitHubRegymatrix\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\CárdapioV3_Tunado.csproj",
+        "projectUniqueName": "C:\\Users\\escola3\\Downloads\\Cardapio-Atualizando\\Cardapio-Atualizando\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\CárdapioV3_Tunado.csproj",
         "projectName": "CárdapioV3_Tunado",
-        "projectPath": "C:\\Users\\gestaomargiteens\\Documents\\GitHubRegymatrix\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\CárdapioV3_Tunado.csproj",
-        "packagesPath": "C:\\Users\\gestaomargiteens\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gestaomargiteens\\Documents\\GitHubRegymatrix\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\obj\\",
+        "projectPath": "C:\\Users\\escola3\\Downloads\\Cardapio-Atualizando\\Cardapio-Atualizando\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\CárdapioV3_Tunado.csproj",
+        "packagesPath": "C:\\Users\\escola3\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\escola3\\Downloads\\Cardapio-Atualizando\\Cardapio-Atualizando\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\gestaomargiteens\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\escola3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -72,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.407\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

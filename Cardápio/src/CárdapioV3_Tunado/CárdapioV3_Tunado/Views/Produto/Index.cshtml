@@ -1,9 +1,21 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model CárdapioV3_Tunado.DAL.EmpresaDAO
 @{
+    CárdapioV3_Tunado.DAL.EmpresaDAO empresa = new CárdapioV3_Tunado.DAL.EmpresaDAO();
 }
+
 <h1> Produtos </h1>
+<h2>
+    @foreach (var item in ViewBag.NomeEmpresa)
+    {
+        <p>Nome Usuario: @item.NomeEmpresa</p> 
+    }
+</h2>
+
+<form  method="post" asp-controller="Empresa" asp-action="Logout">
+    <br />
+    <button style="position: absolute; right: 100px; top: 50;" class="btn btn-info" href="/Empresa/Logout" Nova>Logout</button>
+</form>
+
 <br />
 <td><a class="btn btn-outline-secondary" href="/Cardapio/Index">Voltar para o Cardapio</a></td>
 <td><a class="btn btn-primary" href="/Produto/Create">Novo Produto</a></td>
@@ -13,10 +25,12 @@
 }
 <td><a class="btn btn-outline-info" href="/Empresa/Index?idEmpresa=">Empresa</a></td>
 
+
 @if (ViewBag.ProdutoID !=null)
 {
     <p class="alert-success">Produto criado com sucesso, ID do Produto:@ViewBag.ProdutoID</p>
 }
+
 
 
 <div id="divtabela">

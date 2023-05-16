@@ -10,10 +10,12 @@ namespace CárdapioV3_Tunado.Controllers
     {
         CardapioDAO cardapio = new CardapioDAO();
         ProdutoDAO produto = new ProdutoDAO();
+        EmpresaDAO empresa = new EmpresaDAO();
         public IActionResult Index()
         {
             var idEmpresa = int.Parse(User.Identity!.Name);
             ViewBag.listaProdutosController = cardapio.getTodosProdutosbyEmpresa(idEmpresa);
+            ViewBag.NomeEmpresa = empresa.getTodasEmpresasbyID(idEmpresa);
             return View();
         }
 
