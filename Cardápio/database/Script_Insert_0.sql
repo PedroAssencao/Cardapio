@@ -541,38 +541,38 @@ VALUES ('Roska C/Absolut', '17.90', 3, 1, 'Roska com Absolut', 'carboidratos');
 
 
 
-INSERT INTO Produto (NomeProduto, PrecoProduto, CategoriaID, EmpresaID, Nutricao, DescricaoProduto)
+INSERT INTO Produto (NomeProduto, PrecoProduto, CategoriaID, EmpresaID, NutricaoProduto, DescricaoProduto)
 VALUES ('Tangerina C/Pimenta', '14.90', 3, 1, 'Carboidratos', 'Bebida refrescante com sabor de tangerina e um toque de pimenta.');
 
-INSERT INTO Produto (NomeProduto, PrecoProduto, CategoriaID, EmpresaID, Nutricao, DescricaoProduto)
+INSERT INTO Produto (NomeProduto, PrecoProduto, CategoriaID, EmpresaID, NutricaoProduto, DescricaoProduto)
 VALUES ('Manga C/Maracujá', '14.90', 3, 1, 'Carboidratos', 'Combinação tropical de manga e maracujá para refrescar seu dia.');
 
-INSERT INTO Produto (NomeProduto, PrecoProduto, CategoriaID, EmpresaID, Nutricao, DescricaoProduto)
+INSERT INTO Produto (NomeProduto, PrecoProduto, CategoriaID, EmpresaID, NutricaoProduto, DescricaoProduto)
 VALUES ('Frutas Vermelhas', '15.90', 3, 1, 'Carboidratos', 'Deliciosa mistura de frutas vermelhas em uma bebida refrescante.');
 
-INSERT INTO Produto (NomeProduto, PrecoProduto, CategoriaID, EmpresaID, Nutricao, DescricaoProduto)
+INSERT INTO Produto (NomeProduto, PrecoProduto, CategoriaID, EmpresaID, NutricaoProduto, DescricaoProduto)
 VALUES ('Cajaroska (Roskas,Frutas,Nevada)', '12.50', 3, 1, 'Carboidratos', 'Refrescante roska de cajá com frutas e gelo.');
 
-INSERT INTO Produto (NomeProduto, PrecoProduto, CategoriaID, EmpresaID, Nutricao, DescricaoProduto)
+INSERT INTO Produto (NomeProduto, PrecoProduto, CategoriaID, EmpresaID, NutricaoProduto, DescricaoProduto)
 VALUES ('Caipiroska (Roskas,Frutas,Nevada)', '12.50', 3, 1, 'Carboidratos', 'Clássica caipiroska com frutas frescas e gelo.');
 
-INSERT INTO Produto (NomeProduto, PrecoProduto, CategoriaID, EmpresaID, Nutricao, DescricaoProduto)
+INSERT INTO Produto (NomeProduto, PrecoProduto, CategoriaID, EmpresaID, NutricaoProduto, DescricaoProduto)
 VALUES ('Aceroloroska (Roskas,Frutas,Nevada)', '12.50', 3, 1, 'Carboidratos', 'Saborosa roska de acerola com frutas e gelo.');
 
-INSERT INTO Produto (NomeProduto, PrecoProduto, CategoriaID, EmpresaID, Nutricao, DescricaoProduto)
+INSERT INTO Produto (NomeProduto, PrecoProduto, CategoriaID, EmpresaID, NutricaoProduto, DescricaoProduto)
 VALUES ('Abacaxirosca (Roskas,Frutas,Nevada)', '12.50', 3, 1, 'Carboidratos', 'Refrescante roska de abacaxi com frutas e gelo.');
 
-INSERT INTO Produto (NomeProduto, PrecoProduto, CategoriaID, EmpresaID, Nutricao, DescricaoProduto)
+INSERT INTO Produto (NomeProduto, PrecoProduto, CategoriaID, EmpresaID, NutricaoProduto, DescricaoProduto)
 VALUES ('Umburoska (Roskas,Frutas,Nevada)', '12.50', 3, 1, 'Carboidratos', 'Deliciosa roska de umbu com frutas e gelo.');
 
 
 
 
 
-INSERT INTO Produto (NomeProduto, PrecoProduto, CategoriaID, EmpresaID, Nutricao, DescricaoProduto)
+INSERT INTO Produto (NomeProduto, PrecoProduto, CategoriaID, EmpresaID, NutricaoProduto, DescricaoProduto)
 VALUES ('Maracujaroska (Roskas,Frutas,Nevada)', '12.50', 3, 1, 'Carboidratos', 'Refrescante roska de maracujá com frutas e gelo.');
 
-INSERT INTO Produto (NomeProduto, PrecoProduto, CategoriaID, EmpresaID, Nutricao, DescricaoProduto)
+INSERT INTO Produto (NomeProduto, PrecoProduto, CategoriaID, EmpresaID, NutricaoProduto, DescricaoProduto)
 VALUES ('Cajuroska (Roskas,Frutas,Nevada)', '12.50', 3, 1, 'Carboidratos', 'Deliciosa roska de caju com frutas e gelo.');
 
 
