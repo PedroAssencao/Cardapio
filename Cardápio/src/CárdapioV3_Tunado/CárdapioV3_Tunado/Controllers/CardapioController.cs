@@ -16,63 +16,62 @@ namespace CárdapioV3_Tunado.Controllers
         [AllowAnonymous]
         public IActionResult Index(int idEmpresa)
         {
-            if (User.Identity?.Name != null)
+            try
             {
-                idEmpresa = int.Parse(User.Identity!.Name);
-            }
-            List<CategoriaProdutoView> lista = cardapio.getTodosProdutosbyEmpresa(idEmpresa);
-            List<CategoriaProdutoView> listaCategoria = cardapio.getTodasCategoriasbyEmpresa(idEmpresa);            
+               if (User.Identity?.Name != null)
+                {
+                    idEmpresa = int.Parse(User.Identity!.Name);
+                }
+                List<CategoriaProdutoView> lista = cardapio.getTodosProdutosbyEmpresa(idEmpresa);
+                List<CategoriaProdutoView> listaCategoria = cardapio.getTodasCategoriasbyEmpresa(idEmpresa);            
 
-            var emp = empresa.getTodasEmpresas().First(x => x.EmpresaID == lista.First().EmpresaID); //TODO: Retorna erro ao não ter itens no banco
+                var emp = empresa.getTodasEmpresas().First(x => x.EmpresaID == lista.First().EmpresaID); //TODO: Retorna erro ao não ter itens no banco
              
-            lista = lista.Select(x =>
+                lista = lista.Select(x =>
+                {
+                    x.Telefone = emp.Telefone;
+                    return x;
+                }).ToList();
+                listaCategoria.Select(x =>
+                {
+                    x.Telefone = emp.Telefone;
+                    return x;
+                }).ToList();
+
+                lista = lista.Select(x =>
+                {
+                    x.FotoEmpresa = emp.FotoEmpresa;
+                    return x;
+                }).ToList();
+                listaCategoria.Select(x =>
+                {
+                    x.FotoEmpresa = emp.FotoEmpresa;
+                    return x;
+                }).ToList();
+
+                lista = lista.Select(x =>
+                {
+                    x.Taxa = emp.taxaEmpresa;
+                    return x;
+                }).ToList();
+                listaCategoria.Select(x =>
+                {
+                    x.Taxa = emp.taxaEmpresa;
+                    return x;
+                }).ToList();
+
+                var listas = new ListCategoriaProduto
+                {
+                    Lista1 = lista,
+                    Lista2 = listaCategoria
+                };
+                return View(listas);
+            }
+            catch (Exception)
             {
-                x.Telefone = emp.Telefone;
-                return x;
-            }).ToList();
-            listaCategoria.Select(x =>
-            {
-                x.Telefone = emp.Telefone;
-                return x;
-            }).ToList();
-
-
-
-
-
-            lista = lista.Select(x =>
-            {
-                x.FotoEmpresa = emp.FotoEmpresa;
-                return x;
-            }).ToList();
-            listaCategoria.Select(x =>
-            {
-                x.FotoEmpresa = emp.FotoEmpresa;
-                return x;
-            }).ToList();
-
-
-
-
-
-
-            lista = lista.Select(x =>
-            {
-                x.Taxa = emp.taxaEmpresa;
-                return x;
-            }).ToList();
-            listaCategoria.Select(x =>
-            {
-                x.Taxa = emp.taxaEmpresa;
-                return x;
-            }).ToList();
-
-            var listas = new ListCategoriaProduto
-            {
-                Lista1 = lista,
-                Lista2 = listaCategoria
-            };
-            return View(listas);
+                return Json("Não existem produtos nesta empresa");
+            }
+ 
         }
 
 

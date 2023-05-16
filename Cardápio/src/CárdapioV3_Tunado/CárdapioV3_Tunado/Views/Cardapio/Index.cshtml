@@ -1,4 +1,4 @@
-﻿@{
+﻿    @{
     int cade = -1;
 }
 <!DOCTYPE html>
@@ -15,160 +15,161 @@
     @model CárdapioV3_Tunado.Models.ListCategoriaProduto
 </head>
 <body>
-
-    <div class="box">
-
-
-
-
-        <td valign="top">
-            <table width="360" cellspacing="5" cellpadding="0">
-
-                <tbody>
-                    <tr>
-
-                        <td valign="top" align="center"><img src="@Model.Lista1.First().FotoEmpresa" width="210" height="140" border="0"></td>
-
-                    </tr>
-                </tbody>
-            </table>
-
-            <table width="300" border="0" align="center" cellspacing="0">
-                <tbody>
-                    <tr>
-                        <td align="center" class="estilo_pp" height="44"><p>Nunca Foi Tão Facil <span class="destaque1">Pedir Lanche</span>!</p></td>
-                    </tr>
-                </tbody>
-            </table>
-            <br />
-            @foreach (var item in Model.Lista2.GroupBy(x => x.CategoriaID).Select(y => y.First()))
-            {
-                <div class="categoria" id="cat@item.CategoriaProduto">
-
-                    <table width="340" cellspacing="8">
-                        <tbody>
-                            <tr>
-                                <td width="80"><img src="@item.CategoriaFoto" width="70" height="70"></td>
-                                <td width="230" valign="top">
-                                    <table width="230" cellspacing="2">
-                                        <tbody>
-                                            <tr>
-                                                <td class="estilo_titulo"><b>@item.Nome</b></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="estilo_descricao">@item.CategoriaDescricao</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="produtos" id="produtoscat@item.CategoriaProduto">
-                    @foreach (var itemProduto in Model.Lista1.Where(z => z.CategoriaID == @item.CategoriaID).ToList())
-                    {
-                        cade++;
-                        string qtd = "quantidade";
-                        <table width="300" border="0" align="center">
-                            <tbody>
-                                <tr>
-                                    <td class="estilo_titulo_preco" valign="top" style="white-space: nowrap;" id="nome-produto-@itemProduto.ProID"><b>@itemProduto.NomeProduto</b> R$<b id="preco-produto-@itemProduto.ProID">@itemProduto.PrecoProduto</b></td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <table width="300" border="0" align="center">
-                            <tbody>
-                                <tr>
-                                    <td class="estilo">@itemProduto.DescricaoProduto</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-
-                <td>
-                    <button class="btn-confirmar-pedido" onclick="ocultarTabela(); exibirProdutoSelecionado(@itemProduto.ProID, @cade);">Adicionar Pedido 👌</button>
-
-
-                    <div style="margin-left: 100px; margin-top: -30px;">
-                        <select id="@qtd@cade" size="1">
-                            <option value="01">01</option>
-                            <option value="02">02</option>
-                            <option value="03">03</option>
-                            <option value="04">04</option>
-                            <option value="05">05</option>
-                        </select>
+    <div class="card text-bg-light mt-2" style="height: 90%; overflow-y: scroll; position:fixed;">
+        <div class="container text-center">
+            <nav class="navbar bg-body-tertiary sticky-top">
+                <div class="container-fluid">
+                    <div class="col">
+                        <div class="text-center">
+                            <img class="rounded mx-auto d-block" src="@Model.Lista1.First().FotoEmpresa" width="80" height="80">
+                        </div>
                     </div>
+                    <div class="col">
+                        <div class="text-center">
+                            <span class="navbar-brand mb-0 h1">Nome da Empresa</span>
+                        </div>
+                    </div>
+@*                    <div class="col">
+                        <div class="text-center">
+                            <button id="btn-voltar" class="btn btn-secondary" style="display: none;" onclick="btnVoltarF()">Voltar 👈</button>
+                        </div>
+                    </div>*@
+                </div>
+            </nav>
+            <div class="row mt-3">
+                <div class="col">
+                    <div align="center" class="estilo_pp"><p>Nunca Foi Tão Facil <span class="destaque1">Pedir Lanche</span>!</p></div>
+                </div>
+            </div>
+            <div class="car text-bg-light">
+                <div class="mb-5 container-fluid" style="cursor: pointer;">
+                    @foreach (var item in Model.Lista2.GroupBy(x => x.CategoriaID).Select(y => y.First()))
+                    {
+                        <div class="categoria card text-bg-secondary m-2" id="cat@item.CategoriaProduto">
+                            <table cellspacing="8">
+                                <tbody>
+                                    <tr>
+                                        <td width="80"><img src="@item.CategoriaFoto" width="70" height="70"></td>
+                                        <td valign="top">
+                                            <table cellspacing="2">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="estilo_titulo"><b>@item.Nome</b></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="estilo_descricao">@item.CategoriaDescricao</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
-                </td>
-                <br>
-                <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
+                        <div class="produtos" id="produtoscat@item.CategoriaProduto">
+                            @foreach (var itemProduto in Model.Lista1.Where(z => z.CategoriaID == @item.CategoriaID).ToList())
+                            {
+                                cade++;
+                                string qtd = "quantidade";
+                                <table width="300" border="0" align="center">
+                                    <tbody>
+                                        <tr>
+                                            <td class="estilo_titulo_preco" valign="top" style="white-space: nowrap;" id="nome-produto-@itemProduto.ProID"><b>@itemProduto.NomeProduto</b> R$<b id="preco-produto-@itemProduto.ProID">@itemProduto.PrecoProduto</b></td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <table width="300" border="0" align="center">
+                                    <tbody>
+                                        <tr>
+                                            <td class="estilo">@itemProduto.DescricaoProduto</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+
+                                <td>
+                                    <button class="btn-confirmar-pedido" onclick="ocultarTabela(); exibirProdutoSelecionado(@itemProduto.ProID, @cade);">Adicionar Pedido 👌</button>
+
+
+                                    <div style="margin-left: 100px; margin-top: -30px;">
+                                        <select id="@qtd@cade" size="1">
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                        </select>
+                                    </div>
+
+                                </td>
+                                <br>
+                                <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
+                            }
+
+
+                        </div>
+
+                        <div id="FinalizarPedido" style="display: none;">
+
+                            <div class="linha"></div>
+
+
+                            <div>
+                                <label class="nome" for="exampleFormControlInput1">Nome:</label>
+                                <input type="nome" class="form-controlNome" id="InputNome" placeholder="José Oliveira">
+                            </div>
+
+                            <div>
+                                <label class="Endereco" for="exampleFormControlInput1">Endereço :</label>
+                                <input type="Endereco" class="form-controlEndereco" id="InputEndereco" placeholder="R. Antônio C. Carvalho">
+                            </div>
+
+                            <div>
+                                <label class="NTelefone" for="exampleFormControlInput1">Numero de telefone:</label>
+                                <input type="NTelefone" class="form-controlTelefone" id="InputNTelefone" placeholder="79 9 9854-9746">
+                            </div>
+
+
+
+
+                            <h2 class="resumo">Resumo do pedido</h2>
+
+
+                            <div class="retangulo" id="produto-selecionado">
+                            </div>
+
+
+                            <textarea id="observacao" style="width:100%" rows="2" name="obs" cols="30" class="estilo_novo_form" onfocus="if (this.value=='') this.value='';" onblur="if (this.value=='') this.value=''" placeholder="Observação:"></textarea>
+
+                            <h2 class="pagamento">Formas de pagamento:</h2>
+
+                            <form class="quadradinho" style="margin-left: 100px; margin-top: -30px;">
+                                <select id="FormaDePagamento" class="pagamento" size="1">
+                                    <option value="01">Dinheiro</option>
+                                    <option value="02">Cartão</option>
+                                    <option value="03">Pix</option>
+                                </select>
+                            </form>
+
+                            <div class="linha3"></div>
+                            <button class="btn-FinalizarPedido" onclick="varrer()">Finalizar Pedido</button>
+
+                            <button id="btn-adicionar-item" class="btn-AdicionarPedido">Adicionar item</button>
+
+
+
+
+
+                        </div>
                     }
-
-
+                </div>
+                
+            </div>
         </div>
-
-        <div id="FinalizarPedido" style="display: none;">
-
-            <div class="linha"></div>
-
-
-            <div>
-                <label class="nome" for="exampleFormControlInput1">Nome:</label>
-                <input type="nome" class="form-controlNome" id="InputNome" placeholder="José Oliveira">
-            </div>
-
-            <div>
-                <label class="Endereco" for="exampleFormControlInput1">Endereço :</label>
-                <input type="Endereco" class="form-controlEndereco" id="InputEndereco" placeholder="R. Antônio C. Carvalho">
-            </div>
-
-            <div>
-                <label class="NTelefone" for="exampleFormControlInput1">Numero de telefone:</label>
-                <input type="NTelefone" class="form-controlTelefone" id="InputNTelefone" placeholder="79 9 9854-9746">
-            </div>
-
-
-
-
-            <h2 class="resumo">Resumo do pedido</h2>
-
-
-            <div class="retangulo" id="produto-selecionado">
-            </div>
-
-
-            <textarea id="observacao" style="width:100%" rows="2" name="obs" cols="30" class="estilo_novo_form" onfocus="if (this.value=='') this.value='';" onblur="if (this.value=='') this.value=''" placeholder="Observação:"></textarea>
-
-            <h2 class="pagamento">Formas de pagamento:</h2>
-
-            <form class="quadradinho" style="margin-left: 100px; margin-top: -30px;">
-                <select id="FormaDePagamento" class="pagamento" size="1">
-                    <option value="01">Dinheiro</option>
-                    <option value="02">Cartão</option>
-                    <option value="03">Pix</option>
-                </select>
-            </form>
-
-            <div class="linha3"></div>
-            <button class="btn-FinalizarPedido" onclick="varrer()">Finalizar Pedido</button>
-
-            <button id="btn-adicionar-item" class="btn-AdicionarPedido">Adicionar item</button>
-
-
-
-
-
-        </div>
-
-        <button id="btn-voltar" style="display: none;" onclick="btnVoltarF()">Voltar 👈</button>
-            }
-    </div>
-
     </div>
 
 

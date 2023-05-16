@@ -85,24 +85,11 @@ namespace CárdapioV3_Tunado.Controllers
         [HttpGet]
         public IActionResult Apagar(int id)
         {
-            try
-            {
-                CategoriaProdutoView apagarProduto = new CategoriaProdutoView();
-                apagarProduto.ProID = id;
+            CategoriaProdutoView apagarProduto = new CategoriaProdutoView();
+            apagarProduto.ProID = id;
+            produto.ApagarProduto(apagarProduto);
 
-
-                if (categoria.getTodasCategorias().Any(x => x.CategoriaID == produto.getTodosProdutos().FirstOrDefault(x => x.ProID == id)?.CategoriaID))
-                    throw new Exception();
-
-                produto.ApagarProduto(apagarProduto);
-
-                return RedirectToAction("Index");
-            }
-            catch (Exception)
-            {
-                return Json("Você não pode apagar um produto vinculado a uma categoria");
-            }
-
+            return RedirectToAction("Index");
         }
     }
 }

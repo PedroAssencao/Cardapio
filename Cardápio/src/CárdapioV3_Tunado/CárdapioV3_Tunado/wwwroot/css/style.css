@@ -22,11 +22,6 @@ html, body {
 
 #btn-voltar {
     display: none;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background-color: red;
-    color: white;
 }
 
 .estilo_pp .destaque1 {
@@ -432,14 +427,10 @@ b {
 
 .categoria {
     cursor: pointer;
-    margin-bottom: 10px;
-    max-height: 200px;
-    overflow: auto;
 }
 
 .produtos {
     display: none;
-
 }
 
 
