@@ -26,8 +26,16 @@
 
                 <tbody>
                     <tr>
+                        @if (Model.Lista1.First().FotoEmpresa != null)
+                        {
+                            <td valign="top" align="center"><img src="@Model.Lista1.First().FotoEmpresa" width="210" height="140" border="0"></td>
+                        }
+                        else   
+                        {
+                            <td valign="top" align="center"><h2 width="210" height="140" border="0">@Model.Lista1.First().NomeEmpresa </h2></td>
+                            <br />
+                        }
 
-                        <td valign="top" align="center"><img src="@Model.Lista1.First().FotoEmpresa" width="210" height="140" border="0"></td>
 
                     </tr>
                 </tbody>
@@ -351,7 +359,9 @@
                 string += "\n" + carrinho[i]["nomeProduto"]
             }
 
-            var numero = "@Model.Lista1.First().Telefone"
+	
+            var numero = "@Model.Lista1.First().Telefone.Replace("(", "").Replace(")", "").Replace("+", "").Replace("-", "").Replace(" ", "")";
+            numero = encodeURIComponent(numero)
             var preco = 0.00
             for (var i = 0; i < carrinho.length; i++) {
                 var item = carrinho[i];

@@ -160,3 +160,14 @@
 
 </body>
 </html>
+<script>
+	function sendwhatsapp(){
+		var telefone = document.getElementById('telefone').value;
+		var telefoneSemMascara = telefone.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+		document.getElementById('telefone').value = telefoneSemMascara;
+	}
+
+	// Associar o evento de alteração ao campo de telefone
+	document.getElementById('telefone').addEventListener('change', removerMascaraTelefone);
+</script>
+</script>

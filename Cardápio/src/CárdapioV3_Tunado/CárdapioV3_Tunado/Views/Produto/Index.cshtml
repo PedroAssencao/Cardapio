@@ -3,13 +3,12 @@
     CárdapioV3_Tunado.DAL.EmpresaDAO empresa = new CárdapioV3_Tunado.DAL.EmpresaDAO();
 }
 
-<h1> Produtos </h1>
-<h2>
+<h1>
     @foreach (var item in ViewBag.NomeEmpresa)
     {
-        <p>Nome Usuario: @item.NomeEmpresa</p> 
+        <p> @item.NomeEmpresa - Produtos</p>
     }
-</h2>
+</h1>
 
 <form  method="post" asp-controller="Empresa" asp-action="Logout">
     <br />
