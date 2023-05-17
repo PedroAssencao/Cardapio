@@ -1,5 +1,6 @@
 create database Cardapio;
 use Cardapio;
+drop database cardapio;
 
 Create table Categoria
 (
@@ -7,6 +8,26 @@ CategoriaID int primary key auto_increment,
 Nome varchar(100) not null,
     CategoriaDescricao varchar(100) not null,
     CategoriaFoto varchar(999) null
+);
+
+create table Perfil(
+    Per_Nome varchar(255) primary key
+);
+
+insert Perfil values ('MASTER');
+insert Perfil values ('EMPRESS');
+
+Create table Empresa
+(
+	EmpresaID int primary key auto_increment,
+    Telefone varchar(255),
+    NomeEmpresa varchar(100),
+    SenhaEmpresa varchar(100),
+    FotoEmpresa varchar(999) default null,
+    CNPJ varchar(14),
+    taxaEmpresa double,
+    Perfil_Empresa varchar(255) default 'EMPRESS' not null,
+    Constraint FK_Perfil foreign key (Perfil_Empresa) references Perfil(Per_Nome)
 );
 
 Create table Produto
@@ -23,33 +44,9 @@ CategoriaID int,
     
 );
 
-
-Create table Empresa
-(
-	EmpresaID int primary key auto_increment,
-    Telefone varchar(13),
-    NomeEmpresa varchar(100),
-    SenhaEmpresa varchar(100),
-    FotoEmpresa varchar(999),
-    CNPJ varchar(14),
-    taxaEmpresa double
-);
+insert into Empresa (Telefone, NomeEmpresa, SenhaEmpresa, FotoEmpresa, CNPJ, taxaEmpresa, Perfil_Empresa) values ('5579998462497', 'master', 'bWFzdGVyQDEyM0AxMjM=', null, 99999999999995, 10.99, 'MASTER');
 
 select * from empresa;
 Select * from Categoria;
 select * from Produto;
-
-Select distinct c.CategoriaID, c.CategoriaDescricao from produto
-join categoria c
-where idEmpresa;
-
-select distinct categorias.categoriaID, categorias.nome  from produto produtos join categoria categorias on produtos.categoriaID=categorias.categoriaID where EmpresaID=1;
- 
-select produtos.*,categorias.*, empresas.*  from produto produtos join categoria categorias on produtos.categoriaID=categorias.categoriaID join Empresa empresas on produtos.EmpresaID=empresas.EmpresaID where empresas.EmpresaID=1;
- 
- 
- 
-
-
-
-
+select * from Perfil;

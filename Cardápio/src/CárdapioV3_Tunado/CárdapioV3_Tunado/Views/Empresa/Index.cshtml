@@ -2,7 +2,7 @@
 <html>
 @model CárdapioV3_Tunado.DAL.EmpresaDAO
 @{
-    CárdapioV3_Tunado.DAL.EmpresaDAO empresa = new CárdapioV3_Tunado.DAL.EmpresaDAO();
+	CárdapioV3_Tunado.DAL.EmpresaDAO empresa = new CárdapioV3_Tunado.DAL.EmpresaDAO();
 }
 <head>
 	<meta charset="UTF-8" />
@@ -22,10 +22,12 @@
 </head>
 
 <body>
+	<div>
+
 	<div class="header">
 
 		<h1>Perfil Empresa</h1>
-		
+
 		<div>
 			<br />
 			<h2>
@@ -40,10 +42,6 @@
 	</div>
 
 	<div class="about">
-		<form method="post" asp-controller="Empresa" asp-action="Logout">
-			<br />
-			<button class="btn btn-info" href="/Empresa/Logout" Nova>Logout</button>
-		</form>
 		<br />
 		<input type="text" value="@String.Join("", new string[] { Context.Request.IsHttps ? "https://" : "http://", Context.Request.Host.Value})/cardapio/index?idempresa=@int.Parse(User.Identity!.Name)" id="myInput">
 
@@ -85,10 +83,10 @@
 					}
 				</div>
 			</div>
-			
-			
 
-			
+
+
+
 			@functions {
 				public string FormatCnpj(string cnpj)
 				{
@@ -118,23 +116,7 @@
 					{
 						<input type="password" value="@empresa.Descriptografar(item.SenhaEmpresa)" class="form-control" id="formGroupExampleInput2" readonly>
 					}
-					
 
-				</div>
-			</div>
-
-
-		
-
-
-			<div class="form-group" style="text-align: left; position: relative;">
-				<label for="formGroupExampleInput2">Foto Empresa</label>
-				<div class="input-with-button">
-					@foreach (var item in ViewBag.listadeEmpresas)
-					{
-						<input type="text" value="@item.FotoEmpresa" class="form-control" id="formGroupExampleInput2" readonly>
-					}
-					
 
 				</div>
 			</div>
@@ -150,24 +132,14 @@
 			</div>
 
 
-			
+
 		</form>
-		<a type="button" class="btn btn-primary edit-button" style="margin-left: 700px; margin-top: -550px;" href="/Empresa/Atualizar">Editar</a>
-		<a type="button" class="btn btn-primary edit-button" style="margin-left: 890px; margin-top: -550px;" href="/Cardapio/Index">Cardapio</a>
-		<a type="button" class="btn btn-primary edit-button" style="margin-left: 510px; margin-top: -550px;" href="/Produto/Index">Produtos</a>
+
+		<a type="button" class="btn btn-primary edit-button" style="margin-left: 630px; margin-top: -550px;" href="/Empresa/Atualizar">Editar</a>
+
 
 	</div>
 
+	</div>
 </body>
 </html>
-<script>
-	function sendwhatsapp(){
-		var telefone = document.getElementById('telefone').value;
-		var telefoneSemMascara = telefone.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
-		document.getElementById('telefone').value = telefoneSemMascara;
-	}
-
-	// Associar o evento de alteração ao campo de telefone
-	document.getElementById('telefone').addEventListener('change', removerMascaraTelefone);
-</script>
-</script>

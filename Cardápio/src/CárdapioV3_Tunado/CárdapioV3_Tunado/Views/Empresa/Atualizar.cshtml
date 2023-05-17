@@ -93,11 +93,11 @@
  
             <div class="form-group" style="text-align: left; position: relative;">
 
-                <input type="file" class="custom-file-input" id="customFile">
-                <label style="margin-top: -70px;" for="formGroupExampleInput2">Foto Empresa</label>
+               
+                <label style="margin-top: -20px;" for="formGroupExampleInput2">Foto Empresa</label>
                 @foreach (var item in ViewBag.EmpresaAtualizar)
                 {
-                    <input type="file" name="FotoEmpresa" value="@item.FotoEmpresa" class="form-control" id="formGroupExampleInput">
+                    <input type="file"  name="FotoEmpresa" value="@item.FotoEmpresa" class="form-control" id="formGroupExampleInput">
                 }
                
               
@@ -118,8 +118,8 @@
 
 
 
-            <button type="submit" class="btn btn-primary" style="margin-left: 900px; margin-top: 0px;">Salvar</button>
-            <a class="btn btn-secondary" style="margin-left: 710px; margin-top: -36px;" href="/Empresa/Index">Voltar</a>
+            <button type="submit" class="btn btn-primary" style="margin-left: 620px; margin-top: 0px;">Salvar</button>
+            <a class="btn btn-secondary" style="margin-left: 460px; margin-top: -37px;" href="/Empresa/Index">Voltar</a>
         </form>
     </div>
 

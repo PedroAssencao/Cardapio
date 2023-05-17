@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CárdapioV3_Tunado.Controllers
 {
-    [Authorize(Roles = "AdminIncrivel2006")]
+    [Authorize(Roles = "MASTER")]
     public class CategoriaController : Controller
     {
         CategoriaDAO categoria = new CategoriaDAO();
@@ -25,12 +25,23 @@ namespace CárdapioV3_Tunado.Controllers
         }
 
         [HttpPost]
-        public IActionResult create(string NomeCategoria, string CategoriaDescricao, string Foto)
+        public IActionResult create(string NomeCategoria, string CategoriaDescricao, IFormFile Foto)
         {
             CategoriaProdutoView NovaCategoria = new CategoriaProdutoView();
             NovaCategoria.Nome = NomeCategoria;
             NovaCategoria.CategoriaDescricao = CategoriaDescricao;
-            NovaCategoria.CategoriaFoto = Foto;
+            string path = $"wwwroot/Images/Categoria_{NovaCategoria.CategoriaID}";
+            if (Foto is not null)
+            {
+                using var stream = new MemoryStream();
+                Foto.CopyToAsync(stream);
+                stream.Position = 0;
+                using var fileStream = new FileStream($"{path}empresa_{NovaCategoria.CategoriaID}.png", FileMode.OpenOrCreate);
+                stream.CopyTo(fileStream);
+                fileStream.Close();
+            }
+            NovaCategoria.CategoriaFoto = $"{path}empresa_{NovaCategoria.CategoriaID}.png".Replace(@"wwwroot", string.Empty);
+
             categoria.InsertCategoria(NovaCategoria);
             return RedirectToAction("Index");
 

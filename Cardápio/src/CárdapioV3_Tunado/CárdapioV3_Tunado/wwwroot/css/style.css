@@ -2,29 +2,51 @@
 html, body {
     margin: 0;
     padding: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
-
+@media only screen and (max-width:400px) {
+    .box {
+        width: 100px;
+    }
+}
 
 .box {
     position: relative;
     width: 380px;
-    height: 770px;
-    margin: 120px auto;
+    height: 650px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #aaa transparent; /* cor da scroll bar na vertical */
     border: 2px solid #666666;
     border-radius: 12px;
     padding: 10px;
     background-color: #fff;
     text-align: center;
+    margin: 20px;
+    overflow-x: hidden;
 }
+
+    .box::-webkit-scrollbar {
+        width: 6px; /* largura fina da scroll bar */
+    }
+
+    .box::-webkit-scrollbar-track {
+        background-color: transparent; /* cor transparente para ocultar a scroll bar no eixo X */
+    }
+
+    .box::-webkit-scrollbar-thumb {
+        background-color: #aaa; /* cor da scroll bar na vertical */
+    }
+
+
 
 
 
 #btn-voltar {
     display: none;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
     background-color: red;
     color: white;
 }
@@ -79,7 +101,6 @@ body {
     position: absolute;
     left: 140px;
     margin-top: 5px;
-    
 }
 
 .form-controlEndereco {
@@ -133,13 +154,10 @@ body {
     white-space: nowrap;
 }
 
-.nome{
-
+.nome {
     position: absolute;
     right: 306px;
     top: 230px;
-
-
 }
 
 .Endereco {
@@ -182,7 +200,9 @@ body {
 
 .retangulo {
     position: absolute;
-    width: 359px;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
     height: 242px;
     left: 10px;
     top: 390px;
@@ -204,7 +224,7 @@ body {
     width: 151px;
     height: 18px;
     left: 10px;
-    top: 660px;
+    top: 695px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -220,7 +240,6 @@ body {
     left: 55px;
     top: 30px;
     text-align: center;
-  
 }
 
 .quadradinho2 {
@@ -324,31 +343,6 @@ b {
     color: #333333;
 }
 
-.box {
-    height: 770px;
-    overflow-y: scroll;
-    scrollbar-width: thin;
-    scrollbar-color: #aaa #fff;
-}
-
-
-.box {
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
-    .box::-webkit-scrollbar {
-        width: 10px;
-        height: auto;
-    }
-
-    .box::-webkit-scrollbar-track {
-        background-color: #fff;
-    }
-
-    .box::-webkit-scrollbar-thumb {
-        background-color: #aaa;
-    }
 
 #div-mostrar {
     display: none;
@@ -387,8 +381,7 @@ b {
 }
 
 .estilo_titulo_preco {
-    width: 150px;
-    vertical-align: middle;
+    font-size: 16px;
 }
 
 .estilo_quantidade {
@@ -439,10 +432,11 @@ b {
 
 .produtos {
     display: none;
-
 }
 
-
+.nomeproduto {
+    text-align: center;
+}
 
 .retangulofoda {
     height: 770px;
@@ -457,18 +451,17 @@ b {
     overflow-x: hidden;
 }
 
-.ScroolBAr::-webkit-scrollbar {
-    width: 10px;
-    height: auto;
-}
+    .ScroolBAr::-webkit-scrollbar {
+        width: 10px;
+        height: auto;
+    }
 
 
-.ScroolBAr::-webkit-scrollbar-thumb {
-    background-color: #aaa;
-}
+    .ScroolBAr::-webkit-scrollbar-thumb {
+        background-color: #aaa;
+    }
 
 .btn btn-info {
-
     position: absolute;
     right: 100px;
 }
