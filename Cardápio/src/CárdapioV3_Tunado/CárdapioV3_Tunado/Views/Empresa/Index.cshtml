@@ -22,6 +22,8 @@
 </head>
 
 <body>
+	<div>
+
 	<div class="header">
 
 		<h1>Perfil Empresa</h1>
@@ -119,22 +121,6 @@
 				</div>
 			</div>
 
-
-
-
-
-			<div class="form-group" style="text-align: left; position: relative;">
-				<label for="formGroupExampleInput2">Foto Empresa</label>
-				<div class="input-with-button">
-					@foreach (var item in ViewBag.listadeEmpresas)
-					{
-						<input type="text"  value="@item.FotoEmpresa" class="form-control" id="formGroupExampleInput2" readonly>
-					}
-
-
-				</div>
-			</div>
-
 			<div class="form-group" style="text-align: left; position: relative;">
 				<label for="formGroupExampleInput2">Taxa Empresa</label>
 				<div class="input-with-button">
@@ -154,5 +140,6 @@
 
 	</div>
 
+	</div>
 </body>
 </html>

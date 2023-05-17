@@ -34,20 +34,20 @@
                             <a class="nav-link active" aria-current="page" asp-controller="Produto" asp-action="Index">Produtos</a>
                         </li>
 
+                          @if (User.IsInRole(nameof(E_Perfil.MASTER)))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Categoria" asp-action="Index">Categorias</a>
+                            </li>
+                        }
+
 
                         <li class="nav-item">
                             <form method="post" asp-controller="Empresa" asp-action="Logout">
                                 <a class="nav-link" href="#" onclick="document.forms[0].submit()">Logout</a>
                             </form>
                         </li>
-
-
-                        @if (User.IsInRole(nameof(E_Perfil.MASTER)))
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link" asp-controller="Categoria" asp-action="Index">Categorias</a>
-                            </li>
-                        }
+                      
                     </ul>
                 </div>
             </div>
