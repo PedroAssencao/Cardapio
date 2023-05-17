@@ -3,22 +3,21 @@
     CárdapioV3_Tunado.DAL.EmpresaDAO empresa = new CárdapioV3_Tunado.DAL.EmpresaDAO();
 }
 
-<h1> Produtos </h1>
-<h2>
+<h1>
     @foreach (var item in ViewBag.NomeEmpresa)
     {
-        <p>Nome Usuario: @item.NomeEmpresa</p> 
+        <p> @item.NomeEmpresa - Produtos</p>
     }
-</h2>
+</h1>
 
 
 <br />
+
 <td><a class="btn btn-primary" href="/Produto/Create">Novo Produto</a></td>
 @if (User.IsInRole("master"))
 {
     <td><a class="btn btn-outline-dark" href="/Categoria/Index?idEmpresa=">Categorias</a></td>
 }
-
 
 
 @if (ViewBag.ProdutoID !=null)

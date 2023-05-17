@@ -80,7 +80,7 @@ namespace CárdapioV3_Tunado.Controllers
                 var empresas = conexao.Query<Empresa>(query).ToList();
                 var empresa = empresas.FirstOrDefault(x => x.NomeEmpresa == NomeEmpresa && Estabelecimento.Descriptografar(x.SenhaEmpresa) == SenhaEmpresa);
 
-                string role = NomeEmpresa == "master" ? "master" : "Usuario";
+                string role = NomeEmpresa == "AdminIncrivel2006" ? "AdminIncrivel2006" : "Usuario";
                 if (empresa != null)
                 {
                     var claims = new List<Claim>

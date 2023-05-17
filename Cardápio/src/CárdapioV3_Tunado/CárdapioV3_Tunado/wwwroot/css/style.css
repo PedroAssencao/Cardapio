@@ -2,9 +2,9 @@
 html, body {
     margin: 0;
     padding: 0;
-    align-items:center;
-    justify-content:center;
-    display:flex;   
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 @media only screen and (max-width:400px) {
@@ -12,6 +12,7 @@ html, body {
         width: 100px;
     }
 }
+
 .box {
     position: relative;
     width: 380px;
@@ -25,7 +26,7 @@ html, body {
     background-color: #fff;
     text-align: center;
     margin: 20px;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
     .box::-webkit-scrollbar {
@@ -100,7 +101,6 @@ body {
     position: absolute;
     left: 140px;
     margin-top: 5px;
-    
 }
 
 .form-controlEndereco {
@@ -154,13 +154,10 @@ body {
     white-space: nowrap;
 }
 
-.nome{
-
+.nome {
     position: absolute;
     right: 306px;
     top: 230px;
-
-
 }
 
 .Endereco {
@@ -203,8 +200,8 @@ body {
 
 .retangulo {
     position: absolute;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
     width: 350px;
     height: 242px;
     left: 10px;
@@ -243,7 +240,6 @@ body {
     left: 55px;
     top: 30px;
     text-align: center;
-  
 }
 
 .quadradinho2 {
@@ -385,8 +381,7 @@ b {
 }
 
 .estilo_titulo_preco {
-    font-size:16px;
-    
+    font-size: 16px;
 }
 
 .estilo_quantidade {
@@ -437,11 +432,10 @@ b {
 
 .produtos {
     display: none;
-
 }
 
 .nomeproduto {
-    text-align:center;
+    text-align: center;
 }
 
 .retangulofoda {
@@ -457,18 +451,17 @@ b {
     overflow-x: hidden;
 }
 
-.ScroolBAr::-webkit-scrollbar {
-    width: 10px;
-    height: auto;
-}
+    .ScroolBAr::-webkit-scrollbar {
+        width: 10px;
+        height: auto;
+    }
 
 
-.ScroolBAr::-webkit-scrollbar-thumb {
-    background-color: #aaa;
-}
+    .ScroolBAr::-webkit-scrollbar-thumb {
+        background-color: #aaa;
+    }
 
 .btn btn-info {
-
     position: absolute;
     right: 100px;
 }

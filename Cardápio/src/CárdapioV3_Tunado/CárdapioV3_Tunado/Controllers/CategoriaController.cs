@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CárdapioV3_Tunado.Controllers
 {
-    [Authorize(Roles = "master")]
+    [Authorize(Roles = "AdminIncrivel2006")]
     public class CategoriaController : Controller
     {
         CategoriaDAO categoria = new CategoriaDAO();
@@ -46,14 +46,24 @@ namespace CárdapioV3_Tunado.Controllers
         }
 
         [HttpPost]
-        public IActionResult Atualizar(string NomeCategoria, string CategoriaDescricao, string CategoriaFoto, string codigo)
+        public IActionResult Atualizar(string NomeCategoria, string CategoriaDescricao, IFormFile CategoriaFoto, string codigo)
         {
 
             CategoriaProdutoView AtualizarCategoria = new CategoriaProdutoView();
             AtualizarCategoria.CategoriaID = Convert.ToInt32(codigo);
             AtualizarCategoria.Nome = NomeCategoria;
             AtualizarCategoria.CategoriaDescricao = CategoriaDescricao;
-            AtualizarCategoria.CategoriaFoto = CategoriaFoto;
+
+            string path = $"wwwroot/Images/Categoria_{AtualizarCategoria.CategoriaID}";
+            if (CategoriaFoto is not null)
+            {
+                using var stream = new MemoryStream();
+                CategoriaFoto.CopyToAsync(stream);
+                stream.Position = 0;
+                using var fileStream = new FileStream($"{path}empresa_{AtualizarCategoria.CategoriaID}.png", FileMode.OpenOrCreate);
+                stream.CopyTo(fileStream);
+            }
+            AtualizarCategoria.CategoriaFoto = $"{path}empresa_{AtualizarCategoria.CategoriaID}.png".Replace(@"wwwroot", string.Empty);
             categoria.UptdateCategoria(AtualizarCategoria);
 
             return RedirectToAction("Index");
