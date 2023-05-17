@@ -11,19 +11,14 @@
     }
 </h2>
 
-<form  method="post" asp-controller="Empresa" asp-action="Logout">
-    <br />
-    <button style="position: absolute; right: 100px; top: 50;" class="btn btn-info" href="/Empresa/Logout" Nova>Logout</button>
-</form>
 
 <br />
-<td><a class="btn btn-outline-secondary" href="/Cardapio/Index">Voltar para o Cardapio</a></td>
 <td><a class="btn btn-primary" href="/Produto/Create">Novo Produto</a></td>
-@if (User.IsInRole("AdminIncrivel2006"))
+@if (User.IsInRole("master"))
 {
     <td><a class="btn btn-outline-dark" href="/Categoria/Index?idEmpresa=">Categorias</a></td>
 }
-<td><a class="btn btn-outline-info" href="/Empresa/Index?idEmpresa=">Empresa</a></td>
+
 
 
 @if (ViewBag.ProdutoID !=null)

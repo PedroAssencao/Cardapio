@@ -40,10 +40,6 @@
 	</div>
 
 	<div class="about">
-		<form method="post" asp-controller="Empresa" asp-action="Logout">
-			<br />
-			<button class="btn btn-info" href="/Empresa/Logout" Nova>Logout</button>
-		</form>
 		<br />
 		<input type="text" value="@String.Join("", new string[] { Context.Request.IsHttps ? "https://" : "http://", Context.Request.Host.Value})/cardapio/index?idempresa=@int.Parse(User.Identity!.Name)" id="myInput">
 
@@ -152,9 +148,9 @@
 
 			
 		</form>
-		<a type="button" class="btn btn-primary edit-button" style="margin-left: 700px; margin-top: -550px;" href="/Empresa/Atualizar">Editar</a>
-		<a type="button" class="btn btn-primary edit-button" style="margin-left: 890px; margin-top: -550px;" href="/Cardapio/Index">Cardapio</a>
-		<a type="button" class="btn btn-primary edit-button" style="margin-left: 510px; margin-top: -550px;" href="/Produto/Index">Produtos</a>
+		
+		<a type="button" class="btn btn-primary edit-button" style="margin-left: 890px; margin-top: -550px;" href="/Empresa/Atualizar">Editar</a>
+		
 
 	</div>
 

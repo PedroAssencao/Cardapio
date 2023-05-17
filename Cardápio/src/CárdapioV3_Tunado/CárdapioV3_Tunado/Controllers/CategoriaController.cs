@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CárdapioV3_Tunado.Controllers
 {
-    [Authorize(Roles = "AdminIncrivel2006")]
+    [Authorize(Roles = "master")]
     public class CategoriaController : Controller
     {
         CategoriaDAO categoria = new CategoriaDAO();
