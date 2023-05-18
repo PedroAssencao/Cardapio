@@ -21,6 +21,14 @@ namespace CárdapioV3_Tunado.DAL
             return dados;
         }
 
+        public int getTodosqtdProdutosbyEmpresa(int idEmpresa)
+        {
+            var sql = "select * from Produto";
+
+            var dados = (List<CategoriaProdutoView>)_connection.Query<CategoriaProdutoView>(sql);
+            return dados;
+        }
+
         public void InsertProduto(CategoriaProdutoView novoProduto)
         {
             string query = "Insert Produto (NomeProduto, DescricaoProduto, NutricaoProduto, PrecoProduto, CategoriaID, EmpresaID) values (@NomeProduto, @DescricaoProduto, @NutricaoProduto, @PrecoProduto, @CategoriaID, @EmpresaID)";
