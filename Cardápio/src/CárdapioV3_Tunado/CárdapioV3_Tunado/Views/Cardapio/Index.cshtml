@@ -364,6 +364,16 @@
 
 
             var link = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
+            $.ajax({
+                url: '@Url.ActionLink("CriarPedido", "Pedidos")',
+                data: {
+                    NomeCliente: nome,
+                    EnderecoCliente: endereco,
+                    TelefoneCliente: telefone,
+                    DataPedido: '@DateTime.Now.ToString("dd-MM-yyyy")',
+                    EmpresaID: @ViewBag.EmpresaID
+                }
+            })
             window.open(link, "_blank");
         }
 

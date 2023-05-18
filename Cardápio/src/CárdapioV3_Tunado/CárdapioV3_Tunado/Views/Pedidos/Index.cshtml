@@ -1,0 +1,60 @@
+﻿@foreach (var model in ViewBag.Pedidos)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome do cliente</th>
+                <th scope="col">Endereço do cliente</th>
+                <th scope="col">Telefone do cliente</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in model.Ultimos7Dias)
+            {
+                <tr>
+                    <td>@item.PedNomeCliente</td>
+                    <td>@item.PedEnderecoCliente</td>
+                    <td>@item.PedTelefoneCliente</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome do cliente</th>
+                <th scope="col">Endereço do cliente</th>
+                <th scope="col">Telefone do cliente</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in model.Ultimos15Dias)
+            {
+                <tr>
+                    <td>@item.PedNomeCliente</td>
+                    <td>@item.PedEnderecoCliente</td>
+                    <td>@item.PedTelefoneCliente</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome do cliente</th>
+                <th scope="col">Endereço do cliente</th>
+                <th scope="col">Telefone do cliente</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in model.Ultimos30Dias)
+            {
+                <tr>
+                    <td>@item.PedNomeCliente</td>
+                    <td>@item.PedEnderecoCliente</td>
+                    <td>@item.PedTelefoneCliente</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

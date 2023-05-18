@@ -70,6 +70,8 @@ namespace CárdapioV3_Tunado.Controllers
                 Lista1 = lista,
                 Lista2 = listaCategoria
             };
+
+            ViewBag.EmpresaID = idEmpresa;
             return View(listas);
         }
 
