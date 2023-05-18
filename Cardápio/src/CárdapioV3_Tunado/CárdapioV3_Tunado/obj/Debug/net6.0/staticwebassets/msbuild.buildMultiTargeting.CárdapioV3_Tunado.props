@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\CárdapioV3_Tunado.props" />
-</Project>
