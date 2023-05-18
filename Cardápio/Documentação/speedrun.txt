@@ -1,0 +1,15 @@
+Dia 03
+Entrega 3.1 – Dashboard
+Criar uma tela onde seja possível a empresa possa visualizar de forma simples:
+- Quantidade de produtos cadastrados
+- Quantidade de pedidos realizados ( O pedido é realizado quando de fato a pessoa enviou a mensagem  pelo zap via sistema ) 
+- Produto mais procurado (nome do produto e quantidade )
+- Quantidade de pedidos nos últimos 30 dias
+ - Quantidade de pedidos nos últimos 15 dias
+- Quantidade de pedidos nos últimos 7 dias
+
+1 - select count(*) ...
+2 - criar tabela com (id, data, nome pessoa, numero da pessoa, endereço)
+3 - select count(*) from tabelaNova where datapedido in (datapedido+7dias)
+4 - select count(*) from tabelaNova where datapedido in (datapedido+15dias)
+5 - select count(*) from tabelaNova where datapedido in (datapedido+30dias)
