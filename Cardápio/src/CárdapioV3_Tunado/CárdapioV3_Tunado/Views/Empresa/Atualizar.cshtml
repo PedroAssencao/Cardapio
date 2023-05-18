@@ -72,7 +72,7 @@
                 <div class="input-with-button">
                     @foreach (var item in ViewBag.EmpresaAtualizar)
                     {
-                        <input type="text" name="CNPJ" value="@item.CNPJ" class="form-control" id="formGroupExampleInput" maxlength="14">
+                        <input type="text" name="cnpj" value="@item.CNPJ" class="form-control" id="formGroupExampleInput" maxlength="14">
                     }
 
 
@@ -123,10 +123,11 @@
         </form>
     </div>
 
-
+    s
     <script>
         $(document).ready(function () {
-            $('#telefone').mask('+99(99)9999-9999?9');
+            $('#telefone').mask('+99(99)99999-9999');
+            $('#cnpj').mask('00.000.000/0000-00');
         });
     </script>
 

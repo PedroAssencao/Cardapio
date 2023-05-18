@@ -110,8 +110,10 @@ namespace CárdapioV3_Tunado.Controllers
         }
 
         [HttpGet]
+       
         public IActionResult Atualizar()
         {
+            if (User.Identity!.Name is null) return RedirectToAction("/empresa/logar");
             var idEmpresa = int.Parse(User.Identity!.Name);
             //var empresa = Estabelecimento.getTodasEmpresas().Where(x => x.EmpresaID == idEmpresa).FirstOrDefault();
             //if (empresa is null)

@@ -11,8 +11,11 @@ namespace CárdapioV3_Tunado.Controllers
         CardapioDAO cardapio = new CardapioDAO();
         ProdutoDAO produto = new ProdutoDAO();
         EmpresaDAO empresa = new EmpresaDAO();
+
+        [Authorize]
         public IActionResult Index()
         {
+            if (User.Identity!.Name is null) return RedirectToAction("/empresa/logar");
             var idEmpresa = int.Parse(User.Identity!.Name);
             ViewBag.listaProdutosController = cardapio.getTodosProdutosbyEmpresa(idEmpresa);
             ViewBag.NomeEmpresa = empresa.getTodasEmpresasbyID(idEmpresa);
@@ -21,8 +24,10 @@ namespace CárdapioV3_Tunado.Controllers
 
         //create
         [HttpGet]
+        [Authorize]
         public IActionResult create(int idEmpresa)
         {
+            if (User.Identity!.Name is null) return RedirectToAction("/empresa/logar");
             CategoriaDAO cardapio = new CategoriaDAO();
             idEmpresa = int.Parse(User.Identity!.Name);
             ViewBag.listaCategorias = cardapio.getTodasCategorias();
@@ -31,8 +36,10 @@ namespace CárdapioV3_Tunado.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult create(string NomeProduto, string ProdutoDescricao, string NutricaoProduto, double PrecoProduto, int Categorias)
         {
+            if (User.Identity!.Name is null) return RedirectToAction("/empresa/logar");
             int idEmpresa = int.Parse(User.Identity!.Name);
             CategoriaProdutoView NovoProduto = new CategoriaProdutoView();
             NovoProduto.NomeProduto = NomeProduto;
@@ -64,8 +71,10 @@ namespace CárdapioV3_Tunado.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult Atualizar(string NomeProduto, string DescricaoProduto, string NutricaoProduto, string codigo, double PrecoProduto, int CategoriaID, int EmpresaID)
         {
+            if (User.Identity!.Name is null) return RedirectToAction("/empresa/logar");
             EmpresaID = int.Parse(User.Identity!.Name);
             CategoriaProdutoView AtualizarProduto = new CategoriaProdutoView();
             AtualizarProduto.ProID = Convert.ToInt32(codigo);
