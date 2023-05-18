@@ -16,7 +16,7 @@ namespace CárdapioV3_Tunado.Controllers
     public class PedidosController : Controller
     {
         private readonly PedidosDAO _pedidosContext;
-
+        Pedidos _pedidos = new Pedidos();
         public PedidosController()
         {
             _pedidosContext = new PedidosDAO();
@@ -31,6 +31,20 @@ namespace CárdapioV3_Tunado.Controllers
                 Ultimos30Dias = _pedidosContext.getTodosPedidos(30, int.Parse(User.Identity!.Name!)),
             };
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(string NomeCliente, string EnderecoCliente, string TelefoneCliente, DateTime DataPedido, int EmpresaID)
+        {
+            _pedidos.PedNomeCliente = NomeCliente;
+            _pedidos.PedEnderecoCliente = EnderecoCliente;
+            _pedidos.PedTelefoneCliente = TelefoneCliente;
+            _pedidos.PedDataPedido = DataPedido;
+            _pedidos.EmpresaId = EmpresaID;
+
+            _pedidosContext.insertNovoPedido(_pedidos);
+
+            return RedirectToAction("Index");
         }
     }
 }

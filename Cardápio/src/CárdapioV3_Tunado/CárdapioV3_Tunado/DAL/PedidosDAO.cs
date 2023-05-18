@@ -19,5 +19,21 @@ namespace CárdapioV3_Tunado.DAL
             List<Pedidos> dados = (List<Pedidos>)_connection.Query<Pedidos>(sql);
             return dados;
         }
+
+        public void insertNovoPedido(Pedidos novoPedido)
+        {
+            var sql = "insert Pedidos (PedNomeCliente, PedEnderecoCliente, PedTelefoneCliente, PedDataPedido, EmpresaId) values (@PedNomeCliente, @PedEnderecoCliente, @PedTelefoneCliente, @PedDataPedido, @EmpresaId)";
+
+            var dados = _connection.Execute(sql, novoPedido);
+        }
+
+        public int qtdPedidosbyEmpresa(int idEmpresa)
+        {
+            var sql = $"select Count(*) from Pedidos where EmpresaId={idEmpresa}";
+
+            int dados = _connection.QueryFirst<int>(sql);
+
+            return dados;
+        }
     }
 }
