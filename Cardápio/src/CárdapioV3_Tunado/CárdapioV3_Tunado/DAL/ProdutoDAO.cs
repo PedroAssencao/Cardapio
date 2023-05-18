@@ -7,6 +7,7 @@ namespace CárdapioV3_Tunado.DAL
 {
     public class ProdutoDAO
     {
+        //TODO: Adicionar campo novo nos comandos do sql 'QuantidadePesquisa'
         MySqlConnection _connection;
         public ProdutoDAO()
         {
@@ -71,6 +72,18 @@ namespace CárdapioV3_Tunado.DAL
 
             int qtdAtualizada = _connection.Execute(query, deleteProduto);
 
+        }
+
+        public void atualizarqtdPesquisaProdutos(int[] idProdutos)
+        {
+            string sql = "update Produto set QuantidadePesquisa = @quantidade where ProID = @ProID";
+            foreach (int id in idProdutos)
+            {
+                var produto = this.getTodosProdutos().First(x => x.ProID == id);
+                produto.QuantidadePesquisa++;
+                _connection.Execute(sql, new { quantidade = produto.QuantidadePesquisa, ProID = id});
+            }
+            
         }
     }
 }

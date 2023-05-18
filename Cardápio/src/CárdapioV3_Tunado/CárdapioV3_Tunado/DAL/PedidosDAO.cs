@@ -15,25 +15,18 @@ namespace CárdapioV3_Tunado.DAL
         }
         public List<Pedidos> getTodosPedidos(int qtdDias, int empresaId)
         {
-            var sql = $"Select * from Pedidos where PedDataPedido >= Date_Sub(Curdate(), Interval {qtdDias} DAY) and EmpresaId = {empresaId}";
+            var sql = qtdDias != 0
+                ? $"Select * from Pedidos where PedDataPedido >= Date_Sub(Curdate(), Interval {qtdDias} DAY) and EmpresaId = {empresaId}"
+                : $"Select * from Pedidos where EmpresaId = {empresaId}";
             List<Pedidos> dados = (List<Pedidos>)_connection.Query<Pedidos>(sql);
             return dados;
         }
 
         public void insertNovoPedido(Pedidos novoPedido)
         {
-            var sql = "insert Pedidos (PedNomeCliente, PedEnderecoCliente, PedTelefoneCliente, PedDataPedido, EmpresaId, QuantidadePesquisa) values (@PedNomeCliente, @PedEnderecoCliente, @PedTelefoneCliente, @PedDataPedido, @EmpresaId, @QuantidadePesquisa)";
+            var sql = "insert Pedidos (PedNomeCliente, PedEnderecoCliente, PedTelefoneCliente, PedDataPedido, TipoPagamento, EmpresaId) values (@PedNomeCliente, @PedEnderecoCliente, @PedTelefoneCliente, @PedDataPedido, @TipoPagamento, @EmpresaId)";
 
             var dados = _connection.Execute(sql, novoPedido);
-        }
-
-        public int qtdPedidosbyEmpresa(int idEmpresa)
-        {
-            var sql = $"select Count(*) from Pedidos where EmpresaId={idEmpresa}";
-
-            int dados = _connection.QueryFirst<int>(sql);
-
-            return dados;
         }
     }
 }

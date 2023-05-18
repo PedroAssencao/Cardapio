@@ -1,60 +1,92 @@
-﻿@foreach (var model in ViewBag.Pedidos)
-{
+﻿<h1>Todos</h1>
+<h1>@ViewBag.TodosPedidos.Count</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nome do cliente</th>
+            <th scope="col">Endereço do cliente</th>
+            <th scope="col">Telefone do cliente</th>
+            <th scope="col">Pagamento</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.TodosPedidos)
+        {
+            <tr>
+                <td>@item.PedNomeCliente</td>
+                <td>@item.PedEnderecoCliente</td>
+                <td>@item.PedTelefoneCliente</td>
+                <td>@item.TipoPagamento</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<h1>7 dias</h1>
+<h1>@ViewBag.PedidosUltimos7Dias.Count</h1>
     <table class="table">
         <thead>
             <tr>
                 <th scope="col">Nome do cliente</th>
                 <th scope="col">Endereço do cliente</th>
                 <th scope="col">Telefone do cliente</th>
+                <th scope="col">Pagamento</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in model.Ultimos7Dias)
+        @foreach (var item in ViewBag.PedidosUltimos7Dias)
             {
                 <tr>
                     <td>@item.PedNomeCliente</td>
                     <td>@item.PedEnderecoCliente</td>
                     <td>@item.PedTelefoneCliente</td>
+                    <td>@item.TipoPagamento</td>
                 </tr>
             }
         </tbody>
     </table>
+<h1>15 dias</h1>
+<h1>@ViewBag.PedidosUltimos15Dias.Count</h1>
     <table class="table">
         <thead>
             <tr>
                 <th scope="col">Nome do cliente</th>
                 <th scope="col">Endereço do cliente</th>
                 <th scope="col">Telefone do cliente</th>
+                <th scope="col">Pagamento<th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in model.Ultimos15Dias)
+        @foreach (var item in ViewBag.PedidosUltimos15Dias)
             {
                 <tr>
                     <td>@item.PedNomeCliente</td>
                     <td>@item.PedEnderecoCliente</td>
                     <td>@item.PedTelefoneCliente</td>
+                    <td>@item.TipoPagamento</td>
                 </tr>
             }
         </tbody>
     </table>
+<h1>30 dias</h1>
+<h1>@ViewBag.PedidosUltimos30Dias.Count</h1>
     <table class="table">
         <thead>
             <tr>
                 <th scope="col">Nome do cliente</th>
                 <th scope="col">Endereço do cliente</th>
                 <th scope="col">Telefone do cliente</th>
+                <th scope="col">Pagamento</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in model.Ultimos30Dias)
+        @foreach (var item in ViewBag.PedidosUltimos30Dias)
             {
                 <tr>
                     <td>@item.PedNomeCliente</td>
                     <td>@item.PedEnderecoCliente</td>
                     <td>@item.PedTelefoneCliente</td>
+                    <td>@item.TipoPagamento</td>
                 </tr>
             }
         </tbody>
     </table>
-}

@@ -364,14 +364,21 @@
 
 
             var link = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
+
+            var idsdosprodutos = carrinho.map(objeto => objeto.proID);
+
+
             $.ajax({
                 url: '@Url.ActionLink("CriarPedido", "Pedidos")',
+                method: 'POST',
                 data: {
                     NomeCliente: nome,
                     EnderecoCliente: endereco,
                     TelefoneCliente: telefone,
                     DataPedido: '@DateTime.Now.ToString("dd-MM-yyyy")',
-                    EmpresaID: @ViewBag.EmpresaID
+                    EmpresaID: @ViewBag.EmpresaID,
+                    TipoPagamento: e,
+                    Produtos: idsdosprodutos,
                 }
             })
             window.open(link, "_blank");

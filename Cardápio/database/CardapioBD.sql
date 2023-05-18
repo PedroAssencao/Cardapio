@@ -50,9 +50,11 @@ create table Pedidos(
     PedEnderecoCliente varchar(255) not null,
     PedTelefoneCliente varchar(255) not null,
     PedDataPedido date not null,
+    TipoPagamento varchar(255) not null,
     EmpresaId int not null,
     Constraint FK_EmpresaIDPedidos foreign key (EmpresaID) references Empresa(EmpresaID)
 );
 
 insert into Empresa (Telefone, NomeEmpresa, SenhaEmpresa, FotoEmpresa, CNPJ, taxaEmpresa, Perfil_Empresa) values ('5579998462497', 'master', 'bWFzdGVyQDEyM0AxMjM=', null, 99999999999995, 10.99, 'MASTER');
 
+alter table Produto add column QuantidadePesquisa int default 0 not null;

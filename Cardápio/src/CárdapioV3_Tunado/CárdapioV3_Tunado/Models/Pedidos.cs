@@ -7,6 +7,7 @@
         public string PedEnderecoCliente { get; set; }
         public string PedTelefoneCliente { get; set; }
         public DateTime PedDataPedido { get; set; }
+        public string TipoPagamento { get; set; }
         public int EmpresaId { get; set; }
     }
 }
