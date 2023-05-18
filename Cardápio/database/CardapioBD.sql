@@ -44,9 +44,15 @@ CategoriaID int,
     
 );
 
+create table Pedidos(
+	PedID int primary key auto_increment,
+	PedNomeCliente varchar(255) not null,
+    PedEnderecoCliente varchar(255) not null,
+    PedTelefoneCliente varchar(255) not null,
+    PedDataPedido date not null,
+    EmpresaId int not null,
+    Constraint FK_EmpresaIDPedidos foreign key (EmpresaID) references Empresa(EmpresaID)
+);
+
 insert into Empresa (Telefone, NomeEmpresa, SenhaEmpresa, FotoEmpresa, CNPJ, taxaEmpresa, Perfil_Empresa) values ('5579998462497', 'master', 'bWFzdGVyQDEyM0AxMjM=', null, 99999999999995, 10.99, 'MASTER');
 
-select * from empresa;
-Select * from Categoria;
-select * from Produto;
-select * from Perfil;
