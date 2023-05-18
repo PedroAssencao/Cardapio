@@ -112,7 +112,7 @@
                         <div>
                             <div class="fs-6 mb-2">Produtos selecionados:</div>
                         </div>
-                        <div class="retangulo bg-secondary p-3 rounded-2" id="produto-selecionado" style="overflow-y: scroll; max-height: 145px;">
+                        <div class="retangulo bg-secondary p-3 rounded-2" id="produto-selecionado">
                         </div>
                         <div>
                             <div id="total-da-soma-dos-valores" class="fs-6 mb-2" style="font-weight:500;">Total: R$00,00</div>
@@ -239,7 +239,7 @@
                 "<div id='" + "produto-" + i + "' class='ScroolBAr container card bg-Emphasis mb-2'>" +
                 "<div class='d-flex justify-content-between align-items-center'>" +
                 "<span>" + item.nomeProduto + " x " + item.quantidade + " = R$" + precoTotal.toFixed(2) + "</span>" +
-                "<button class='btn btn-danger rounded-2' style='margin-left:20px;' onclick='event.preventDefault(); deleteDiv(" + i + "); removerItemDoCarrinho(" + i + ");'>X</button></div>" +
+                "<button class='btn btn-danger rounded-2 btn_produto' style='margin-left:20px;' onclick='event.preventDefault(); deleteDiv(" + i + "); removerItemDoCarrinho(" + i + ");'>X</button></div>" +
                 "</div>" + "</div>";
             }
 
@@ -251,12 +251,20 @@
 
         function deleteDiv(id) {
             var divpequena = document.getElementById("produto-" + id).remove();
+            $(".btn_produto").each((index, object) => {
+                $(".btn_produto").eq(index).prop("disabled", true)
+            })
         }
 
         async function removerItemDoCarrinho(index) {
             carrinho.splice(index, 1);
             await salvarNoLocalStorage("carrinho", carrinho);
             await atualizarValorTotal();
+            setTimeout(function () {
+                $(".btn_produto").each((i, object) => {
+                    $(".btn_produto").eq(i).prop("disabled", false)
+                })
+            }, 450);
         }
 
         function atualizarValorTotal() {
