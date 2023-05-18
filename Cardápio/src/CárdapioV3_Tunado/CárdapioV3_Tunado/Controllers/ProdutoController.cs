@@ -67,7 +67,10 @@ namespace CárdapioV3_Tunado.Controllers
         {
             var produtoPesquisado = produto.getTodosProdutos().FirstOrDefault(x => x.ProID == id);
 
-            produtoPesquisado.QuantidadePesquisa++;
+            if (produtoPesquisado != null)
+            {
+                produtoPesquisado.QuantidadePesquisa++;
+            }
 
             return RedirectToAction("Index");
         }
