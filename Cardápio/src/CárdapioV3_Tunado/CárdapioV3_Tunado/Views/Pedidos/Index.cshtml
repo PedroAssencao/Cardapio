@@ -1,0 +1,83 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<ul class="nav nav-underline">
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Active</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link disabled">Disabled</a>
+    </li>
+</ul>
+
+@foreach (var model in ViewBag.Pedidos)
+{
+    <table class="=table">
+        <thead>
+            <tr>
+                <th scope="col">Nome do Cliente</th>
+                <th scope="col">Endereço do Cliente</th>
+                <th scope="col">Telefone do Cliente</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in model.Ultimos7Dias)
+            {
+                <tr>
+                    <td scope="col">@item.PedNomeCliente</td>
+                    <td scope="col">@item.PedEnderecoCliente</td>
+                    <td scope="col">@item.PedTelefoneCliente</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome do Cliente</th>
+                <th scope="col">Endereço do Cliente</th>
+                <th scope="col">Telefone do Cliente</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in model.Ultimos15Dias)
+            {
+                <tr>
+                    <td scope="col">@item.PedNomeCliente</td>
+                    <td scope="col">@item.PedEnderecoCliente</td>
+                    <td scope="col">@item.PedTelefoneCliente</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome do Cliente</th>
+                <th scope="col">Endereço do Cliente</th>
+                <th scope="col">Telefone do Cliente</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in model.Ultimos30Dias)
+            {
+                <tr>
+                    <td scope="col">@item.PedNomeCliente</td>
+                    <td scope="col">@item.PedEnderecoCliente</td>
+                    <td scope="col">@item.PedTelefoneCliente</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
