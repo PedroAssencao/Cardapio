@@ -13,12 +13,10 @@ namespace CárdapioV3_Tunado.DAL
         {
             _connection = ConexaoBD.getConexao();
         }
-        public List<Pedidos> getTodosPedidos(int qtdDias)
+        public List<Pedidos> getTodosPedidos(int qtdDias, int empresaId)
         {
-            var sql = $"Select * from Pedidos where PedDataPedido >= Date_Sub(Curdate(), Interval + {qtdDias}";
-
+            var sql = $"Select * from Pedidos where PedDataPedido >= Date_Sub(Curdate(), Interval {qtdDias} DAY) and EmpresaId = {empresaId}";
             List<Pedidos> dados = (List<Pedidos>)_connection.Query<Pedidos>(sql);
-
             return dados;
         }
     }
