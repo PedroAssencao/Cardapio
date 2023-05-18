@@ -21,11 +21,12 @@ namespace CárdapioV3_Tunado.DAL
             return dados;
         }
 
-        public int getTodosqtdProdutosbyEmpresa(int idEmpresa)
+        public int getQtdProdutosbyEmpresa(int idEmpresa)
         {
-            var sql = "select * from Produto";
+            var sql = $"select Count(*) from Produto where EmpresaID= {idEmpresa}";
 
-            var dados = (List<CategoriaProdutoView>)_connection.Query<CategoriaProdutoView>(sql);
+            int dados = _connection.QueryFirst<int>(sql);
+
             return dados;
         }
 
