@@ -16,6 +16,7 @@ namespace CárdapioV3_Tunado.Controllers
     public class PedidosController : Controller
     {
         private readonly PedidosDAO _pedidosContext;
+        Pedidos _pedidos = new Pedidos();
         public PedidosController()
         {
             _pedidosContext = new PedidosDAO();
@@ -33,17 +34,17 @@ namespace CárdapioV3_Tunado.Controllers
         }
 
         [HttpPost]
-        [ActionName("CriarPedido")] 
-        public void Create(string NomeCliente, string EnderecoCliente, string TelefoneCliente, string DataPedido, int EmpresaID)
+        public IActionResult Create(string NomeCliente, string EnderecoCliente, string TelefoneCliente, DateTime DataPedido, int EmpresaID)
         {
-            var pedido = new Pedidos();
-            pedido.PedNomeCliente = NomeCliente;
-            pedido.PedEnderecoCliente = EnderecoCliente;
-            pedido.PedTelefoneCliente = TelefoneCliente;
-            pedido.PedDataPedido = DateTime.Parse(DataPedido);
-            pedido.EmpresaId = EmpresaID;
+            _pedidos.PedNomeCliente = NomeCliente;
+            _pedidos.PedEnderecoCliente = EnderecoCliente;
+            _pedidos.PedTelefoneCliente = TelefoneCliente;
+            _pedidos.PedDataPedido = DataPedido;
+            _pedidos.EmpresaId = EmpresaID;
 
-            _pedidosContext.insertNovoPedido(pedido);
+            _pedidosContext.insertNovoPedido(_pedidos);
+
+            return RedirectToAction("Index");
         }
     }
 }
