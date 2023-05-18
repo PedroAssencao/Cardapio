@@ -17,6 +17,7 @@
         public string CategoriaFoto { get; set; }
         public string FotoEmpresa { get; set; }
         public string NomeEmpresa { get; set; }
+        public int QuantidadePesquisa { get; set; } = 0;
 
     }
 }

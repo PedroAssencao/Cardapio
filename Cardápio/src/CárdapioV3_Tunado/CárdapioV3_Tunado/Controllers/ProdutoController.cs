@@ -62,6 +62,19 @@ namespace CárdapioV3_Tunado.Controllers
 
         //atualizar
 
+        [HttpPost]
+        public IActionResult updateQuantidadePesquisa(int id)
+        {
+            var produtoPesquisado = produto.getTodosProdutos().FirstOrDefault(x => x.ProID == id);
+
+            if (produtoPesquisado != null)
+            {
+                produtoPesquisado.QuantidadePesquisa++;
+            }
+
+            return RedirectToAction("Index");
+        }
+
         [HttpGet]
         public IActionResult Atualizar(int id)
         {

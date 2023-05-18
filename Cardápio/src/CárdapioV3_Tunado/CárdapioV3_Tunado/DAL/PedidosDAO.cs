@@ -22,7 +22,7 @@ namespace CárdapioV3_Tunado.DAL
 
         public void insertNovoPedido(Pedidos novoPedido)
         {
-            var sql = "insert Pedidos (PedNomeCliente, PedEnderecoCliente, PedTelefoneCliente, PedDataPedido, EmpresaId) values (@PedNomeCliente, @PedEnderecoCliente, @PedTelefoneCliente, @PedDataPedido, @EmpresaId)";
+            var sql = "insert Pedidos (PedNomeCliente, PedEnderecoCliente, PedTelefoneCliente, PedDataPedido, EmpresaId, QuantidadePesquisa) values (@PedNomeCliente, @PedEnderecoCliente, @PedTelefoneCliente, @PedDataPedido, @EmpresaId, @QuantidadePesquisa)";
 
             var dados = _connection.Execute(sql, novoPedido);
         }
