@@ -37,6 +37,7 @@ NomeProduto varchar(250) not null,
 DescricaoProduto varchar(250) not null,
 NutricaoProduto varchar(500) null,
 PrecoProduto double not null,
+QuantidadePesquisa int default 0,
 EmpresaID int,
 CategoriaID int,
     Constraint FK_CategoriaProduto foreign key (CategoriaID) references Categoria(CategoriaID),
@@ -57,4 +58,4 @@ create table Pedidos(
 
 insert into Empresa (Telefone, NomeEmpresa, SenhaEmpresa, FotoEmpresa, CNPJ, taxaEmpresa, Perfil_Empresa) values ('5579998462497', 'master', 'bWFzdGVyQDEyM0AxMjM=', null, 99999999999995, 10.99, 'MASTER');
 
-alter table Produto add column QuantidadePesquisa int default 0 not null;
+

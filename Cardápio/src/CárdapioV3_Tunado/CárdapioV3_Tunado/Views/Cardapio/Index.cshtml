@@ -139,7 +139,8 @@
                         </div>
                         <div class="d-flex justify-content-between">
                             <button id="btn-adicionar-item" class="btn-AdicionarPedido btn btn-secondary">Adicionar item</button>
-                            <button class="btn-FinalizarPedido btn btn-warning" style="margin-left: 20px;" onclick="varrer()">Finalizar Pedido</button>
+                            <button id="FinalizarPedido" class="btn-FinalizarPedido btn btn-warning" style="margin-left: 20px;" onclick="if (validarCampos()) { varrer(); }">Finalizar Pedido</button>
+
                         </div>
                     </div>
                 </div>
@@ -396,6 +397,39 @@
             carrinho.push(item);
             salvarNoLocalStorage("carrinho", carrinho);
         }
+
+        var inputNome = document.getElementById('InputNome');
+var inputEndereco = document.getElementById('InputEndereco');
+var inputNTelefone = document.getElementById('InputNTelefone');
+
+
+function validarCampos() {
+  if (inputNome.value.trim() === '') {
+    alert('Por favor, preencha o campo Nome.');
+    return false;
+  }
+
+  if (inputEndereco.value.trim() === '') {
+    alert('Por favor, preencha o campo Endereço.');
+    return false;
+  }
+
+  if (inputNTelefone.value.trim() === '') {
+    alert('Por favor, preencha o campo Número de Telefone.');
+    return false;
+  }
+
+  return true;
+}
+
+var form = document.getElementById('FinalizarPedido');
+form.addEventListener('submit', function(event) {
+  if (!validarCampos()) {
+    event.preventDefault(); 
+  }
+});
+
+
     </script>
 </body>
 </html>

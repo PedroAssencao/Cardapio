@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CárdapioV3_Tunado.Controllers
 {
-    [Authorize]
+
     public class PedidosController : Controller
     {
         private readonly PedidosDAO _pedidosContext;
@@ -15,7 +15,7 @@ namespace CárdapioV3_Tunado.Controllers
             _pedidosContext = new PedidosDAO();
             _produtoContext = new ProdutoDAO();
         }
-
+        [Authorize]
         public IActionResult Index()
         {
             ViewBag.TodosPedidos = _pedidosContext.getTodosPedidos(0, int.Parse(User.Identity!.Name!));
