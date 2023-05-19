@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\CárdapioV3_Tunado.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\FotoEmpresas\\Empresa_1.png",
+      "PackagePath": "staticwebassets\\FotoEmpresas\\Empresa_1.png"
+    },
+    {
+      "Id": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\FotoEmpresas\\Empresa_2.png",
+      "PackagePath": "staticwebassets\\FotoEmpresas\\Empresa_2.png"
+    },
+    {
       "Id": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\Images\\1empresa_1.png",
       "PackagePath": "staticwebassets\\Images\\1empresa_1.png"
     },

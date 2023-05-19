@@ -119,23 +119,27 @@
             </div>
         </div>
     </div>
+
     <div class="row align-items-center mt-5">
-        <div class="col mb-3">
-            <div class="card bg-primary p-5">
+        <div class="col mb-3 same-height">
+            <div class="card bg-primary p-5" style="max-height: 170px;">
                 <div class="card-body">
                     <h5 class="card-title">Quantidade de Produtos:</h5>
                     <h6>@ViewBag.QuantidadeProdutos</h6>
                 </div>
             </div>
         </div>
-        <div class="col mb-3">
-            <div class="card bg-primary p-4">
+        <div class="col mb-3 same-height">
+            <div class="card bg-primary p-5" style="max-height: 170px;">
                 <div class="card-body">
                     <h5 class="card-title">Produto Mais Procurado:</h5>
                     <p>@ViewBag.ProdutoMaisProcurado.NomeProduto foi procurado @ViewBag.ProdutoMaisProcurado.QuantidadePesquisa vezes</p>
                 </div>
             </div>
         </div>
+    </div>
+
+
         @if (User.IsInRole(nameof(E_Perfil.MASTER)))
         {
             <div class="col mb-3">

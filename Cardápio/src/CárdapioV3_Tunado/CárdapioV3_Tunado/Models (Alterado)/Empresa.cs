@@ -10,8 +10,6 @@
         public double taxaEmpresa { get; set; } 
         public string Perfil_Empresa { get; set; }
         public string FotoEmpresa { get; set; }
-        public string Perfil_Empresa { get; set; }
-
         public bool VerificarSenha(string Senha, string ConfirmarSenhas) => Senha == ConfirmarSenhas;
 
     }

@@ -30,7 +30,8 @@
                     else
                     {
                         <div style="font-size: 24px; font-weight: 500; margin-left: 50px;">
-                            <span style="font-size: 30px;">@Model.Lista1.First().NomeEmpresa</span>
+              
+                            <span style="font-size: 30px; margin-left:250px;">@Model.Lista1.First().NomeEmpresa</span>
                         </div>
                     }
 
@@ -259,9 +260,9 @@
             await salvarNoLocalStorage("carrinho", carrinho);
             atualizarValorTotal();
 
-            $("#produto-" + index).remove(); // Remove o elemento específico do DOM
+            $("#produto-" + index).remove(); 
 
-            // Atualiza os IDs dos elementos restantes após a remoção
+            
             $(".btn_produto").each(function (i, object) {
                 var element = $(this);
                 var currentIndex = element.closest(".ScroolBAr").attr("id").split("-")[1];
