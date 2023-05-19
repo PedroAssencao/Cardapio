@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7T2eyCJ3nMvvgBzMfj6+z3ZJA8Il/DqFKv6LYgSw4Jk=",
+  "Hash": "oVDXcYBccRm4mpABDcLbA2syHO72w2wVpKFneBIm8pM=",
   "Source": "CárdapioV3_Tunado",
   "BasePath": "_content/CárdapioV3_Tunado",
   "Mode": "Default",
@@ -136,12 +136,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\FotoEmpresas\\Empresa_1.png",
+      "Identity": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\Images\\1empresa_1.png",
       "SourceId": "CárdapioV3_Tunado",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\",
       "BasePath": "_content/CárdapioV3_Tunado",
-      "RelativePath": "FotoEmpresas/Empresa_1.png",
+      "RelativePath": "Images/1empresa_1.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -150,15 +150,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\FotoEmpresas\\Empresa_1.png"
+      "OriginalItemSpec": "wwwroot\\Images\\1empresa_1.png"
     },
     {
-      "Identity": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\FotoEmpresas\\Empresa_2.png",
+      "Identity": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\Images\\2empresa_2.png",
       "SourceId": "CárdapioV3_Tunado",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\",
       "BasePath": "_content/CárdapioV3_Tunado",
-      "RelativePath": "FotoEmpresas/Empresa_2.png",
+      "RelativePath": "Images/2empresa_2.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -167,7 +167,75 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\FotoEmpresas\\Empresa_2.png"
+      "OriginalItemSpec": "wwwroot\\Images\\2empresa_2.png"
+    },
+    {
+      "Identity": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\Images\\3empresa_3.png",
+      "SourceId": "CárdapioV3_Tunado",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\",
+      "BasePath": "_content/CárdapioV3_Tunado",
+      "RelativePath": "Images/3empresa_3.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\3empresa_3.png"
+    },
+    {
+      "Identity": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\Images\\Categoria_0empresa_0.png",
+      "SourceId": "CárdapioV3_Tunado",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\",
+      "BasePath": "_content/CárdapioV3_Tunado",
+      "RelativePath": "Images/Categoria_0empresa_0.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Categoria_0empresa_0.png"
+    },
+    {
+      "Identity": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\Images\\Categoria_4empresa_4.png",
+      "SourceId": "CárdapioV3_Tunado",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\",
+      "BasePath": "_content/CárdapioV3_Tunado",
+      "RelativePath": "Images/Categoria_4empresa_4.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Categoria_4empresa_4.png"
+    },
+    {
+      "Identity": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\Images\\Categoria_5empresa_5.png",
+      "SourceId": "CárdapioV3_Tunado",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\",
+      "BasePath": "_content/CárdapioV3_Tunado",
+      "RelativePath": "Images/Categoria_5empresa_5.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Categoria_5empresa_5.png"
     },
     {
       "Identity": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\Images\\dish-left.png",
@@ -1341,6 +1409,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\Properties\\launchSettings.json",
+      "SourceId": "CárdapioV3_Tunado",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\",
+      "BasePath": "_content/CárdapioV3_Tunado",
+      "RelativePath": "Properties/launchSettings.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Properties\\launchSettings.json"
     }
   ]
 }

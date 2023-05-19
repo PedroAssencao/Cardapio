@@ -1,4 +1,4 @@
-﻿    @{
+﻿@{
     int cade = -1;
 }
 <!DOCTYPE html>
@@ -10,171 +10,143 @@
     <title>CardapioV2</title>
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
     @model CárdapioV3_Tunado.Models.ListCategoriaProduto
 </head>
 <body>
-    <div class="card text-bg-light mt-2" style="height: 90%; overflow-y: scroll; position:fixed;">
-        <div class="container text-center">
-            <nav class="navbar bg-body-tertiary sticky-top">
-                <div class="container-fluid">
-                    <div class="col">
-                        <div class="text-center">
-                            <img class="rounded mx-auto d-block" src="@Model.Lista1.First().FotoEmpresa" width="80" height="80">
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="text-center">
-                            <span class="navbar-brand mb-0 h1">Nome da Empresa</span>
-                        </div>
-                    </div>
-@*                    <div class="col">
-                        <div class="text-center">
-                            <button id="btn-voltar" class="btn btn-secondary" style="display: none;" onclick="btnVoltarF()">Voltar 👈</button>
-                        </div>
-                    </div>*@
+    <div class="col-12 card text-bg-light rounded-2" style="height: 90%;overflow-y: scroll;scrollbar-width: thin;scrollbar-color: #aaa transparent;">
+        <header class="navbar navbar-expand-lg bd-navbar sticky-top rounded-2 container-fluid border-bottom" style="background-color:white">
+            <div class="col d-flex justify-content-between">
+                <div class="m-2">
+                    <span class="material-symbols-outlined rounded-2" id="btn-voltar"  style="display: none; z-index:99999999; justify-content:flex-start;" onclick="btnVoltarF()">chevron_left</span>
                 </div>
-            </nav>
-            <div class="row mt-3">
-                <div class="col">
-                    <div align="center" class="estilo_pp"><p>Nunca Foi Tão Facil <span class="destaque1">Pedir Lanche</span>!</p></div>
+                <div class="m-2">
+                    @if (Model.Lista1.First().FotoEmpresa != null)
+                    {
+                     
+                        <img class="rounded d-block" src="@Model.Lista1.First().FotoEmpresa" height="80" border="0">
+                    }
+                    else
+                    {
+                        <div style="font-size: 24px; font-weight: 500; margin-left: 50px;">
+                            <span style="font-size: 30px;">@Model.Lista1.First().NomeEmpresa</span>
+                        </div>
+                    }
+
+
                 </div>
             </div>
-            <div class="car text-bg-light">
-                <div class="mb-5 container-fluid" style="cursor: pointer;">
-                    @foreach (var item in Model.Lista2.GroupBy(x => x.CategoriaID).Select(y => y.First()))
-                    {
-                        <div class="categoria card text-bg-secondary m-2" id="cat@item.CategoriaProduto">
-                            <table cellspacing="8">
-                                <tbody>
-                                    <tr>
-                                        <td width="80"><img src="@item.CategoriaFoto" width="70" height="70"></td>
-                                        <td valign="top">
-                                            <table cellspacing="2">
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="estilo_titulo"><b>@item.Nome</b></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="estilo_descricao">@item.CategoriaDescricao</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div class="produtos" id="produtoscat@item.CategoriaProduto">
-                            @foreach (var itemProduto in Model.Lista1.Where(z => z.CategoriaID == @item.CategoriaID).ToList())
-                            {
-                                cade++;
-                                string qtd = "quantidade";
-                                <table width="300" border="0" align="center">
-                                    <tbody>
-                                        <tr>
-                                            <td class="estilo_titulo_preco" valign="top" style="white-space: nowrap;" id="nome-produto-@itemProduto.ProID"><b>@itemProduto.NomeProduto</b> R$<b id="preco-produto-@itemProduto.ProID">@itemProduto.PrecoProduto</b></td>
-
-
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-                                <table width="300" border="0" align="center">
-                                    <tbody>
-                                        <tr>
-                                            <td class="estilo">@itemProduto.DescricaoProduto</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
-
-                                <td>
-                                    <button class="btn-confirmar-pedido" onclick="ocultarTabela(); exibirProdutoSelecionado(@itemProduto.ProID, @cade);">Adicionar Pedido 👌</button>
-
-
-                                    <div style="margin-left: 100px; margin-top: -30px;">
-                                        <select id="@qtd@cade" size="1">
-                                            <option value="01">01</option>
-                                            <option value="02">02</option>
-                                            <option value="03">03</option>
-                                            <option value="04">04</option>
-                                            <option value="05">05</option>
-                                        </select>
-                                    </div>
-
+        </header>
+        <div class="container-fluid mt-3">
+            <div align="center" class="estilo_pp"><p>Nunca Foi Tão Facil <span class="destaque1">Pedir Lanche</span>!</p></div>
+        </div>
+        <div class="container-fluid mt-2">
+            @foreach (var item in Model.Lista2.GroupBy(x => x.CategoriaID).Select(y => y.First()))
+            {
+                <div class="categoria card bg-light" id="cat@item.CategoriaProduto">
+                    <table cellspacing="8">
+                        <tbody>
+                            <tr>
+                                <td><img src="@item.CategoriaFoto" height="70"></td>
+                                <td valign="top">
+                                    <table cellspacing="2">
+                                        <tbody>
+                                            <tr>
+                                                <td class="estilo_titulo"><b>@item.Nome</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="estilo_descricao">@item.CategoriaDescricao</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </td>
-                                <br>
-                                <td> <img src="https://dipietro.cardapio.top/imagens/traco.png" width="400" height="8" border="0"></td>
-                            }
-
-
-                        </div>
-
-                        <div id="FinalizarPedido" style="display: none;">
-
-                            <div class="linha"></div>
-
-
-                            <div>
-                                <label class="nome" for="exampleFormControlInput1">Nome:</label>
-                                <input type="nome" class="form-controlNome" id="InputNome" placeholder="José Oliveira">
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="produtos" id="produtoscat@item.CategoriaProduto">
+                    @foreach (var itemProduto in Model.Lista1.Where(z => z.CategoriaID == @item.CategoriaID).ToList())
+                    {
+                        cade++;
+                        string qtd = "quantidade";
+                        <div class="container card bg-light mb-2">
+                            <div class="row d-flex justify-content-start mb-2 mt-2">
+                                <div class="estilo_titulo_preco" style="white-space: nowrap; word-break: break-all;" id="nome-produto-@itemProduto.ProID"><b>@itemProduto.NomeProduto</b></div>
+                                <div style="font-weight:bold;">Preço: R$<b id="preco-produto-@itemProduto.ProID">@itemProduto.PrecoProduto</b></div>
                             </div>
-
-                            <div>
-                                <label class="Endereco" for="exampleFormControlInput1">Endereço :</label>
-                                <input type="Endereco" class="form-controlEndereco" id="InputEndereco" placeholder="R. Antônio C. Carvalho">
+                            <div class="row mb-2">
+                                <div class="d-flex justify-content-start">
+                                    <div class="estilo">@itemProduto.DescricaoProduto</div>
+                                </div>
                             </div>
-
-                            <div>
-                                <label class="NTelefone" for="exampleFormControlInput1">Numero de telefone:</label>
-                                <input type="NTelefone" class="form-controlTelefone" id="InputNTelefone" placeholder="79 9 9854-9746">
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <button class="btn-confirmar-pedido rounded-2" onclick="ocultarTabela(); exibirProdutoSelecionado(@itemProduto.ProID, @cade);">Adicionar Pedido 👌</button>
+                                </div>
+                                <div class="col-3 d-flex align-items-center">
+                                    <select class="form-select" id="@qtd@cade" size="1">
+                                        <option value="01" selected>01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                    </select>
+                                </div>
                             </div>
-
-
-
-
-                            <h2 class="resumo">Resumo do pedido</h2>
-
-
-                            <div class="retangulo" id="produto-selecionado">
-                            </div>
-
-
-                            <textarea id="observacao" style="width:100%" rows="2" name="obs" cols="30" class="estilo_novo_form" onfocus="if (this.value=='') this.value='';" onblur="if (this.value=='') this.value=''" placeholder="Observação:"></textarea>
-
-                            <h2 class="pagamento">Formas de pagamento:</h2>
-
-                            <form class="quadradinho" style="margin-left: 100px; margin-top: -30px;">
-                                <select id="FormaDePagamento" class="pagamento" size="1">
-                                    <option value="01">Dinheiro</option>
-                                    <option value="02">Cartão</option>
-                                    <option value="03">Pix</option>
-                                </select>
-                            </form>
-
-                            <div class="linha3"></div>
-                            <button class="btn-FinalizarPedido" onclick="varrer()">Finalizar Pedido</button>
-
-                            <button id="btn-adicionar-item" class="btn-AdicionarPedido">Adicionar item</button>
-
-
-
-
-
                         </div>
                     }
                 </div>
-                
-            </div>
+                <div id="FinalizarPedido" style="display: none;">
+                    <div class="container card bg-light mb-2 p-4">
+                        <div>
+                            <div class="fs-5 mb-2">Dados do usuário:</div>
+                        </div>
+                        <div class="row mb-2">
+                            <input type="text" class="form-controlNome form-control" id="InputNome" placeholder="Nome">
+                        </div>
+                        <div class="row mb-2">
+                            <input type="text" class="form-controlEndereco form-control" id="InputEndereco" placeholder="Endereço">
+                        </div>
+                        <div class="row mb-4">
+                            <input type="text" class="form-controlTelefone form-control" id="InputNTelefone" placeholder="Número de Telefone">
+                        </div>
+                        <div>
+                            <div class="fs-5 mb-2">Resumo do pedido:</div>
+                        </div>
+                        <div>
+                            <div class="fs-6 mb-2">Produtos selecionados:</div>
+                        </div>
+                        <div class="retangulo bg-secondary p-3 rounded-2" id="produto-selecionado">
+                        </div>
+                        <div>
+                            <div id="total-da-soma-dos-valores" class="fs-6 mb-2" style="font-weight:500;">Total: R$00,00</div>
+                        </div>
+                        <div class="mb-4">
+                            <label for="observacao" class="form-label mt-2" style="font-weight: 500;">Obsevação do pedido:</label>
+                            <textarea class="form-control" id="observacao" rows="3"></textarea>
+                        </div>
+                        <div class="mb-2">
+                            <div class="fs-5">Formas de pagamento:</div>
+                        </div>
+                        <div class="quadradinho mb-4">
+                            <select id="FormaDePagamento" class="pagamento form-select" size="1">
+                                <option value="01">Dinheiro</option>
+                                <option value="02">Cartão</option>
+                                <option value="03">Pix</option>
+                            </select>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <button id="btn-adicionar-item" class="btn-AdicionarPedido btn btn-secondary">Adicionar item</button>
+                            <button class="btn-FinalizarPedido btn btn-warning" style="margin-left: 20px;" onclick="varrer()">Finalizar Pedido</button>
+                        </div>
+                    </div>
+                </div>
+            }
         </div>
     </div>
-
-
     <script>
-
+        var carrinho = [];
         var categorias = document.getElementsByClassName("categoria");
         var produtos = document.getElementsByClassName("produtos");
         var btnVoltar = document.getElementById("btn-voltar");
@@ -185,7 +157,6 @@
             btnVoltar.style.display = "none";
             telaFinalizarPedido.style.display = "none";
         })
-
 
         function mostrarBotaoVoltar() {
             $("#btn-voltar").show()
@@ -227,14 +198,10 @@
             produtosCategoria.style.display = "block";
         }
 
-
-
         function ocultarTabela() {
             document.getElementById("FinalizarPedido").style.display = "block";
             document.getElementById("TabelaPedido").style.display = "none";
         }
-
-
 
         function ocultarBotaoVoltar() {
             btnVoltar.style.display = "none";
@@ -249,14 +216,11 @@
         function ocultarTabela() {
 
             $(".produtos").hide();
-
-
             $("#FinalizarPedido").show();
         }
 
-        /*------------------------*/
-
         function exibirProdutoSelecionado(idProduto, id) {
+            $("#produto-selecionado").empty();
             var nomeProduto = document.getElementById("nome-produto-" + idProduto)?.textContent;
             var precoProduto = parseFloat(document.getElementById("preco-produto-" + idProduto)?.textContent.replace(',', '.'));
             var precoAnterior = 0;
@@ -270,31 +234,56 @@
 
             var produtoSelecionado = document.getElementById("produto-selecionado");
             var html = "";
+
+            var somaProdutos = 0;
             for (var i = 0; i < carrinho.length; i++) {
-                console.log(carrinho[i].precoProduto);
                 var item = carrinho[i];
-                html += "<div id='" + "produto-" + i + "' class='ScroolBAr '>" + item.nomeProduto +
-                    " x " + item.quantidade + " = R$" + (parseFloat(item.precoProduto) * parseFloat(item.quantidade)).toFixed(2) +
-                    "<button onclick='event.preventDefault(); deleteDiv(" + i + "); removerItemDoCarrinho();'>X</button></div>";
+                var precoTotal = parseFloat(item.precoProduto) * parseFloat(item.quantidade);
+                somaProdutos += precoTotal;
+                html +=
+                    "<div id='" + "produto-" + i + "' class='ScroolBAr container card bg-Emphasis mb-2'>" +
+                    "<div class='d-flex justify-content-between align-items-center'>" +
+                    "<span>" + item.nomeProduto + " x " + item.quantidade + " = R$" + precoTotal.toFixed(2) + "</span>" +
+                    "<button class='btn btn-danger rounded-2 btn_produto' style='margin-left:20px;' onclick='event.preventDefault(); removerItemDoCarrinho(" + i + ");'>X</button></div>" +
+                    "</div>" + "</div>";
             }
 
-            produtoSelecionado.innerHTML = "Produtos selecionados: " + html;
+            var divSomaProdutos = document.getElementById("total-da-soma-dos-valores");
+            divSomaProdutos.textContent = "Total: R$" + somaProdutos.toFixed(2);
 
-            // Adicionar a classe ScroolBAr apenas quando houver mais de 4 itens
-            if (carrinho.length > 4) {
-                produtoSelecionado.classList.add("ScroolBAr");
-            } else {
-                produtoSelecionado.classList.remove("ScroolBAr");
-            }
+            produtoSelecionado.innerHTML = html;
         }
 
-        function deleteDiv(id) {
-            var divpequena = document.getElementById("produto-" + id).remove();
-        }
-
-        function removerItemDoCarrinho(index) {
+        async function removerItemDoCarrinho(index) {
             carrinho.splice(index, 1);
-            salvarNoLocalStorage("carrinho", carrinho);
+            await salvarNoLocalStorage("carrinho", carrinho);
+            atualizarValorTotal();
+
+            $("#produto-" + index).remove(); // Remove o elemento específico do DOM
+
+            // Atualiza os IDs dos elementos restantes após a remoção
+            $(".btn_produto").each(function (i, object) {
+                var element = $(this);
+                var currentIndex = element.closest(".ScroolBAr").attr("id").split("-")[1];
+                if (currentIndex > index) {
+                    var newId = currentIndex - 1;
+                    element.closest(".ScroolBAr").attr("id", "produto-" + newId);
+                    element.attr("onclick", "event.preventDefault(); removerItemDoCarrinho(" + newId + ");");
+                }
+            });
+        }
+
+
+        function atualizarValorTotal() {
+            var somaProdutos = 0;
+            for (var i = 0; i < carrinho.length; i++) {
+                var item = carrinho[i];
+                var precoTotal = parseFloat(item.precoProduto) * parseFloat(item.quantidade);
+                somaProdutos += precoTotal;
+            }
+
+            var divSomaProdutos = document.getElementById("total-da-soma-dos-valores");
+            divSomaProdutos.textContent = "Total: R$" + somaProdutos.toFixed(2);
         }
 
         var btnAdicionarItem = document.getElementById("btn-adicionar-item");
@@ -304,8 +293,6 @@
             document.getElementById("produtoscat@item.CategoriaProduto").style.display = "block";
         });
 
-        var carrinho = [];
-
         function salvarNoLocalStorage(nome, valor) {
             localStorage.setItem(nome, JSON.stringify(valor));
         }
@@ -313,7 +300,6 @@
         function lerDoLocalStorage(nome) {
             return JSON.parse(localStorage.getItem(nome));
         }
-
 
         function allStorage() {
 
@@ -328,13 +314,12 @@
             return values;
         }
 
-
         function varrer(nome, valor) {
             carrinho = JSON.parse(allStorage()[1])
             var string = "";
             var nome = $("#InputNome").val()
             var endereco = $("#InputEndereco").val()
-            var telefone = $("#InputNTelefone").val()
+            var telefone = $("#InputNTelefone").val().replace(/[()+\-]/g, '');
             var observacao = $("#observacao").val()
             var html = "";
             for (var i = 0; i < carrinho.length; i++) {
@@ -352,7 +337,7 @@
                 string += "\n" + carrinho[i]["nomeProduto"]
             }
 
-            var numero = "@Model.Lista1.First().Telefone"
+            var numero = "@Model.Lista1.First().Telefone.Replace("(", "").Replace(")", "").Replace("+", "").Replace("-", "").Replace(" ", "")"
             var preco = 0.00
             for (var i = 0; i < carrinho.length; i++) {
                 var item = carrinho[i];
@@ -379,11 +364,25 @@
 
 
             var link = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
+
+            var idsdosprodutos = carrinho.map(objeto => objeto.proID);
+
+
+            $.ajax({
+                url: '@Url.ActionLink("CriarPedido", "Pedidos")',
+                method: 'POST',
+                data: {
+                    NomeCliente: nome,
+                    EnderecoCliente: endereco,
+                    TelefoneCliente: telefone,
+                    DataPedido: '@DateTime.Now.ToString("dd-MM-yyyy")',
+                    EmpresaID: @ViewBag.EmpresaID,
+                    TipoPagamento: e,
+                    Produtos: idsdosprodutos,
+                }
+            })
             window.open(link, "_blank");
         }
-
-
-        //não mexi no banco
 
         function adicionarAoCarrinho(proID, precoProduto, nomeProduto, precoAnterior, quantidade) {
             var item = {
@@ -397,6 +396,5 @@
             salvarNoLocalStorage("carrinho", carrinho);
         }
     </script>
-
 </body>
 </html>

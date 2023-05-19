@@ -1,5 +1,6 @@
 create database Cardapio;
 use Cardapio;
+drop database cardapio;
 
 Create table Categoria
 (
@@ -43,18 +44,17 @@ CategoriaID int,
     
 );
 
-insert into Empresa (EmpresaID, Telefone, NomeEmpresa, SenhaEmpresa, FotoEmpresa, CNPJ, taxaEmpresa, Perfil_Empresa) values (null, null, 'master', 'bWFzdGVyQDEyM0AxMjM=', null, null, null, 'MASTER');
-/*insert into Empresa (EmpresaID, Telefone, NomeEmpresa, SenhaEmpresa, FotoEmpresa, CNPJ, taxaEmpresa, Perfil_Empresa) values (null, null, 'pedro', 'bWFzdGVyQDEyM0AxMjM=', null, null, null, 'EMPRESS');*/
-/*insert into Empresa (EmpresaID, Telefone, NomeEmpresa, SenhaEmpresa, FotoEmpresa, CNPJ, taxaEmpresa, Perfil_Empresa) values (null, null, 'mario', 'bWFzdGVyQDEyM0AxMjM=', null, null, null, 'DEFAULT');*/
+create table Pedidos(
+	PedID int primary key auto_increment,
+	PedNomeCliente varchar(255) not null,
+    PedEnderecoCliente varchar(255) not null,
+    PedTelefoneCliente varchar(255) not null,
+    PedDataPedido date not null,
+    TipoPagamento varchar(255) not null,
+    EmpresaId int not null,
+    Constraint FK_EmpresaIDPedidos foreign key (EmpresaID) references Empresa(EmpresaID)
+);
 
-select * from empresa;
-Select * from Categoria;
-select * from Produto;
-select * from Perfil;
- 
- 
- 
+insert into Empresa (Telefone, NomeEmpresa, SenhaEmpresa, FotoEmpresa, CNPJ, taxaEmpresa, Perfil_Empresa) values ('5579998462497', 'master', 'bWFzdGVyQDEyM0AxMjM=', null, 99999999999995, 10.99, 'MASTER');
 
-
-
-
+alter table Produto add column QuantidadePesquisa int default 0 not null;

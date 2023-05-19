@@ -1,40 +1,46 @@
 ﻿using CárdapioV3_Tunado.DAL;
 using CárdapioV3_Tunado.Models;
-using CárdapioV3_Tunado.Models.enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CárdapioV3_Tunado.Controllers
-{
+{       
     [Authorize]
     public class ProdutoController : Controller
     {
         CardapioDAO cardapio = new CardapioDAO();
         ProdutoDAO produto = new ProdutoDAO();
-        CategoriaDAO categoria = new CategoriaDAO();
-        public IActionResult Index(int idEmpresa = 0)
+        EmpresaDAO empresa = new EmpresaDAO();
+
+        [Authorize]
+        public IActionResult Index()
         {
-            if (idEmpresa == 0)
-                idEmpresa = int.Parse(User.Identity!.Name!);
+            if (User.Identity!.Name is null) return RedirectToAction("/empresa/logar");
+            var idEmpresa = int.Parse(User.Identity!.Name);
             ViewBag.listaProdutosController = cardapio.getTodosProdutosbyEmpresa(idEmpresa);
+            ViewBag.NomeEmpresa = empresa.getTodasEmpresasbyID(idEmpresa);
             return View();
         }
 
         //create
         [HttpGet]
+        [Authorize]
         public IActionResult create(int idEmpresa)
         {
+            if (User.Identity!.Name is null) return RedirectToAction("/empresa/logar");
             CategoriaDAO cardapio = new CategoriaDAO();
-            idEmpresa = int.Parse(User.Identity!.Name!);
+            idEmpresa = int.Parse(User.Identity!.Name);
             ViewBag.listaCategorias = cardapio.getTodasCategorias();
             return View();
 
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult create(string NomeProduto, string ProdutoDescricao, string NutricaoProduto, double PrecoProduto, int Categorias)
         {
-            int idEmpresa = int.Parse(User.Identity!.Name!);
+            if (User.Identity!.Name is null) return RedirectToAction("/empresa/logar");
+            int idEmpresa = int.Parse(User.Identity!.Name);
             CategoriaProdutoView NovoProduto = new CategoriaProdutoView();
             NovoProduto.NomeProduto = NomeProduto;
             NovoProduto.DescricaoProduto = ProdutoDescricao;
@@ -55,6 +61,19 @@ namespace CárdapioV3_Tunado.Controllers
 
         //atualizar
 
+        [HttpPost]
+        public IActionResult updateQuantidadePesquisa(int id)
+        {
+            var produtoPesquisado = produto.getTodosProdutos().FirstOrDefault(x => x.ProID == id);
+
+            if (produtoPesquisado != null)
+            {
+                produtoPesquisado.QuantidadePesquisa++;
+            }
+
+            return RedirectToAction("Index");
+        }
+
         [HttpGet]
         public IActionResult Atualizar(int id)
         {
@@ -65,9 +84,11 @@ namespace CárdapioV3_Tunado.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult Atualizar(string NomeProduto, string DescricaoProduto, string NutricaoProduto, string codigo, double PrecoProduto, int CategoriaID, int EmpresaID)
         {
-            EmpresaID = int.Parse(User.Identity!.Name!);
+            if (User.Identity!.Name is null) return RedirectToAction("/empresa/logar");
+            EmpresaID = int.Parse(User.Identity!.Name);
             CategoriaProdutoView AtualizarProduto = new CategoriaProdutoView();
             AtualizarProduto.ProID = Convert.ToInt32(codigo);
             AtualizarProduto.NomeProduto = NomeProduto;
@@ -83,10 +104,11 @@ namespace CárdapioV3_Tunado.Controllers
 
         //apagar
         [HttpGet]
-        public IActionResult Apagar(int id)
+        public IActionResult Apagar(string id)
         {
+
             CategoriaProdutoView apagarProduto = new CategoriaProdutoView();
-            apagarProduto.ProID = id;
+            apagarProduto.ProID = Convert.ToInt32(id);
             produto.ApagarProduto(apagarProduto);
 
             return RedirectToAction("Index");

@@ -5,7 +5,7 @@
 }
 <h1>Atualizar Categoria</h1>
 
-<form method="post" action="Atualizar">
+<form method="post" action="Atualizar" enctype="multipart/form-data">
 
     <div class="form-group">
         <label for="codigo">Código</label>
@@ -24,7 +24,7 @@
     </div>
     <div class="form-group">
         <label for="CategoriaFoto">Foto</label>
-        <input type="text" class="form-control" id="CategoriaFoto" value="@ViewBag.CategoriaAtualizar.CategoriaFoto" name="CategoriaFoto">
+        <input type="file" class="form-control" id="CategoriaFoto" value="@ViewBag.CategoriaAtualizar.CategoriaFoto" name="CategoriaFoto">
     </div>
 
 

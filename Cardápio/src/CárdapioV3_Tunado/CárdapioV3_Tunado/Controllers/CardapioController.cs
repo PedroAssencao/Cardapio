@@ -1,77 +1,78 @@
 ﻿using CárdapioV3_Tunado.DAL;
 using CárdapioV3_Tunado.Models;
-using CárdapioV3_Tunado.Models.enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CárdapioV3_Tunado.Controllers
 {
-    [Authorize(Roles = nameof(E_Perfil.MASTER))] // alterado
     public class CardapioController : Controller
     {
         ListCategoriaProduto cardapio2 = new ListCategoriaProduto();
         CardapioDAO cardapio = new CardapioDAO();
         EmpresaDAO empresa = new EmpresaDAO();
 
-        [AllowAnonymous]
+        
         public IActionResult Index(int idEmpresa)
         {
-            try
+            if (User.Identity?.Name != null)
             {
-               if (User.Identity?.Name != null)
-                {
-                    idEmpresa = int.Parse(User.Identity!.Name);
-                }
-                List<CategoriaProdutoView> lista = cardapio.getTodosProdutosbyEmpresa(idEmpresa);
-                List<CategoriaProdutoView> listaCategoria = cardapio.getTodasCategoriasbyEmpresa(idEmpresa);            
+                idEmpresa = int.Parse(User.Identity!.Name);
+            }
+            List<CategoriaProdutoView> lista = cardapio.getTodosProdutosbyEmpresa(idEmpresa);
+            List<CategoriaProdutoView> listaCategoria = cardapio.getTodasCategoriasbyEmpresa(idEmpresa);            
 
-                var emp = empresa.getTodasEmpresas().First(x => x.EmpresaID == lista.First().EmpresaID); //TODO: Retorna erro ao não ter itens no banco
+            var emp = empresa.getTodasEmpresas().First(x => x.EmpresaID == lista.First().EmpresaID);
              
-                lista = lista.Select(x =>
-                {
-                    x.Telefone = emp.Telefone;
-                    return x;
-                }).ToList();
-                listaCategoria.Select(x =>
-                {
-                    x.Telefone = emp.Telefone;
-                    return x;
-                }).ToList();
-
-                lista = lista.Select(x =>
-                {
-                    x.FotoEmpresa = emp.FotoEmpresa;
-                    return x;
-                }).ToList();
-                listaCategoria.Select(x =>
-                {
-                    x.FotoEmpresa = emp.FotoEmpresa;
-                    return x;
-                }).ToList();
-
-                lista = lista.Select(x =>
-                {
-                    x.Taxa = emp.taxaEmpresa;
-                    return x;
-                }).ToList();
-                listaCategoria.Select(x =>
-                {
-                    x.Taxa = emp.taxaEmpresa;
-                    return x;
-                }).ToList();
-
-                var listas = new ListCategoriaProduto
-                {
-                    Lista1 = lista,
-                    Lista2 = listaCategoria
-                };
-                return View(listas);
-            }
-            catch (Exception)
+            lista = lista.Select(x =>
             {
-                return Json("Não existem produtos nesta empresa");
-            }
- 
+                x.Telefone = emp.Telefone;
+                return x;
+            }).ToList();
+            listaCategoria.Select(x =>
+            {
+                x.Telefone = emp.Telefone;
+                return x;
+            }).ToList();
+
+
+
+
+
+            lista = lista.Select(x =>
+            {
+                x.FotoEmpresa = emp.FotoEmpresa;
+                return x;
+            }).ToList();
+            listaCategoria.Select(x =>
+            {
+                x.FotoEmpresa = emp.FotoEmpresa;
+                return x;
+            }).ToList();
+
+
+
+
+
+
+            lista = lista.Select(x =>
+            {
+                x.Taxa = emp.taxaEmpresa;
+                return x;
+            }).ToList();
+            listaCategoria.Select(x =>
+            {
+                x.Taxa = emp.taxaEmpresa;
+                return x;
+            }).ToList();
+
+            var listas = new ListCategoriaProduto
+            {
+                Lista1 = lista,
+                Lista2 = listaCategoria
+            };
+
+            ViewBag.EmpresaID = idEmpresa;
+            return View(listas);
         }
 
 

@@ -1,22 +1,30 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model CárdapioV3_Tunado.DAL.EmpresaDAO
 @{
+    CárdapioV3_Tunado.DAL.EmpresaDAO empresa = new CárdapioV3_Tunado.DAL.EmpresaDAO();
 }
-<h1> Produtos </h1>
+
+<h1>
+    @foreach (var item in ViewBag.NomeEmpresa)
+    {
+        <p> @item.NomeEmpresa - Produtos</p>
+    }
+</h1>
+
+
 <br />
-<td><a class="btn btn-outline-secondary" href="/Cardapio/Index">Voltar para o Cardapio</a></td>
+
 <td><a class="btn btn-primary" href="/Produto/Create">Novo Produto</a></td>
-@if (User.IsInRole("AdminIncrivel2006"))
+@if (User.IsInRole("master"))
 {
     <td><a class="btn btn-outline-dark" href="/Categoria/Index?idEmpresa=">Categorias</a></td>
 }
-<td><a class="btn btn-outline-info" href="/Empresa/Index?idEmpresa=">Empresa</a></td>
+
 
 @if (ViewBag.ProdutoID !=null)
 {
     <p class="alert-success">Produto criado com sucesso, ID do Produto:@ViewBag.ProdutoID</p>
 }
+
 
 
 <div id="divtabela">
@@ -39,8 +47,8 @@
                     <td>@item.DescricaoProduto</td>
                     <td>@item.NutricaoProduto</td>
                     <td>@item.PrecoProduto</td>
-                    <td><a class="btn btn-outline-warning" href="/Produto/Atualizar?id=@item.ProID">Editar</a></td>
-                    <td><a class="btn btn-outline-danger" href="/Produto/Apagar?id=@item.ProID">Deletar</a></td>
+                    <td><a class="btn btn-outline-warning" href="/Produto/Atualizar/@item.ProID">Editar</a></td>
+                    <td><a class="btn btn-outline-danger" href="/Produto/Apagar/@item.ProID">Deletar</a></td>
                 </tr>
             }
         </tbody>
