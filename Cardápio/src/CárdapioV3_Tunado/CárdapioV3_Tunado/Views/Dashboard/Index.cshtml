@@ -1,0 +1,151 @@
+﻿@using CárdapioV3_Tunado.Models.enums;
+@*<h1>Todos</h1>
+<h1>@ViewBag.TodosPedidos.Count</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nome do cliente</th>
+            <th scope="col">Endereço do cliente</th>
+            <th scope="col">Telefone do cliente</th>
+            <th scope="col">Pagamento</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.TodosPedidos)
+        {
+            <tr>
+                <td>@item.PedNomeCliente</td>
+                <td>@item.PedEnderecoCliente</td>
+                <td>@item.PedTelefoneCliente</td>
+                <td>@item.TipoPagamento</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<h1>7 dias</h1>
+<h1>@ViewBag.PedidosUltimos7Dias.Count</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome do cliente</th>
+                <th scope="col">Endereço do cliente</th>
+                <th scope="col">Telefone do cliente</th>
+                <th scope="col">Pagamento</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in ViewBag.PedidosUltimos7Dias)
+            {
+                <tr>
+                    <td>@item.PedNomeCliente</td>
+                    <td>@item.PedEnderecoCliente</td>
+                    <td>@item.PedTelefoneCliente</td>
+                    <td>@item.TipoPagamento</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+<h1>15 dias</h1>
+<h1>@ViewBag.PedidosUltimos15Dias.Count</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome do cliente</th>
+                <th scope="col">Endereço do cliente</th>
+                <th scope="col">Telefone do cliente</th>
+                <th scope="col">Pagamento<th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in ViewBag.PedidosUltimos15Dias)
+            {
+                <tr>
+                    <td>@item.PedNomeCliente</td>
+                    <td>@item.PedEnderecoCliente</td>
+                    <td>@item.PedTelefoneCliente</td>
+                    <td>@item.TipoPagamento</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+<h1>30 dias</h1>
+<h1>@ViewBag.PedidosUltimos30Dias.Count</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome do cliente</th>
+                <th scope="col">Endereço do cliente</th>
+                <th scope="col">Telefone do cliente</th>
+                <th scope="col">Pagamento</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in ViewBag.PedidosUltimos30Dias)
+            {
+                <tr>
+                    <td>@item.PedNomeCliente</td>
+                    <td>@item.PedEnderecoCliente</td>
+                    <td>@item.PedTelefoneCliente</td>
+                    <td>@item.TipoPagamento</td>
+                </tr>
+            }
+        </tbody>
+    </table>*@
+
+<div class="container text-center mt-5 text-white">
+    <div class="row align-items-center mt-5">
+        <div class="col mb-3">
+            <div class="card bg-primary p-5">
+                <div class="card-body">
+                    <h5 class="card-title">Pedidos nos Últimos 7 Dias:</h5>
+                    <h6>@ViewBag.PedidosUltimos7Dias</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col  mb-3">
+            <div class="card bg-primary p-5">
+                <div class="card-body">
+                    <h5 class="card-title">Pedidos nos Últimos 15 Dias:</h5>
+                    <h6>@ViewBag.PedidosUltimos15Dias</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col  mb-3">
+            <div class="card bg-primary p-5">
+                <div class="card-body">
+                    <h5 class="card-title">Pedidos nos Últimos 30 Dias:</h5>
+                    <h6> @ViewBag.PedidosUltimos30Dias</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-center mt-5">
+        <div class="col mb-3">
+            <div class="card bg-primary p-5">
+                <div class="card-body">
+                    <h5 class="card-title">Quantidade de Produtos:</h5>
+                    <h6>@ViewBag.QuantidadeProdutos</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-3">
+            <div class="card bg-primary p-4">
+                <div class="card-body">
+                    <h5 class="card-title">Produto Mais Procurado:</h5>
+                    <p>@ViewBag.ProdutoMaisProcurado.NomeProduto foi procurado @ViewBag.ProdutoMaisProcurado.QuantidadePesquisa vezes</p>
+                </div>
+            </div>
+        </div>
+        @if (User.IsInRole(nameof(E_Perfil.MASTER)))
+        {
+            <div class="col mb-3">
+                <div class="card bg-primary p-5">
+                    <div class="card-body">
+                        <h5 class="card-title">Quantiade de Categorias:</h5>
+                        <h6> @ViewBag.QuantidadeCategorias</h6>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

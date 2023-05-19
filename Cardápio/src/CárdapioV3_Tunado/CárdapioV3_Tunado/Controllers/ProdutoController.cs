@@ -17,7 +17,6 @@ namespace CárdapioV3_Tunado.Controllers
         {
             if (User.Identity!.Name is null) return RedirectToAction("/empresa/logar");
             var idEmpresa = int.Parse(User.Identity!.Name);
-            ViewBag.ProdutosBanco = produto.getQtdProdutosbyEmpresa(idEmpresa);
             ViewBag.listaProdutosController = cardapio.getTodosProdutosbyEmpresa(idEmpresa);
             ViewBag.NomeEmpresa = empresa.getTodasEmpresasbyID(idEmpresa);
             return View();

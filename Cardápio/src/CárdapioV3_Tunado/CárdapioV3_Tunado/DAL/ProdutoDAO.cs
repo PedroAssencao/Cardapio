@@ -42,7 +42,7 @@ namespace CárdapioV3_Tunado.DAL
 
         public void InsertProduto(CategoriaProdutoView novoProduto)
         {
-            string query = "Insert Produto (NomeProduto, DescricaoProduto, NutricaoProduto, PrecoProduto, CategoriaID, EmpresaID) values (@NomeProduto, @DescricaoProduto, @NutricaoProduto, @PrecoProduto, @CategoriaID, @EmpresaID)";
+            string query = "Insert Produto (NomeProduto, DescricaoProduto, NutricaoProduto, PrecoProduto, CategoriaID, EmpresaID, QuantidadePesquisa) values (@NomeProduto, @DescricaoProduto, @NutricaoProduto, @PrecoProduto, @CategoriaID, @EmpresaID, @QuantidadePesquisa)";
 
             int qtdinserida = _connection.Execute(query, novoProduto);
         }
@@ -58,7 +58,7 @@ namespace CárdapioV3_Tunado.DAL
 
         public void UptdateProduto(CategoriaProdutoView EditarProduto)
         {
-            string query = "update Produto set NomeProduto=@NomeProduto, DescricaoProduto=@DescricaoProduto, NutricaoProduto=@NutricaoProduto, PrecoProduto=@PrecoProduto, CategoriaID=@CategoriaID, EmpresaID=@EmpresaID where ProID=@ProID";
+            string query = "update Produto set NomeProduto=@NomeProduto, DescricaoProduto=@DescricaoProduto, NutricaoProduto=@NutricaoProduto, PrecoProduto=@PrecoProduto, CategoriaID=@CategoriaID, EmpresaID=@EmpresaID, QuantidadePesquisa=@QuantidadePesquisa where ProID=@ProID";
 
             int qtdAtualizada = _connection.Execute(query, EditarProduto);
 
