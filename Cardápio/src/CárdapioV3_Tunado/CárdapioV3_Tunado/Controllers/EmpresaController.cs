@@ -80,17 +80,16 @@ namespace CárdapioV3_Tunado.Controllers
                 var empresas = conexao.Query<Empresa>(query).ToList();
                 var empresa = empresas.FirstOrDefault(x => x.NomeEmpresa == NomeEmpresa && Estabelecimento.Descriptografar(x.SenhaEmpresa) == SenhaEmpresa);
 
-                string role = NomeEmpresa == "AdminIncrivel2006" ? "AdminIncrivel2006" : "Usuario";
                 if (empresa != null)
                 {
                     var claims = new List<Claim>
                     {
                         new Claim(ClaimTypes.Name, empresa.EmpresaID.ToString()),
-                        new Claim(ClaimTypes.Role, role),
+                        new Claim(ClaimTypes.Role, empresa.Perfil_Empresa),
                         new Claim(ClaimTypes.NameIdentifier, NomeEmpresa),
                     };
 
-                    var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme) ;
+                    var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     var principal = new ClaimsPrincipal(identity);
 
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
@@ -111,8 +110,10 @@ namespace CárdapioV3_Tunado.Controllers
         }
 
         [HttpGet]
+       
         public IActionResult Atualizar()
         {
+            if (User.Identity!.Name is null) return RedirectToAction("/empresa/logar");
             var idEmpresa = int.Parse(User.Identity!.Name);
             //var empresa = Estabelecimento.getTodasEmpresas().Where(x => x.EmpresaID == idEmpresa).FirstOrDefault();
             //if (empresa is null)
@@ -124,7 +125,7 @@ namespace CárdapioV3_Tunado.Controllers
         }
 
         [HttpPost]
-        public IActionResult Atualizar(string NomeEmpresa, string Telefone, string CNPJ, string SenhaEmpresa, double taxaEmpresa, string FotoEmpresa, int idEmpresa)
+        public async Task<IActionResult> Atualizar(string NomeEmpresa, string Telefone, string CNPJ, string SenhaEmpresa, double taxaEmpresa, IFormFile FotoEmpresa, int idEmpresa)
         {
             idEmpresa = int.Parse(User.Identity!.Name);
             Empresa novaEmpresa = new Empresa();
@@ -135,9 +136,22 @@ namespace CárdapioV3_Tunado.Controllers
             novaEmpresa.Telefone = Telefone;
             novaEmpresa.CNPJ = CNPJ;
             novaEmpresa.taxaEmpresa = taxaEmpresa;
-            novaEmpresa.FotoEmpresa = FotoEmpresa;
+
+            string path = $"wwwroot/Images/{novaEmpresa.EmpresaID}";
+            if (FotoEmpresa is not null)
+            {
+                using var stream = new MemoryStream();
+                await FotoEmpresa.CopyToAsync(stream);
+                stream.Position = 0;    
+                using var fileStream = new FileStream($"{path}empresa_{novaEmpresa.EmpresaID}.png", FileMode.OpenOrCreate);
+                await stream.CopyToAsync(fileStream);
+                await fileStream.FlushAsync();
+                fileStream.Close();
+            }
             string novaSenha = Estabelecimento.Criptografar(SenhaEmpresa);
             novaEmpresa.SenhaEmpresa = novaSenha;
+            novaEmpresa.FotoEmpresa = $"{path}empresa_{novaEmpresa.EmpresaID}.png".Replace(@"wwwroot", string.Empty);
+            
             Estabelecimento.AtualizarEmpresa(novaEmpresa);
 
             return RedirectToAction("Index");

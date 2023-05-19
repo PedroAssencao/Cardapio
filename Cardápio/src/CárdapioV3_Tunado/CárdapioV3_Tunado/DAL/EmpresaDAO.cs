@@ -91,7 +91,8 @@ namespace CárdapioV3_Tunado.DAL
 
         public void AtualizarEmpresa(Empresa novaEmpresa)
         {
-            var query = "update Empresa set NomeEmpresa=@NomeEmpresa, SenhaEmpresa=@SenhaEmpresa, CNPJ=@CNPJ, Telefone=@Telefone, taxaEmpresa=@taxaEmpresa, FotoEmpresa=@FotoEmpresa where EmpresaID=@EmpresaID";
+            var query = novaEmpresa.FotoEmpresa is not null ? "update Empresa set NomeEmpresa=@NomeEmpresa, SenhaEmpresa=@SenhaEmpresa, CNPJ=@CNPJ, Telefone=@Telefone, taxaEmpresa=@taxaEmpresa, FotoEmpresa=@FotoEmpresa where EmpresaID=@EmpresaID" 
+                : "update Empresa set NomeEmpresa=@NomeEmpresa, SenhaEmpresa=@SenhaEmpresa, CNPJ=@CNPJ, Telefone=@Telefone, taxaEmpresa=@taxaEmpresa where EmpresaID=@EmpresaID";
 
             int qtdinserida = _connection.Execute(query, novaEmpresa);
         }

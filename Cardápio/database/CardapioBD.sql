@@ -1,5 +1,6 @@
 create database Cardapio;
 use Cardapio;
+drop database cardapio;
 
 Create table Categoria
 (
@@ -9,6 +10,26 @@ Nome varchar(100) not null,
     CategoriaFoto varchar(999) null
 );
 
+create table Perfil(
+    Per_Nome varchar(255) primary key
+);
+
+insert Perfil values ('MASTER');
+insert Perfil values ('EMPRESS');
+
+Create table Empresa
+(
+	EmpresaID int primary key auto_increment,
+    Telefone varchar(255),
+    NomeEmpresa varchar(100),
+    SenhaEmpresa varchar(100),
+    FotoEmpresa varchar(999) default null,
+    CNPJ varchar(14),
+    taxaEmpresa double,
+    Perfil_Empresa varchar(255) default 'EMPRESS' not null,
+    Constraint FK_Perfil foreign key (Perfil_Empresa) references Perfil(Per_Nome)
+);
+
 Create table Produto
 (
 ProID int primary key auto_increment,
@@ -16,6 +37,7 @@ NomeProduto varchar(250) not null,
 DescricaoProduto varchar(250) not null,
 NutricaoProduto varchar(500) null,
 PrecoProduto double not null,
+QuantidadePesquisa int default 0,
 EmpresaID int,
 CategoriaID int,
     Constraint FK_CategoriaProduto foreign key (CategoriaID) references Categoria(CategoriaID),
@@ -23,33 +45,17 @@ CategoriaID int,
     
 );
 
-
-Create table Empresa
-(
-	EmpresaID int primary key auto_increment,
-    Telefone varchar(13),
-    NomeEmpresa varchar(100),
-    SenhaEmpresa varchar(100),
-    FotoEmpresa varchar(999),
-    CNPJ varchar(14),
-    taxaEmpresa double
+create table Pedidos(
+	PedID int primary key auto_increment,
+	PedNomeCliente varchar(255) not null,
+    PedEnderecoCliente varchar(255) not null,
+    PedTelefoneCliente varchar(255) not null,
+    PedDataPedido date not null,
+    TipoPagamento varchar(255) not null,
+    EmpresaId int not null,
+    Constraint FK_EmpresaIDPedidos foreign key (EmpresaID) references Empresa(EmpresaID)
 );
 
-select * from empresa;
-Select * from Categoria;
-select * from Produto;
-
-Select distinct c.CategoriaID, c.CategoriaDescricao from produto
-join categoria c
-where idEmpresa;
-
-select distinct categorias.categoriaID, categorias.nome  from produto produtos join categoria categorias on produtos.categoriaID=categorias.categoriaID where EmpresaID=1;
- 
-select produtos.*,categorias.*, empresas.*  from produto produtos join categoria categorias on produtos.categoriaID=categorias.categoriaID join Empresa empresas on produtos.EmpresaID=empresas.EmpresaID where empresas.EmpresaID=1;
- 
- 
- 
-
-
+insert into Empresa (Telefone, NomeEmpresa, SenhaEmpresa, FotoEmpresa, CNPJ, taxaEmpresa, Perfil_Empresa) values ('5579998462497', 'master', 'bWFzdGVyQDEyM0AxMjM=', null, 99999999999995, 10.99, 'MASTER');
 
 

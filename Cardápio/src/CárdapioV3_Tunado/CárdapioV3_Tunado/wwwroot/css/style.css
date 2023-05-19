@@ -2,36 +2,57 @@
 html, body {
     margin: 0;
     padding: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
-
-
 
 .box {
     position: relative;
     width: 380px;
-    height: 770px;
-    margin: 120px auto;
+    height: 650px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #aaa transparent; /* cor da scroll bar na vertical */
     border: 2px solid #666666;
     border-radius: 12px;
     padding: 10px;
     background-color: #fff;
     text-align: center;
+    margin: 20px;
+    overflow-x: hidden;
 }
+
+    .box::-webkit-scrollbar {
+        width: 6px; /* largura fina da scroll bar */
+    }
+
+    .box::-webkit-scrollbar-track {
+        background-color: transparent; /* cor transparente para ocultar a scroll bar no eixo X */
+    }
+
+    .box::-webkit-scrollbar-thumb {
+        background-color: #aaa; /* cor da scroll bar na vertical */
+    }
+
+
 
 
 
 #btn-voltar {
     display: none;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
     background-color: red;
     color: white;
 }
 
-.estilo_pp .destaque1 {
+.estilo_pp {
+    font-size: 14px;
+    font-weight: 500;
+}
+.destaque1 {
     color: red;
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 body {
@@ -75,35 +96,8 @@ body {
 }
 
 
-.form-controlNome {
-    position: absolute;
-    left: 140px;
-    margin-top: 5px;
-    
-}
-
-.form-controlEndereco {
-    position: absolute;
-    left: 60px;
-    margin-top: -30px;
-    margin-left: 80px;
-}
-
-.form-controlTelefone {
-    position: absolute;
-    left: 60px;
-    margin-top: 40px;
-    margin-left: 80px;
-}
-
-
 .estilo_novo_form {
-    position: absolute;
-    top: 590px;
-    left: 10px;
-    margin-right: 100px;
     border: 1px solid #333333;
-    padding: 0.24em;
     background-color: #CECECE;
     font-family: Arial, Verdana, Helvetica, sans-serif;
     font-size: 13px;
@@ -118,12 +112,8 @@ body {
 
 
 .NTelefone {
-    position: absolute;
-    width: 68px;
-    height: 26px;
-    left: 13px;
     border-radius: 5px;
-    top: 270px;
+
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -133,13 +123,10 @@ body {
     white-space: nowrap;
 }
 
-.nome{
-
+.nome {
     position: absolute;
     right: 306px;
     top: 230px;
-
-
 }
 
 .Endereco {
@@ -167,11 +154,6 @@ body {
 }
 
 .resumo {
-    position: absolute;
-    width: 133px;
-    height: 18px;
-    left: 10px;
-    top: 340px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -180,19 +162,7 @@ body {
     color: #000000;
 }
 
-.retangulo {
-    position: absolute;
-    width: 359px;
-    height: 242px;
-    left: 10px;
-    top: 390px;
-    background: #D9D9D9;
-    border-radius: 10px;
-}
-
 .linha2 {
-    position: absolute;
-    width: 390px;
     height: 0px;
     left: 0px;
     top: 615px;
@@ -200,27 +170,15 @@ body {
 }
 
 .pagamento {
-    position: absolute;
-    width: 151px;
-    height: 18px;
-    left: 10px;
-    top: 660px;
-    font-family: 'Inter';
     font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
+    font-weight: 500;
+    font-size: 16px;
     line-height: 18px;
     color: #000000;
 }
 
 .quadradinho {
-    position: absolute;
-    width: 82px;
-    height: 20px;
-    left: 55px;
-    top: 30px;
     text-align: center;
-  
 }
 
 .quadradinho2 {
@@ -244,35 +202,17 @@ body {
 }
 
 .linha3 {
-    position: absolute;
-    width: 390px;
-    height: 0px;
     left: 0px;
     top: 762px;
     border: 1px solid #000000;
 }
 
 .btn-FinalizarPedido {
-    position: absolute;
-    width: 162px;
-    height: 25px;
-    right: 200px;
-    top: 775px;
     text-align: center;
-    border-radius: 5px;
-    margin-bottom: 10px;
 }
 
 .btn-AdicionarPedido {
-    position: absolute;
-    width: 162px;
-    height: 25px;
-    left: 90px;
-    top: 775px;
     text-align: center;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    margin-left: 100px;
 }
 
 
@@ -324,31 +264,6 @@ b {
     color: #333333;
 }
 
-.box {
-    height: 770px;
-    overflow-y: scroll;
-    scrollbar-width: thin;
-    scrollbar-color: #aaa #fff;
-}
-
-
-.box {
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
-    .box::-webkit-scrollbar {
-        width: 10px;
-        height: auto;
-    }
-
-    .box::-webkit-scrollbar-track {
-        background-color: #fff;
-    }
-
-    .box::-webkit-scrollbar-thumb {
-        background-color: #aaa;
-    }
 
 #div-mostrar {
     display: none;
@@ -387,8 +302,7 @@ b {
 }
 
 .estilo_titulo_preco {
-    width: 150px;
-    vertical-align: middle;
+    font-size: 16px;
 }
 
 .estilo_quantidade {
@@ -399,7 +313,6 @@ b {
 
 
 .btn-confirmar-pedido {
-    margin-right: 150px;
     background-color: red;
     border: none;
     color: white;
@@ -408,7 +321,6 @@ b {
     text-decoration: none;
     display: inline-block;
     font-size: 14px;
-    margin-top: 5px;
     cursor: pointer;
 }
 
@@ -434,15 +346,15 @@ b {
     cursor: pointer;
     margin-bottom: 10px;
     max-height: 200px;
-    overflow: auto;
 }
 
 .produtos {
     display: none;
-
 }
 
-
+.nomeproduto {
+    text-align: center;
+}
 
 .retangulofoda {
     height: 770px;
@@ -457,12 +369,17 @@ b {
     overflow-x: hidden;
 }
 
-.ScroolBAr::-webkit-scrollbar {
-    width: 10px;
-    height: auto;
-}
+    .ScroolBAr::-webkit-scrollbar {
+        width: 10px;
+        height: auto;
+    }
 
 
-.ScroolBAr::-webkit-scrollbar-thumb {
-    background-color: #aaa;
+    .ScroolBAr::-webkit-scrollbar-thumb {
+        background-color: #aaa;
+    }
+
+.btn btn-info {
+    position: absolute;
+    right: 100px;
 }

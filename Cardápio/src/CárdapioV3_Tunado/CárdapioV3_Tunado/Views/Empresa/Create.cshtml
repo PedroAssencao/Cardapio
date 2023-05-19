@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/StyleSheet.css">
 </head>
 <body>
-    <div>
+    <div class="metal1">
 
         <div class="metal">
             <div class="form-image">
@@ -37,11 +37,6 @@
                         </div>
 
                         <div class="input-box">
-                            <label for="FotoEmpresa">Link da foto da Empresa</label>
-                            <input id="FotoEmpresa" type="text" name="FotoEmpresa" placeholder="Digite o link" required>
-                        </div>
-
-                        <div class="input-box">
                             <label for="SenhaEmpresa">Senha</label>
                             <input id="SenhaEmpresa" type="password" name="SenhaEmpresa" placeholder="Digite a senha" required>
                         </div>
@@ -49,7 +44,7 @@
 
                         <div class="input-box">
                             <label for="CNPJ">Cnpj da empresa</label>
-                            <input id="CNPJ" type="text" name="CNPJ" placeholder="Digite o Cnpj" required>
+                            <input id="CNPJ" type="text" name="cnpj" placeholder="Digite o Cnpj" required>
                         </div>
 
                         <div class="input-box">
@@ -68,4 +63,12 @@
         </div>
     </div>
 </body>
+
+
+<script>
+    $(document).ready(function () {
+    $('#telefone').mask('+99(99)99999-9999');
+        $('#cnpj').mask('99.999.999/9999-99');
+});
+</script>
 </html>

@@ -1,0 +1,153 @@
+﻿@using CárdapioV3_Tunado.Models.enums;
+@*<h1>Todos</h1>
+<h1>@ViewBag.TodosPedidos.Count</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Nome do cliente</th>
+            <th scope="col">Endereço do cliente</th>
+            <th scope="col">Telefone do cliente</th>
+            <th scope="col">Pagamento</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.TodosPedidos)
+        {
+            <tr>
+                <td>@item.PedNomeCliente</td>
+                <td>@item.PedEnderecoCliente</td>
+                <td>@item.PedTelefoneCliente</td>
+                <td>@item.TipoPagamento</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<h1>7 dias</h1>
+<h1>@ViewBag.PedidosUltimos7Dias.Count</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome do cliente</th>
+                <th scope="col">Endereço do cliente</th>
+                <th scope="col">Telefone do cliente</th>
+                <th scope="col">Pagamento</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in ViewBag.PedidosUltimos7Dias)
+            {
+                <tr>
+                    <td>@item.PedNomeCliente</td>
+                    <td>@item.PedEnderecoCliente</td>
+                    <td>@item.PedTelefoneCliente</td>
+                    <td>@item.TipoPagamento</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+<h1>15 dias</h1>
+<h1>@ViewBag.PedidosUltimos15Dias.Count</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome do cliente</th>
+                <th scope="col">Endereço do cliente</th>
+                <th scope="col">Telefone do cliente</th>
+                <th scope="col">Pagamento<th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in ViewBag.PedidosUltimos15Dias)
+            {
+                <tr>
+                    <td>@item.PedNomeCliente</td>
+                    <td>@item.PedEnderecoCliente</td>
+                    <td>@item.PedTelefoneCliente</td>
+                    <td>@item.TipoPagamento</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+<h1>30 dias</h1>
+<h1>@ViewBag.PedidosUltimos30Dias.Count</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nome do cliente</th>
+                <th scope="col">Endereço do cliente</th>
+                <th scope="col">Telefone do cliente</th>
+                <th scope="col">Pagamento</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in ViewBag.PedidosUltimos30Dias)
+            {
+                <tr>
+                    <td>@item.PedNomeCliente</td>
+                    <td>@item.PedEnderecoCliente</td>
+                    <td>@item.PedTelefoneCliente</td>
+                    <td>@item.TipoPagamento</td>
+                </tr>
+            }
+        </tbody>
+    </table>*@
+
+<div class="container text-center mt-5">
+    <div class="row align-items-center mt-5">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Pedidos nos Últimos 7 Dias</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Pedidos nos Últimos 15 Dias</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Pedidos nos Últimos 30 Dias</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-center mt-5">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Quantidade de Produtos Cadastrados</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Produto Mais Procurado</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </div>
+        </div>
+        @if(User.IsInRole(nameof(E_Perfil.MASTER))){
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Quantiade de Categorias Cadastradas</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
