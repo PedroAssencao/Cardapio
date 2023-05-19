@@ -56,20 +56,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/android/Documents/GitHub/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Empresa/Empresas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxFbXByZXNhcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/android/Documents/GitHub/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Empresa/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/android/Documents/GitHub/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Empresa/Logar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxMb2dhci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/android/Documents/GitHub/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/android/Documents/GitHub/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/android/Documents/GitHub/Cardapio/Cardápio/src/CárdapioV3_Tunado/CárdapioV3_Tunado/Views/Pedidos/Index.cshtml]
