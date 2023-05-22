@@ -21,21 +21,17 @@
                 <div class="m-2">
                     <span class="material-symbols-outlined rounded-2" id="btn-voltar"  style="display: none; z-index:99999999; justify-content:flex-start;" onclick="btnVoltarF()">chevron_left</span>
                 </div>
-                <div class="m-2">
+                <div class="m-2" style="display: flex; justify-content: center; align-items: center;">
                     @if (Model.Lista1.First().FotoEmpresa != null)
                     {
-                     
                         <img class="rounded d-block" src="@Model.Lista1.First().FotoEmpresa" height="80" border="0">
                     }
                     else
                     {
-                        <div style="font-size: 24px; font-weight: 500; margin-left: 50px;">
-              
-                            <span style="font-size: 30px; margin-left:250px;">@Model.Lista1.First().NomeEmpresa</span>
+                        <div style="font-size: 24px; font-weight: 500; text-align: center;">
+                            <span style="font-size: 30px;">@Model.Lista1.First().NomeEmpresa</span>
                         </div>
                     }
-
-
                 </div>
             </div>
         </header>
@@ -97,6 +93,7 @@
                             </div>
                         </div>
                     }
+                   
                 </div>
                 <div id="FinalizarPedido" style="display: none;">
                     <div class="container card bg-light mb-2 p-4">
@@ -317,7 +314,7 @@
         }
 
         function varrer(nome, valor) {
-            var carrinho = JSON.parse(allStorage()[0]);
+            var carrinho = JSON.parse(allStorage()[1]);
             var string = "";
             var nome = $("#InputNome").val()
             var endereco = $("#InputEndereco").val()
@@ -335,10 +332,10 @@
             var e = $("#FormaDePagamento option:selected").text();
 
             for (var i = 0; i < carrinho.length; i++) {
-                var carrinho = JSON.parse(allStorage()[0])
+                var carrinho = JSON.parse(allStorage()[1])
                 string += "\n" + carrinho[i]["nomeProduto"]
             }
-
+            var nomeEmpresa = '(@Model.Lista1.First().NomeEmpresa)'
             var numero = '@(Model.Lista1.First().Telefone.Replace("(", "").Replace(")", "").Replace("+", "").Replace("-", "").Replace(" ", ""))';
             var preco = 0.00
             for (var i = 0; i < carrinho.length; i++) {
@@ -350,8 +347,9 @@
             var taxa = parseFloat("@Model.Lista1.First().Taxa")
             var novopreco = parseFloat(preco)
             var resultado = taxa + novopreco
-
-            var mensagem = "👥 CLIENTE \nNome:  " + nome + " \n" +
+             
+            var mensagem = "🏢 Empresa: " +  nomeEmpresa + " \n" + 
+           " \n" +   "👥 CLIENTE \nNome:  " + nome + " \n" +
                 "Endereço:  " + endereco + " \n" +
                 "Telefone:  " + telefone + "  \n" +
                 " \n📝 RESUMO DO PEDIDO \n" +

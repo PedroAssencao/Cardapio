@@ -55,6 +55,19 @@ namespace CárdapioV3_Tunado.Controllers
                 }).ToList();
 
 
+                lista = lista.Select(x =>
+                {
+                    x.NomeEmpresa = emp.NomeEmpresa;
+                    return x;
+                }).ToList();
+                listaCategoria.Select(x =>
+                {
+                    x.NomeEmpresa = emp.NomeEmpresa;
+                    return x;
+                }).ToList();
+
+
+
 
 
 
