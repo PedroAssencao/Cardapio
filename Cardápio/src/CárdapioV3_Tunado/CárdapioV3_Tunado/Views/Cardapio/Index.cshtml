@@ -317,7 +317,7 @@
         }
 
         function varrer(nome, valor) {
-            carrinho = JSON.parse(allStorage()[0])  
+            var carrinho = JSON.parse(allStorage()[0]);
             var string = "";
             var nome = $("#InputNome").val()
             var endereco = $("#InputEndereco").val()
@@ -339,7 +339,7 @@
                 string += "\n" + carrinho[i]["nomeProduto"]
             }
 
-            var numero = "@(Model.Lista1.First().Telefone.Replace("(", "").Replace(")", "").Replace("+", "").Replace("-", "").Replace(" ", ""))";
+            var numero = "(Model.Lista1.First().Telefone.Replace("(", "").Replace(")", "").Replace("+", "").Replace("-", "").Replace(" ", ""))";
             var preco = 0.00
             for (var i = 0; i < carrinho.length; i++) {
                 var item = carrinho[i];
