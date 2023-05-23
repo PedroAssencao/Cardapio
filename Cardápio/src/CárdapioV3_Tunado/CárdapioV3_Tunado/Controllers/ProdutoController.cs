@@ -20,6 +20,8 @@ namespace CárdapioV3_Tunado.Controllers
             {
                 ViewBag.listaProdutosController = cardapio.getTodosProdutosbyEmpresa(Convert.ToInt32(EmpresaID));
                 ViewBag.NomeEmpresa = empresa.getTodasEmpresasbyID(Convert.ToInt32(EmpresaID));
+                ViewBag.TodasEmpresasBox = empresa.getTodasEmpresas();
+                ViewBag.EmpresaIDSubmit = EmpresaID;
                 return View();
             }
             else

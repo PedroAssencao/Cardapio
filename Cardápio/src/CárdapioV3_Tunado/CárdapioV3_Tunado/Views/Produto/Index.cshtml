@@ -20,13 +20,15 @@
     <td><a class="btn btn-outline-dark" href="/Categoria/Index?idEmpresa=">Categorias</a></td>
 }
 
-
-@if (ViewBag.ProdutoID !=null)
+@if (int.Parse(User.Identity!.Name) != null)
 {
-    <p class="alert-success">Produto criado com sucesso, ID do Produto:@ViewBag.ProdutoID</p>
+    <input type="text" value="@String.Join("", new string[] { Context.Request.IsHttps ? "https://" : "http://", Context.Request.Host.Value})/cardapio/index?idempresa=@int.Parse(User.Identity!.Name)" id="myInput">
+}
+else
+{
+    <input type="text" value="@String.Join("", new string[] { Context.Request.IsHttps ? "https://" : "http://", Context.Request.Host.Value})/cardapio/index?idempresa=@ViewBag.EmpresaIDSubmit" id="myInput">
 }
 
-<input type="text" value="@String.Join("", new string[] { Context.Request.IsHttps ? "https://" : "http://", Context.Request.Host.Value})/cardapio/index?idempresa=@int.Parse(User.Identity!.Name)" id="myInput">
 <button id="copyButton">Copiar</button>
 <div id="textDisplay"></div>
 <form asp-controller="Produto" asp-action="Index" >
@@ -61,7 +63,7 @@
             </tr>
         </thead>
         <tbody>
-            @if (User.IsInRole(nameof(E_Perfil.MASTER)))
+            @if (User.IsInRole(nameof(E_Perfil.MASTER)) && ViewBag.todosProdutos != null)
             {
                 @foreach (var item in ViewBag.todosProdutos)
                 {
