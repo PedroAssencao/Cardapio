@@ -26,7 +26,8 @@
 }
 
 <input type="text" value="@String.Join("", new string[] { Context.Request.IsHttps ? "https://" : "http://", Context.Request.Host.Value})/cardapio/index?idempresa=@int.Parse(User.Identity!.Name)" id="myInput">
-<button onclick="myFunction()">Copiar</button>
+<button id="copyButton">Copiar</button>
+<div id="textDisplay"></div>
 <div id="divtabela">
     <table class="table table-striped">
         <thead>
@@ -54,3 +55,14 @@
         </tbody>
     </table>
 </div>
+<script>
+    $(document).ready(function () {
+        $('#copyButton').on('click', function () {
+            var copyText = document.getElementById('myInput');
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value);
+            alert("Copied the text: " + copyText.value);
+        });
+    });
+</script>

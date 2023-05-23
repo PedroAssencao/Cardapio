@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yqQeb98BcYyVBGe4pwQlODqK5Bw7P79zXQlMUK6jfzE=",
+  "Hash": "wsqzV7lC9zO0rCbiKHijxJI7R0p2Uhk+mHtkOXp70c0=",
   "Source": "CárdapioV3_Tunado",
   "BasePath": "_content/CárdapioV3_Tunado",
   "Mode": "Default",
@@ -423,23 +423,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\undraw_shopping_app_flsj.svg"
-    },
-    {
-      "Identity": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\js\\JavaScript.js",
-      "SourceId": "CárdapioV3_Tunado",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\",
-      "BasePath": "_content/CárdapioV3_Tunado",
-      "RelativePath": "js/JavaScript.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\JavaScript.js"
     },
     {
       "Identity": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\wwwroot\\js\\script.js",

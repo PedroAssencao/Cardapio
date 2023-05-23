@@ -30,6 +30,7 @@ namespace CárdapioV3_Tunado.Controllers
         {
             idEmpresa = int.Parse(User.Identity!.Name);
             ViewBag.listadeEmpresas = Estabelecimento.getTodasEmpresasbyID(idEmpresa);
+            ViewBag.TodasAsEmpresa = Estabelecimento.getTodasEmpresas();
             return View();
         }
 
