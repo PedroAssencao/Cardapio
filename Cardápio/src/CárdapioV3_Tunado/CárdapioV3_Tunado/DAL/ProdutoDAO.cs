@@ -22,6 +22,14 @@ namespace CárdapioV3_Tunado.DAL
             return dados;
         }
 
+        public List<CategoriaProdutoView> SepararProdutos()
+        {
+            var sql = "SELECT distinct produtos.*, empresas.NomeEmpresa FROM Produto produtos JOIN Empresa empresas ON produtos.EmpresaID=empresas.EmpresaID;";
+
+            var dados = (List<CategoriaProdutoView>)_connection.Query<CategoriaProdutoView>(sql);
+            return dados;
+        }
+
         public List<CategoriaProdutoView> getMaisPedidos(int idEmpresa)
         {
             string sql = $"select NomeProduto, QuantidadePesquisa from Produto where EmpresaID={idEmpresa} Order By QuantidadePesquisa desc";

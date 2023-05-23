@@ -29,33 +29,70 @@
 <input type="text" value="@String.Join("", new string[] { Context.Request.IsHttps ? "https://" : "http://", Context.Request.Host.Value})/cardapio/index?idempresa=@int.Parse(User.Identity!.Name)" id="myInput">
 <button id="copyButton">Copiar</button>
 <div id="textDisplay"></div>
+<form asp-controller="Produto" asp-action="Index" >
+    @if (User.IsInRole(nameof(E_Perfil.MASTER)))
+    {
+        <br />
+        <label for="EmpresaID">Escolha uma empresa:</label>
+        <select name="EmpresaID" id="EmpresaID">
+            @foreach (var item in ViewBag.TodasEmpresasBox)
+            {
+                <option value="@item.EmpresaID">@item.NomeEmpresa</option>
+            }
+        </select>
+
+        <button type="submit" class="btn btn-outline-dark" >Submit</button>
+    }
+</form>
 <div id="divtabela">
     <table class="table table-striped">
         <thead>
             <tr>
+                <th scope="col">EmpresaID</th>
                 <th scope="col">ProdutoID</th>
                 <th scope="col">Nome do Produto</th>
                 <th scope="col">Descrição</th>
                 <th scope="col">Nutrição do Produto</th>
                 <th scope="col">Preço do Produto</th>
+                @if (User.IsInRole(nameof(E_Perfil.MASTER)))
+                {
+                    <th scope="col">Nome da Empresa</th>
+                }
             </tr>
         </thead>
         <tbody>
             @if (User.IsInRole(nameof(E_Perfil.MASTER)))
             {
-                
+                @foreach (var item in ViewBag.todosProdutos)
+                {
+                    <tr>
+                        <td>@item.EmpresaID</td>
+                        <td>@item.ProID</td>
+                        <td>@item.NomeProduto</td>
+                        <td>@item.DescricaoProduto</td>
+                        <td>@item.NutricaoProduto</td>
+                        <td>@item.PrecoProduto</td>
+                        <td>@item.NomeEmpresa</td>
+                        <td><a class="btn btn-outline-warning" href="/Produto/Atualizar/@item.ProID">Editar</a></td>
+                        <td><a class="btn btn-outline-danger" href="/Produto/Apagar/@item.ProID">Deletar</a></td>
+                    </tr>
+                }
             }
-            @foreach (var item in @ViewBag.listaProdutosController)
+            else
             {
-                <tr>
-                    <td>@item.ProID</td>
-                    <td>@item.NomeProduto</td>
-                    <td>@item.DescricaoProduto</td>
-                    <td>@item.NutricaoProduto</td>
-                    <td>@item.PrecoProduto</td>
-                    <td><a class="btn btn-outline-warning" href="/Produto/Atualizar/@item.ProID">Editar</a></td>
-                    <td><a class="btn btn-outline-danger" href="/Produto/Apagar/@item.ProID">Deletar</a></td>
-                </tr>
+                @foreach (var item in @ViewBag.listaProdutosController)
+                {
+                    <tr>
+                        <td>@item.EmpresaID</td>
+                        <td>@item.ProID</td>
+                        <td>@item.NomeProduto</td>
+                        <td>@item.DescricaoProduto</td>
+                        <td>@item.NutricaoProduto</td>
+                        <td>@item.PrecoProduto</td>
+                        <td><a class="btn btn-outline-warning" href="/Produto/Atualizar/@item.ProID">Editar</a></td>
+                        <td><a class="btn btn-outline-danger" href="/Produto/Apagar/@item.ProID">Deletar</a></td>
+                    </tr>
+                }
             }
         </tbody>
     </table>
