@@ -3,6 +3,8 @@
     public class CategoriaProdutoView
     {
         public int ProID { get; set; }
+        public int PedID { get; set; }
+        public DateTime PedDataPedido { get; set; }
         public int CategoriaID { get; set; }
         public string Telefone { get; set; }
         public int EmpresaID { get; set; }

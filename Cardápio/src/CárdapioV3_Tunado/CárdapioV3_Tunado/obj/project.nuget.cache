@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+TY4AudnyW/Ahym8ICEnwpoO5+OsDcIv9IrokZ1/zoM7658eaETT+9IWHBZYIoYCypfcLw1d8LoYobpccFjwQQ==",
+  "dgSpecHash": "0inH9sM7JwGelG2QufxL6IBC+2HDrSB2KsZFfR2ohoadZAVqnIcjQqFMPek7ZZ+LtD/2xEg16835TMS/pOiWfA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\android\\Documents\\GitHub\\Cardapio\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\CárdapioV3_Tunado.csproj",
+  "projectFilePath": "C:\\Users\\android\\Desktop\\Cardapio-Atualiza_v3\\Cardapio-Atualiza_v3\\Cardápio\\src\\CárdapioV3_Tunado\\CárdapioV3_Tunado\\CárdapioV3_Tunado.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\android\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\android\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",

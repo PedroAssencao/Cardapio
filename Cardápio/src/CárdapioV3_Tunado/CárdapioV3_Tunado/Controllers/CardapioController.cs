@@ -54,6 +54,27 @@ namespace CárdapioV3_Tunado.Controllers
                     return x;
                 }).ToList();
 
+                 lista = lista.Select(x =>
+                {
+                    x.PedID = emp.PedID;
+                    return x;
+                }).ToList();
+                listaCategoria.Select(x =>
+                {
+                    x.PedID = emp.PedID;
+                    return x;
+                }).ToList();
+
+                lista = lista.Select(x =>
+                {
+                    x.PedDataPedido = emp.PedDataPedido;
+                    return x;
+                }).ToList();
+                listaCategoria.Select(x =>
+                {
+                    x.PedDataPedido = emp.PedDataPedido;
+                    return x;
+                }).ToList();
 
                 lista = lista.Select(x =>
                 {
@@ -68,7 +89,7 @@ namespace CárdapioV3_Tunado.Controllers
 
 
 
-
+                ViewBag.Empresaid = idEmpresa;
 
 
 

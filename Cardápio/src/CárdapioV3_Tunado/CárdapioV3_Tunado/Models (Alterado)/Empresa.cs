@@ -3,6 +3,8 @@
     public class Empresa
     {
         public int EmpresaID { get; set; }
+        public int PedID { get; set; }
+        public DateTime PedDataPedido { get; set; }
         public string Telefone { get; set; }
         public string NomeEmpresa { get; set; }
         public string SenhaEmpresa { get; set; }
