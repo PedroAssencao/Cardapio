@@ -7,10 +7,26 @@
 body {
     font-family: 'Ubuntu', sans-serif;
     text-align: center;
-    background-color: #f1f1f1
+    background-color: #f1f1f1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
+.tt{
+    display:flex;
+    justify-content:flex-start;
+}
 
+.bbs{
+    display:flex;
+    justify-content:flex-start;
+    padding:0 10px;
+}
+
+.bh{
+    margin-left:10px;
+}
 
 .header > img {
     width: 250px;
@@ -20,17 +36,15 @@ body {
 
 
 
-.about {
+.about{
   
     background-color: #fff;
-    margin-left: 200px;
-    margin-right: 200px;
    
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
+   
+    
+ 
     margin-bottom: 10px;
-    padding: 10px;
+   
     height: 700px;
    
 }
@@ -56,31 +70,10 @@ p {
     padding: 20px;
 }
 
-.Button-empresa {
-    position: absolute;
-    right: 200px;
-    top: 40px;
-    height: 60px;
-    width: 200px;
-    color: white;
-    background-color: #1C1C1C;
-    border-radius: 10px;
+
+
+.bb{
+    display:flex;
+    justify-content:flex-start;
+    
 }
-
-
-.input-with-button {
-    position: relative;
-}
-
-    .input-with-button input {
-        padding-right: 120px;
-    }
-
-    .input-with-button .edit-button {
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: 100%;
-        width: 120px;
-        width: 100px;
-    }
