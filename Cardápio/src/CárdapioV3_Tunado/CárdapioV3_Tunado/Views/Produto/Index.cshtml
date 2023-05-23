@@ -2,6 +2,7 @@
 @{
     CárdapioV3_Tunado.DAL.EmpresaDAO empresa = new CárdapioV3_Tunado.DAL.EmpresaDAO();
 }
+@using CárdapioV3_Tunado.Models.enums;
 
 <h1>
     @foreach (var item in ViewBag.NomeEmpresa)
@@ -40,6 +41,10 @@
             </tr>
         </thead>
         <tbody>
+            @if (User.IsInRole(nameof(E_Perfil.MASTER)))
+            {
+                
+            }
             @foreach (var item in @ViewBag.listaProdutosController)
             {
                 <tr>
