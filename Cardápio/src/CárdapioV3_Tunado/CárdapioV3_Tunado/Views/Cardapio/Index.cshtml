@@ -13,32 +13,37 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
     @model CárdapioV3_Tunado.Models.ListCategoriaProduto
+    
+
+
+  <style>
+    .hidden {
+        display: none;
+    }
+
+</style>
 </head>
 <body>
     <div class="col-12 card text-bg-light rounded-2" style="height: 90%;overflow-y: scroll;scrollbar-width: thin;scrollbar-color: #aaa transparent;">
-        <header class="navbar navbar-expand-lg bd-navbar sticky-top rounded-2 container-fluid border-bottom" style="background-color:white">
-            <div class="col d-flex justify-content-between">
+        <header class="navbar navbar-expand-lg bd-navbar sticky-top rounded-2 border-bottom" style="background-color:white">
+            <div class="m-2">
+                <span class="material-symbols-outlined rounded-2" id="btn-voltar" style="display: none; z-index:99999999; justify-content:flex-start;" onclick="btnVoltarF()">chevron_left</span>
+            </div>
+            <div class="container-fluid d-flex justify-content-center">
                 <div class="m-2">
-                    <span class="material-symbols-outlined rounded-2" id="btn-voltar"  style="display: none; z-index:99999999; justify-content:flex-start;" onclick="btnVoltarF()">chevron_left</span>
-                </div>
-
-                <div class="m-2 text-center">
-    @if (Model.Lista1.First().FotoEmpresa != null)
-    {
-        <div class="mx-auto">
-            <img class="rounded d-block" src="@Model.Lista1.First().FotoEmpresa" height="80" border="0">
-        </div>
-    }
-    else
-    {
-        <div class="text-center">
-            <span style="font-size: 30px;">@Model.Lista1.First().NomeEmpresa</span>
-        </div>
-    }
-</div>
-
-
-
+                    @if (Model.Lista1.First().FotoEmpresa != null)
+                    {
+                        <div class="mx-auto">
+                            <img class="rounded d-block" src="@Model.Lista1.First().FotoEmpresa" height="80" border="0">
+                        </div>
+                    }
+                    else
+                    {
+                        <div>
+                            <span style="font-size: 30px;">@Model.Lista1.First().NomeEmpresa</span>
+                        </div>
+                    }
+                </div> 
             </div>
         </header>
         <div class="container-fluid mt-3">
@@ -94,6 +99,21 @@
                                         <option value="03">03</option>
                                         <option value="04">04</option>
                                         <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
                                     </select>
                                 </div>
                             </div>
@@ -110,11 +130,27 @@
                             <input type="text" class="form-controlNome form-control" id="InputNome" placeholder="Nome">
                         </div>
                         <div class="row mb-2">
-                            <input type="text" class="form-controlEndereco form-control" id="InputEndereco" placeholder="Endereço">
-                        </div>
-                        <div class="row mb-4">
                             <input type="text" class="form-controlTelefone form-control" id="InputNTelefone" placeholder="Número de Telefone">
                         </div>
+                        <div class="row mb-2">
+                            <div class="input-group">
+                                <input type="text" class="form-controlTelefone form-control" id="InputEndereco" placeholder="Endereço">
+                                <div class="input-group-append">
+                                    <span class="input-group-text arrow">&#9660;</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-2 hidden" id="complementoDiv">
+                            <input type="text" class="form-controlTelefone form-control" id="InputComplemento" placeholder="Complemento">
+                        </div>
+                        <div class="row mb-2 hidden" id="bairroDiv">
+                            <input type="text" class="form-controlTelefone form-control" id="InputBairro" placeholder="Bairro">
+                        </div>
+                        <div class="row mb-4 hidden" id="referenciaDiv">
+                            <input type="text" class="form-controlTelefone form-control" id="InputReferencia" placeholder="Ponto de Referencia">
+                        </div>
+
+
                         <div>
                             <div class="fs-5 mb-2">Resumo do pedido:</div>
                         </div>
@@ -125,6 +161,7 @@
                         </div>
                         <div>
                             <div id="total-da-soma-dos-valores" class="fs-6 mb-2" style="font-weight:500;">Total: R$00,00</div>
+                            <div id="taxaTela" class="fs-6 mb-2" style="font-weight:500;">Taxa de entrega: R$00,00</div>
                         </div>
                         <div class="mb-4">
                             <label for="observacao" class="form-label mt-2" style="font-weight: 500;">Obsevação do pedido:</label>
@@ -272,9 +309,18 @@
                     "<button class='btn btn-danger rounded-2 btn_produto' style='margin-left:20px;' onclick='event.preventDefault(); removerItemDoCarrinho(" + i + ");'>X</button></div>" +
                     "</div>" + "</div>";
             }
+           var taxaString = "@Model.Lista1.First().Taxa";
+
+           taxaString = taxaString.replace(',', '.');
+
+
+           var taxa = parseFloat(taxaString);
 
             var divSomaProdutos = document.getElementById("total-da-soma-dos-valores");
             divSomaProdutos.textContent = "Total: R$" + somaProdutos.toFixed(2);
+
+            var divSomaProdutos = document.getElementById("taxaTela");
+            divSomaProdutos.textContent = "Taxa de entrega: R$" + taxa.toFixed(2);
 
             produtoSelecionado.innerHTML = html;
         }
@@ -340,12 +386,15 @@
         }
 
         function varrer(nome, valor) {
-            var carrinho = JSON.parse(allStorage()[1]); 
+            var carrinho = JSON.parse(allStorage()[1]); // lembrar de mudar para 0
             var string = "";
             var nome = $("#InputNome").val()
             var endereco = $("#InputEndereco").val()
             var telefone = $("#InputNTelefone").val().replace(/[()+\-]/g, '');
             var observacao = $("#observacao").val()
+            var complemento = $("#InputComplemento").val()
+            var Bairro = $("#InputBairro").val()
+            var ptnReferencia = $("#InputReferencia").val()
             var html = "";
             for (var i = 0; i < carrinho.length; i++) {
                 console.log(carrinho[i].precoProduto)
@@ -358,10 +407,12 @@
             var e = $("#FormaDePagamento option:selected").text();
 
             for (var i = 0; i < carrinho.length; i++) {
-                var carrinho = JSON.parse(allStorage()[1])
+                var carrinho = JSON.parse(allStorage()[1]) //lembrar de mudar para 0
                 string += "\n" + carrinho[i]["nomeProduto"]
             }
             var nomeEmpresa = '(@Model.Lista1.First().NomeEmpresa)'
+            var horaPedido = '(@Model.Lista1.First().PedDataPedido.ToString("dd/MM/yyyy"))'
+            var idpedido = '(@Model.Lista1.First().PedID)'
             var numero = '@(Model.Lista1.First().Telefone.Replace("(", "").Replace(")", "").Replace("+", "").Replace("-", "").Replace(" ", ""))';
             var preco = 0.00
             for (var i = 0; i < carrinho.length; i++) {
@@ -373,33 +424,10 @@
             var taxa = parseFloat("@Model.Lista1.First().Taxa")
             var novopreco = parseFloat(preco)
             var resultado = taxa + novopreco
-             
-            var mensagem = "\n" + "🏢 Empresa: " +  nomeEmpresa + " \n" + 
-           "\n" + "---------------------------" + "\n" +
-           "\n" + "📢Delivery - "+ nomeEmpresa + "\n" +
-           "\n" + "---------------------------" + "\n" +
-           " \n" +   "👥 CLIENTE \nNome:  " + nome + " \n" +
-                "Endereço:  " + endereco + " \n" +
-                "Telefone:  " + telefone + "  \n" +
-             "\n" +    "---------------------------" + "\n" +
-                " \n📝 RESUMO DO PEDIDO \n" +
-                "Produto: " + "\n" + html +
-                "\nObservação: " + observacao + "\n" +
-           "\n" +      "---------------------------" + "\n" +
-                " \n💵 DADOS DE PAGAMENTO " + "\n" +
-                "Forma de pagamento:" + "" + e + "\n" +
-                "Preço do produto(s) R$" + parseFloat(preco).toFixed(2) + "\n" +
-                "Taxa de entrega: @Model.Lista1.First().Taxa" + "\n" +
-                "Valor total R$: " + resultado.toFixed(2)
-
-
-
-            var link = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
-
+            var idempresa = @ViewBag.Empresaid
             var idsdosprodutos = carrinho.map(objeto => objeto.proID);
-
-
-            $.ajax({
+           
+             $.ajax({
                 url: '@Url.ActionLink("CriarPedido", "Pedidos")',
                 method: 'POST',
                 data: {
@@ -410,9 +438,48 @@
                     EmpresaID: @ViewBag.EmpresaID,
                     TipoPagamento: e,
                     Produtos: idsdosprodutos,
+                        empresaids: idempresa
+                } , 
+                success: function (batata){
+                        var data =  batata[0]
+                        var idpid =  batata[1] 
+                
+                 
+                     
+
+                    var mensagem = "\n" + "*✏PEDIDO Nº* " + idpid  + " \n" +
+                    "Realizado em " + data + 
+                        
+                        "\n" + "📣Delivery -" + nomeEmpresa + "\n"   +
+                        "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
+                        " \n" + "👥 *CLIENTE* \nNome:  " + nome + " \n" +
+                        "*Endereço:  " + endereco + " \n" +
+                        "*Complemento:  " + complemento + "  \n" +
+                        "bairro:" + Bairro + "  \n" +
+                        "Ponto de Referencia:" + ptnReferencia + "  \n" +
+                        "*Telefone:" + telefone + "  \n" +
+                        "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
+                        " \n*📝 RESUMO DO PEDIDO* \n" +
+                        "Produto: " + "\n" + html +
+                        "\nObservação: " + observacao + "\n" +
+                        "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
+                        "\n*💵DADOS DE PAGAMENTO*" + "\n" +
+                        "Forma de pagamento: " + "" + e + "\n" +
+                        "Preço do produto(s) R$ " + parseFloat(preco).toFixed(2) + "\n" +
+                        "Taxa de entrega: @Model.Lista1.First().Taxa" + "\n" +
+                        "Valor total R$: " + resultado.toFixed(2)
+
+
+
+                    var link = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
+
+
+
+                    window.open(link, "_blank");
                 }
+
+
             })
-            window.open(link, "_blank");
         }
 
         function adicionarAoCarrinho(proID, precoProduto, nomeProduto, precoAnterior, quantidade) {
@@ -457,6 +524,23 @@ form.addEventListener('submit', function(event) {
     event.preventDefault(); 
   }
 });
+
+ 
+        const arrow = document.querySelector('.arrow');
+        const complementoDiv = document.getElementById('complementoDiv');
+        const bairroDiv = document.getElementById('bairroDiv');
+        const referenciaDiv = document.getElementById('referenciaDiv');
+
+ 
+        arrow.addEventListener('click', function () {
+          
+            complementoDiv.classList.toggle('hidden');
+            bairroDiv.classList.toggle('hidden');
+            referenciaDiv.classList.toggle('hidden');
+        });
+
+
+
 
 
     </script>

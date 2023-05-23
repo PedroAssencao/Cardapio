@@ -4,7 +4,6 @@
 @{
 	CárdapioV3_Tunado.DAL.EmpresaDAO empresa = new CárdapioV3_Tunado.DAL.EmpresaDAO();
 }
-@using CárdapioV3_Tunado.Models.enums;
 <head>
 	<meta charset="UTF-8" />
 	<title>PerfilEmpresa</title>
@@ -14,6 +13,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="~/js/JavaScript.js"></script>
 	<link rel="stylesheet" href="~/css/telaEmpresa.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
@@ -23,182 +23,131 @@
 
 <body>
 	<div>
-		@if (User.IsInRole(nameof(E_Perfil.MASTER)))
-		{
-			<table class="table">
-				<thead class="thead-dark">
-					<tr>
-						<th scope="col">EmpresaID</th>
-						<th scope="col">Nome da Empresa</th>
-						<th scope="col">Link Cardápio</th>
-					</tr>
-				</thead>
-				<tbody>
-					@foreach (var item in ViewBag.TodasAsEmpresa)
+
+	<div class="header">
+
+		<h1>Perfil Empresa</h1>
+
+		<div>
+			<br />
+			<h2>
+				@foreach (var item in ViewBag.listadeEmpresas)
+				{
+					@item.NomeEmpresa
+				}
+			</h2>
+		</div>
+		<br />
+
+	</div>
+
+	<div class="about">
+		<br />
+		<input type="text" value="@String.Join("", new string[] { Context.Request.IsHttps ? "https://" : "http://", Context.Request.Host.Value})/cardapio/index?idempresa=@int.Parse(User.Identity!.Name)" id="myInput">
+
+		<button onclick="myFunction()">Copiar</button>
+
+		<form method="post">
+			<div class="form-group" style="text-align: left; position: relative;">
+				<label for="formGroupExampleInput">Nome</label>
+				<div class="input-with-button">
+					@foreach (var item in ViewBag.listadeEmpresas)
 					{
-						string nome = "myImput" + item.EmpresaID.ToString();
-						string nomeBotao = "copyButton" + item.EmpresaID.ToString();
-						<tr>
-							<td>@item.EmpresaID</td>
-							<td>@item.NomeEmpresa</td>
-							<td>
-								<input type="text" value="@String.Join("", new string[] { Context.Request.IsHttps ? "https://" : "http://", Context.Request.Host.Value})/cardapio/index?idempresa=@item.EmpresaID" id="@nome">
-								<button id="@nomeBotao">Copiar Link</button>
-								<div id="textDisplay"></div>
-							</td>
-						</tr>
-						<script>
-							$(document).ready(function(){
-								$('#@nomeBotao').on('click', function () {
-									var copyText = document.getElementById('@nome');
-									copyText.select();
-									copyText.setSelectionRange(0, 99999);
-									navigator.clipboard.writeText(copyText.value);
-									alert("Copied the text: " + copyText.value);
-								});
-							})
-						</script>
+						<input type="text" value="@item.NomeEmpresa" class="form-control" id="formGroupExampleInput" readonly>
 					}
-				</tbody>
-			</table>
-		}
-		else
-		{
-			<div class="header">
 
-				<h1>Perfil Empresa</h1>
 
-				<div>
-					<br />
-					<h2>
-						@foreach (var item in ViewBag.listadeEmpresas)
-						{
-							@item.NomeEmpresa
-						}
-					</h2>
 				</div>
-				<br />
-
 			</div>
 
-			<div class="about">
-				<br />
-				<input type="text" value="@String.Join("", new string[] { Context.Request.IsHttps ? "https://" : "http://", Context.Request.Host.Value})/cardapio/index?idempresa=@int.Parse(User.Identity!.Name)" id="myInput">
 
-				<button id="copyButton">Copiar</button>
-				<div id="textDisplay"></div>
+			@functions {
+				public string FormatTelefone(string telefone)
+				{
+					if (string.IsNullOrWhiteSpace(telefone))
+						return "";
 
-				<form method="post">
-					<div class="form-group" style="text-align: left; position: relative;">
-						<label for="formGroupExampleInput">Nome</label>
-						<div class="input-with-button">
-							@foreach (var item in ViewBag.listadeEmpresas)
-							{
-								<input type="text" value="@item.NomeEmpresa" class="form-control" id="formGroupExampleInput" readonly>
-							}
+					if (telefone.Length != 14)
+						return telefone;
 
-
-						</div>
-					</div>
-
-
-					@functions {
-					public string FormatTelefone(string telefone)
-					{
-						if (string.IsNullOrWhiteSpace(telefone))
-							return "";
-
-						if (telefone.Length != 14)
-							return telefone;
-
-						return string.Format("({0}) {1} {2}-{3}", telefone.Substring(0, 2), telefone.Substring(2, 2), telefone.Substring(4, 5), telefone.Substring(9, 4));
-					}
+					return string.Format("({0}) {1} {2}-{3}", telefone.Substring(0, 2), telefone.Substring(2, 2), telefone.Substring(4, 5), telefone.Substring(9, 4));
 				}
+			}
 
-				<div class="form-group" style="text-align: left; position: relative;">
-					<label for="formGroupExampleInput2">Telefone</label>
-					<div class="input-with-button">
-						@foreach (var item in ViewBag.listadeEmpresas)
-							{
-								<input type="text" value="@FormatTelefone(item.Telefone)" class="form-control telefone-input" id="telefone" readonly>
-							}
-						</div>
-					</div>
-
-
-
-
-					@functions {
-					public string FormatCnpj(string cnpj)
+			<div class="form-group" style="text-align: left; position: relative;">
+				<label for="formGroupExampleInput2">Telefone</label>
+				<div class="input-with-button">
+					@foreach (var item in ViewBag.listadeEmpresas)
 					{
-						if (string.IsNullOrWhiteSpace(cnpj))
-							return "";
-
-						if (cnpj.Length != 14)
-							return cnpj;
-
-						return $"{cnpj.Substring(0, 2)}.{cnpj.Substring(2, 3)}.{cnpj.Substring(5, 3)}/{cnpj.Substring(8, 4)}-{cnpj.Substring(12, 2)}";
+						<input type="text" value="@FormatTelefone(item.Telefone)" class="form-control telefone-input" id="telefone" readonly>
 					}
-				}
-
-				<div class="form-group" style="text-align: left; position: relative;">
-					<label for="formGroupExampleInput">CNPJ</label>
-					<div class="input-with-button">
-						@foreach (var item in ViewBag.listadeEmpresas)
-							{
-								<input type="text" value="@FormatCnpj(item.CNPJ)" class="form-control" id="formGroupExampleInput" readonly>
-							}
-						</div>
-					</div>
-					<div class="form-group" style="text-align: left; position: relative;">
-						<label for="formGroupExampleInput2">Senha</label>
-						<div class="input-with-button">
-							@foreach (var item in ViewBag.listadeEmpresas)
-							{
-								<input type="password" value="@empresa.Descriptografar(item.SenhaEmpresa)" class="form-control" id="formGroupExampleInput2" readonly>
-							}
-
-
-						</div>
-					</div>
-
-					<div class="form-group" style="text-align: left; position: relative;">
-						<label for="formGroupExampleInput2">Taxa Empresa</label>
-						<div class="input-with-button">
-							@foreach (var item in ViewBag.listadeEmpresas)
-							{
-								<input type="text" value="@item.taxaEmpresa.ToString("0.00")" class="form-control" id="formGroupExampleInput2" readonly>
-							}
-						</div>
-					</div>
-
-
-
-				</form>
-
-				<a type="button" class="btn btn-primary edit-button" style="margin-left: 630px; margin-top: -550px;" href="/Empresa/Atualizar">Editar</a>
-
-
+				</div>
 			</div>
-		}
 
-		
+
+
+
+			@functions {
+				public string FormatCnpj(string cnpj)
+				{
+					if (string.IsNullOrWhiteSpace(cnpj))
+						return "";
+
+					if (cnpj.Length != 14)
+						return cnpj;
+
+					return $"{cnpj.Substring(0, 2)}.{cnpj.Substring(2, 3)}.{cnpj.Substring(5, 3)}/{cnpj.Substring(8, 4)}-{cnpj.Substring(12, 2)}";
+				}
+			}
+
+			<div class="form-group" style="text-align: left; position: relative;">
+				<label for="formGroupExampleInput">CNPJ</label>
+				<div class="input-with-button">
+					@foreach (var item in ViewBag.listadeEmpresas)
+					{
+						<input type="text" value="@FormatCnpj(item.CNPJ)" class="form-control" id="formGroupExampleInput" readonly>
+					}
+				</div>
+			</div>
+			<div class="form-group" style="text-align: left; position: relative;">
+				<label for="formGroupExampleInput2">Senha</label>
+				<div class="input-with-button">
+					@foreach (var item in ViewBag.listadeEmpresas)
+					{
+						<input type="password" value="@empresa.Descriptografar(item.SenhaEmpresa)" class="form-control" id="formGroupExampleInput2" readonly>
+					}
+
+
+				</div>
+			</div>
+
+			<div class="form-group" style="text-align: left; position: relative;">
+				<label for="formGroupExampleInput2">Taxa Empresa</label>
+				<div class="input-with-button">
+					@foreach (var item in ViewBag.listadeEmpresas)
+					{
+						<input type="text" value="@item.taxaEmpresa.ToString("0.00")" class="form-control" id="formGroupExampleInput2" readonly>
+					}
+				</div>
+			</div>
+
+
+
+		</form>
+
+		<a type="button" class="btn btn-primary edit-button" style="margin-left: 630px; margin-top: -550px;" href="/Empresa/Atualizar">Editar</a>
+
+
+	</div>
 
 	</div>
 
 	<script>
-		$('#copyButton').on('click', function () {
-			var copyText = document.getElementById('myInput');
-			copyText.select();
-			copyText.setSelectionRange(0, 99999);
-			navigator.clipboard.writeText(copyText.value);
-			alert("Copied the text: " + copyText.value);
-		});
-
 		$(document).ready(function () {
-			$('#telefone').mask('+99(99)99999-9999');
-			$('#cnpj').mask('00.000.000/0000-00');
-		});
+    $('#telefone').mask('+99(99)99999-9999');
+    $('#cnpj').mask('00.000.000/0000-00');
+});
+
 	</script>
 </body>
 </html>

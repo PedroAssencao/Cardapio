@@ -27,7 +27,7 @@ namespace CárdapioV3_Tunado.Controllers
 
         [HttpPost]
         [ActionName("CriarPedido")] 
-        public void Create(string NomeCliente, string EnderecoCliente, string TelefoneCliente, string DataPedido, string TipoPagamento, int EmpresaID, int[] Produtos)
+        public IActionResult Create(string NomeCliente, string EnderecoCliente, string TelefoneCliente, string DataPedido, string TipoPagamento, int EmpresaID, int[] Produtos, int empresaids)
         {
             var pedido = new Pedidos();
             pedido.PedNomeCliente = NomeCliente;
@@ -37,8 +37,10 @@ namespace CárdapioV3_Tunado.Controllers
             pedido.TipoPagamento = TipoPagamento;
             pedido.EmpresaId = EmpresaID;
 
-            _pedidosContext.insertNovoPedido(pedido);
+            var batata = _pedidosContext.insertNovoPedido(pedido);
             _produtoContext.atualizarqtdPesquisaProdutos(Produtos);
+            var model = _pedidosContext.getTodosPedidos(0, empresaids).First(x => x.PedID == batata);
+            return Json(new string[] { model.PedDataPedido.ToString("dd/MM/yyyy"), model.PedID.ToString() });
         }
     }
 }

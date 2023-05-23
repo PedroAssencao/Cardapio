@@ -22,11 +22,14 @@ namespace CárdapioV3_Tunado.DAL
             return dados;
         }
 
-        public void insertNovoPedido(Pedidos novoPedido)
+      
+        public int insertNovoPedido(Pedidos novoPedido)
         {
-            var sql = "insert Pedidos (PedNomeCliente, PedEnderecoCliente, PedTelefoneCliente, PedDataPedido, TipoPagamento, EmpresaId) values (@PedNomeCliente, @PedEnderecoCliente, @PedTelefoneCliente, @PedDataPedido, @TipoPagamento, @EmpresaId)";
+            var sql = "insert Pedidos (PedNomeCliente, PedEnderecoCliente, PedTelefoneCliente, PedDataPedido, TipoPagamento, EmpresaId) values (@PedNomeCliente, @PedEnderecoCliente, @PedTelefoneCliente, @PedDataPedido, @TipoPagamento, @EmpresaId); SELECT LAST_INSERT_ID();";
 
-            var dados = _connection.Execute(sql, novoPedido);
+            return _connection.ExecuteScalar <int> (sql, novoPedido);
+
+
         }
     }
 }

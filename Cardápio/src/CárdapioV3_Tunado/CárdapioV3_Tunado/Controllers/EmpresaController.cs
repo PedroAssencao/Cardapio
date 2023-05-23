@@ -13,6 +13,7 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Authorization;
+using ConexaoBD = CárdapioV3_Tunado.DAL.ConexaoBD;
 
 namespace CárdapioV3_Tunado.Controllers
 {
@@ -23,7 +24,7 @@ namespace CárdapioV3_Tunado.Controllers
         MySqlConnection _connection;
         public EmpresaController()
         {
-            _connection = DAL.ConexaoBD.getConexao();
+            _connection = ConexaoBD.getConexao();
         }
         [Authorize]
         public IActionResult Index(int idEmpresa)
