@@ -1,13 +1,12 @@
-﻿function myFunction() {
-    // Get the text field
-    var copyText = document.getElementById("myInput");
+﻿document.getElementById('copyButton').addEventListener('click', function () {
 
-    // Select the text field
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); // For mobile devices
+    var dummyElement = document.getElementById('myInput');
+    dummyElement.value = textToCopy;
+    document.body.appendChild(dummyElement);
+    dummyElement.select();
+    document.execCommand('copy');
+    document.body.removeChild(dummyElement);
 
-    // Copy the text inside the text field
-    navigator.clipboard.writeText(copyText.value);
-
-
-}
+    document.getElementById('textDisplay').textContent = textToCopy;
+    alert('Texto copiado para a área de transferência!');
+});

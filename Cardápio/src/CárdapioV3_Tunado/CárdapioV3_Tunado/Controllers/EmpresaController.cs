@@ -23,7 +23,7 @@ namespace CárdapioV3_Tunado.Controllers
         MySqlConnection _connection;
         public EmpresaController()
         {
-            _connection = ConexaoBD.getConexao();
+            _connection = DAL.ConexaoBD.getConexao();
         }
         [Authorize]
         public IActionResult Index(int idEmpresa)
