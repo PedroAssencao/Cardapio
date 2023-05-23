@@ -22,7 +22,7 @@
 </head>
 
 <body>
-	
+	<div>
 		@if (User.IsInRole(nameof(E_Perfil.MASTER)))
 		{
 			<table class="table">
@@ -83,29 +83,14 @@
 
 			<div class="about">
 				<br />
-				
-				
-
-				
-				<div class="bb">
-
-				<a type="button" class="btn btn-primary edit-button" href="/Empresa/Atualizar">Editar</a>
-
-				</div>
-
-				<div class="aa">
-
-				<form method="post">
-
-				<div class="form-group">
 				<input type="text" value="@String.Join("", new string[] { Context.Request.IsHttps ? "https://" : "http://", Context.Request.Host.Value})/cardapio/index?idempresa=@int.Parse(User.Identity!.Name)" id="myInput">
 
 				<button id="copyButton">Copiar</button>
 				<div id="textDisplay"></div>
-				</div>
 
-					<div class="form-group">
-						<label for="formGroupExampleInput" class="tt">Nome</label>
+				<form method="post">
+					<div class="form-group" style="text-align: left; position: relative;">
+						<label for="formGroupExampleInput">Nome</label>
 						<div class="input-with-button">
 							@foreach (var item in ViewBag.listadeEmpresas)
 							{
@@ -130,8 +115,8 @@
 					}
 				}
 
-				<div class="form-group">
-					<label for="formGroupExampleInput2" class="tt">Telefone</label>
+				<div class="form-group" style="text-align: left; position: relative;">
+					<label for="formGroupExampleInput2">Telefone</label>
 					<div class="input-with-button">
 						@foreach (var item in ViewBag.listadeEmpresas)
 							{
@@ -156,8 +141,8 @@
 					}
 				}
 
-				<div class="form-group">
-					<label for="formGroupExampleInput" class="tt">CNPJ</label>
+				<div class="form-group" style="text-align: left; position: relative;">
+					<label for="formGroupExampleInput">CNPJ</label>
 					<div class="input-with-button">
 						@foreach (var item in ViewBag.listadeEmpresas)
 							{
@@ -165,8 +150,8 @@
 							}
 						</div>
 					</div>
-					<div class="form-group">
-						<label for="formGroupExampleInput2" class="tt">Senha</label>
+					<div class="form-group" style="text-align: left; position: relative;">
+						<label for="formGroupExampleInput2">Senha</label>
 						<div class="input-with-button">
 							@foreach (var item in ViewBag.listadeEmpresas)
 							{
@@ -177,8 +162,8 @@
 						</div>
 					</div>
 
-					<div class="form-group">
-						<label for="formGroupExampleInput2" class="tt">Taxa Empresa</label>
+					<div class="form-group" style="text-align: left; position: relative;">
+						<label for="formGroupExampleInput2">Taxa Empresa</label>
 						<div class="input-with-button">
 							@foreach (var item in ViewBag.listadeEmpresas)
 							{
@@ -190,17 +175,16 @@
 
 
 				</form>
-				</div>
 
+				<a type="button" class="btn btn-primary edit-button" style="margin-left: 630px; margin-top: -550px;" href="/Empresa/Atualizar">Editar</a>
 
 
 			</div>
-				
 		}
 
 		
 
-	
+	</div>
 
 	<script>
 		$('#copyButton').on('click', function () {

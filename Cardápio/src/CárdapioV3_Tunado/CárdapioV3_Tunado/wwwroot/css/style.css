@@ -37,7 +37,17 @@ html, body {
 
 
 
+.hidden {
+    display: none;
+}
 
+.arrow {
+    transition: transform 0.3s;
+}
+
+    .arrow.rotate {
+        transform: rotate(180deg);
+    }
 
 
 #btn-voltar {
