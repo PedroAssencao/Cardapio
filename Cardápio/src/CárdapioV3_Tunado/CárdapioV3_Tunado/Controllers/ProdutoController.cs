@@ -1,5 +1,6 @@
 ﻿using CárdapioV3_Tunado.DAL;
 using CárdapioV3_Tunado.Models;
+using CárdapioV3_Tunado.Models.enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,13 +14,26 @@ namespace CárdapioV3_Tunado.Controllers
         EmpresaDAO empresa = new EmpresaDAO();
 
         [Authorize]
-        public IActionResult Index()
+        public IActionResult Index(int? EmpresaID)
         {
-            if (User.Identity!.Name is null) return RedirectToAction("/empresa/logar");
-            var idEmpresa = int.Parse(User.Identity!.Name);
-            ViewBag.listaProdutosController = cardapio.getTodosProdutosbyEmpresa(idEmpresa);
-            ViewBag.NomeEmpresa = empresa.getTodasEmpresasbyID(idEmpresa);
-            return View();
+            if (User.IsInRole(nameof(E_Perfil.MASTER)) && EmpresaID != null)
+            {
+                ViewBag.listaProdutosController = cardapio.getTodosProdutosbyEmpresa(Convert.ToInt32(EmpresaID));
+                ViewBag.NomeEmpresa = empresa.getTodasEmpresasbyID(Convert.ToInt32(EmpresaID));
+                ViewBag.TodasEmpresasBox = empresa.getTodasEmpresas();
+                ViewBag.EmpresaIDSubmit = EmpresaID;
+                return View();
+            }
+            else
+            {
+                if (User.Identity!.Name is null) return RedirectToAction("/empresa/logar");
+                var idEmpresa = int.Parse(User.Identity!.Name);
+                ViewBag.listaProdutosController = cardapio.getTodosProdutosbyEmpresa(idEmpresa);
+                ViewBag.todosProdutos = produto.SepararProdutos();
+                ViewBag.NomeEmpresa = empresa.getTodasEmpresasbyID(idEmpresa);
+                ViewBag.TodasEmpresasBox = empresa.getTodasEmpresas();
+                return View();
+            }
         }
 
         //create
