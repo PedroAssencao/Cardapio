@@ -1,0 +1,397 @@
+﻿
+html, body {
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.box {
+    position: relative;
+    width: 380px;
+    height: 650px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #aaa transparent; /* cor da scroll bar na vertical */
+    border: 2px solid #666666;
+    border-radius: 12px;
+    padding: 10px;
+    background-color: #fff;
+    text-align: center;
+    margin: 20px;
+    overflow-x: hidden;
+}
+
+    .box::-webkit-scrollbar {
+        width: 6px; /* largura fina da scroll bar */
+    }
+
+    .box::-webkit-scrollbar-track {
+        background-color: transparent; /* cor transparente para ocultar a scroll bar no eixo X */
+    }
+
+    .box::-webkit-scrollbar-thumb {
+        background-color: #aaa; /* cor da scroll bar na vertical */
+    }
+
+
+
+.hidden {
+    display: none;
+}
+
+.arrow {
+    transition: transform 0.3s;
+}
+
+    .arrow.rotate {
+        transform: rotate(180deg);
+    }
+
+
+#btn-voltar {
+    display: none;
+    background-color: red;
+    color: white;
+}
+
+.estilo_pp {
+    font-size: 14px;
+    font-weight: 500;
+}
+.destaque1 {
+    color: red;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+body {
+    background-color: #000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+
+
+.quadrado {
+    position: absolute;
+    width: 390px;
+    height: 90px;
+    left: 0px;
+    top: 0px;
+    background: #DFDFDF;
+}
+
+.seta {
+    position: absolute;
+    width: 25px;
+    height: 28px;
+    left: 25px;
+    top: 32px;
+}
+
+.carrinho {
+    position: absolute;
+    width: 91px;
+    height: 17px;
+    left: 59px;
+    top: 23px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #fff;
+}
+
+
+.estilo_novo_form {
+    border: 1px solid #333333;
+    background-color: #CECECE;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #999999;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+}
+
+
+
+
+
+.NTelefone {
+    border-radius: 5px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.nome {
+    position: absolute;
+    right: 306px;
+    top: 230px;
+}
+
+.Endereco {
+    position: absolute;
+    width: 68px;
+    height: 26px;
+    left: 10px;
+    border-radius: 5px;
+    top: 200px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.linha {
+    position: absolute;
+    width: 390px;
+    height: 0px;
+    left: 0px;
+    top: 320px;
+    border: 1px solid #000000;
+}
+
+.resumo {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.linha2 {
+    height: 0px;
+    left: 0px;
+    top: 615px;
+    border: 1px solid #000000;
+}
+
+.pagamento {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.quadradinho {
+    text-align: center;
+}
+
+.quadradinho2 {
+    position: absolute;
+    width: 82px;
+    height: 20px;
+    left: 154px;
+    top: 685px;
+    text-align: center;
+    background: #D9D9D9;
+}
+
+.quadradinho3 {
+    position: absolute;
+    width: 82px;
+    height: 20px;
+    left: 280px;
+    top: 685px;
+    text-align: center;
+    background: #D9D9D9;
+}
+
+.linha3 {
+    left: 0px;
+    top: 762px;
+    border: 1px solid #000000;
+}
+
+.btn-FinalizarPedido {
+    text-align: center;
+}
+
+.btn-AdicionarPedido {
+    text-align: center;
+}
+
+
+
+
+.teste {
+    color: #000;
+}
+
+table {
+    border-collapse: separate;
+    text-indent: initial;
+    white-space: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-size: medium;
+    font-style: normal;
+    color: -internal-quirk-inherit;
+    text-align: start;
+    border-spacing: 2px;
+    font-variant: normal;
+}
+
+.estilo_titulo a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.estilo_data a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.estilo_titulo {
+    font-family: Arial, calibri, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #333333;
+    visibility: inherit;
+    text-transform: uppercase;
+}
+
+b {
+    font-weight: bold;
+    color: #333333;
+}
+
+.estilo_data a:hover {
+    text-decoration: underline;
+    color: #333333;
+}
+
+
+#div-mostrar {
+    display: none;
+}
+
+#div-mostrar2 {
+    display: none;
+}
+
+#mostrart {
+    display: none;
+}
+
+#div-mostrar3 {
+    display: none;
+}
+
+#div-mostrar4 {
+    display: none;
+}
+
+#div-mostrar5 {
+    display: none;
+}
+
+#div-mostrar6 {
+    display: none;
+}
+
+#div-mostrar7 {
+    display: none;
+}
+
+#seta {
+    padding-top: 15rem;
+}
+
+.estilo_titulo_preco {
+    font-size: 16px;
+}
+
+.estilo_quantidade {
+    width: 150px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+.btn-confirmar-pedido {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+
+.estilo_form {
+    margin-right: 1px;
+    border: 1px solid #333333;
+    padding: 0.24em;
+    background-color: #CECECE;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #333333;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+}
+
+
+.categoria {
+    cursor: pointer;
+    margin-bottom: 10px;
+    max-height: 200px;
+}
+
+.produtos {
+    display: none;
+}
+
+.nomeproduto {
+    text-align: center;
+}
+
+.retangulofoda {
+    height: 770px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #aaa #fff;
+}
+
+
+.ScroolBAr {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+    .ScroolBAr::-webkit-scrollbar {
+        width: 10px;
+        height: auto;
+    }
+
+
+    .ScroolBAr::-webkit-scrollbar-thumb {
+        background-color: #aaa;
+    }
+
+.btn btn-info {
+    position: absolute;
+    right: 100px;
+}
+
+
+
