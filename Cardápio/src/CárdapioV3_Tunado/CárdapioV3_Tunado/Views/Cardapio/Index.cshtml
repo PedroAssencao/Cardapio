@@ -436,45 +436,17 @@
             var taxa = parseFloat("@Model.Lista1.First().Taxa")
             var novopreco = parseFloat(preco)
             var resultado = taxa + novopreco
-            var idempresa = @ViewBag.Empresaid
-                    var idsdosprodutos = carrinho.map(objeto => objeto.proID);
 
-            
-
-            
-
-            await new Promise((resolve,reject )=> {
-
-
-                $.ajax({
-                    url: '@Url.ActionLink("CriarPedido", "Pedidos")',
-                    method: 'POST',
-                    data: {
-                        NomeCliente: nome,
-                        EnderecoCliente: endereco,
-                        TelefoneCliente: telefone,
-                        DataPedido: '@DateTime.Now.ToString("dd-MM-yyyy")',
-                        EmpresaID: @ViewBag.EmpresaID,
-                        TipoPagamento: e,
-                        Produtos: idsdosprodutos,
-                        empresaids: idempresa
-
-                    },
-                    success: function (batata) {
-                        var data = batata[0]
-                        var idpid = batata[1]
-
-
-                    var mensagem = 
-                    "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" + 
+               var mensagem = 
                             "\n" + "📣Delivery - " + nomeEmpresa + "\n" +
                             "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
                             " \n" + "👥 *CLIENTE* \nNome:  " + nome + " \n" +
+                            "Telefone: " + telefone + "  \n" +
                             "Endereço:  " + endereco + " \n" +
                             "Complemento:  " + complemento + "  \n" +
                             "bairro: " + Bairro + "  \n" +
                             "Ponto de Referencia: " + ptnReferencia + "  \n" +
-                            "Telefone: " + telefone + "  \n" +
+                           
                             "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
                             " \n*📝 RESUMO DO PEDIDO* \n" +
                             "Produto: " + "\n" + html +
@@ -487,20 +459,26 @@
                             "Valor total R$: " + resultado.toFixed(2)
 
 
+            var link = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
 
-                        var link = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
+            var idsdosprodutos = carrinho.map(objeto => objeto.proID);
 
-                     
-                         window.open(link, "_blank");
 
-                        resolve()
-                    }
-
-                })
+            $.ajax({
+                url: '@Url.ActionLink("CriarPedido", "Pedidos")',
+                method: 'POST',
+                data: {
+                    NomeCliente: nome,
+                    EnderecoCliente: endereco,
+                    TelefoneCliente: telefone,
+                    DataPedido: '@DateTime.Now.ToString("dd-MM-yyyy")',
+                    EmpresaID: @ViewBag.EmpresaID,
+                    TipoPagamento: e,
+                    Produtos: idsdosprodutos,
+                }
             })
-
-
-            }
+            window.open(link, "_blank");
+        }
            
                     
         function adicionarAoCarrinho(proID, precoProduto, nomeProduto, precoAnterior, quantidade) {
