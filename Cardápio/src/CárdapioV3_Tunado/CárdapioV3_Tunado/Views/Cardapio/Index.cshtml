@@ -437,8 +437,8 @@
             var idempresa = @ViewBag.Empresaid
             var idsdosprodutos = carrinho.map(objeto => objeto.proID);
            
-             $.ajax({
-                url: '@Url.ActionLink("CriarPedido", "Pedidos")',
+            $.ajax({
+                url: '/Pedidos/CriarPedido',
                 method: 'POST',
                 data: {
                     NomeCliente: nome,
@@ -448,12 +448,11 @@
                     EmpresaID: @ViewBag.EmpresaID,
                     TipoPagamento: e,
                     Produtos: idsdosprodutos,
-                        empresaids: idempresa
-                } , 
-                success: function (batata){
-                        var data =  batata[0]
-                        var idpid =  batata[1] 
-                
+                    empresaids: idempresa
+                },
+                success: function (batata) {
+                    var data = batata[0];
+                    var idpid = batata[1];
                  
                      
 
