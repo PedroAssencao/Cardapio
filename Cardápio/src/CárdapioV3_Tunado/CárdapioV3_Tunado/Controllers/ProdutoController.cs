@@ -75,19 +75,6 @@ namespace CárdapioV3_Tunado.Controllers
 
         //atualizar
 
-        [HttpPost]
-        public async Task <IActionResult> updateQuantidadePesquisa(int id)
-        {
-            var produtoPesquisado = (await produto.getTodosProdutos()).FirstOrDefault(x => x.ProID == id);
-
-            if (produtoPesquisado != null)
-            {
-                produtoPesquisado.QuantidadePesquisa++;
-            }
-
-            return RedirectToAction("Index");
-        }
-
         [HttpGet]
         public async Task <IActionResult> Atualizar(int id)
         {
