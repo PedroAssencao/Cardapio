@@ -16,18 +16,18 @@ namespace CárdapioV3_Tunado.Controllers
             _produtoContext = new ProdutoDAO();
         }
         [Authorize]
-        public IActionResult Index()
+        public async Task < IActionResult> Index()
         {
-            ViewBag.TodosPedidos = _pedidosContext.getTodosPedidos(0, int.Parse(User.Identity!.Name!));
-            ViewBag.PedidosUltimos7Dias = _pedidosContext.getTodosPedidos(7, int.Parse(User.Identity!.Name!));
-            ViewBag.PedidosUltimos15Dias = _pedidosContext.getTodosPedidos(15, int.Parse(User.Identity!.Name!));
-            ViewBag.PedidosUltimos30Dias = _pedidosContext.getTodosPedidos(30, int.Parse(User.Identity!.Name!));
+            ViewBag.TodosPedidos = await _pedidosContext.getTodosPedidos(0, int.Parse(User.Identity!.Name!));
+            ViewBag.PedidosUltimos7Dias = await _pedidosContext.getTodosPedidos(7, int.Parse(User.Identity!.Name!));
+            ViewBag.PedidosUltimos15Dias = await _pedidosContext.getTodosPedidos(15, int.Parse(User.Identity!.Name!));
+            ViewBag.PedidosUltimos30Dias = await _pedidosContext.getTodosPedidos(30, int.Parse(User.Identity!.Name!));
             return View();
         }
 
         [HttpPost]
         [ActionName("CriarPedido")] 
-        public IActionResult Create(string NomeCliente, string EnderecoCliente, string TelefoneCliente, string DataPedido, string TipoPagamento, int EmpresaID, int[] Produtos, int empresaids)
+        public async Task<IActionResult>  Create(string NomeCliente, string EnderecoCliente, string TelefoneCliente, string DataPedido, string TipoPagamento, int EmpresaID, int[] Produtos, int empresaids)
         {
             var pedido = new Pedidos();
             pedido.PedNomeCliente = NomeCliente;
@@ -37,10 +37,11 @@ namespace CárdapioV3_Tunado.Controllers
             pedido.TipoPagamento = TipoPagamento;
             pedido.EmpresaId = EmpresaID;
 
-            var batata = _pedidosContext.insertNovoPedido(pedido);
-            _produtoContext.atualizarqtdPesquisaProdutos(Produtos);
-            var model = _pedidosContext.getTodosPedidos(0, empresaids).First(x => x.PedID == batata);
-            return Json(new string[] { model.PedDataPedido.ToString("dd/MM/yyyy"), model.PedID.ToString() });
+            var batata = await _pedidosContext.insertNovoPedido(pedido);
+            await _produtoContext.atualizarqtdPesquisaProdutos(Produtos);
+            var models = await _pedidosContext.getTodosPedidos(0, empresaids);
+            var model = models.FirstOrDefault(x => x.PedID == batata);
+            return model != null ? Json(new string[] { model.PedDataPedido.ToString("dd/MM/yyyy"), model.PedID.ToString() }): Json("deu ruim") ;
         }
     }
 }

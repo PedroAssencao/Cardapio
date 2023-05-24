@@ -76,9 +76,9 @@ namespace CárdapioV3_Tunado.Controllers
         //atualizar
 
         [HttpPost]
-        public IActionResult updateQuantidadePesquisa(int id)
+        public async Task <IActionResult> updateQuantidadePesquisa(int id)
         {
-            var produtoPesquisado = produto.getTodosProdutos().FirstOrDefault(x => x.ProID == id);
+            var produtoPesquisado = (await produto.getTodosProdutos()).FirstOrDefault(x => x.ProID == id);
 
             if (produtoPesquisado != null)
             {
@@ -89,10 +89,10 @@ namespace CárdapioV3_Tunado.Controllers
         }
 
         [HttpGet]
-        public IActionResult Atualizar(int id)
+        public async Task <IActionResult> Atualizar(int id)
         {
             CategoriaDAO categoria = new CategoriaDAO();
-            ViewBag.ProdutoAtualizar = produto.getTodosProdutos().FirstOrDefault(x => x.ProID == id);
+            ViewBag.ProdutoAtualizar = (await produto.getTodosProdutos()).FirstOrDefault(x => x.ProID == id);
             ViewBag.Categoria = categoria.getTodasCategorias();
             return View();
         }

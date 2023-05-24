@@ -440,7 +440,7 @@
             var idsdosprodutos = carrinho.map(objeto => objeto.proID);
            
             $.ajax({
-                url: '/Pedidos/CriarPedido',
+                url:  '@Url.ActionLink("CriarPedido", "Pedidos")',
                 method: 'POST',
                 data: {
                     NomeCliente: nome,
@@ -453,6 +453,8 @@
                     empresaids: idempresa
                 },
                 success: function (batata) {
+                                   console.log(batata)
+
                     var data = batata[0];
                     var idpid = batata[1];
                  

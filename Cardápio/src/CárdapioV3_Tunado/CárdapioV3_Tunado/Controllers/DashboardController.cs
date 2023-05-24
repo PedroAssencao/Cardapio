@@ -19,11 +19,11 @@ namespace CárdapioV3_Tunado.Controllers
             _categoriaContext = new CategoriaDAO();
         }
 
-        public IActionResult Index()
+        public async Task <IActionResult> Index()
         {
-            ViewBag.PedidosUltimos7Dias = _pedidosContext.getTodosPedidos(7, int.Parse(User.Identity!.Name!)).Count;
-            ViewBag.PedidosUltimos15Dias = _pedidosContext.getTodosPedidos(15, int.Parse(User.Identity!.Name!)).Count;
-            ViewBag.PedidosUltimos30Dias = _pedidosContext.getTodosPedidos(30, int.Parse(User.Identity!.Name!)).Count;
+            ViewBag.PedidosUltimos7Dias = (await _pedidosContext.getTodosPedidos(7, int.Parse(User.Identity!.Name!))).Count;
+            ViewBag.PedidosUltimos15Dias = (await _pedidosContext.getTodosPedidos(15, int.Parse(User.Identity!.Name!))).Count;
+            ViewBag.PedidosUltimos30Dias = (await _pedidosContext.getTodosPedidos(30, int.Parse(User.Identity!.Name!))).Count;
             ViewBag.QuantidadeProdutos = _produtoContext.getQtdProdutosbyEmpresa(int.Parse(User.Identity!.Name!));
             ViewBag.ProdutoMaisProcurado = _produtoContext.getMaisPedidos(int.Parse(User.Identity!.Name!)).FirstOrDefault();
             if (User.IsInRole(nameof(E_Perfil.MASTER)))

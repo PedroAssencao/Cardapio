@@ -13,21 +13,21 @@ namespace CárdapioV3_Tunado.DAL
         {
             _connection = ConexaoBD.getConexao();
         }
-        public List<Pedidos> getTodosPedidos(int qtdDias, int empresaId)
+        public async Task <List<Pedidos>> getTodosPedidos(int qtdDias, int empresaId)
         {
             var sql = qtdDias != 0
                 ? $"Select * from Pedidos where PedDataPedido >= Date_Sub(Curdate(), Interval {qtdDias} DAY) and EmpresaId = {empresaId}"
                 : $"Select * from Pedidos where EmpresaId = {empresaId}";
-            List<Pedidos> dados = (List<Pedidos>)_connection.Query<Pedidos>(sql);
+            List<Pedidos> dados = (List<Pedidos>) await _connection.QueryAsync<Pedidos>(sql);
             return dados;
         }
 
       
-        public int insertNovoPedido(Pedidos novoPedido)
+        public async Task<int> insertNovoPedido(Pedidos novoPedido)
         {
             var sql = "insert Pedidos (PedNomeCliente, PedEnderecoCliente, PedTelefoneCliente, PedDataPedido, TipoPagamento, EmpresaId) values (@PedNomeCliente, @PedEnderecoCliente, @PedTelefoneCliente, @PedDataPedido, @TipoPagamento, @EmpresaId); SELECT LAST_INSERT_ID();";
 
-            return _connection.ExecuteScalar <int> (sql, novoPedido);
+            return await _connection.ExecuteScalarAsync <int> (sql, novoPedido);
 
 
         }

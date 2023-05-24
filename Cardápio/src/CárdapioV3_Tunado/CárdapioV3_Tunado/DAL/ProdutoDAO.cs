@@ -14,11 +14,11 @@ namespace CárdapioV3_Tunado.DAL
             _connection = ConexaoBD.getConexao();
         }
 
-        public List<CategoriaProdutoView> getTodosProdutos()
+        public async Task< List<CategoriaProdutoView>> getTodosProdutos()
         {
             var sql = "select * from Produto";
 
-            var dados = (List<CategoriaProdutoView>)_connection.Query<CategoriaProdutoView>(sql);
+            var dados = (List<CategoriaProdutoView>) await _connection.QueryAsync<CategoriaProdutoView>(sql);
             return dados;
         }
 
@@ -82,14 +82,21 @@ namespace CárdapioV3_Tunado.DAL
 
         }
 
-        public void atualizarqtdPesquisaProdutos(int[] idProdutos)
+        public async Task atualizarqtdPesquisaProdutos(int[] idProdutos)
         {
             string sql = "update Produto set QuantidadePesquisa = @quantidade where ProID = @ProID";
             foreach (int id in idProdutos)
             {
-                var produto = this.getTodosProdutos().First(x => x.ProID == id);
-                produto.QuantidadePesquisa++;
-                _connection.Execute(sql, new { quantidade = produto.QuantidadePesquisa, ProID = id});
+                var produto = (await this.getTodosProdutos()).FirstOrDefault(x => x.ProID == id);
+                if (produto != null) { 
+                
+                    
+                    produto.QuantidadePesquisa++;
+                await _connection.ExecuteAsync(sql, new { quantidade = produto.QuantidadePesquisa, ProID = id});
+
+                
+                }
+
             }
             
         }
