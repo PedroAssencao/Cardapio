@@ -398,7 +398,7 @@
         }
 
         function varrer(nome, valor) {
-            var carrinho = JSON.parse(allStorage()[1]); // lembrar de mudar para 0
+            var carrinho = JSON.parse(allStorage()[0]); // lembrar de mudar para 0
             var string = "";
              var nomeEmpresa = '(@Model.Lista1.First().NomeEmpresa)'
             var nome = $("#InputNome").val()
@@ -421,7 +421,7 @@
             var e = $("#FormaDePagamento option:selected").text();
 
             for (var i = 0; i < carrinho.length; i++) {
-                var carrinho = JSON.parse(allStorage()[1]) //lembrar de mudar para 0
+                var carrinho = JSON.parse(allStorage()[0]) //lembrar de mudar para 0
                 string += "\n" + carrinho[i]["nomeProduto"]
             }
 
