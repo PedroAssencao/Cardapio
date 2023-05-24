@@ -398,8 +398,9 @@
         }
 
         function varrer(nome, valor) {
-            var carrinho = JSON.parse(allStorage()[0]); // lembrar de mudar para 0
+            var carrinho = JSON.parse(allStorage()[1]); // lembrar de mudar para 0
             var string = "";
+             var nomeEmpresa = '(@Model.Lista1.First().NomeEmpresa)'
             var nome = $("#InputNome").val()
             var endereco = $("#InputEndereco").val()
             var telefone = $("#InputNTelefone").val().replace(/[()+\-]/g, '');
@@ -414,18 +415,17 @@
                 html += item.nomeProduto +
                     " x " + item.quantidade + " = R$" + (parseFloat(item.precoProduto) * parseFloat(item.quantidade)).toFixed(2) + "\n";
             }
-       
+
+
 
             var e = $("#FormaDePagamento option:selected").text();
 
             for (var i = 0; i < carrinho.length; i++) {
-                var carrinho = JSON.parse(allStorage()[0]) //lembrar de mudar para 0
+                var carrinho = JSON.parse(allStorage()[1]) //lembrar de mudar para 0
                 string += "\n" + carrinho[i]["nomeProduto"]
             }
-            var nomeEmpresa = '(@Model.Lista1.First().NomeEmpresa)'
-            var horaPedido = '(@Model.Lista1.First().PedDataPedido.ToString("dd/MM/yyyy"))'
-            var idpedido = '(@Model.Lista1.First().PedID)'
-            var numero = '@(Model.Lista1.First().Telefone.Replace("(", "").Replace(")", "").Replace("+", "").Replace("-", "").Replace(" ", ""))';
+
+            var numero = "@Model.Lista1.First().Telefone.Replace("(", "").Replace(")", "").Replace("+", "").Replace("-", "").Replace(" ", "")"
             var preco = 0.00
             for (var i = 0; i < carrinho.length; i++) {
                 var item = carrinho[i];
@@ -439,6 +439,36 @@
             var idempresa = @ViewBag.Empresaid
                     var idsdosprodutos = carrinho.map(objeto => objeto.proID);
 
+            var mensagem =
+                "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
+                "\n" + "📣Delivery - " + nomeEmpresa + "\n" +
+                "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
+                " \n" + "👥 *CLIENTE* \nNome:  " + nome + " \n" +
+                "Endereço:  " + endereco + " \n" +
+                "Complemento:  " + complemento + "  \n" +
+                "bairro: " + Bairro + "  \n" +
+                "Ponto de Referencia: " + ptnReferencia + "  \n" +
+                "Telefone: " + telefone + "  \n" +
+                "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
+                " \n*📝 RESUMO DO PEDIDO* \n" +
+                "Produto: " + "\n" + html +
+                "\nObservação: " + observacao + "\n" +
+                "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
+                "\n*💵DADOS DE PAGAMENTO*" + "\n" +
+                "Forma de pagamento: " + "" + e + "\n" +
+                "Preço do produto(s) R$ " + parseFloat(preco).toFixed(2) + "\n" +
+                "Taxa de entrega: @Model.Lista1.First().Taxa" + "\n" +
+                "Valor total R$: " + resultado.toFixed(2)
+
+
+
+            var link = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
+
+            window.open(link, "_blank");
+
+            
+
+
             $.ajax({
                 url: '@Url.ActionLink("CriarPedido", "Pedidos")',
                 method: 'POST',
@@ -449,51 +479,18 @@
                     DataPedido: '@DateTime.Now.ToString("dd-MM-yyyy")',
                     EmpresaID: @ViewBag.EmpresaID,
                     TipoPagamento: e,
-                    
+                    Produtos: idsdosprodutos,
                     empresaids: idempresa
+                        
                 },
                 success: function (batata) {
                     var data = batata[0]
-                    
-
-
-
-
-                    var mensagem =
-                        "Realizado em " + data +
-                        "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
-                        "\n" + "📣Delivery - " + nomeEmpresa + "\n" +
-                        "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
-                        " \n" + "👥 *CLIENTE* \nNome:  " + nome + " \n" +
-                        "*Endereço:  " + endereco + " \n" +
-                        "*Complemento:  " + complemento + "  \n" +
-                        "bairro: " + Bairro + "  \n" +
-                        "Ponto de Referencia: " + ptnReferencia + "  \n" +
-                        "*Telefone: " + telefone + "  \n" +
-                        "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
-                        " \n*📝 RESUMO DO PEDIDO* \n" +
-                        "Produto: " + "\n" + html +
-                        "\nObservação: " + observacao + "\n" +
-                        "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
-                        "\n*💵DADOS DE PAGAMENTO*" + "\n" +
-                        "Forma de pagamento: " + "" + e + "\n" +
-                        "Preço do produto(s) R$ " + parseFloat(preco).toFixed(2) + "\n" +
-                        "Taxa de entrega: @Model.Lista1.First().Taxa" + "\n" +
-                        "Valor total R$: " + resultado.toFixed(2)
-
-
-
-                    var link = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
-
-
-
-                    window.open(link, "_blank");
+                    var idpid = batata[1]
                 }
-
 
             })
         }
-
+                    
         function adicionarAoCarrinho(proID, precoProduto, nomeProduto, precoAnterior, quantidade) {
             var item = {
                 proID: proID,
