@@ -397,7 +397,7 @@
             return values;
         }
 
-        function varrer(nome, valor) {
+        async function varrer(nome, valor) {
             var carrinho = JSON.parse(allStorage()[0]); // lembrar de mudar para 0
             var string = "";
              var nomeEmpresa = '(@Model.Lista1.First().NomeEmpresa)'
@@ -439,57 +439,69 @@
             var idempresa = @ViewBag.Empresaid
                     var idsdosprodutos = carrinho.map(objeto => objeto.proID);
 
-            var mensagem =
-                "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
-                "\n" + "📣Delivery - " + nomeEmpresa + "\n" +
-                "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
-                " \n" + "👥 *CLIENTE* \nNome:  " + nome + " \n" +
-                "Endereço:  " + endereco + " \n" +
-                "Complemento:  " + complemento + "  \n" +
-                "bairro: " + Bairro + "  \n" +
-                "Ponto de Referencia: " + ptnReferencia + "  \n" +
-                "Telefone: " + telefone + "  \n" +
-                "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
-                " \n*📝 RESUMO DO PEDIDO* \n" +
-                "Produto: " + "\n" + html +
-                "\nObservação: " + observacao + "\n" +
-                "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
-                "\n*💵DADOS DE PAGAMENTO*" + "\n" +
-                "Forma de pagamento: " + "" + e + "\n" +
-                "Preço do produto(s) R$ " + parseFloat(preco).toFixed(2) + "\n" +
-                "Taxa de entrega: @Model.Lista1.First().Taxa" + "\n" +
-                "Valor total R$: " + resultado.toFixed(2)
-
-
-
-            var link = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
-
-            window.open(link, "_blank");
+            
 
             
 
+            await new Promise((resolve,reject )=> {
 
-            $.ajax({
-                url: '@Url.ActionLink("CriarPedido", "Pedidos")',
-                method: 'POST',
-                data: {
-                    NomeCliente: nome,
-                    EnderecoCliente: endereco,
-                    TelefoneCliente: telefone,
-                    DataPedido: '@DateTime.Now.ToString("dd-MM-yyyy")',
-                    EmpresaID: @ViewBag.EmpresaID,
-                    TipoPagamento: e,
-                    Produtos: idsdosprodutos,
-                    empresaids: idempresa
-                        
-                },
-                success: function (batata) {
-                    var data = batata[0]
-                    var idpid = batata[1]
-                }
 
+                $.ajax({
+                    url: '@Url.ActionLink("CriarPedido", "Pedidos")',
+                    method: 'POST',
+                    data: {
+                        NomeCliente: nome,
+                        EnderecoCliente: endereco,
+                        TelefoneCliente: telefone,
+                        DataPedido: '@DateTime.Now.ToString("dd-MM-yyyy")',
+                        EmpresaID: @ViewBag.EmpresaID,
+                        TipoPagamento: e,
+                        Produtos: idsdosprodutos,
+                        empresaids: idempresa
+
+                    },
+                    success: function (batata) {
+                        var data = batata[0]
+                        var idpid = batata[1]
+
+
+                    var mensagem = 
+                    "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" + 
+                            "\n" + "📣Delivery - " + nomeEmpresa + "\n" +
+                            "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
+                            " \n" + "👥 *CLIENTE* \nNome:  " + nome + " \n" +
+                            "Endereço:  " + endereco + " \n" +
+                            "Complemento:  " + complemento + "  \n" +
+                            "bairro: " + Bairro + "  \n" +
+                            "Ponto de Referencia: " + ptnReferencia + "  \n" +
+                            "Telefone: " + telefone + "  \n" +
+                            "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
+                            " \n*📝 RESUMO DO PEDIDO* \n" +
+                            "Produto: " + "\n" + html +
+                            "\nObservação: " + observacao + "\n" +
+                            "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
+                            "\n*💵DADOS DE PAGAMENTO*" + "\n" +
+                            "Forma de pagamento: " + "" + e + "\n" +
+                            "Preço do produto(s) R$ " + parseFloat(preco).toFixed(2) + "\n" +
+                            "Taxa de entrega: @Model.Lista1.First().Taxa" + "\n" +
+                            "Valor total R$: " + resultado.toFixed(2)
+
+
+
+                        var link = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
+
+                     
+                         window.open(link, "_blank");
+
+                        resolve()
+                    }
+
+                })
             })
-        }
+
+
+            }
+           
                     
         function adicionarAoCarrinho(proID, precoProduto, nomeProduto, precoAnterior, quantidade) {
             var item = {
