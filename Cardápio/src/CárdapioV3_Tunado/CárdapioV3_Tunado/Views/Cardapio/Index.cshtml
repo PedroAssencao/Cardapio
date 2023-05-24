@@ -204,12 +204,14 @@
 
        -->
 
-       
-           <div class="container-fluid mt-2 position-flex">
-    <div class="d-flex align-items-end justify-content-center estilo_pp" style="opacity: 0.3;">
-        <p>Versão - 1.00</p>
-    </div>
+ <!--
+                <div class="container-fluid mt-2 position-flex">
+          <div class="d-flex align-items-end justify-content-center estilo_pp" style="opacity: 0.3;">
+         <p>Versão - 1.00</p>
+          </div>
 </div>
+ -->      
+
        
 
 
@@ -396,7 +398,7 @@
         }
 
         function varrer(nome, valor) {
-            var carrinho = JSON.parse(allStorage()[1]); // lembrar de mudar para 0
+            var carrinho = JSON.parse(allStorage()[0]); // lembrar de mudar para 0
             var string = "";
             var nome = $("#InputNome").val()
             var endereco = $("#InputEndereco").val()
@@ -417,7 +419,7 @@
             var e = $("#FormaDePagamento option:selected").text();
 
             for (var i = 0; i < carrinho.length; i++) {
-                var carrinho = JSON.parse(allStorage()[1]) //lembrar de mudar para 0
+                var carrinho = JSON.parse(allStorage()[0]) //lembrar de mudar para 0
                 string += "\n" + carrinho[i]["nomeProduto"]
             }
             var nomeEmpresa = '(@Model.Lista1.First().NomeEmpresa)'
