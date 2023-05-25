@@ -7,7 +7,6 @@ namespace CárdapioV3_Tunado.DAL
 {
     public class ProdutoDAO
     {
-        //TODO: Adicionar campo novo nos comandos do sql 'QuantidadePesquisa'
         MySqlConnection _connection;
         public ProdutoDAO()
         {
@@ -84,21 +83,27 @@ namespace CárdapioV3_Tunado.DAL
 
         public async Task atualizarqtdPesquisaProdutos(int[] idProdutos)
         {
-            string sql = "update Produto set QuantidadePesquisa = @quantidade where ProID = @ProID";
-            foreach (int id in idProdutos)
+            try
             {
-                var produto = (await this.getTodosProdutos()).FirstOrDefault(x => x.ProID == id);
-                if (produto != null) { 
+                string sql = "update Produto set QuantidadePesquisa = @quantidade where ProID = @ProID";
+                foreach (int id in idProdutos)
+                {
+                    var produto = (await this.getTodosProdutos()).FirstOrDefault(x => x.ProID == id);
+                    if (produto != null) { 
                 
                     
-                    produto.QuantidadePesquisa++;
-                await _connection.ExecuteAsync(sql, new { quantidade = produto.QuantidadePesquisa, ProID = id});
+                        produto.QuantidadePesquisa++;
+                    await _connection.ExecuteAsync(sql, new { quantidade = produto.QuantidadePesquisa, ProID = id});
 
                 
-                }
+                    }
 
+                }
             }
-            
+            catch
+            {
+                throw new Exception("Erro ao atualizar dados do produto");
+            }
         }
     }
 }

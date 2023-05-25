@@ -26,22 +26,39 @@ namespace CárdapioV3_Tunado.Controllers
         }
 
         [HttpPost]
-        [ActionName("CriarPedido")] 
-        public async Task<IActionResult>  Create(string NomeCliente, string EnderecoCliente, string TelefoneCliente, string DataPedido, string TipoPagamento, int EmpresaID, int[] Produtos, int empresaids)
+        public async Task<IActionResult>  Create(string NomeCliente, string EnderecoCliente, string TelefoneCliente, string DataPedido, string TipoPagamento, int EmpresaID, int[] Produtos)
         {
-            var pedido = new Pedidos();
-            pedido.PedNomeCliente = NomeCliente;
-            pedido.PedEnderecoCliente = EnderecoCliente;
-            pedido.PedTelefoneCliente = TelefoneCliente;
-            pedido.PedDataPedido = DateTime.Parse(DataPedido);
-            pedido.TipoPagamento = TipoPagamento;
-            pedido.EmpresaId = EmpresaID;
+            try
+            {
+                var pedido = new Pedidos();
+                pedido.PedNomeCliente = NomeCliente;
+                pedido.PedEnderecoCliente = EnderecoCliente;
+                pedido.PedTelefoneCliente = TelefoneCliente;
+                try
+                {
+                    pedido.PedDataPedido = DateTime.Parse(DataPedido);
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest($"Erro ao converter a data: {ex.Message}");
+                }
+                
+                pedido.TipoPagamento = TipoPagamento;
+                pedido.EmpresaId = EmpresaID;
 
-            var batata = await _pedidosContext.insertNovoPedido(pedido);
-            await _produtoContext.atualizarqtdPesquisaProdutos(Produtos);
-            var models = await _pedidosContext.getTodosPedidos(0, empresaids);
-            var model = models.FirstOrDefault(x => x.PedID == batata);
-            return model != null ? Json(new string[] { model.PedDataPedido.ToString("dd/MM/yyyy"), model.PedID.ToString() }): Json("deu ruim") ;
+                var batata = await _pedidosContext.insertNovoPedido(pedido);
+                await _produtoContext.atualizarqtdPesquisaProdutos(Produtos);
+                var models = await _pedidosContext.getTodosPedidos(0, EmpresaID);
+                if (models.Count == 0)
+                    return BadRequest("A lista de pedidos está vazia");
+                var model = models.FirstOrDefault(x => x.PedID == batata);
+                return model != null ? Json(new string[] { model.PedDataPedido.ToString("dd/MM/yyyy"), model.PedID.ToString() }) : BadRequest("O pedido não foi encontrado") ;
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro interno do servidor: {ex.Message}");
+            }
+
         }
     }
 }

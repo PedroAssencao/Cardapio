@@ -398,7 +398,7 @@
         }
 
         async function varrer(nome, valor) {
-            var carrinho = JSON.parse(allStorage()[0]); // lembrar de mudar para 0
+            var carrinho = JSON.parse(allStorage()[0]); //TODO: lembrar de mudar para 0
             var string = "";
              var nomeEmpresa = '(@Model.Lista1.First().NomeEmpresa)'
             var nome = $("#InputNome").val()
@@ -437,36 +437,12 @@
             var novopreco = parseFloat(preco)
             var resultado = taxa + novopreco
 
-               var mensagem = 
-                            "\n" + "📣Delivery - " + nomeEmpresa + "\n" +
-                            "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
-                            " \n" + "👥 *CLIENTE* \nNome:  " + nome + " \n" +
-                            "Telefone: " + telefone + "  \n" +
-                            "Endereço:  " + endereco + " \n" +
-                            "Complemento:  " + complemento + "  \n" +
-                            "bairro: " + Bairro + "  \n" +
-                            "Ponto de Referencia: " + ptnReferencia + "  \n" +
-                           
-                            "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
-                            " \n*📝 RESUMO DO PEDIDO* \n" +
-                            "Produto: " + "\n" + html +
-                            "\nObservação: " + observacao + "\n" +
-                            "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
-                            "\n*💵DADOS DE PAGAMENTO*" + "\n" +
-                            "Forma de pagamento: " + "" + e + "\n" +
-                            "Preço do produto(s) R$ " + parseFloat(preco).toFixed(2) + "\n" +
-                            "Taxa de entrega: @Model.Lista1.First().Taxa" + "\n" +
-                            "Valor total R$: " + resultado.toFixed(2)
-
-
-            var link = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
-
             var idsdosprodutos = carrinho.map(objeto => objeto.proID);
 
-
             $.ajax({
-                url: '@Url.ActionLink("CriarPedido", "Pedidos")',
+                url: '@Url.ActionLink("Create", "Pedidos")',
                 method: 'POST',
+                dataType: 'JSON',
                 data: {
                     NomeCliente: nome,
                     EnderecoCliente: endereco,
@@ -475,9 +451,68 @@
                     EmpresaID: @ViewBag.EmpresaID,
                     TipoPagamento: e,
                     Produtos: idsdosprodutos,
+                },
+                success: (result) => {
+                    console.log(result[0])
+                    console.log(result[1])
+
+                    var id = result[1]
+                    var data = result[0]
+
+                    var mensagem =
+                        "\n" + "📣Delivery - " + nomeEmpresa + "\n" + "Pedido nº:" + id + "\n Data:" + data +
+                        "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
+                        " \n" + "👥 *CLIENTE* \nNome:  " + nome + " \n" +
+                        "Telefone: " + telefone + "  \n" +
+                        "Endereço:  " + endereco + " \n" +
+                        "Complemento:  " + complemento + "  \n" +
+                        "bairro: " + Bairro + "  \n" +
+                        "Ponto de Referencia: " + ptnReferencia + "  \n" +
+
+                        "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
+                        " \n*📝 RESUMO DO PEDIDO* \n" +
+                        "Produto: " + "\n" + html +
+                        "\nObservação: " + observacao + "\n" +
+                        "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
+                        "\n*💵DADOS DE PAGAMENTO*" + "\n" +
+                        "Forma de pagamento: " + "" + e + "\n" +
+                        "Preço do produto(s) R$ " + parseFloat(preco).toFixed(2) + "\n" +
+                        "Taxa de entrega: @Model.Lista1.First().Taxa" + "\n" +
+                        "Valor total R$: " + resultado.toFixed(2)
+
+
+                    var link = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
+                    window.open(link, "_blank", 'noreferrer');
+                },
+                error: (result) => {
+                    console.log(result)
+
+                    var mensagem =
+                        "\n" + "📣Delivery - " + nomeEmpresa + "\n" +
+                        "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
+                        " \n" + "👥 *CLIENTE* \nNome:  " + nome + " \n" +
+                        "Telefone: " + telefone + "  \n" +
+                        "Endereço:  " + endereco + " \n" +
+                        "Complemento:  " + complemento + "  \n" +
+                        "bairro: " + Bairro + "  \n" +
+                        "Ponto de Referencia: " + ptnReferencia + "  \n" +
+
+                        "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
+                        " \n*📝 RESUMO DO PEDIDO* \n" +
+                        "Produto: " + "\n" + html +
+                        "\nObservação: " + observacao + "\n" +
+                        "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
+                        "\n*💵DADOS DE PAGAMENTO*" + "\n" +
+                        "Forma de pagamento: " + "" + e + "\n" +
+                        "Preço do produto(s) R$ " + parseFloat(preco).toFixed(2) + "\n" +
+                        "Taxa de entrega: @Model.Lista1.First().Taxa" + "\n" +
+                        "Valor total R$: " + resultado.toFixed(2)
+
+
+                    var link = "https://api.whatsapp.com/send?phone=" + numero + "&text=" + encodeURIComponent(mensagem);
+                    window.open(link, "_blank", 'noreferrer');
                 }
             })
-            window.open(link, "_blank");
         }
            
                     

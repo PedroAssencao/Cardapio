@@ -28,8 +28,7 @@ namespace CárdapioV3_Tunado.DAL
             var sql = "insert Pedidos (PedNomeCliente, PedEnderecoCliente, PedTelefoneCliente, PedDataPedido, TipoPagamento, EmpresaId) values (@PedNomeCliente, @PedEnderecoCliente, @PedTelefoneCliente, @PedDataPedido, @TipoPagamento, @EmpresaId); SELECT LAST_INSERT_ID();";
 
             return await _connection.ExecuteScalarAsync <int> (sql, novoPedido);
-
-
+            throw new Exception("Erro ao inserir pedido");
         }
     }
 }
