@@ -26,7 +26,7 @@ namespace CárdapioV3_Tunado.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult>  Create(string NomeCliente, string EnderecoCliente, string TelefoneCliente, string DataPedido, string TipoPagamento, int EmpresaID, int[] Produtos)
+        public async Task<IActionResult>  Create(string NomeCliente, string EnderecoCliente, string TelefoneCliente, string TipoPagamento, int EmpresaID, int[] Produtos)
         {
             try
             {
@@ -34,15 +34,6 @@ namespace CárdapioV3_Tunado.Controllers
                 pedido.PedNomeCliente = NomeCliente;
                 pedido.PedEnderecoCliente = EnderecoCliente;
                 pedido.PedTelefoneCliente = TelefoneCliente;
-                try
-                {
-                    pedido.PedDataPedido = DateTime.Parse(DataPedido);
-                }
-                catch (Exception ex)
-                {
-                    return BadRequest($"Erro ao converter a data: {ex.Message}");
-                }
-                
                 pedido.TipoPagamento = TipoPagamento;
                 pedido.EmpresaId = EmpresaID;
 

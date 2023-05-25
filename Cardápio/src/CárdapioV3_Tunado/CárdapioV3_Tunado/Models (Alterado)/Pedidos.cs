@@ -6,7 +6,7 @@
         public string PedNomeCliente { get; set; }
         public string PedEnderecoCliente { get; set; }
         public string PedTelefoneCliente { get; set; }
-        public DateTime PedDataPedido { get; set; }
+        public DateTime PedDataPedido { get; set; } = DateTime.Now;
         public string TipoPagamento { get; set; }
         public int EmpresaId { get; set; }
     }
