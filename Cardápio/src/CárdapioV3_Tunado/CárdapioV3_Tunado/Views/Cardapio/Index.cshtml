@@ -458,16 +458,17 @@
                     var id = result[1]
                     var data = result[0]
 
-                    var mensagem =
-                        "\n" + "📣Delivery - " + nomeEmpresa + "\n" + "Pedido nº:" + id + "\n Data:" + data +
+                   var mensagem = "\n" + "*✏PEDIDO Nº* " + id  + " \n" +
+                    "Realizado em " + data + 
+                    "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" + 
+                        "\n" + "📣Delivery - " + nomeEmpresa + "\n"   +   
                         "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
                         " \n" + "👥 *CLIENTE* \nNome:  " + nome + " \n" +
-                        "Telefone: " + telefone + "  \n" +
-                        "Endereço:  " + endereco + " \n" +
-                        "Complemento:  " + complemento + "  \n" +
-                        "bairro: " + Bairro + "  \n" +
-                        "Ponto de Referencia: " + ptnReferencia + "  \n" +
-
+                        "*Endereço:  " + endereco + " \n" +
+                        "*Complemento:  " + complemento + "  \n" +
+                        "bairro:" + Bairro + "  \n" +
+                        "Ponto de Referencia:" + ptnReferencia + "  \n" +
+                        "*Telefone:" + telefone + "  \n" +
                         "\n" + "- - - - - - - - - - - - - - - - - - - - - - - - - - -" + "\n" +
                         " \n*📝 RESUMO DO PEDIDO* \n" +
                         "Produto: " + "\n" + html +
