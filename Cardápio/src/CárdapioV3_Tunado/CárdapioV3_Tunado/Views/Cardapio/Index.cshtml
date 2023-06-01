@@ -86,18 +86,44 @@
                                 <div class="col">
                                     <button class="btn-confirmar-pedido rounded-2" onclick="ocultarTabela(); exibirProdutoSelecionado(@itemProduto.ProID, @cade);">Adicionar Pedido  </button>
                                 </div>
-                                @if (item.CategoriaID == 1)
+                                @if (item.CategoriaID == 4)
                                 {
                                     <div class="col-3 d-flex align-items-center">
-                                        <select class="form-select" id="@qtd@cade" size="1">
-                                            <option value="Pequena" selected>01</option>
+                                        <select class="form-select" id="CatPizza" size="1">
+                                            <option value="01" selected>Pequena</option>
                                             <option value="02">Média</option>
                                             <option value="03">Grande</option>
                                             <option value="04">Familia</option>
-                                            
-
                                         </select>
                                     </div>
+
+                                    <div class="col-3 d-flex align-items-center">
+                                        <select class="form-select" id="@qtd@cade" size="1">
+                                            <option value="01" selected>01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                            <option value="13">13</option>
+                                            <option value="14">14</option>
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                            <option value="20">20</option>
+                                        </select>
+                                    </div>
+
+
+
                                 }else
                                 {
                                     <div class="col-3 d-flex align-items-center">
@@ -310,6 +336,8 @@
 
         function exibirProdutoSelecionado(idProduto, id) {
             $("#produto-selecionado").empty();
+            var pizza = $("#CatPizza option:selected").text();
+
             var nomeProduto = document.getElementById("nome-produto-" + idProduto)?.textContent;
             var precoProduto = parseFloat(document.getElementById("preco-produto-" + idProduto)?.textContent.replace(',', '.'));
             var precoAnterior = 0;
@@ -332,16 +360,16 @@
                 html +=
                     "<div id='" + "produto-" + i + "' class='ScroolBAr container card bg-Emphasis mb-2'>" +
                     "<div class='d-flex justify-content-between align-items-center'>" +
-                    "<span>" + item.nomeProduto + " x " + item.quantidade + " = R$" + precoTotal.toFixed(2) + "</span>" +
+                    "<span>" + item.nomeProduto + " "+ pizza + " x " + item.quantidade + " = R$" + precoTotal.toFixed(2) + "</span>" +
                     "<button class='btn btn-danger rounded-2 btn_produto' style='margin-left:20px;' onclick='event.preventDefault(); removerItemDoCarrinho(" + i + ");'>X</button></div>" +
                     "</div>" + "</div>";
             }
-           var taxaString = "@Model.Lista1.First().Taxa";
+            var taxaString = "@Model.Lista1.First().Taxa";
 
-           taxaString = taxaString.replace(',', '.');
+            taxaString = taxaString.replace(',', '.');
 
 
-           var taxa = parseFloat(taxaString);
+            var taxa = parseFloat(taxaString);
 
             var divSomaProdutos = document.getElementById("total-da-soma-dos-valores");
             divSomaProdutos.textContent = "Total: R$" + somaProdutos.toFixed(2);
@@ -413,7 +441,7 @@
         }
 
         async function varrer(nome, valor) {
-            var carrinho = JSON.parse(allStorage()[0]); //TODO: lembrar de mudar para 0
+            var carrinho = JSON.parse(allStorage()[1]); //TODO: lembrar de mudar para 0
             var string = "";
              var nomeEmpresa = '(@Model.Lista1.First().NomeEmpresa)'
             var nome = $("#InputNome").val()
@@ -422,12 +450,14 @@
             var observacao = $("#observacao").val()
             var complemento = $("#InputComplemento").val()
             var Bairro = $("#InputBairro").val()
+            var pizza = $("#CatPizza option:selected").text();
             var ptnReferencia = $("#InputReferencia").val()
             var html = "";
             for (var i = 0; i < carrinho.length; i++) {
                 console.log(carrinho[i].precoProduto)
                 var item = carrinho[i];
-                html += item.nomeProduto +
+         
+                html += item.nomeProduto + " " + pizza +
                     " x " + item.quantidade + " = R$" + (parseFloat(item.precoProduto) * parseFloat(item.quantidade)).toFixed(2) + "\n";
             }
 
@@ -436,7 +466,7 @@
             var e = $("#FormaDePagamento option:selected").text();
 
             for (var i = 0; i < carrinho.length; i++) {
-                var carrinho = JSON.parse(allStorage()[0]) //lembrar de mudar para 0
+                var carrinho = JSON.parse(allStorage()[1]) //lembrar de mudar para 0
                 string += "\n" + carrinho[i]["nomeProduto"]
             }
 
